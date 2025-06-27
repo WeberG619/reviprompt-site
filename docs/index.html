@@ -7,27 +7,67 @@
     <meta name="description" content="Professional AI prompt packs that automate Revit's most time-consuming tasks. Save 8-12 hours per project with battle-tested automation.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .pulse-animation { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+        .modal-content { background-color: #fefefe; margin: 5% auto; padding: 20px; border-radius: 10px; width: 90%; max-width: 600px; position: relative; }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; }
+        .close:hover { color: black; }
+        .success-message { background: #10b981; color: white; padding: 10px; border-radius: 5px; margin: 10px 0; display: none; }
+        .mobile-menu { display: none; }
+        @media (max-width: 768px) {
+            .desktop-nav { display: none; }
+            .mobile-menu { display: block; }
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-6">
+            <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <div class="text-2xl font-bold text-blue-600">🚀 ReviPrompt Lab</div>
+                    <div class="text-2xl font-bold text-blue-600 floating">🚀 ReviPrompt Lab</div>
                 </div>
-                <nav class="hidden md:flex space-x-8">
-                    <a href="#products" class="text-gray-600 hover:text-blue-600">Products</a>
-                    <a href="#features" class="text-gray-600 hover:text-blue-600">Features</a>
-                    <a href="#pricing" class="text-gray-600 hover:text-blue-600">Pricing</a>
-                    <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav hidden md:flex space-x-8">
+                    <a href="#products" class="text-gray-600 hover:text-blue-600 transition duration-300">Products</a>
+                    <a href="#features" class="text-gray-600 hover:text-blue-600 transition duration-300">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-blue-600 transition duration-300">Reviews</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+                    <a href="#free-download" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition duration-300">Free Pack</a>
                 </nav>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-600 hover:text-blue-600">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
             </div>
+            
+            <!-- Mobile Navigation -->
+            <nav id="mobile-menu" class="mobile-menu md:hidden pb-4">
+                <div class="flex flex-col space-y-3">
+                    <a href="#products" class="text-gray-600 hover:text-blue-600 py-2">Products</a>
+                    <a href="#features" class="text-gray-600 hover:text-blue-600 py-2">Features</a>
+                    <a href="#testimonials" class="text-gray-600 hover:text-blue-600 py-2">Reviews</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 py-2">Contact</a>
+                    <a href="#free-download" class="bg-green-500 text-white px-4 py-2 rounded-lg text-center">Free Pack</a>
+                </div>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-blue-600 to-purple-700 text-white">
+    <section class="gradient-bg text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
             <div class="text-center">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -38,10 +78,10 @@
                     150+ Professional AI prompts that automate sheet setup, quality control, and code compliance
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#free-download" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition">
+                    <button onclick="openModal('freeModal')" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 pulse-animation">
                         🎁 Get 3 FREE Prompts
-                    </a>
-                    <a href="#pricing" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition">
+                    </button>
+                    <a href="#products" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition duration-300">
                         View Pricing
                     </a>
                 </div>
@@ -49,31 +89,35 @@
         </div>
     </section>
 
-    <!-- Social Proof -->
+    <!-- Stats Section -->
     <section class="bg-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h3 class="text-2xl font-bold text-gray-900 mb-8">Trusted by 500+ Revit Professionals</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-lg card-hover">
                         <div class="text-4xl font-bold text-blue-600 mb-2">2,400+</div>
                         <div class="text-gray-600">Hours Saved</div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-gray-50 p-6 rounded-lg card-hover">
                         <div class="text-4xl font-bold text-green-600 mb-2">3,800%</div>
                         <div class="text-gray-600">Average ROI</div>
                     </div>
-                    <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="bg-gray-50 p-6 rounded-lg card-hover">
                         <div class="text-4xl font-bold text-purple-600 mb-2">150+</div>
                         <div class="text-gray-600">AI Prompts</div>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg card-hover">
+                        <div class="text-4xl font-bold text-orange-600 mb-2">500+</div>
+                        <div class="text-gray-600">Happy Users</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What We Solve -->
-    <section id="features" class="py-16">
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -83,53 +127,165 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center">
+                <div class="text-center card-hover bg-white p-6 rounded-lg">
                     <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-file-alt text-2xl text-blue-600"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Sheet Setup</h3>
-                    <p class="text-gray-600">Fix title blocks, renumber sheets, align viewports</p>
-                    <div class="text-green-600 font-semibold mt-2">2 hours → 2 minutes</div>
+                    <p class="text-gray-600 mb-3">Fix title blocks, renumber sheets, align viewports</p>
+                    <div class="text-green-600 font-semibold">2 hours → 2 minutes</div>
                 </div>
 
-                <div class="text-center">
+                <div class="text-center card-hover bg-white p-6 rounded-lg">
                     <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-check-circle text-2xl text-green-600"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Quality Control</h3>
-                    <p class="text-gray-600">Find missing tags, validate dimensions, check errors</p>
-                    <div class="text-green-600 font-semibold mt-2">3 hours → 15 minutes</div>
+                    <p class="text-gray-600 mb-3">Find missing tags, validate dimensions, check errors</p>
+                    <div class="text-green-600 font-semibold">3 hours → 15 minutes</div>
                 </div>
 
-                <div class="text-center">
+                <div class="text-center card-hover bg-white p-6 rounded-lg">
                     <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-balance-scale text-2xl text-purple-600"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Code Compliance</h3>
-                    <p class="text-gray-600">Florida Building Code, ADA, life safety analysis</p>
-                    <div class="text-green-600 font-semibold mt-2">4 hours → 30 minutes</div>
+                    <p class="text-gray-600 mb-3">Florida Building Code, ADA, life safety analysis</p>
+                    <div class="text-green-600 font-semibold">4 hours → 30 minutes</div>
                 </div>
 
-                <div class="text-center">
+                <div class="text-center card-hover bg-white p-6 rounded-lg">
                     <div class="bg-yellow-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                         <i class="fas fa-download text-2xl text-yellow-600"></i>
                     </div>
                     <h3 class="text-xl font-semibold mb-2">Export Automation</h3>
-                    <p class="text-gray-600">Batch PDF/DWG creation with proper naming</p>
-                    <div class="text-green-600 font-semibold mt-2">1 hour → 5 minutes</div>
+                    <p class="text-gray-600 mb-3">Batch PDF/DWG creation with proper naming</p>
+                    <div class="text-green-600 font-semibold">1 hour → 5 minutes</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Customer Testimonials -->
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Choose Your Automation Level</h2>
+                <p class="text-xl text-gray-600">From individual users to enterprise teams</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Free Sampler -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 text-center card-hover">
+                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">FREE</div>
+                    <h3 class="text-2xl font-bold mb-2">Sampler</h3>
+                    <div class="text-4xl font-bold text-green-600 mb-4">$0</div>
+                    <ul class="text-left space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 3 Essential Prompts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Quick Start Guide</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Community Access</li>
+                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Email Support</li>
+                    </ul>
+                    <button onclick="openModal('freeModal')" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition duration-300">
+                        Download Free
+                    </button>
+                </div>
+
+                <!-- Foundation -->
+                <div class="bg-white border-2 border-blue-500 rounded-lg p-6 text-center card-hover">
+                    <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">POPULAR</div>
+                    <h3 class="text-2xl font-bold mb-2">Foundation</h3>
+                    <div class="text-4xl font-bold text-blue-600 mb-4">$39</div>
+                    <ul class="text-left space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> 25 Essential Prompts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Dynamo Backup Graphs</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> 6 Months Updates</li>
+                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Email Support</li>
+                    </ul>
+                    <button onclick="openModal('purchaseModal', 'Foundation Pack', '$39')" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition duration-300">
+                        Buy Now
+                    </button>
+                </div>
+
+                <!-- Professional -->
+                <div class="bg-white border-2 border-purple-500 rounded-lg p-6 text-center relative card-hover">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                        BEST VALUE
+                    </div>
+                    <h3 class="text-2xl font-bold mb-2 mt-4">Professional</h3>
+                    <div class="text-4xl font-bold text-purple-600 mb-4">$149</div>
+                    <ul class="text-left space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> 75 Total Prompts</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Video Tutorials</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Priority Support</li>
+                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> 1 Year Updates</li>
+                    </ul>
+                    <button onclick="openModal('purchaseModal', 'Professional Pack', '$149')" class="w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition duration-300">
+                        Buy Now
+                    </button>
+                </div>
+
+                <!-- Enterprise -->
+                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 text-center card-hover">
+                    <div class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">TEAMS</div>
+                    <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
+                    <div class="text-4xl font-bold text-gray-700 mb-4">$299</div>
+                    <ul class="text-left space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-gray-500 mr-2"></i> 150+ Complete Library</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gray-500 mr-2"></i> MEP & Structural</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gray-500 mr-2"></i> 10 User License</li>
+                        <li class="flex items-center"><i class="fas fa-check text-gray-500 mr-2"></i> Custom Development</li>
+                    </ul>
+                    <button onclick="openModal('purchaseModal', 'Enterprise Pack', '$299')" class="w-full bg-gray-700 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition duration-300">
+                        Buy Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <p class="text-gray-600">30-day money-back guarantee • Instant delivery • Works with Revit 2024-2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
     <section class="bg-gray-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
+                <p class="text-xl text-gray-600">Start automating in 3 simple steps</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center card-hover bg-white p-8 rounded-lg">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                    <h3 class="text-xl font-semibold mb-4">Copy Any Prompt</h3>
+                    <p class="text-gray-600">Choose from 150+ professional prompts organized by category. Each prompt is battle-tested on real projects.</p>
+                </div>
+
+                <div class="text-center card-hover bg-white p-8 rounded-lg">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                    <h3 class="text-xl font-semibold mb-4">Paste Into AI</h3>
+                    <p class="text-gray-600">Use ChatGPT, Claude, or Copilot. Replace [BRACKETS] with your project values and get custom automation code.</p>
+                </div>
+
+                <div class="text-center card-hover bg-white p-8 rounded-lg">
+                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                    <h3 class="text-xl font-semibold mb-4">Save Hours</h3>
+                    <p class="text-gray-600">Run the generated code in Dynamo or pyRevit. Tasks that took hours now finish in minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="bg-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl font-bold text-gray-900 mb-4">What Our Customers Say</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow">
+                <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
                     <div class="mb-4">
                         <div class="flex text-yellow-400 mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -140,7 +296,7 @@
                     <div class="text-gray-500">Project Architect, Miami</div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow">
+                <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
                     <div class="mb-4">
                         <div class="flex text-yellow-400 mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -151,7 +307,7 @@
                     <div class="text-gray-500">Project Manager, Tampa</div>
                 </div>
 
-                <div class="bg-white p-6 rounded-lg shadow">
+                <div class="bg-gray-50 p-6 rounded-lg shadow card-hover">
                     <div class="mb-4">
                         <div class="flex text-yellow-400 mb-2">
                             <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
@@ -174,164 +330,12 @@
             <p class="text-xl mb-8 text-green-100">
                 Try our Sheet Setup Master, Missing Tag Finder, and Area Calculator Pro absolutely free
             </p>
-            <form class="max-w-md mx-auto flex gap-4">
-                <input type="email" placeholder="Enter your email" required
-                       class="flex-1 px-4 py-3 rounded-lg text-gray-900 border-0">
-                <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-6 py-3 rounded-lg font-semibold transition">
-                    Get Free Prompts
-                </button>
-            </form>
+            <button onclick="openModal('freeModal')" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition duration-300">
+                Get Free Prompts Now
+            </button>
             <p class="text-sm text-green-200 mt-4">
                 Instant download. No spam. Unsubscribe anytime.
             </p>
-        </div>
-    </section>
-
-    <!-- Products -->
-    <section id="products" class="py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Choose Your Automation Level</h2>
-                <p class="text-xl text-gray-600">From individual users to enterprise teams</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Free Sampler -->
-                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 text-center">
-                    <div class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">FREE</div>
-                    <h3 class="text-2xl font-bold mb-2">Sampler</h3>
-                    <div class="text-4xl font-bold text-green-600 mb-4">$0</div>
-                    <ul class="text-left space-y-2 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> 3 Essential Prompts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Quick Start Guide</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Community Access</li>
-                        <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Email Support</li>
-                    </ul>
-                    <a href="#free-download" class="block w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition">
-                        Download Free
-                    </a>
-                </div>
-
-                <!-- Foundation -->
-                <div class="bg-white border-2 border-blue-500 rounded-lg p-6 text-center">
-                    <div class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">POPULAR</div>
-                    <h3 class="text-2xl font-bold mb-2">Foundation</h3>
-                    <div class="text-4xl font-bold text-blue-600 mb-4">$39</div>
-                    <ul class="text-left space-y-2 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> 25 Essential Prompts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Dynamo Backup Graphs</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> 6 Months Updates</li>
-                        <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> Email Support</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/YOUR_FOUNDATION_LINK" class="block w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition">
-                        Buy Now
-                    </a>
-                </div>
-
-                <!-- Professional -->
-                <div class="bg-white border-2 border-purple-500 rounded-lg p-6 text-center relative">
-                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
-                        BEST VALUE
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2 mt-4">Professional</h3>
-                    <div class="text-4xl font-bold text-purple-600 mb-4">$149</div>
-                    <ul class="text-left space-y-2 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> 75 Total Prompts</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Video Tutorials</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> Priority Support</li>
-                        <li class="flex items-center"><i class="fas fa-check text-purple-500 mr-2"></i> 1 Year Updates</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/YOUR_PROFESSIONAL_LINK" class="block w-full bg-purple-600 hover:bg-purple-700 text-white py-3 rounded-lg font-semibold transition">
-                        Buy Now
-                    </a>
-                </div>
-
-                <!-- Enterprise -->
-                <div class="bg-white border-2 border-gray-200 rounded-lg p-6 text-center">
-                    <div class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold mb-4">TEAMS</div>
-                    <h3 class="text-2xl font-bold mb-2">Enterprise</h3>
-                    <div class="text-4xl font-bold text-gray-700 mb-4">$299</div>
-                    <ul class="text-left space-y-2 mb-6">
-                        <li class="flex items-center"><i class="fas fa-check text-gray-500 mr-2"></i> 150+ Complete Library</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gray-500 mr-2"></i> MEP & Structural</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gray-500 mr-2"></i> 10 User License</li>
-                        <li class="flex items-center"><i class="fas fa-check text-gray-500 mr-2"></i> Custom Development</li>
-                    </ul>
-                    <a href="https://buy.stripe.com/YOUR_ENTERPRISE_LINK" class="block w-full bg-gray-700 hover:bg-gray-800 text-white py-3 rounded-lg font-semibold transition">
-                        Buy Now
-                    </a>
-                </div>
-            </div>
-
-            <div class="text-center mt-8">
-                <p class="text-gray-600">30-day money-back guarantee • Instant delivery • Works with Revit 2024-2026</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works -->
-    <section class="bg-gray-100 py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">How It Works</h2>
-                <p class="text-xl text-gray-600">Start automating in 3 simple steps</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="text-center">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
-                    <h3 class="text-xl font-semibold mb-4">Copy Any Prompt</h3>
-                    <p class="text-gray-600">Choose from 150+ professional prompts organized by category. Each prompt is battle-tested on real projects.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
-                    <h3 class="text-xl font-semibold mb-4">Paste Into AI</h3>
-                    <p class="text-gray-600">Use ChatGPT, Claude, or Copilot. Replace [BRACKETS] with your project values and get custom automation code.</p>
-                </div>
-
-                <div class="text-center">
-                    <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
-                    <h3 class="text-xl font-semibold mb-4">Save Hours</h3>
-                    <p class="text-gray-600">Run the generated code in Dynamo or pyRevit. Tasks that took hours now finish in minutes.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="py-16">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            </div>
-
-            <div class="space-y-8">
-                <div class="border-b border-gray-200 pb-6">
-                    <h3 class="text-lg font-semibold mb-2">What AI tools do these prompts work with?</h3>
-                    <p class="text-gray-600">Our prompts work with ChatGPT, Claude, GitHub Copilot, and any AI assistant that can generate code. No special AI subscription required.</p>
-                </div>
-
-                <div class="border-b border-gray-200 pb-6">
-                    <h3 class="text-lg font-semibold mb-2">Which Revit versions are supported?</h3>
-                    <p class="text-gray-600">All prompts are tested and compatible with Revit 2024, 2025, and 2026. Many also work with earlier versions.</p>
-                </div>
-
-                <div class="border-b border-gray-200 pb-6">
-                    <h3 class="text-lg font-semibold mb-2">Do I need programming experience?</h3>
-                    <p class="text-gray-600">No programming knowledge required! Simply copy our prompts, paste into AI, and run the generated code. We include Dynamo backup graphs for every prompt.</p>
-                </div>
-
-                <div class="border-b border-gray-200 pb-6">
-                    <h3 class="text-lg font-semibold mb-2">How much time will I actually save?</h3>
-                    <p class="text-gray-600">Our customers report saving 8-12 hours per project on average. Sheet setup alone goes from 2+ hours to 2 minutes.</p>
-                </div>
-
-                <div class="border-b border-gray-200 pb-6">
-                    <h3 class="text-lg font-semibold mb-2">What if the prompts don't work for my project?</h3>
-                    <p class="text-gray-600">30-day money-back guarantee, no questions asked. Plus, every prompt includes Dynamo backup graphs that work without AI.</p>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -342,10 +346,10 @@
             <p class="text-xl mb-8 text-blue-100">Join 500+ Revit professionals saving hours every day</p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="#free-download" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition">
+                <button onclick="openModal('freeModal')" class="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300">
                     Start with Free Prompts
-                </a>
-                <a href="#products" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition">
+                </button>
+                <a href="#products" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition duration-300">
                     View All Packages
                 </a>
             </div>
@@ -360,7 +364,7 @@
                     <div>
                         <i class="fab fa-discord text-2xl mb-2"></i>
                         <div class="font-semibold">Community</div>
-                        <div class="text-blue-200">discord.gg/revipromptlab</div>
+                        <div class="text-blue-200">Discord community</div>
                     </div>
                     <div>
                         <i class="fas fa-phone text-2xl mb-2"></i>
@@ -380,25 +384,185 @@
                     <div class="text-xl font-bold">🚀 ReviPrompt Lab</div>
                     <div class="text-gray-400">AI prompts for Revit automation</div>
                 </div>
-                <div class="text-gray-400 text-sm">
-                    © 2024 ReviPrompt Lab LLC. All rights reserved.
-                    <span class="ml-4">Florida, USA</span>
+                <div class="text-gray-400 text-sm text-center">
+                    © 2024 ReviPrompt Lab LLC. All rights reserved.<br>
+                    <span class="ml-4">Florida, USA • 30-Day Guarantee</span>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- Simple email capture script -->
+    <!-- Free Download Modal -->
+    <div id="freeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('freeModal')">&times;</span>
+            <h2 class="text-2xl font-bold mb-4">🎁 Get Your FREE Prompts</h2>
+            <p class="mb-4">Get instant access to 3 powerful AI prompts that will save you hours:</p>
+            <ul class="mb-6 space-y-2">
+                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Sheet Setup Master - Fix title blocks in seconds</li>
+                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Missing Tag Finder - Find untagged elements automatically</li>
+                <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Area Calculator Pro - Instant area analysis</li>
+            </ul>
+            
+            <form id="freeForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Name *</label>
+                    <input type="text" id="freeName" required class="w-full p-3 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Email *</label>
+                    <input type="email" id="freeEmail" required class="w-full p-3 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Company (Optional)</label>
+                    <input type="text" id="freeCompany" class="w-full p-3 border border-gray-300 rounded-lg">
+                </div>
+                <div class="success-message" id="freeSuccess">
+                    ✅ Success! Check your email for the download link.
+                </div>
+                <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition duration-300">
+                    Send Me the Free Prompts
+                </button>
+            </form>
+            <p class="text-sm text-gray-600 mt-4">No spam, ever. Unsubscribe with one click.</p>
+        </div>
+    </div>
+
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('purchaseModal')">&times;</span>
+            <h2 class="text-2xl font-bold mb-4" id="purchaseTitle">Purchase Pack</h2>
+            <div class="mb-6">
+                <div class="text-3xl font-bold text-blue-600 mb-2" id="purchasePrice">$39</div>
+                <p class="text-gray-600">Complete your purchase to get instant access to your prompts.</p>
+            </div>
+            
+            <form id="purchaseForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Name *</label>
+                    <input type="text" id="purchaseName" required class="w-full p-3 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Email *</label>
+                    <input type="email" id="purchaseEmail" required class="w-full p-3 border border-gray-300 rounded-lg">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium mb-1">Company</label>
+                    <input type="text" id="purchaseCompany" class="w-full p-3 border border-gray-300 rounded-lg">
+                </div>
+                <div class="success-message" id="purchaseSuccess">
+                    ✅ Thank you! You'll receive payment instructions via email within 5 minutes.
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-semibold transition duration-300">
+                    Complete Purchase
+                </button>
+            </form>
+            <p class="text-sm text-gray-600 mt-4">
+                💳 Secure payment via PayPal or Stripe<br>
+                🔒 30-day money-back guarantee<br>
+                📧 Instant delivery after payment
+            </p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
     <script>
-        document.querySelector('form').addEventListener('submit', function(e) {
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal(modalId, productName = '', price = '') {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            
+            if (modalId === 'purchaseModal') {
+                document.getElementById('purchaseTitle').textContent = `Purchase ${productName}`;
+                document.getElementById('purchasePrice').textContent = price;
+            }
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Form submissions
+        document.getElementById('freeForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = this.querySelector('input[type="email"]').value;
             
-            // Replace this with your actual email capture service
-            alert('Thanks! Check your email for the free download link. (In production, integrate with ConvertKit, Mailchimp, etc.)');
+            const name = document.getElementById('freeName').value;
+            const email = document.getElementById('freeEmail').value;
+            const company = document.getElementById('freeCompany').value;
             
-            // For now, you can manually collect emails or integrate with your preferred service
-            console.log('Email captured:', email);
+            // Simulate form submission
+            console.log('Free form submitted:', { name, email, company });
+            
+            // Show success message
+            document.getElementById('freeSuccess').style.display = 'block';
+            
+            // You can replace this with actual form submission to your backend
+            // For now, we'll simulate sending an email
+            setTimeout(() => {
+                window.location.href = `mailto:support@revipromptlab.com?subject=Free Sampler Request&body=Name: ${name}%0AEmail: ${email}%0ACompany: ${company}%0A%0APlease send me the free sampler pack.`;
+            }, 2000);
+        });
+
+        document.getElementById('purchaseForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('purchaseName').value;
+            const email = document.getElementById('purchaseEmail').value;
+            const company = document.getElementById('purchaseCompany').value;
+            const productTitle = document.getElementById('purchaseTitle').textContent;
+            const price = document.getElementById('purchasePrice').textContent;
+            
+            // Simulate form submission
+            console.log('Purchase form submitted:', { name, email, company, productTitle, price });
+            
+            // Show success message
+            document.getElementById('purchaseSuccess').style.display = 'block';
+            
+            // You can replace this with actual payment processing
+            // For now, we'll simulate sending an email
+            setTimeout(() => {
+                window.location.href = `mailto:sales@revipromptlab.com?subject=Purchase Request - ${productTitle}&body=Name: ${name}%0AEmail: ${email}%0ACompany: ${company}%0AProduct: ${productTitle}%0APrice: ${price}%0A%0APlease send me payment instructions.`;
+            }, 2000);
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('shadow-lg');
+            }
         });
     </script>
 </body>
