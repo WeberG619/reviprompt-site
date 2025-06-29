@@ -76,75 +76,70 @@
     <!-- Custom Styles -->
     <style>
         :root {
-            --accent-color: #009688;
-            --text-primary: #1e293b;
-            --text-secondary: #64748b;
+            --primary-blue: #0078d4;
+            --light-blue: #f3f9ff;
+            --text-primary: #323130;
+            --text-secondary: #605e5c;
+            --border-gray: #edebe9;
+            --background-gray: #faf9f8;
         }
         
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Segoe UI', 'Inter', sans-serif;
+            color: var(--text-primary);
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Segoe UI', 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--text-primary);
         }
         
-        .gradient-bg { 
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-bg {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" opacity="0.05"><path d="M0,100 Q300,50 600,100 T1200,100 L1200,600 L0,600 Z" fill="white"/></svg>');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(15, 23, 42, 0.4);
-            z-index: 1;
+        .hero-section { 
+            background: #f8f9fa;
+            border-bottom: 1px solid var(--border-gray);
         }
         
         .card-hover { 
-            transition: all 0.3s ease; 
+            transition: box-shadow 0.2s ease; 
         }
         
         .card-hover:hover { 
-            transform: translateY(-5px); 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
         }
         
-        .floating { 
-            animation: subtleFloat 6s ease-in-out infinite; 
+        .professional-button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 2px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.2s ease;
         }
         
-        @keyframes subtleFloat { 
-            0%, 100% { transform: translateY(0px); } 
-            50% { transform: translateY(-5px); } 
+        .professional-button:hover {
+            background: #106ebe;
+            color: white;
         }
         
-        .nav-button {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+        .secondary-button {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 1px solid var(--primary-blue);
+            padding: 11px 23px;
+            border-radius: 2px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
         }
         
-        .nav-button:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-        
-        header.scrolled {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.95);
+        .secondary-button:hover {
+            background: var(--primary-blue);
+            color: white;
         }
         
         .testimonial-carousel {
@@ -285,24 +280,24 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body style="background-color: var(--background-gray)">
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+    <header class="bg-white border-b" style="border-color: var(--border-gray)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center">
-                    <div class="text-2xl font-bold text-slate-700 floating">ReviPrompt Lab</div>
-                    <div class="ml-3 text-sm text-slate-500 font-medium">Professional Revit Developer Tools</div>
+                    <div class="text-2xl font-semibold" style="color: var(--text-primary)">ReviPrompt Lab</div>
+                    <div class="ml-3 text-sm font-medium" style="color: var(--text-secondary)">Professional Revit Developer Tools</div>
                 </div>
                 
                 <!-- Desktop Navigation -->
-                <nav class="desktop-nav hidden md:flex items-center space-x-4">
-                    <a href="#mini-packs" class="nav-button px-4 py-2 rounded-lg text-gray-700 hover:text-accent font-semibold text-teal-600">Mini-Packs</a>
-                    <a href="#architecture" class="nav-button px-4 py-2 rounded-lg text-gray-700 hover:text-accent">Architecture</a>
-                    <a href="#pricing" class="nav-button px-4 py-2 rounded-lg text-gray-700 hover:text-accent">Complete Packs</a>
-                    <a href="#testimonials" class="nav-button px-4 py-2 rounded-lg text-gray-700 hover:text-accent">Reviews</a>
-                    <a href="#free-download" class="bg-teal-600 hover:bg-teal-700 text-white px-6 py-2 rounded-lg transition duration-300 font-semibold">Get Free Pack</a>
+                <nav class="desktop-nav hidden md:flex items-center space-x-6">
+                    <a href="#mini-packs" class="text-sm font-medium" style="color: var(--text-secondary)">Mini-Packs</a>
+                    <a href="#architecture" class="text-sm font-medium" style="color: var(--text-secondary)">Solutions</a>
+                    <a href="#pricing" class="text-sm font-medium" style="color: var(--text-secondary)">Pricing</a>
+                    <a href="#testimonials" class="text-sm font-medium" style="color: var(--text-secondary)">Reviews</a>
+                    <a href="#free-download" class="professional-button">Get Started</a>
                 </nav>
                 
                 <!-- Mobile Menu Button -->
@@ -314,84 +309,49 @@
             <!-- Mobile Navigation -->
             <nav id="mobile-menu" class="mobile-menu md:hidden pb-4">
                 <div class="flex flex-col space-y-3">
-                    <a href="#mini-packs" class="text-teal-600 hover:text-teal-700 py-2 font-semibold">Mini-Packs</a>
-                    <a href="#architecture" class="text-gray-600 hover:text-teal-600 py-2">Architecture</a>
-                    <a href="#pricing" class="text-gray-600 hover:text-teal-600 py-2">Complete Packs</a>
-                    <a href="#testimonials" class="text-gray-600 hover:text-teal-600 py-2">Reviews</a>
-                    <a href="#free-download" class="bg-teal-600 text-white px-4 py-2 rounded-lg text-center">Get Free Pack</a>
+                    <a href="#mini-packs" class="py-2 font-medium" style="color: var(--text-secondary)">Mini-Packs</a>
+                    <a href="#architecture" class="py-2 font-medium" style="color: var(--text-secondary)">Solutions</a>
+                    <a href="#pricing" class="py-2 font-medium" style="color: var(--text-secondary)">Pricing</a>
+                    <a href="#testimonials" class="py-2 font-medium" style="color: var(--text-secondary)">Reviews</a>
+                    <a href="#free-download" class="professional-button text-center">Get Started</a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Architecture Background -->
-    <section class="gradient-bg hero-bg text-white relative">
-        <div class="absolute inset-0 opacity-10">
-            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&h=600&fit=crop" alt="Architectural section" loading="lazy" class="w-full h-full object-cover">
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-20">
-            <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">
-                    Transform Hours of Manual Revit Work<br>
-                    <span class="text-teal-300">Into Minutes</span>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-semibold mb-6" style="color: var(--text-primary)">
+                    Transform Hours of Manual Revit Work Into Minutes
                 </h1>
-                <p class="text-xl md:text-2xl mb-2 text-white font-medium drop-shadow-md">
-                    Professional Revit developer-built AI prompts for AEC professionals & BIM specialists
-                </p>
-                <p class="text-lg mb-8 text-gray-100 drop-shadow-md">
-                    Sheet setup, IBC/ADA compliance checks, door scheduling – automated with precision
+                <p class="text-xl mb-8" style="color: var(--text-secondary)">
+                    Professional Revit developer-built AI prompts and C# add-ins for AEC professionals and BIM specialists. Automate sheet setup, compliance checks, and documentation tasks.
                 </p>
                 
-                <!-- Professional Tools Showcase -->
-                <div class="mb-8 max-w-2xl mx-auto">
-                    <div class="bg-white/20 backdrop-blur-md rounded-lg p-6 border border-white/30">
-                        <div class="grid grid-cols-3 gap-4 text-center">
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <div class="text-3xl mb-2">🔧</div>
-                                <div class="text-white font-semibold text-sm">C# Add-ins</div>
-                                <div class="text-gray-300 text-xs">Professional Tools</div>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <div class="text-3xl mb-2">🤖</div>
-                                <div class="text-white font-semibold text-sm">AI Prompts</div>
-                                <div class="text-gray-300 text-xs">Smart Automation</div>
-                            </div>
-                            <div class="bg-slate-800/50 rounded-lg p-4">
-                                <div class="text-3xl mb-2">⚡</div>
-                                <div class="text-white font-semibold text-sm">Instant Results</div>
-                                <div class="text-gray-300 text-xs">Hours → Minutes</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#mini-packs" class="bg-teal-600 hover:bg-teal-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
-                        <i class="fas fa-bolt mr-2"></i> View Mini-Packs from $29
+                <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                    <a href="#mini-packs" class="professional-button text-lg px-8 py-3">
+                        View Solutions from $29
                     </a>
-                    <button onclick="openModal('freeModal')" class="bg-white/20 backdrop-blur-md text-white hover:bg-white/30 px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 border border-white/30">
-                        Try 3 Free Prompts First
+                    <button onclick="openModal('freeModal')" class="secondary-button text-lg px-8 py-3">
+                        Try Free Samples
                     </button>
                 </div>
                 
-                <div class="mt-6 text-center">
-                    <p class="text-gray-100 text-sm drop-shadow-sm">
-                        <i class="fas fa-info-circle mr-1"></i> New: Professional C# Revit Add-ins in targeted mini-packs
-                    </p>
-                </div>
-                
-                <div class="mt-8 flex items-center justify-center space-x-8">
+                <!-- Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-2xl mx-auto">
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-white drop-shadow-md">500+</div>
-                        <div class="text-sm text-gray-100 drop-shadow-sm">AEC Professionals Using Daily</div>
+                        <div class="text-3xl font-semibold mb-2" style="color: var(--text-primary)">500+</div>
+                        <div class="text-sm" style="color: var(--text-secondary)">AEC Professionals</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-white drop-shadow-md">98%</div>
-                        <div class="text-sm text-gray-100 drop-shadow-sm">Time Saved</div>
+                        <div class="text-3xl font-semibold mb-2" style="color: var(--text-primary)">98%</div>
+                        <div class="text-sm" style="color: var(--text-secondary)">Time Reduction</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold text-white drop-shadow-md">4 hrs → 5 min</div>
-                        <div class="text-sm text-gray-100 drop-shadow-sm">Sheet Setup Time</div>
+                        <div class="text-3xl font-semibold mb-2" style="color: var(--text-primary)">4hrs → 5min</div>
+                        <div class="text-sm" style="color: var(--text-secondary)">Sheet Setup</div>
                     </div>
                 </div>
             </div>
