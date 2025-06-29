@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>Equipment Tagger</Name>
+    <Assembly>EquipmentTagger.dll</Assembly>
+    <FullClassName>EquipmentTagger.EquipmentTaggerCommand</FullClassName>
+    <ClientId>B8B0F0A0-1234-4567-8901-123456789ABC</ClientId>
+    <VendorId>REVI</VendorId>
+    <VendorDescription>ReviPrompt Lab</VendorDescription>
+    <Text>Equipment Tagger</Text>
+    <Description>Automatically tag untagged MEP equipment in the current view</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+  </AddIn>
+</RevitAddIns>
