@@ -166,6 +166,16 @@
             box-shadow: 0 4px 8px rgba(255,255,255,0.1); 
         }
         
+        .footer-section {
+            background-color: var(--text-primary);
+            color: white;
+        }
+        
+        [data-theme="dark"] .footer-section {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
         .professional-button {
             background: var(--primary-blue);
             color: white;
@@ -496,13 +506,13 @@
     </section>
 
     <!-- Architecture-First Content Section -->
-    <section id="architecture" class="py-16 bg-gray-50">
+    <section id="architecture" class="py-16" style="background-color: var(--background-gray)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--text-primary)">
                     Stop Wasting Time on Repetitive Tasks
                 </h2>
-                <p class="text-xl text-gray-600">Choose your discipline for targeted solutions</p>
+                <p class="text-xl" style="color: var(--text-secondary)">Choose your discipline for targeted solutions</p>
             </div>
             
             <!-- Discipline Tabs -->
@@ -515,10 +525,10 @@
             <!-- Tab Contents -->
             <div id="arch-tab" class="tab-content active">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-teal-600 text-3xl mb-4"><i class="fas fa-file-alt"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Sheet Management</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Sheet Management</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Auto-renumber sheets with validation</li>
                             <li>• Batch title block updates</li>
                             <li>• Smart sheet index generation</li>
@@ -527,10 +537,10 @@
                         <div class="mt-4 text-sm font-semibold text-teal-600">4 hours → 5 minutes</div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-teal-600 text-3xl mb-4"><i class="fas fa-door-open"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Door & Window Tools</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Door & Window Tools</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Automatic door tagging</li>
                             <li>• Schedule generation</li>
                             <li>• Hardware set management</li>
@@ -539,10 +549,10 @@
                         <div class="mt-4 text-sm font-semibold text-teal-600">2 days → 20 minutes</div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-teal-600 text-3xl mb-4"><i class="fas fa-check-circle"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">IBC / ADA Compliance</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">IBC / ADA Compliance</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Egress path validation</li>
                             <li>• ADA clearance checks</li>
                             <li>• Fire rating verification</li>
@@ -551,10 +561,10 @@
                         <div class="mt-4 text-sm font-semibold text-teal-600">Manual review → Instant</div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-teal-600 text-3xl mb-4"><i class="fas fa-th"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Room & Area Tools</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Room & Area Tools</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Area calculations by department</li>
                             <li>• Room data sheets</li>
                             <li>• Finish schedule automation</li>
@@ -563,10 +573,10 @@
                         <div class="mt-4 text-sm font-semibold text-teal-600">6 hours → 15 minutes</div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-teal-600 text-3xl mb-4"><i class="fas fa-ruler-combined"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Dimension Automation</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Dimension Automation</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Auto-dimension floor plans</li>
                             <li>• String dimension cleanup</li>
                             <li>• Grid dimension placement</li>
@@ -575,10 +585,10 @@
                         <div class="mt-4 text-sm font-semibold text-teal-600">3 hours → 10 minutes</div>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-teal-600 text-3xl mb-4"><i class="fas fa-search"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">QA/QC Tools</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">QA/QC Tools</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Find untagged elements</li>
                             <li>• View template compliance</li>
                             <li>• Wall cleanup detection</li>
@@ -591,10 +601,10 @@
             
             <div id="mep-tab" class="tab-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-purple-600 text-3xl mb-4"><i class="fas fa-bolt"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Electrical Systems</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Electrical Systems</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Panel schedule generation</li>
                             <li>• Load calculations (NEC)</li>
                             <li>• Circuit numbering</li>
@@ -602,10 +612,10 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-purple-600 text-3xl mb-4"><i class="fas fa-wind"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">HVAC Systems</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">HVAC Systems</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Equipment scheduling</li>
                             <li>• Duct sizing validation</li>
                             <li>• System balancing</li>
@@ -613,10 +623,10 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-purple-600 text-3xl mb-4"><i class="fas fa-tint"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Plumbing Systems</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Plumbing Systems</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Fixture unit calculations</li>
                             <li>• Pipe sizing automation</li>
                             <li>• Riser diagram generation</li>
@@ -628,10 +638,10 @@
             
             <div id="struct-tab" class="tab-content">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-orange-600 text-3xl mb-4"><i class="fas fa-columns"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Framing Tools</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Framing Tools</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Beam & column schedules</li>
                             <li>• Connection detail callouts</li>
                             <li>• Member size validation</li>
@@ -639,10 +649,10 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-orange-600 text-3xl mb-4"><i class="fas fa-grip-lines"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Rebar Detailing</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Rebar Detailing</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Rebar scheduling</li>
                             <li>• Bar bending schedules</li>
                             <li>• Concrete volume calcs</li>
@@ -650,10 +660,10 @@
                         </ul>
                     </div>
                     
-                    <div class="bg-white p-6 rounded-lg shadow-sm card-hover">
+                    <div class="p-6 rounded-lg shadow-sm card-hover" style="background-color: var(--card-background)">
                         <div class="text-orange-600 text-3xl mb-4"><i class="fas fa-weight"></i></div>
-                        <h3 class="text-xl font-semibold mb-3">Load Analysis</h3>
-                        <ul class="space-y-2 text-gray-600">
+                        <h3 class="text-xl font-semibold mb-3" style="color: var(--text-primary)">Load Analysis</h3>
+                        <ul class="space-y-2" style="color: var(--text-secondary)">
                             <li>• Load path visualization</li>
                             <li>• Foundation loads</li>
                             <li>• Lateral system checks</li>
@@ -972,7 +982,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-12" style="background-color: var(--text-primary); color: white">
+    <footer class="py-12 footer-section">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
@@ -996,7 +1006,6 @@
                     <ul class="space-y-2 text-sm" style="opacity: 0.8">
                         <li><a href="#mini-packs" class="hover:text-white">Mini-Packs ($29-$39)</a></li>
                         <li><a href="#pricing" class="hover:text-white">Complete Packs ($39-$299)</a></li>
-                        <li><a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="hover:text-white">Shop on Ko-fi</a></li>
                         <li><a href="/enterprise.html" class="hover:text-white">Enterprise Solutions</a></li>
                     </ul>
                 </div>
