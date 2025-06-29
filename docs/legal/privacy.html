@@ -9,19 +9,53 @@
     <style>
         :root {
             --primary-blue: #0078d4;
+            --light-blue: #f3f9ff;
             --text-primary: #323130;
             --text-secondary: #605e5c;
             --border-gray: #edebe9;
             --background-gray: #faf9f8;
+            --card-background: #ffffff;
+            --header-background: #ffffff;
         }
-        body { font-family: 'Segoe UI', 'Inter', sans-serif; color: var(--text-primary); }
+        
+        [data-theme="dark"] {
+            --primary-blue: #4fc3f7;
+            --light-blue: #1a1a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-gray: #404040;
+            --background-gray: #1a1a1a;
+            --card-background: #2d2d2d;
+            --header-background: #2d2d2d;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', 'Inter', sans-serif; 
+            color: var(--text-primary);
+        }
+        
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-gray);
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
     </style>
 </head>
 <body style="background-color: var(--background-gray)">
     <div class="max-w-4xl mx-auto px-4 py-16">
         <h1 class="text-4xl font-semibold mb-8" style="color: var(--text-primary)">Privacy Policy</h1>
         
-        <div class="bg-white rounded-lg p-8 mb-8" style="border: 1px solid var(--border-gray)">
+        <div class="rounded-lg p-8 mb-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
             <p class="text-sm mb-6" style="color: var(--text-secondary)">
                 <strong>Effective Date:</strong> December 29, 2024<br>
                 <strong>Last Updated:</strong> December 29, 2024
@@ -141,7 +175,7 @@
             <p class="mb-4" style="color: var(--text-secondary)">
                 If you have questions about this Privacy Policy or our data practices, please contact us:
             </p>
-            <div class="bg-gray-50 p-4 rounded">
+            <div class="p-4 rounded" style="background-color: var(--background-gray); border: 1px solid var(--border-gray)">
                 <p style="color: var(--text-secondary)">
                     <strong>ReviPrompt Lab LLC</strong><br>
                     Email: hello@revipromptlab.com<br>
@@ -150,11 +184,41 @@
             </div>
         </div>
         
-        <div class="text-center">
+        <div class="text-center flex justify-center items-center gap-4">
             <a href="/" class="inline-block px-8 py-3 rounded" style="background-color: var(--primary-blue); color: white; text-decoration: none;">
                 Back to Home
             </a>
+            <button onclick="toggleTheme()" class="theme-toggle" id="theme-toggle">🌙 Dark</button>
         </div>
     </div>
+    
+    <script>
+        // Dark Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeButton = document.getElementById('theme-toggle');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                themeButton.textContent = '🌙 Dark';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeButton = document.getElementById('theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+            }
+        });
+    </script>
 </body>
 </html>

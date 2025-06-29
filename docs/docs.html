@@ -9,12 +9,46 @@
     <style>
         :root {
             --primary-blue: #0078d4;
+            --light-blue: #f3f9ff;
             --text-primary: #323130;
             --text-secondary: #605e5c;
             --border-gray: #edebe9;
             --background-gray: #faf9f8;
+            --card-background: #ffffff;
+            --header-background: #ffffff;
         }
-        body { font-family: 'Segoe UI', 'Inter', sans-serif; color: var(--text-primary); }
+        
+        [data-theme="dark"] {
+            --primary-blue: #4fc3f7;
+            --light-blue: #1a1a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-gray: #404040;
+            --background-gray: #1a1a1a;
+            --card-background: #2d2d2d;
+            --header-background: #2d2d2d;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', 'Inter', sans-serif; 
+            color: var(--text-primary);
+        }
+        
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-gray);
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
     </style>
 </head>
 <body style="background-color: var(--background-gray)">
@@ -22,7 +56,7 @@
         <h1 class="text-4xl font-semibold mb-8" style="color: var(--text-primary)">Documentation</h1>
         
         <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
                 <h2 class="text-xl font-semibold mb-4" style="color: var(--text-primary)">Quick Start</h2>
                 <ul class="space-y-3">
                     <li><a href="#installation" class="hover:text-blue-600" style="color: var(--text-secondary)">Installation Guide</a></li>
@@ -32,7 +66,7 @@
                 </ul>
             </div>
             
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
                 <h2 class="text-xl font-semibold mb-4" style="color: var(--text-primary)">Products</h2>
                 <ul class="space-y-3">
                     <li><a href="#sheet-setup" class="hover:text-blue-600" style="color: var(--text-secondary)">Sheet Setup Starter</a></li>
@@ -42,7 +76,7 @@
                 </ul>
             </div>
             
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
                 <h2 class="text-xl font-semibold mb-4" style="color: var(--text-primary)">Support</h2>
                 <ul class="space-y-3">
                     <li><a href="#faq" class="hover:text-blue-600" style="color: var(--text-secondary)">FAQ</a></li>
@@ -54,7 +88,7 @@
         </div>
         
         <div class="mt-12 space-y-8">
-            <section id="installation" class="bg-white rounded-lg p-8" style="border: 1px solid var(--border-gray)">
+            <section id="installation" class="rounded-lg p-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
                 <h2 class="text-2xl font-semibold mb-4" style="color: var(--text-primary)">Installation Guide</h2>
                 
                 <h3 class="text-lg font-semibold mb-3" style="color: var(--text-primary)">System Requirements</h3>
@@ -102,7 +136,7 @@
                 </ol>
             </section>
             
-            <section id="sheet-setup" class="bg-white rounded-lg p-8" style="border: 1px solid var(--border-gray)">
+            <section id="sheet-setup" class="rounded-lg p-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
                 <h2 class="text-2xl font-semibold mb-4" style="color: var(--text-primary)">Sheet Setup Starter</h2>
                 
                 <h3 class="text-lg font-semibold mb-3" style="color: var(--text-primary)">SheetRenamer Tool</h3>
@@ -131,7 +165,7 @@
                 </ul>
             </section>
             
-            <section id="faq" class="bg-white rounded-lg p-8" style="border: 1px solid var(--border-gray)">
+            <section id="faq" class="rounded-lg p-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
                 <h2 class="text-2xl font-semibold mb-6" style="color: var(--text-primary)">Frequently Asked Questions</h2>
                 
                 <div class="space-y-6">
@@ -175,9 +209,39 @@
             </a>
         </div>
         
-        <div class="text-center mt-8">
+        <div class="text-center mt-8 flex justify-center items-center gap-4">
             <a href="/" class="hover:text-blue-600" style="color: var(--text-secondary)">← Back to Home</a>
+            <button onclick="toggleTheme()" class="theme-toggle" id="theme-toggle">🌙 Dark</button>
         </div>
     </div>
+    
+    <script>
+        // Dark Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeButton = document.getElementById('theme-toggle');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                themeButton.textContent = '🌙 Dark';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeButton = document.getElementById('theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+            }
+        });
+    </script>
 </body>
 </html>
