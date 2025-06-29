@@ -1,0 +1,112 @@
+# 📋 Sheet Setup Starter Pack - $29
+## Transform Hours of Sheet Management into Minutes
+
+### 🎯 WHAT'S INCLUDED (8 Essential Prompts):
+
+---
+
+## 1. **Sheet Numbering Wizard**
+**Prompt**: "I need to renumber all sheets in my Revit project. Current sheets start with A101, A102, etc. I want to change the numbering system to start with A-001, A-002, etc. Please provide a step-by-step process to batch rename all sheets while maintaining their sequence and updating all references in schedules and views."
+
+**Time Saved**: 2-3 hours → 15 minutes
+**Use Case**: Project renumbering, client standards compliance
+
+---
+
+## 2. **Sheet Template Creator**
+**Prompt**: "Help me create a standardized sheet template system in Revit. I need templates for: Floor Plans (A), Elevations (A), Sections (A), Details (A), and MEP Plans (M). Each template should include proper title blocks, view references, and drawing organization. Provide the complete setup process."
+
+**Time Saved**: 4-6 hours → 30 minutes  
+**Use Case**: New project setup, standardization
+
+---
+
+## 3. **Missing Sheet Identifier**
+**Prompt**: "I have a Revit project with gaps in sheet numbering (A101, A103, A105 - missing A102, A104). Help me identify all missing sheet numbers in the sequence and provide a systematic approach to either create the missing sheets or renumber existing ones to close the gaps."
+
+**Time Saved**: 1-2 hours → 5 minutes
+**Use Case**: QC checking, project cleanup
+
+---
+
+## 4. **Viewport Organization Master**
+**Prompt**: "My sheets have multiple viewports that need better organization. Help me create a system to: 1) Align viewports to a grid, 2) Standardize viewport spacing, 3) Ensure consistent title placement, 4) Optimize sheet layout for plotting. Provide step-by-step instructions for batch viewport cleanup."
+
+**Time Saved**: 3-4 hours → 45 minutes
+**Use Case**: Drawing set finalization, presentation prep
+
+---
+
+## 5. **Sheet Index Generator**
+**Prompt**: "I need to create a comprehensive sheet index schedule in Revit that automatically updates when sheets are added, modified, or deleted. The index should include: Sheet Number, Sheet Name, Discipline, Issue Date, and Revision. Help me set up this dynamic sheet index with proper filtering and sorting."
+
+**Time Saved**: 2 hours → 20 minutes
+**Use Case**: Drawing set coordination, client deliverables
+
+---
+
+## 6. **Revision Cloud Automation**
+**Prompt**: "Help me streamline the revision process in Revit. I need to: 1) Create revision clouds efficiently, 2) Tag revisions consistently, 3) Update revision schedules automatically, 4) Manage revision sequences across multiple sheets. Provide a complete revision workflow system."
+
+**Time Saved**: 1-2 hours per revision cycle
+**Use Case**: Design development, construction documentation
+
+---
+
+## 7. **Sheet Set Publisher**
+**Prompt**: "I need to publish my sheet set efficiently from Revit. Help me create a standardized publishing workflow that: 1) Exports sheets to PDF with proper naming, 2) Organizes files by discipline, 3) Includes print settings optimization, 4) Handles batch publishing for multiple sheet sets."
+
+**Time Saved**: 1 hour → 10 minutes
+**Use Case**: Client deliverables, consultant coordination
+
+---
+
+## 8. **Drawing List Coordinator**
+**Prompt**: "Create a system to coordinate drawing lists across multiple disciplines in Revit. I need to track: Architectural drawings, Structural drawings, MEP drawings, and ensure no conflicts in sheet numbering. Help me set up a master drawing list coordination system."
+
+**Time Saved**: 2-3 hours → 30 minutes
+**Use Case**: Multi-discipline coordination, large projects
+
+---
+
+## 🚀 **BONUS MATERIALS**:
+
+### **Sheet Setup Checklist** 
+- Pre-project setup verification
+- Quality control checkpoints  
+- Common troubleshooting solutions
+
+### **Template Library**
+- Standard sheet sizes and layouts
+- Title block customization guide
+- Viewport placement templates
+
+### **Time-Saving Tips**
+- Keyboard shortcuts for sheet management
+- Best practices for large projects
+- Error prevention strategies
+
+---
+
+## 💰 **ROI CALCULATION**:
+**Cost**: $29 one-time
+**Time Saved Per Project**: 10-15 hours
+**Value at $75/hour**: $750-1,125
+**ROI**: 2,500%+ on first project
+
+---
+
+## ✅ **PERFECT FOR**:
+- Individual architects and designers
+- Small to medium projects (under 50 sheets)
+- Teams wanting to standardize sheet workflows
+- Anyone spending too much time on sheet management
+
+---
+
+## 🎯 **UPGRADE PATH**:
+Ready for more? Use code **UPGRADE30** to save $30 on Professional Pack (75 total prompts + video tutorials)
+
+---
+
+*This mini-pack is part of the complete ReviPrompt Lab system used by 500+ AEC professionals worldwide.*

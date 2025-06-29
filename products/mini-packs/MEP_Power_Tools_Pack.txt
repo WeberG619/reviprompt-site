@@ -1,0 +1,152 @@
+# ⚡ MEP Power Tools Pack - $39
+## Advanced MEP Coordination & Equipment Management for Revit
+
+### 🎯 WHAT'S INCLUDED (12 Essential MEP Prompts):
+
+---
+
+## 1. **Equipment Tagging Automation**
+**Prompt**: "I have 200+ pieces of MEP equipment in my Revit model that need to be tagged systematically. Help me create an efficient workflow to: 1) Tag all untagged equipment, 2) Ensure consistent tag placement, 3) Update equipment schedules automatically, 4) Handle equipment in different disciplines (HVAC, electrical, plumbing)."
+
+**Time Saved**: 4-6 hours → 30 minutes
+**Use Case**: Equipment documentation, coordination drawings
+
+---
+
+## 2. **Load Calculation Wizard**
+**Prompt**: "Help me set up automated load calculations in Revit for electrical systems. I need to: 1) Calculate lighting loads by room/zone, 2) Determine receptacle loads, 3) Calculate HVAC electrical loads, 4) Generate load summary schedules. Provide a complete electrical load calculation system."
+
+**Time Saved**: 3-4 hours → 45 minutes
+**Use Case**: Electrical design, code compliance
+
+---
+
+## 3. **Duct Sizing Optimizer**
+**Prompt**: "My HVAC system in Revit needs proper duct sizing throughout the building. Help me create a systematic approach to: 1) Size ducts based on airflow requirements, 2) Optimize duct routes for space constraints, 3) Ensure proper sizing transitions, 4) Generate duct sizing schedules for documentation."
+
+**Time Saved**: 5-8 hours → 1 hour
+**Use Case**: HVAC design, system optimization
+
+---
+
+## 4. **Pipe System Coordinator**
+**Prompt**: "I need to coordinate multiple pipe systems (domestic water, sanitary, storm, gas) in my Revit model. Help me: 1) Organize pipe systems by type and function, 2) Ensure proper pipe sizing, 3) Coordinate pipe routing to avoid conflicts, 4) Create pipe system schedules and documentation."
+
+**Time Saved**: 3-5 hours → 1 hour
+**Use Case**: Plumbing design, system coordination
+
+---
+
+## 5. **MEP Clash Detection Setup**
+**Prompt**: "Set up an efficient clash detection workflow specifically for MEP systems in Revit. I need to: 1) Identify conflicts between different MEP disciplines, 2) Prioritize critical clashes, 3) Create clash reports for coordination, 4) Track clash resolution progress."
+
+**Time Saved**: 2-3 hours → 30 minutes
+**Use Case**: Multi-discipline coordination, clash resolution
+
+---
+
+## 6. **Equipment Schedule Master**
+**Prompt**: "Create comprehensive equipment schedules for all MEP systems in Revit. I need schedules for: 1) HVAC equipment (units, fans, pumps), 2) Electrical equipment (panels, transformers, motors), 3) Plumbing fixtures and equipment, 4) Include specifications, capacities, and connections."
+
+**Time Saved**: 4-6 hours → 1 hour
+**Use Case**: Equipment specifications, submittal coordination
+
+---
+
+## 7. **Circuit and Panel Organizer**
+**Prompt**: "Help me organize electrical circuits and panels in Revit efficiently. I need to: 1) Create logical circuit numbering, 2) Balance electrical loads across panels, 3) Generate panel schedules automatically, 4) Coordinate circuit routing and documentation."
+
+**Time Saved**: 3-4 hours → 45 minutes
+**Use Case**: Electrical design, panel coordination
+
+---
+
+## 8. **MEP Space Planning Tool**
+**Prompt**: "Optimize MEP equipment placement and space allocation in Revit. Help me: 1) Determine equipment room requirements, 2) Plan mechanical/electrical room layouts, 3) Coordinate equipment access and clearances, 4) Ensure code compliance for MEP spaces."
+
+**Time Saved**: 2-3 hours → 30 minutes
+**Use Case**: Space planning, equipment coordination
+
+---
+
+## 9. **Airflow and CFM Calculator**
+**Prompt**: "Set up airflow calculations and CFM requirements in Revit for HVAC design. I need to: 1) Calculate room airflow requirements, 2) Size air distribution systems, 3) Balance supply and return air, 4) Generate airflow documentation and schedules."
+
+**Time Saved**: 3-4 hours → 1 hour
+**Use Case**: HVAC design, airflow balancing
+
+---
+
+## 10. **MEP Legend and Symbol Creator**
+**Prompt**: "Create standardized MEP legends and symbol libraries for Revit. Help me: 1) Develop consistent MEP symbols, 2) Create discipline-specific legends, 3) Standardize annotation and labeling, 4) Set up automated legend generation for drawings."
+
+**Time Saved**: 2-3 hours → 30 minutes
+**Use Case**: Drawing standardization, documentation
+
+---
+
+## 11. **Energy Analysis Prep**
+**Prompt**: "Prepare my Revit MEP model for energy analysis and sustainability calculations. Help me: 1) Set up proper MEP system properties, 2) Define energy-related parameters, 3) Organize systems for analysis export, 4) Ensure model readiness for energy modeling software."
+
+**Time Saved**: 2-4 hours → 45 minutes
+**Use Case**: Energy modeling, sustainability analysis
+
+---
+
+## 12. **MEP Coordination Workflow**
+**Prompt**: "Establish a complete MEP coordination workflow in Revit for multi-discipline projects. I need: 1) Coordination review processes, 2) Issue tracking and resolution, 3) Drawing coordination standards, 4) Quality control checkpoints for MEP systems."
+
+**Time Saved**: 4-6 hours setup → 1 hour
+**Use Case**: Project coordination, quality control
+
+---
+
+## 🚀 **BONUS MATERIALS**:
+
+### **MEP Standards Library** 
+- Equipment naming conventions
+- System organization templates
+- Code compliance checklists
+
+### **Calculation Templates**
+- Load calculation worksheets
+- Sizing tables and references
+- Performance verification tools
+
+### **Coordination Checklists**
+- Pre-coordination setup
+- Clash detection priorities
+- Resolution tracking templates
+
+---
+
+## 💰 **ROI CALCULATION**:
+**Cost**: $39 one-time
+**Time Saved Per Project**: 15-25 hours
+**Value at $85/hour**: $1,275-2,125
+**ROI**: 3,200%+ on first project
+
+---
+
+## ✅ **PERFECT FOR**:
+- MEP engineers and designers
+- Mechanical, electrical, and plumbing professionals
+- BIM coordinators handling MEP systems
+- Anyone doing multi-discipline MEP coordination
+
+---
+
+## 🔌 **SYSTEM COVERAGE**:
+- **HVAC**: Air distribution, equipment, controls
+- **Electrical**: Power, lighting, specialty systems  
+- **Plumbing**: Water, sanitary, storm, gas
+- **Fire Protection**: Sprinkler systems, alarms
+
+---
+
+## 🎯 **UPGRADE PATH**:
+Need the complete MEP solution? Use code **UPGRADE30** to save $30 on Professional Pack (includes structural and advanced coordination tools)
+
+---
+
+*This mini-pack is part of the complete ReviPrompt Lab system used by 500+ AEC professionals worldwide.*
