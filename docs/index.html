@@ -97,6 +97,9 @@
         
         .hero-section { 
             background: #f8f9fa;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" opacity="0.08"><g fill="none" stroke="%23323130" stroke-width="1"><rect x="50" y="200" width="120" height="200"/><rect x="60" y="180" width="20" height="20"/><rect x="90" y="180" width="20" height="20"/><rect x="120" y="180" width="20" height="20"/><rect x="60" y="220" width="20" height="20"/><rect x="90" y="220" width="20" height="20"/><rect x="120" y="220" width="20" height="20"/><rect x="60" y="260" width="20" height="20"/><rect x="90" y="260" width="20" height="20"/><rect x="120" y="260" width="20" height="20"/><rect x="200" y="150" width="100" height="250"/><rect x="210" y="130" width="15" height="15"/><rect x="235" y="130" width="15" height="15"/><rect x="260" y="130" width="15" height="15"/><rect x="285" y="130" width="15" height="15"/><rect x="210" y="170" width="15" height="15"/><rect x="235" y="170" width="15" height="15"/><rect x="260" y="170" width="15" height="15"/><rect x="285" y="170" width="15" height="15"/><rect x="350" y="180" width="80" height="220"/><rect x="360" y="160" width="12" height="12"/><rect x="380" y="160" width="12" height="12"/><rect x="400" y="160" width="12" height="12"/><rect x="360" y="200" width="12" height="12"/><rect x="380" y="200" width="12" height="12"/><rect x="400" y="200" width="12" height="12"/><rect x="500" y="220" width="150" height="180"/><rect x="510" y="200" width="18" height="18"/><rect x="535" y="200" width="18" height="18"/><rect x="560" y="200" width="18" height="18"/><rect x="585" y="200" width="18" height="18"/><rect x="610" y="200" width="18" height="18"/><rect x="635" y="200" width="18" height="18"/><rect x="510" y="240" width="18" height="18"/><rect x="535" y="240" width="18" height="18"/><rect x="560" y="240" width="18" height="18"/><rect x="585" y="240" width="18" height="18"/><rect x="610" y="240" width="18" height="18"/><rect x="635" y="240" width="18" height="18"/><rect x="700" y="160" width="90" height="240"/><rect x="710" y="140" width="14" height="14"/><rect x="730" y="140" width="14" height="14"/><rect x="750" y="140" width="14" height="14"/><rect x="770" y="140" width="14" height="14"/><rect x="710" y="180" width="14" height="14"/><rect x="730" y="180" width="14" height="14"/><rect x="750" y="180" width="14" height="14"/><rect x="770" y="180" width="14" height="14"/><rect x="830" y="190" width="110" height="210"/><rect x="840" y="170" width="16" height="16"/><rect x="865" y="170" width="16" height="16"/><rect x="890" y="170" width="16" height="16"/><rect x="915" y="170" width="16" height="16"/><rect x="840" y="210" width="16" height="16"/><rect x="865" y="210" width="16" height="16"/><rect x="890" y="210" width="16" height="16"/><rect x="915" y="210" width="16" height="16"/><rect x="980" y="140" width="85" height="260"/><rect x="990" y="120" width="13" height="13"/><rect x="1010" y="120" width="13" height="13"/><rect x="1030" y="120" width="13" height="13"/><rect x="1050" y="120" width="13" height="13"/><rect x="990" y="160" width="13" height="13"/><rect x="1010" y="160" width="13" height="13"/><rect x="1030" y="160" width="13" height="13"/><rect x="1050" y="160" width="13" height="13"/></g></svg>');
+            background-size: cover;
+            background-position: center;
             border-bottom: 1px solid var(--border-gray);
         }
         
@@ -958,18 +961,18 @@
     </section>
 
     <!-- Lead Generation CTA -->
-    <section id="free-download" class="gradient-bg text-white py-20">
+    <section id="free-download" class="py-20" style="background-color: var(--primary-blue); color: white">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                🎁 Get Your "Top 10 Revit Prompt Hacks" PDF
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+                Get Your "Top 10 Revit Prompt Hacks" PDF
             </h2>
-            <p class="text-xl mb-8 text-slate-200">
-                8-page guide with our most powerful architecture automation prompts
+            <p class="text-xl mb-8" style="color: rgba(255,255,255,0.95)">
+                8-page guide with our most powerful automation prompts
             </p>
-            <button onclick="openModal('leadMagnetModal')" class="bg-white hover:bg-gray-100 text-slate-700 px-8 py-4 rounded-lg text-lg font-semibold transition duration-300 shadow-lg hover:shadow-xl">
-                Download Free Guide (PDF)
+            <button onclick="openModal('leadMagnetModal')" class="bg-white text-lg font-semibold px-8 py-4 rounded transition duration-300" style="color: var(--primary-blue)">
+                Download Free Guide
             </button>
-            <p class="text-sm text-slate-300 mt-4">
+            <p class="text-sm mt-4" style="color: rgba(255,255,255,0.9)">
                 Join 2,000+ AEC professionals getting weekly automation tips
             </p>
         </div>
