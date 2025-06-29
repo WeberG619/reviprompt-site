@@ -12,7 +12,7 @@ Visit: https://weberg619.github.io/reviprompt-site/
 - Enterprise Pack ($299)
 
 ## Contact
-- Email: support@revipromptlab.com
+- Email: weber@revipromptlab.com
 - Website: https://weberg619.github.io/reviprompt-site/
 
 ## Business Information
