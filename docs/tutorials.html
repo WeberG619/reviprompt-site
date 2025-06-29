@@ -9,19 +9,53 @@
     <style>
         :root {
             --primary-blue: #0078d4;
+            --light-blue: #f3f9ff;
             --text-primary: #323130;
             --text-secondary: #605e5c;
             --border-gray: #edebe9;
             --background-gray: #faf9f8;
+            --card-background: #ffffff;
+            --header-background: #ffffff;
         }
-        body { font-family: 'Segoe UI', 'Inter', sans-serif; color: var(--text-primary); }
+        
+        [data-theme="dark"] {
+            --primary-blue: #4fc3f7;
+            --light-blue: #1a1a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-gray: #404040;
+            --background-gray: #1a1a1a;
+            --card-background: #2d2d2d;
+            --header-background: #2d2d2d;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', 'Inter', sans-serif; 
+            color: var(--text-primary);
+        }
+        
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-gray);
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
     </style>
 </head>
 <body style="background-color: var(--background-gray)">
     <div class="max-w-6xl mx-auto px-4 py-16">
         <h1 class="text-4xl font-semibold mb-8" style="color: var(--text-primary)">Video Tutorials</h1>
         
-        <div class="bg-white rounded-lg p-8 mb-8" style="border: 1px solid var(--border-gray)">
+        <div class="rounded-lg p-8 mb-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
             <h2 class="text-2xl font-semibold mb-4" style="color: var(--text-primary)">Getting Started</h2>
             <p class="text-lg mb-6" style="color: var(--text-secondary)">
                 Learn how to install and use ReviPrompt Lab tools with our comprehensive video tutorials.
@@ -29,98 +63,131 @@
         </div>
         
         <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
-                <div class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <span style="color: var(--text-secondary)">Video: Installation Guide</span>
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <div class="aspect-video rounded-lg mb-4 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onclick="openVideoModal('installation-video')">
+                    <img src="/images/thumbnail-installation.svg" alt="Installation Guide" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary)">
                     Installing ReviPrompt Lab Add-ins
                 </h3>
                 <p style="color: var(--text-secondary)">
-                    Step-by-step guide to installing C# add-ins for Revit 2024, 2025, and 2026. Includes troubleshooting common issues.
+                    Step-by-step guide to installing C# add-ins for Revit 2024, 2025, and 2026. Includes troubleshooting common issues and administrator setup.
                 </p>
-                <div class="mt-4">
+                <div class="mt-4 flex items-center gap-4">
                     <span class="text-sm px-3 py-1 rounded" style="background-color: var(--background-gray); color: var(--text-secondary)">5 minutes</span>
+                    <button onclick="openVideoModal('installation-video')" class="text-sm px-4 py-2 rounded" style="background-color: var(--primary-blue); color: white;">
+                        Watch Tutorial
+                    </button>
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
-                <div class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <span style="color: var(--text-secondary)">Video: Sheet Setup Demo</span>
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <div class="aspect-video rounded-lg mb-4 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onclick="openVideoModal('sheet-setup-video')">
+                    <img src="/images/thumbnail-sheet-setup.svg" alt="Sheet Setup Demo" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary)">
                     Sheet Setup Starter Walkthrough
                 </h3>
                 <p style="color: var(--text-secondary)">
-                    Watch how to rename 100+ sheets in seconds using our SheetRenamer tool with Excel integration.
+                    Complete walkthrough of the SheetRenamer tool with Excel integration. Learn to rename 100+ sheets in seconds, import sheet data from Excel templates, and automate sheet parameter updates for consistent project delivery.
                 </p>
-                <div class="mt-4">
+                <div class="mt-4 flex items-center gap-4">
                     <span class="text-sm px-3 py-1 rounded" style="background-color: var(--background-gray); color: var(--text-secondary)">8 minutes</span>
+                    <button onclick="openVideoModal('sheet-setup-video')" class="text-sm px-4 py-2 rounded" style="background-color: var(--primary-blue); color: white;">
+                        Watch Tutorial
+                    </button>
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
-                <div class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <span style="color: var(--text-secondary)">Video: MEP Tools Demo</span>
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <div class="aspect-video rounded-lg mb-4 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onclick="openVideoModal('mep-tools-video')">
+                    <img src="/images/thumbnail-mep-tools.svg" alt="MEP Power Tools Demo" class="w-full h-full object-cover">
                 </div>
                 <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary)">
                     MEP Power Tools in Action
                 </h3>
                 <p style="color: var(--text-secondary)">
-                    See how to auto-tag MEP equipment, calculate electrical loads, and validate system connectivity.
+                    Comprehensive demonstration of MEP automation tools. See auto-tagging of equipment, electrical load calculations, system connectivity validation, and batch parameter updates across mechanical, electrical, and plumbing systems.
                 </p>
-                <div class="mt-4">
+                <div class="mt-4 flex items-center gap-4">
                     <span class="text-sm px-3 py-1 rounded" style="background-color: var(--background-gray); color: var(--text-secondary)">12 minutes</span>
+                    <button onclick="openVideoModal('mep-tools-video')" class="text-sm px-4 py-2 rounded" style="background-color: var(--primary-blue); color: white;">
+                        Watch Tutorial
+                    </button>
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
-                <div class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <span style="color: var(--text-secondary)">Video: QC Suite Demo</span>
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <div class="aspect-video rounded-lg mb-4 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onclick="openVideoModal('qc-suite-video')">
+                    <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, var(--primary-blue), #0056b3); color: white;">
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">▶</div>
+                            <div class="text-sm">QC Professional Suite</div>
+                        </div>
+                    </div>
                 </div>
                 <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary)">
                     Quality Control Automation
                 </h3>
                 <p style="color: var(--text-secondary)">
-                    Learn to run comprehensive model audits and export findings to Excel for project delivery.
+                    Master the QC Professional Suite for comprehensive model auditing. Learn automated clash detection, standard compliance checks, model validation workflows, and professional reporting with Excel export capabilities.
                 </p>
-                <div class="mt-4">
+                <div class="mt-4 flex items-center gap-4">
                     <span class="text-sm px-3 py-1 rounded" style="background-color: var(--background-gray); color: var(--text-secondary)">10 minutes</span>
+                    <button onclick="openVideoModal('qc-suite-video')" class="text-sm px-4 py-2 rounded" style="background-color: var(--primary-blue); color: white;">
+                        Watch Tutorial
+                    </button>
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
-                <div class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <span style="color: var(--text-secondary)">Video: AI Prompts Guide</span>
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <div class="aspect-video rounded-lg mb-4 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onclick="openVideoModal('ai-prompts-video')">
+                    <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #4fc3f7, #0078d4); color: white;">
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">🤖</div>
+                            <div class="text-sm">AI Prompts Guide</div>
+                        </div>
+                    </div>
                 </div>
                 <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary)">
                     Using AI Prompts with ChatGPT
                 </h3>
                 <p style="color: var(--text-secondary)">
-                    How to use our AI prompts with ChatGPT and Claude to generate custom Revit automation code.
+                    Complete guide to leveraging AI for Revit automation. Learn to use our specialized prompts with ChatGPT and Claude to generate custom C# code, debug existing add-ins, and create tailored solutions for your specific workflows.
                 </p>
-                <div class="mt-4">
+                <div class="mt-4 flex items-center gap-4">
                     <span class="text-sm px-3 py-1 rounded" style="background-color: var(--background-gray); color: var(--text-secondary)">15 minutes</span>
+                    <button onclick="openVideoModal('ai-prompts-video')" class="text-sm px-4 py-2 rounded" style="background-color: var(--primary-blue); color: white;">
+                        Watch Tutorial
+                    </button>
                 </div>
             </div>
             
-            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
-                <div class="aspect-video bg-gray-200 rounded-lg mb-4 flex items-center justify-center">
-                    <span style="color: var(--text-secondary)">Video: Troubleshooting</span>
+            <div class="rounded-lg p-6" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <div class="aspect-video rounded-lg mb-4 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity" onclick="openVideoModal('foundation-video')">
+                    <div class="w-full h-full flex items-center justify-center" style="background: linear-gradient(135deg, #28a745, #20c997); color: white;">
+                        <div class="text-center">
+                            <div class="text-4xl mb-2">🏗️</div>
+                            <div class="text-sm">Foundation Pack Overview</div>
+                        </div>
+                    </div>
                 </div>
                 <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary)">
-                    Common Issues & Solutions
+                    Foundation Pack Overview
                 </h3>
                 <p style="color: var(--text-secondary)">
-                    Troubleshoot installation problems, permission issues, and compatibility across Revit versions.
+                    Introduction to the Foundation Pack essentials. Overview of core tools, basic workflows, troubleshooting common installation issues, and getting started with your first automation projects in Revit.
                 </p>
-                <div class="mt-4">
+                <div class="mt-4 flex items-center gap-4">
                     <span class="text-sm px-3 py-1 rounded" style="background-color: var(--background-gray); color: var(--text-secondary)">7 minutes</span>
+                    <button onclick="openVideoModal('foundation-video')" class="text-sm px-4 py-2 rounded" style="background-color: var(--primary-blue); color: white;">
+                        Watch Tutorial
+                    </button>
                 </div>
             </div>
         </div>
         
-        <div class="bg-white rounded-lg p-8 mt-8" style="border: 1px solid var(--border-gray)">
+        <div class="rounded-lg p-8 mt-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
             <h2 class="text-2xl font-semibold mb-4" style="color: var(--text-primary)">Professional Pack Tutorials</h2>
             <p class="mb-4" style="color: var(--text-secondary)">
                 Access advanced tutorials and training materials with our Professional and Enterprise packs:
@@ -146,9 +213,125 @@
             </div>
         </div>
         
-        <div class="text-center mt-8">
+        <div class="text-center flex justify-center items-center gap-4 mt-8">
             <a href="/" class="hover:text-blue-600" style="color: var(--text-secondary)">← Back to Home</a>
+            <button onclick="toggleTheme()" class="theme-toggle" id="theme-toggle">🌙 Dark</button>
         </div>
     </div>
+    
+    <!-- Video Modal -->
+    <div id="videoModal" class="fixed inset-0 z-50 hidden" style="background-color: rgba(0,0,0,0.8);">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-lg max-w-4xl w-full" style="background-color: var(--card-background);">
+                <div class="flex justify-between items-center p-6 border-b" style="border-color: var(--border-gray);">
+                    <h3 id="modalTitle" class="text-xl font-semibold" style="color: var(--text-primary);">Video Tutorial</h3>
+                    <button onclick="closeVideoModal()" class="text-2xl" style="color: var(--text-secondary);">&times;</button>
+                </div>
+                <div class="p-6">
+                    <div id="modalContent" class="aspect-video bg-gray-100 rounded-lg flex items-center justify-center mb-4" style="background-color: var(--background-gray);">
+                        <div class="text-center" style="color: var(--text-secondary);">
+                            <div class="text-6xl mb-4">▶</div>
+                            <p>Video content will be available soon</p>
+                            <p class="text-sm mt-2">This tutorial is currently in production</p>
+                        </div>
+                    </div>
+                    <div id="modalDescription" style="color: var(--text-secondary);"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Video Modal Functions
+        function openVideoModal(videoId) {
+            const modal = document.getElementById('videoModal');
+            const title = document.getElementById('modalTitle');
+            const content = document.getElementById('modalContent');
+            const description = document.getElementById('modalDescription');
+            
+            const videoData = {
+                'installation-video': {
+                    title: 'Installing ReviPrompt Lab Add-ins',
+                    description: 'Step-by-step guide to installing C# add-ins for Revit 2024, 2025, and 2026. Includes troubleshooting common issues and administrator setup.'
+                },
+                'sheet-setup-video': {
+                    title: 'Sheet Setup Starter Walkthrough',
+                    description: 'Complete walkthrough of the SheetRenamer tool with Excel integration. Learn to rename 100+ sheets in seconds, import sheet data from Excel templates, and automate sheet parameter updates for consistent project delivery.'
+                },
+                'mep-tools-video': {
+                    title: 'MEP Power Tools in Action',
+                    description: 'Comprehensive demonstration of MEP automation tools. See auto-tagging of equipment, electrical load calculations, system connectivity validation, and batch parameter updates across mechanical, electrical, and plumbing systems.'
+                },
+                'qc-suite-video': {
+                    title: 'Quality Control Automation',
+                    description: 'Master the QC Professional Suite for comprehensive model auditing. Learn automated clash detection, standard compliance checks, model validation workflows, and professional reporting with Excel export capabilities.'
+                },
+                'ai-prompts-video': {
+                    title: 'Using AI Prompts with ChatGPT',
+                    description: 'Complete guide to leveraging AI for Revit automation. Learn to use our specialized prompts with ChatGPT and Claude to generate custom C# code, debug existing add-ins, and create tailored solutions for your specific workflows.'
+                },
+                'foundation-video': {
+                    title: 'Foundation Pack Overview',
+                    description: 'Introduction to the Foundation Pack essentials. Overview of core tools, basic workflows, troubleshooting common installation issues, and getting started with your first automation projects in Revit.'
+                }
+            };
+            
+            const video = videoData[videoId];
+            if (video) {
+                title.textContent = video.title;
+                description.textContent = video.description;
+            }
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeVideoModal() {
+            const modal = document.getElementById('videoModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal when clicking outside
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeVideoModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeVideoModal();
+            }
+        });
+
+        // Dark Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeButton = document.getElementById('theme-toggle');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                themeButton.textContent = '🌙 Dark';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeButton = document.getElementById('theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+            }
+        });
+    </script>
 </body>
 </html>

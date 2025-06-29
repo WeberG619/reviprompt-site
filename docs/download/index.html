@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Products - ReviPrompt Lab</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-blue: #0078d4;
+            --text-primary: #323130;
+            --text-secondary: #605e5c;
+            --border-gray: #edebe9;
+            --background-gray: #faf9f8;
+            --card-background: #ffffff;
+        }
+        
+        [data-theme="dark"] {
+            --primary-blue: #4fc3f7;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-gray: #404040;
+            --background-gray: #1a1a1a;
+            --card-background: #2d2d2d;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--background-gray);
+            color: var(--text-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex items-center justify-center px-4">
+        <div class="max-w-2xl w-full">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold mb-4" style="color: var(--text-primary)">
+                    Download Your ReviPrompt Lab Products
+                </h1>
+                <p style="color: var(--text-secondary)">
+                    Enter your order details to access your downloads
+                </p>
+            </div>
+            
+            <div class="rounded-lg p-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <form id="downloadForm" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium mb-2" style="color: var(--text-primary)">
+                            Order ID or Email
+                        </label>
+                        <input 
+                            type="text" 
+                            id="orderInfo" 
+                            required
+                            class="w-full px-4 py-2 rounded border"
+                            style="background-color: var(--background-gray); border-color: var(--border-gray); color: var(--text-primary)"
+                            placeholder="Enter your Stripe order ID or purchase email"
+                        >
+                    </div>
+                    
+                    <button 
+                        type="submit"
+                        class="w-full py-3 px-6 rounded font-semibold text-white"
+                        style="background-color: var(--primary-blue)"
+                    >
+                        Access Downloads
+                    </button>
+                </form>
+                
+                <div id="downloadLinks" class="mt-8 hidden">
+                    <!-- Download links will appear here -->
+                </div>
+                
+                <div id="errorMessage" class="mt-4 p-4 rounded hidden" style="background-color: #fee; color: #c00">
+                    <!-- Error messages will appear here -->
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="text-sm" style="color: var(--text-secondary)">
+                    Having trouble? <a href="/contact.html" style="color: var(--primary-blue)">Contact support</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // This will connect to your backend API
+        document.getElementById('downloadForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const orderInfo = document.getElementById('orderInfo').value;
+            const errorDiv = document.getElementById('errorMessage');
+            const linksDiv = document.getElementById('downloadLinks');
+            
+            // Hide previous messages
+            errorDiv.classList.add('hidden');
+            linksDiv.classList.add('hidden');
+            
+            try {
+                // TODO: Replace with your actual API endpoint
+                const response = await fetch('/api/get-downloads', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ orderInfo })
+                });
+                
+                if (!response.ok) throw new Error('Invalid order information');
+                
+                const data = await response.json();
+                
+                // Display download links
+                linksDiv.innerHTML = `
+                    <h3 class="font-semibold mb-4" style="color: var(--text-primary)">Your Downloads:</h3>
+                    ${data.products.map(product => `
+                        <div class="mb-4 p-4 rounded" style="background-color: var(--background-gray)">
+                            <h4 class="font-medium mb-2" style="color: var(--text-primary)">${product.name}</h4>
+                            <a href="${product.downloadUrl}" 
+                               class="inline-block px-4 py-2 rounded text-white text-sm"
+                               style="background-color: var(--primary-blue)"
+                               download>
+                                Download Now
+                            </a>
+                            <p class="text-xs mt-2" style="color: var(--text-secondary)">
+                                Expires: ${new Date(product.expiresAt).toLocaleDateString()}
+                            </p>
+                        </div>
+                    `).join('')}
+                `;
+                linksDiv.classList.remove('hidden');
+                
+            } catch (error) {
+                errorDiv.textContent = 'Order not found. Please check your order ID or email.';
+                errorDiv.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>

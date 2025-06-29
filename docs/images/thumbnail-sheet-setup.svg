@@ -1,0 +1,88 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.95" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:0.95" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1280" height="720" fill="url(#bgGradient)"/>
+  
+  <!-- Background Pattern -->
+  <pattern id="pattern" patternUnits="userSpaceOnUse" width="80" height="80">
+    <rect x="10" y="10" width="15" height="20" fill="rgba(255,255,255,0.1)" rx="2"/>
+    <rect x="30" y="15" width="15" height="20" fill="rgba(255,255,255,0.1)" rx="2"/>
+    <rect x="50" y="10" width="15" height="20" fill="rgba(255,255,255,0.1)" rx="2"/>
+  </pattern>
+  <rect width="1280" height="720" fill="url(#pattern)"/>
+  
+  <!-- Main Content Card -->
+  <rect x="60" y="80" width="1160" height="560" fill="url(#cardGradient)" rx="20" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+  
+  <!-- Before Section -->
+  <rect x="100" y="120" width="300" height="200" fill="#fee2e2" rx="10" stroke="#dc2626" stroke-width="2"/>
+  <text x="110" y="150" fill="#dc2626" font-family="Arial, sans-serif" font-size="20" font-weight="bold">BEFORE:</text>
+  <text x="110" y="180" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="16">Sheet 1</text>
+  <text x="110" y="200" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="16">Copy of Floor Plan</text>
+  <text x="110" y="220" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="16">Untitled Sheet</text>
+  <text x="110" y="240" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="16">Sheet (2)</text>
+  <text x="110" y="260" fill="#7f1d1d" font-family="Arial, sans-serif" font-size="16">New Sheet1</text>
+  <text x="110" y="300" fill="#dc2626" font-family="Arial, sans-serif" font-size="18" font-weight="bold">4+ HOURS</text>
+  
+  <!-- Arrow -->
+  <path d="M430 220 L530 220 M510 200 L530 220 L510 240" stroke="#0078d4" stroke-width="8" fill="none"/>
+  
+  <!-- After Section -->
+  <rect x="560" y="120" width="300" height="200" fill="#dcfce7" rx="10" stroke="#16a34a" stroke-width="2"/>
+  <text x="570" y="150" fill="#16a34a" font-family="Arial, sans-serif" font-size="20" font-weight="bold">AFTER:</text>
+  <text x="570" y="180" fill="#14532d" font-family="Arial, sans-serif" font-size="16">A-001 Floor Plan - Level 1</text>
+  <text x="570" y="200" fill="#14532d" font-family="Arial, sans-serif" font-size="16">A-002 Floor Plan - Level 2</text>
+  <text x="570" y="220" fill="#14532d" font-family="Arial, sans-serif" font-size="16">A-101 Ceiling Plan - Level 1</text>
+  <text x="570" y="240" fill="#14532d" font-family="Arial, sans-serif" font-size="16">S-001 Foundation Plan</text>
+  <text x="570" y="260" fill="#14532d" font-family="Arial, sans-serif" font-size="16">M-001 HVAC Plan - Level 1</text>
+  <text x="570" y="300" fill="#16a34a" font-family="Arial, sans-serif" font-size="18" font-weight="bold">5 MINUTES</text>
+  
+  <!-- Main Title -->
+  <text x="100" y="400" fill="#1a1a1a" font-family="Arial, sans-serif" font-size="52" font-weight="900">
+    RENAME 100+ SHEETS
+  </text>
+  <text x="100" y="460" fill="#1a1a1a" font-family="Arial, sans-serif" font-size="52" font-weight="900">
+    IN 5 MINUTES!
+  </text>
+  
+  <!-- Excel Integration -->
+  <rect x="900" y="120" width="280" height="200" fill="#f0f9ff" rx="10" stroke="#0284c7" stroke-width="2"/>
+  <rect x="920" y="140" width="60" height="40" fill="#16a34a" rx="4"/>
+  <text x="950" y="165" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">EXCEL</text>
+  <text x="920" y="200" fill="#0369a1" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Excel Integration:</text>
+  <text x="920" y="220" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="14">• Bulk editing</text>
+  <text x="920" y="240" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="14">• Formula automation</text>
+  <text x="920" y="260" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="14">• Professional naming</text>
+  <text x="920" y="280" fill="#0c4a6e" font-family="Arial, sans-serif" font-size="14">• Error validation</text>
+  
+  <!-- Bottom Features -->
+  <rect x="100" y="500" width="500" height="100" fill="rgba(34,197,94,0.1)" rx="10"/>
+  <text x="110" y="530" fill="#16a34a" font-family="Arial, sans-serif" font-size="18" font-weight="bold">✓ Works with ANY project size</text>
+  <text x="110" y="555" fill="#16a34a" font-family="Arial, sans-serif" font-size="18" font-weight="bold">✓ Professional naming standards</text>
+  <text x="110" y="580" fill="#16a34a" font-family="Arial, sans-serif" font-size="18" font-weight="bold">✓ Automatic validation & error checking</text>
+  
+  <!-- Results Badge -->
+  <rect x="920" y="360" width="260" height="120" fill="#dc2626" rx="15"/>
+  <text x="1050" y="390" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">REAL RESULTS:</text>
+  <text x="1050" y="420" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="32" font-weight="900">4 HOURS → 5 MIN</text>
+  <text x="1050" y="450" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">98% TIME SAVINGS</text>
+  
+  <!-- ReviPrompt Lab Logo -->
+  <rect x="920" y="500" width="260" height="60" fill="#1a1a1a" rx="10"/>
+  <text x="1050" y="530" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="18" font-weight="bold">ReviPrompt Lab</text>
+  <text x="1050" y="550" text-anchor="middle" fill="#22c55e" font-family="Arial, sans-serif" font-size="14">Sheet Setup Starter</text>
+  
+  <!-- Play Button Overlay -->
+  <circle cx="640" cy="360" r="45" fill="rgba(255,255,255,0.95)" stroke="#22c55e" stroke-width="4"/>
+  <path d="M620 340 L620 380 L660 360 Z" fill="#22c55e"/>
+</svg>
