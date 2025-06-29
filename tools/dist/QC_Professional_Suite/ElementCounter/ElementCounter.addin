@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>Element Counter</Name>
+    <Assembly>ElementCounter.dll</Assembly>
+    <FullClassName>ElementCounter.ElementCounterCommand</FullClassName>
+    <Text>Element Counter</Text>
+    <Description>Advanced element counting with category, level, and workset breakdown</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>English_USA</LanguageType>
+    <VendorId>REVI</VendorId>
+    <VendorDescription>ReviPrompt Lab</VendorDescription>
+  </AddIn>
+</RevitAddIns>

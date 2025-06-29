@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>Load Calculator</Name>
+    <Assembly>LoadCalculator.dll</Assembly>
+    <FullClassName>LoadCalculator.LoadCalculatorCommand</FullClassName>
+    <ClientId>C9C1F1B1-2345-5678-9012-234567890BCD</ClientId>
+    <VendorId>REVI</VendorId>
+    <VendorDescription>ReviPrompt Lab</VendorDescription>
+    <Text>Load Calculator</Text>
+    <Description>Calculate electrical loads from Revit equipment with NEC-compliant demand factors</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+  </AddIn>
+</RevitAddIns>

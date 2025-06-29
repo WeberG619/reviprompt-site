@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "FFD55eX/zNvByV2pp8MZhsqpHAFyOAMDbqPBDdiCrli2Tz644EHBp5bn+IcM0fGqJe6PvkYitXy3+wEbS68SaQ==",
+  "success": true,
+  "projectFilePath": "/mnt/d/reviprompt-site/tools/EquipmentTagger/EquipmentTagger.csproj",
+  "expectedPackageFiles": [
+    "/home/weber/.nuget/packages/epplus/7.0.0/epplus.7.0.0.nupkg.sha512",
+    "/home/weber/.nuget/packages/epplus.interfaces/6.1.1/epplus.interfaces.6.1.1.nupkg.sha512",
+    "/home/weber/.nuget/packages/epplus.system.drawing/6.1.1/epplus.system.drawing.6.1.1.nupkg.sha512",
+    "/home/weber/.nuget/packages/microsoft.io.recyclablememorystream/1.4.1/microsoft.io.recyclablememorystream.1.4.1.nupkg.sha512",
+    "/home/weber/.nuget/packages/microsoft.netframework.referenceassemblies/1.0.3/microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "/home/weber/.nuget/packages/microsoft.netframework.referenceassemblies.net48/1.0.3/microsoft.netframework.referenceassemblies.net48.1.0.3.nupkg.sha512",
+    "/home/weber/.nuget/packages/system.componentmodel.annotations/5.0.0/system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

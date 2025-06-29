@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>MEP System Validator</Name>
+    <Assembly>SystemValidator.dll</Assembly>
+    <FullClassName>SystemValidator.SystemValidatorCommand</FullClassName>
+    <Text>System Validator</Text>
+    <Description>Validates MEP system connectivity and finds orphaned components</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>English_USA</LanguageType>
+    <VendorId>REVI</VendorId>
+    <VendorDescription>ReviPrompt Lab</VendorDescription>
+  </AddIn>
+</RevitAddIns>

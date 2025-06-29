@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>Model Auditor</Name>
+    <Assembly>ModelAuditor.dll</Assembly>
+    <FullClassName>ModelAuditor.ModelAuditorCommand</FullClassName>
+    <Text>Model Auditor</Text>
+    <Description>Comprehensive model health audit with 7 analysis categories</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>English_USA</LanguageType>
+    <VendorId>REVI</VendorId>
+    <VendorDescription>ReviPrompt Lab</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Name>Deliverable Checker</Name>
+    <Assembly>DeliverableChecker.dll</Assembly>
+    <FullClassName>DeliverableChecker.DeliverableCheckerCommand</FullClassName>
+    <Text>Deliverable Checker</Text>
+    <Description>Comprehensive project delivery readiness assessment</Description>
+    <VisibilityMode>AlwaysVisible</VisibilityMode>
+    <LanguageType>English_USA</LanguageType>
+    <VendorId>REVI</VendorId>
+    <VendorDescription>ReviPrompt Lab</VendorDescription>
+  </AddIn>
+</RevitAddIns>

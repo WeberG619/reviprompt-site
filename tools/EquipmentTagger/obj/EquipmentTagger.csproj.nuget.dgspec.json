@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "restore": {
+    "/mnt/d/reviprompt-site/tools/EquipmentTagger/EquipmentTagger.csproj": {}
+  },
+  "projects": {
+    "/mnt/d/reviprompt-site/tools/EquipmentTagger/EquipmentTagger.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/mnt/d/reviprompt-site/tools/EquipmentTagger/EquipmentTagger.csproj",
+        "projectName": "EquipmentTagger",
+        "projectPath": "/mnt/d/reviprompt-site/tools/EquipmentTagger/EquipmentTagger.csproj",
+        "packagesPath": "/home/weber/.nuget/packages/",
+        "outputPath": "/mnt/d/reviprompt-site/tools/EquipmentTagger/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/weber/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net48"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net48": {
+            "targetAlias": "net48",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net48": {
+          "targetAlias": "net48",
+          "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[1.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.117/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
