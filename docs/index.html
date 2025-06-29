@@ -90,15 +90,26 @@
         }
         
         .gradient-bg { 
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
             position: relative;
             overflow: hidden;
         }
         
         .hero-bg {
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" opacity="0.1"><path d="M0,100 Q300,50 600,100 T1200,100 L1200,600 L0,600 Z" fill="white"/></svg>');
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" opacity="0.05"><path d="M0,100 Q300,50 600,100 T1200,100 L1200,600 L0,600 Z" fill="white"/></svg>');
             background-size: cover;
             background-position: center;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.4);
+            z-index: 1;
         }
         
         .card-hover { 
@@ -318,24 +329,28 @@
         <div class="absolute inset-0 opacity-10">
             <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1200&h=600&fit=crop" alt="Architectural section" loading="lazy" class="w-full h-full object-cover">
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-20">
             <div class="text-center">
-                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">
                     Transform Hours of Manual Revit Work<br>
-                    <span class="text-teal-400">Into Minutes</span>
+                    <span class="text-teal-300">Into Minutes</span>
                 </h1>
-                <p class="text-xl md:text-2xl mb-2 text-slate-200 font-medium">
+                <p class="text-xl md:text-2xl mb-2 text-white font-medium drop-shadow-md">
                     Architect-built AI prompts for architects & BIM professionals
                 </p>
-                <p class="text-lg mb-8 text-slate-300">
+                <p class="text-lg mb-8 text-gray-100 drop-shadow-md">
                     Sheet setup, IBC/ADA compliance checks, door scheduling – automated with precision
                 </p>
                 
                 <!-- Auto-dimension GIF showcase -->
                 <div class="mb-8 max-w-2xl mx-auto">
-                    <div class="bg-white/10 backdrop-blur-md rounded-lg p-4">
-                        <img src="https://via.placeholder.com/600x300/1e293b/ffffff?text=Auto-Dimension+Demo+GIF" alt="Auto-dimensioning in action" class="w-full rounded-lg" loading="lazy">
-                        <p class="text-sm text-slate-300 mt-2 text-center">Watch: Plan auto-dimensioned in 15 seconds</p>
+                    <div class="bg-white/20 backdrop-blur-md rounded-lg p-4 border border-white/30">
+                        <div class="bg-slate-800 rounded-lg p-8 text-center">
+                            <div class="text-6xl mb-4">⚡</div>
+                            <div class="text-white font-bold text-xl mb-2">Auto-Dimension Demo</div>
+                            <div class="text-gray-300">Coming Soon: Interactive Demo</div>
+                        </div>
+                        <p class="text-sm text-gray-100 mt-2 text-center drop-shadow-sm">Watch: Plan auto-dimensioned in 15 seconds</p>
                     </div>
                 </div>
                 
@@ -349,23 +364,23 @@
                 </div>
                 
                 <div class="mt-6 text-center">
-                    <p class="text-white/80 text-sm">
+                    <p class="text-gray-100 text-sm drop-shadow-sm">
                         <i class="fas fa-info-circle mr-1"></i> New: Professional C# Revit Add-ins in targeted mini-packs
                     </p>
                 </div>
                 
                 <div class="mt-8 flex items-center justify-center space-x-8">
                     <div class="text-center">
-                        <div class="text-3xl font-bold">500+</div>
-                        <div class="text-sm text-slate-300">Architects Using Daily</div>
+                        <div class="text-3xl font-bold text-white drop-shadow-md">500+</div>
+                        <div class="text-sm text-gray-100 drop-shadow-sm">Architects Using Daily</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold">98%</div>
-                        <div class="text-sm text-slate-300">Time Saved</div>
+                        <div class="text-3xl font-bold text-white drop-shadow-md">98%</div>
+                        <div class="text-sm text-gray-100 drop-shadow-sm">Time Saved</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-3xl font-bold">4 hrs → 5 min</div>
-                        <div class="text-sm text-slate-300">Sheet Setup Time</div>
+                        <div class="text-3xl font-bold text-white drop-shadow-md">4 hrs → 5 min</div>
+                        <div class="text-sm text-gray-100 drop-shadow-sm">Sheet Setup Time</div>
                     </div>
                 </div>
             </div>
@@ -393,7 +408,16 @@
                 <div>
                     <h3 class="text-lg font-semibold mb-3 text-gray-800">AI Generated Result:</h3>
                     <div class="bg-gray-100 rounded-lg p-4">
-                        <img src="https://via.placeholder.com/500x300/f3f4f6/1e293b?text=Dynamo+Graph+Screenshot" alt="Generated Dynamo graph" class="w-full rounded" loading="lazy">
+                        <div class="bg-slate-700 rounded-lg p-8 text-center">
+                            <div class="text-4xl mb-4 text-teal-400">🔗</div>
+                            <div class="text-white font-bold mb-2">Dynamo Graph</div>
+                            <div class="text-gray-300 text-sm">Sheet Renumbering Logic</div>
+                            <div class="mt-4 grid grid-cols-3 gap-2">
+                                <div class="bg-blue-500 h-4 rounded"></div>
+                                <div class="bg-green-500 h-4 rounded"></div>
+                                <div class="bg-purple-500 h-4 rounded"></div>
+                            </div>
+                        </div>
                         <p class="text-sm text-gray-600 mt-2">Complete Dynamo graph ready to run</p>
                     </div>
                 </div>
