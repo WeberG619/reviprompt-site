@@ -97,9 +97,11 @@
         
         .hero-section { 
             background: #f8f9fa;
-            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" opacity="0.08"><g fill="none" stroke="%23323130" stroke-width="1"><rect x="50" y="200" width="120" height="200"/><rect x="60" y="180" width="20" height="20"/><rect x="90" y="180" width="20" height="20"/><rect x="120" y="180" width="20" height="20"/><rect x="60" y="220" width="20" height="20"/><rect x="90" y="220" width="20" height="20"/><rect x="120" y="220" width="20" height="20"/><rect x="60" y="260" width="20" height="20"/><rect x="90" y="260" width="20" height="20"/><rect x="120" y="260" width="20" height="20"/><rect x="200" y="150" width="100" height="250"/><rect x="210" y="130" width="15" height="15"/><rect x="235" y="130" width="15" height="15"/><rect x="260" y="130" width="15" height="15"/><rect x="285" y="130" width="15" height="15"/><rect x="210" y="170" width="15" height="15"/><rect x="235" y="170" width="15" height="15"/><rect x="260" y="170" width="15" height="15"/><rect x="285" y="170" width="15" height="15"/><rect x="350" y="180" width="80" height="220"/><rect x="360" y="160" width="12" height="12"/><rect x="380" y="160" width="12" height="12"/><rect x="400" y="160" width="12" height="12"/><rect x="360" y="200" width="12" height="12"/><rect x="380" y="200" width="12" height="12"/><rect x="400" y="200" width="12" height="12"/><rect x="500" y="220" width="150" height="180"/><rect x="510" y="200" width="18" height="18"/><rect x="535" y="200" width="18" height="18"/><rect x="560" y="200" width="18" height="18"/><rect x="585" y="200" width="18" height="18"/><rect x="610" y="200" width="18" height="18"/><rect x="635" y="200" width="18" height="18"/><rect x="510" y="240" width="18" height="18"/><rect x="535" y="240" width="18" height="18"/><rect x="560" y="240" width="18" height="18"/><rect x="585" y="240" width="18" height="18"/><rect x="610" y="240" width="18" height="18"/><rect x="635" y="240" width="18" height="18"/><rect x="700" y="160" width="90" height="240"/><rect x="710" y="140" width="14" height="14"/><rect x="730" y="140" width="14" height="14"/><rect x="750" y="140" width="14" height="14"/><rect x="770" y="140" width="14" height="14"/><rect x="710" y="180" width="14" height="14"/><rect x="730" y="180" width="14" height="14"/><rect x="750" y="180" width="14" height="14"/><rect x="770" y="180" width="14" height="14"/><rect x="830" y="190" width="110" height="210"/><rect x="840" y="170" width="16" height="16"/><rect x="865" y="170" width="16" height="16"/><rect x="890" y="170" width="16" height="16"/><rect x="915" y="170" width="16" height="16"/><rect x="840" y="210" width="16" height="16"/><rect x="865" y="210" width="16" height="16"/><rect x="890" y="210" width="16" height="16"/><rect x="915" y="210" width="16" height="16"/><rect x="980" y="140" width="85" height="260"/><rect x="990" y="120" width="13" height="13"/><rect x="1010" y="120" width="13" height="13"/><rect x="1030" y="120" width="13" height="13"/><rect x="1050" y="120" width="13" height="13"/><rect x="990" y="160" width="13" height="13"/><rect x="1010" y="160" width="13" height="13"/><rect x="1030" y="160" width="13" height="13"/><rect x="1050" y="160" width="13" height="13"/></g></svg>');
+            background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
+            background-blend-mode: overlay;
+            background-color: rgba(248, 249, 250, 0.95);
             border-bottom: 1px solid var(--border-gray);
         }
         
@@ -581,155 +583,53 @@
                 <p class="text-base" style="color: var(--text-secondary)">Perfect for testing before committing to complete packs</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+            <div class="pricing-grid max-w-5xl mx-auto mb-12">
                 <!-- Sheet Setup Starter -->
-                <div class="bg-white rounded card-hover" style="border: 1px solid var(--border-gray); padding: 32px">
-                    <div class="mb-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-semibold mb-2" style="color: var(--text-primary)">Sheet Setup Starter</h3>
-                                <p class="text-base" style="color: var(--text-secondary)">Complete sheet management toolkit</p>
-                            </div>
-                            <div class="px-3 py-1 rounded text-sm font-medium" style="background-color: var(--light-blue); color: var(--text-secondary)">
-                                Architecture
-                            </div>
-                        </div>
-                        <div class="text-4xl font-semibold" style="color: var(--text-primary)">$29</div>
-                    </div>
-                    <div class="mb-6">
-                        <h4 class="font-semibold mb-3" style="color: var(--text-primary)">What's included:</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>SheetRenamer Tool</strong> - Excel import/export for batch renaming</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>5 Discipline Templates</strong> - Architecture, MEP, Structural presets</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Smart AI Prompts</strong> - Title block automation scripts</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Batch Operations</strong> - Update 100+ sheets in seconds</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pt-4 mb-6" style="border-top: 1px solid var(--border-gray)">
-                        <div class="flex justify-between text-sm">
-                            <span style="color: var(--text-secondary)">Time Saved:</span>
-                            <span class="font-semibold" style="color: var(--primary-blue)">4 hours → 5 minutes</span>
-                        </div>
-                        <div class="flex justify-between text-sm mt-2">
-                            <span style="color: var(--text-secondary)">ROI:</span>
-                            <span class="font-semibold" style="color: var(--text-primary)">First project</span>
-                        </div>
-                    </div>
-                    <a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="professional-button w-full text-center">
-                        Get Sheet Setup Pack - $29
+                <div class="bg-white rounded p-8 text-center card-hover" style="border: 2px solid var(--border-gray)">
+                    <div class="px-3 py-1 rounded text-sm font-semibold mb-4 inline-block" style="background-color: var(--light-blue); color: var(--primary-blue)">ARCHITECTURE</div>
+                    <h3 class="text-2xl font-semibold mb-2" style="color: var(--text-primary)">Sheet Setup Starter</h3>
+                    <div class="text-4xl font-semibold mb-6" style="color: var(--primary-blue)">$29</div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">SheetRenamer Tool - Excel import/export</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">5 Discipline Templates included</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Smart AI Prompts for automation</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Batch Operations - 100+ sheets</span></li>
+                    </ul>
+                    <a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="w-full professional-button text-center">
+                        Get Now - $29
                     </a>
                 </div>
                 </div>
 
                 <!-- MEP Power Tools -->
-                <div class="bg-white rounded card-hover" style="border: 1px solid var(--border-gray); padding: 32px">
-                    <div class="mb-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-semibold mb-2" style="color: var(--text-primary)">MEP Power Tools</h3>
-                                <p class="text-base" style="color: var(--text-secondary)">Professional MEP analysis suite</p>
-                            </div>
-                            <div class="px-3 py-1 rounded text-sm font-medium" style="background-color: var(--light-blue); color: var(--text-secondary)">
-                                MEP
-                            </div>
-                        </div>
-                        <div class="text-4xl font-semibold" style="color: var(--text-primary)">$39</div>
-                    </div>
-                    <div class="mb-6">
-                        <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Professional C# Add-ins:</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Equipment Tagger</strong> - Auto-tag all MEP equipment with data</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Load Calculator</strong> - NEC-compliant electrical loads</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>System Validator</strong> - Check MEP connectivity & flow</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Excel Reports</strong> - Professional documentation</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pt-4 mb-6" style="border-top: 1px solid var(--border-gray)">
-                        <div class="flex justify-between text-sm">
-                            <span style="color: var(--text-secondary)">Time Saved:</span>
-                            <span class="font-semibold" style="color: var(--primary-blue)">2 days → 20 minutes</span>
-                        </div>
-                        <div class="flex justify-between text-sm mt-2">
-                            <span style="color: var(--text-secondary)">Best For:</span>
-                            <span class="font-semibold" style="color: var(--text-primary)">MEP Engineers</span>
-                        </div>
-                    </div>
-                    <a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="professional-button w-full text-center">
-                        Get MEP Tools Pack - $39
+                <div class="bg-white rounded p-8 text-center card-hover" style="border: 2px solid var(--border-gray)">
+                    <div class="px-3 py-1 rounded text-sm font-semibold mb-4 inline-block" style="background-color: var(--light-blue); color: var(--primary-blue)">MEP</div>
+                    <h3 class="text-2xl font-semibold mb-2" style="color: var(--text-primary)">MEP Power Tools</h3>
+                    <div class="text-4xl font-semibold mb-6" style="color: var(--primary-blue)">$39</div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Equipment Tagger - Auto-tag MEP</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Load Calculator - NEC compliant</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">System Validator - Check connectivity</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Excel Reports - Documentation</span></li>
+                    </ul>
+                    <a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="w-full professional-button text-center">
+                        Get Now - $39
                     </a>
                 </div>
 
                 <!-- QC Professional Suite -->
-                <div class="bg-white rounded card-hover" style="border: 1px solid var(--border-gray); padding: 32px">
-                    <div class="mb-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <div>
-                                <h3 class="text-2xl font-semibold mb-2" style="color: var(--text-primary)">QC Professional Suite</h3>
-                                <p class="text-base" style="color: var(--text-secondary)">Complete quality control toolkit</p>
-                            </div>
-                            <div class="px-3 py-1 rounded text-sm font-medium" style="background-color: var(--light-blue); color: var(--text-secondary)">
-                                QA/QC
-                            </div>
-                        </div>
-                        <div class="text-4xl font-semibold" style="color: var(--text-primary)">$39</div>
-                    </div>
-                    <div class="mb-6">
-                        <h4 class="font-semibold mb-3" style="color: var(--text-primary)">Quality Control Add-ins:</h4>
-                        <ul class="space-y-3">
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Model Auditor</strong> - 7-category comprehensive analysis</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Element Counter</strong> - Advanced counting & reporting</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Deliverable Checker</strong> - Pre-submission validation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
-                                <span style="color: var(--text-secondary)"><strong>Issue Tracking</strong> - Export findings to Excel</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="pt-4 mb-6" style="border-top: 1px solid var(--border-gray)">
-                        <div class="flex justify-between text-sm">
-                            <span style="color: var(--text-secondary)">Issues Found:</span>
-                            <span class="font-semibold" style="color: var(--primary-blue)">Instantly</span>
-                        </div>
-                        <div class="flex justify-between text-sm mt-2">
-                            <span style="color: var(--text-secondary)">Best For:</span>
-                            <span class="font-semibold" style="color: var(--text-primary)">BIM Managers</span>
-                        </div>
-                    </div>
-                    <a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="professional-button w-full text-center">
-                        Get QC Suite Pack - $39
+                <div class="bg-white rounded p-8 text-center card-hover" style="border: 2px solid var(--border-gray)">
+                    <div class="px-3 py-1 rounded text-sm font-semibold mb-4 inline-block" style="background-color: var(--light-blue); color: var(--primary-blue)">QA/QC</div>
+                    <h3 class="text-2xl font-semibold mb-2" style="color: var(--text-primary)">QC Professional Suite</h3>
+                    <div class="text-4xl font-semibold mb-6" style="color: var(--primary-blue)">$39</div>
+                    <ul class="text-left space-y-3 mb-8">
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Model Auditor - 7-category analysis</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Element Counter - Advanced reporting</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Deliverable Checker - Validation</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Issue Tracking - Excel export</span></li>
+                    </ul>
+                    <a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="w-full professional-button text-center">
+                        Get Now - $39
                     </a>
                 </div>
             </div>
@@ -961,18 +861,18 @@
     </section>
 
     <!-- Lead Generation CTA -->
-    <section id="free-download" class="py-20" style="background-color: var(--primary-blue); color: white">
+    <section id="free-download" class="py-20" style="background-color: var(--background-gray)">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4" style="color: var(--text-primary)">
                 Get Your "Top 10 Revit Prompt Hacks" PDF
             </h2>
-            <p class="text-xl mb-8" style="color: rgba(255,255,255,0.95)">
+            <p class="text-xl mb-8" style="color: var(--text-secondary)">
                 8-page guide with our most powerful automation prompts
             </p>
-            <button onclick="openModal('leadMagnetModal')" class="bg-white text-lg font-semibold px-8 py-4 rounded transition duration-300" style="color: var(--primary-blue)">
+            <button onclick="openModal('leadMagnetModal')" class="professional-button text-lg px-8 py-4">
                 Download Free Guide
             </button>
-            <p class="text-sm mt-4" style="color: rgba(255,255,255,0.9)">
+            <p class="text-sm mt-4" style="color: var(--text-secondary)">
                 Join 2,000+ AEC professionals getting weekly automation tips
             </p>
         </div>
