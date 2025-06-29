@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - ReviPrompt Lab</title>
+    <meta name="description" content="Complete documentation for ReviPrompt Lab tools, installation guides, and API reference for Revit automation.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-blue: #0078d4;
+            --text-primary: #323130;
+            --text-secondary: #605e5c;
+            --border-gray: #edebe9;
+            --background-gray: #faf9f8;
+        }
+        body { font-family: 'Segoe UI', 'Inter', sans-serif; color: var(--text-primary); }
+    </style>
+</head>
+<body style="background-color: var(--background-gray)">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-semibold mb-8" style="color: var(--text-primary)">Documentation</h1>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
+                <h2 class="text-xl font-semibold mb-4" style="color: var(--text-primary)">Quick Start</h2>
+                <ul class="space-y-3">
+                    <li><a href="#installation" class="hover:text-blue-600" style="color: var(--text-secondary)">Installation Guide</a></li>
+                    <li><a href="#system-requirements" class="hover:text-blue-600" style="color: var(--text-secondary)">System Requirements</a></li>
+                    <li><a href="#first-steps" class="hover:text-blue-600" style="color: var(--text-secondary)">First Steps</a></li>
+                    <li><a href="#troubleshooting" class="hover:text-blue-600" style="color: var(--text-secondary)">Troubleshooting</a></li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
+                <h2 class="text-xl font-semibold mb-4" style="color: var(--text-primary)">Products</h2>
+                <ul class="space-y-3">
+                    <li><a href="#sheet-setup" class="hover:text-blue-600" style="color: var(--text-secondary)">Sheet Setup Starter</a></li>
+                    <li><a href="#mep-tools" class="hover:text-blue-600" style="color: var(--text-secondary)">MEP Power Tools</a></li>
+                    <li><a href="#qc-suite" class="hover:text-blue-600" style="color: var(--text-secondary)">QC Professional Suite</a></li>
+                    <li><a href="#ai-prompts" class="hover:text-blue-600" style="color: var(--text-secondary)">AI Prompts Guide</a></li>
+                </ul>
+            </div>
+            
+            <div class="bg-white rounded-lg p-6" style="border: 1px solid var(--border-gray)">
+                <h2 class="text-xl font-semibold mb-4" style="color: var(--text-primary)">Support</h2>
+                <ul class="space-y-3">
+                    <li><a href="#faq" class="hover:text-blue-600" style="color: var(--text-secondary)">FAQ</a></li>
+                    <li><a href="/contact.html" class="hover:text-blue-600" style="color: var(--text-secondary)">Contact Support</a></li>
+                    <li><a href="/legal/license.html" class="hover:text-blue-600" style="color: var(--text-secondary)">License Terms</a></li>
+                    <li><a href="#updates" class="hover:text-blue-600" style="color: var(--text-secondary)">Update Notes</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="mt-12 space-y-8">
+            <section id="installation" class="bg-white rounded-lg p-8" style="border: 1px solid var(--border-gray)">
+                <h2 class="text-2xl font-semibold mb-4" style="color: var(--text-primary)">Installation Guide</h2>
+                
+                <h3 class="text-lg font-semibold mb-3" style="color: var(--text-primary)">System Requirements</h3>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
+                        <span style="color: var(--text-secondary)">Autodesk Revit 2024, 2025, or 2026</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
+                        <span style="color: var(--text-secondary)">Windows 10 or 11 (64-bit)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
+                        <span style="color: var(--text-secondary)">.NET Framework 4.8 or higher</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
+                        <span style="color: var(--text-secondary)">Administrator privileges for installation</span>
+                    </li>
+                </ul>
+                
+                <h3 class="text-lg font-semibold mb-3" style="color: var(--text-primary)">Installation Steps</h3>
+                <ol class="space-y-3 mb-6">
+                    <li class="flex items-start">
+                        <span class="w-6 h-6 rounded-full mr-3 mt-0.5 flex-shrink-0 text-white text-sm flex items-center justify-center" style="background-color: var(--primary-blue)">1</span>
+                        <span style="color: var(--text-secondary)">Download the add-in package from your purchase confirmation email</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-6 h-6 rounded-full mr-3 mt-0.5 flex-shrink-0 text-white text-sm flex items-center justify-center" style="background-color: var(--primary-blue)">2</span>
+                        <span style="color: var(--text-secondary)">Close all Revit applications</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-6 h-6 rounded-full mr-3 mt-0.5 flex-shrink-0 text-white text-sm flex items-center justify-center" style="background-color: var(--primary-blue)">3</span>
+                        <span style="color: var(--text-secondary)">Run the installer as Administrator</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-6 h-6 rounded-full mr-3 mt-0.5 flex-shrink-0 text-white text-sm flex items-center justify-center" style="background-color: var(--primary-blue)">4</span>
+                        <span style="color: var(--text-secondary)">Select your Revit version(s)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-6 h-6 rounded-full mr-3 mt-0.5 flex-shrink-0 text-white text-sm flex items-center justify-center" style="background-color: var(--primary-blue)">5</span>
+                        <span style="color: var(--text-secondary)">Launch Revit and verify tools appear in the Add-ins tab</span>
+                    </li>
+                </ol>
+            </section>
+            
+            <section id="sheet-setup" class="bg-white rounded-lg p-8" style="border: 1px solid var(--border-gray)">
+                <h2 class="text-2xl font-semibold mb-4" style="color: var(--text-primary)">Sheet Setup Starter</h2>
+                
+                <h3 class="text-lg font-semibold mb-3" style="color: var(--text-primary)">SheetRenamer Tool</h3>
+                <p class="mb-4" style="color: var(--text-secondary)">
+                    Batch rename sheets using Excel import/export functionality. Supports all Revit project types.
+                </p>
+                
+                <h4 class="font-semibold mb-2" style="color: var(--text-primary)">Features:</h4>
+                <ul class="space-y-2 mb-6">
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
+                        <span style="color: var(--text-secondary)">Export current sheet list to Excel</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
+                        <span style="color: var(--text-secondary)">Edit sheet numbers and names in Excel</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
+                        <span style="color: var(--text-secondary)">Import changes back to Revit with validation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span>
+                        <span style="color: var(--text-secondary)">Process 100+ sheets in seconds</span>
+                    </li>
+                </ul>
+            </section>
+            
+            <section id="faq" class="bg-white rounded-lg p-8" style="border: 1px solid var(--border-gray)">
+                <h2 class="text-2xl font-semibold mb-6" style="color: var(--text-primary)">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold mb-2" style="color: var(--text-primary)">Can I use these tools on multiple computers?</h3>
+                        <p style="color: var(--text-secondary)">
+                            Standard licenses are for single users. Enterprise licenses support up to 10 users. See our <a href="/legal/license.html" class="text-blue-600 hover:underline">license terms</a> for details.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold mb-2" style="color: var(--text-primary)">Do you support older Revit versions?</h3>
+                        <p style="color: var(--text-secondary)">
+                            Current tools support Revit 2024-2026. For older versions, contact our support team for compatibility options.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold mb-2" style="color: var(--text-primary)">How do I get updates?</h3>
+                        <p style="color: var(--text-secondary)">
+                            Updates are delivered via email. Mini-packs include 6 months of updates, Professional packs include 1 year, Enterprise includes lifetime updates.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-semibold mb-2" style="color: var(--text-primary)">Can I customize the tools?</h3>
+                        <p style="color: var(--text-secondary)">
+                            Yes! All products include full C# source code for customization. Enterprise customers get additional support for custom development.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        
+        <div class="text-center mt-12">
+            <p class="text-lg mb-6" style="color: var(--text-secondary)">
+                Need additional help? Our support team is here to assist you.
+            </p>
+            <a href="/contact.html" class="inline-block px-8 py-3 rounded" style="background-color: var(--primary-blue); color: white; text-decoration: none;">
+                Contact Support
+            </a>
+        </div>
+        
+        <div class="text-center mt-8">
+            <a href="/" class="hover:text-blue-600" style="color: var(--text-secondary)">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
