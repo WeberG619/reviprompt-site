@@ -263,6 +263,18 @@
             }
         }
         
+        .mini-packs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        
+        @media (min-width: 768px) {
+            .mini-packs-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
         .mobile-menu { display: none; }
         
         @media (max-width: 768px) {
@@ -583,7 +595,7 @@
                 <p class="text-base" style="color: var(--text-secondary)">Perfect for testing before committing to complete packs</p>
             </div>
 
-            <div class="pricing-grid max-w-5xl mx-auto mb-12">
+            <div class="mini-packs-grid max-w-5xl mx-auto mb-12">
                 <!-- Sheet Setup Starter -->
                 <div class="bg-white rounded p-8 text-center card-hover" style="border: 2px solid var(--border-gray)">
                     <div class="px-3 py-1 rounded text-sm font-semibold mb-4 inline-block" style="background-color: var(--light-blue); color: var(--primary-blue)">ARCHITECTURE</div>
