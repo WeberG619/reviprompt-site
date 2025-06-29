@@ -393,6 +393,7 @@
                     <a href="#architecture" class="py-2 font-medium" style="color: var(--text-secondary)">Solutions</a>
                     <a href="#pricing" class="py-2 font-medium" style="color: var(--text-secondary)">Pricing</a>
                     <a href="#testimonials" class="py-2 font-medium" style="color: var(--text-secondary)">Reviews</a>
+                    <button onclick="toggleTheme()" class="theme-toggle text-left py-2" id="mobile-theme-toggle">🌙 Dark</button>
                     <a href="#free-download" class="professional-button text-center">Get Started</a>
                 </div>
             </nav>
@@ -1181,9 +1182,9 @@
             document.getElementById('freeSuccess').style.display = 'block';
             
             // Here you would integrate with your email service
-            // For now, redirect to Ko-fi after 2 seconds
+            // For now, redirect to pricing section after 2 seconds
             setTimeout(() => {
-                window.location.href = 'https://ko-fi.com/revipromptlab/shop';
+                window.location.href = '#pricing';
             }, 2000);
         });
 
@@ -1200,6 +1201,38 @@
             // Here you would integrate with Mailchimp/ConvertKit
             // For now, just log it
             console.log('Lead captured:', { name, email, company });
+        });
+
+        // Dark Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeButton = document.getElementById('theme-toggle');
+            const mobileThemeButton = document.getElementById('mobile-theme-toggle');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                themeButton.textContent = '🌙 Dark';
+                mobileThemeButton.textContent = '🌙 Dark';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+                mobileThemeButton.textContent = '☀️ Light';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeButton = document.getElementById('theme-toggle');
+            const mobileThemeButton = document.getElementById('mobile-theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+                mobileThemeButton.textContent = '☀️ Light';
+            }
         });
 
         // Show lead popup after 30 seconds
