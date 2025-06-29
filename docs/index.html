@@ -265,14 +265,19 @@
         
         .mini-packs-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
         }
         
         @media (min-width: 768px) {
             .mini-packs-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+        }
+        
+        .mini-packs-grid > div {
+            height: 100%;
+            min-height: 500px;
         }
         
         .mobile-menu { display: none; }
@@ -611,7 +616,6 @@
                         Get Now - $29
                     </a>
                 </div>
-                </div>
 
                 <!-- MEP Power Tools -->
                 <div class="bg-white rounded p-8 text-center card-hover" style="border: 2px solid var(--border-gray)">
@@ -619,9 +623,9 @@
                     <h3 class="text-2xl font-semibold mb-2" style="color: var(--text-primary)">MEP Power Tools</h3>
                     <div class="text-4xl font-semibold mb-6" style="color: var(--primary-blue)">$39</div>
                     <ul class="text-left space-y-3 mb-8">
-                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Equipment Tagger - Auto-tag MEP</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Equipment Tagger - Auto-tag</span></li>
                         <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Load Calculator - NEC compliant</span></li>
-                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">System Validator - Check connectivity</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">System Validator - Connectivity</span></li>
                         <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Excel Reports - Documentation</span></li>
                     </ul>
                     <a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="w-full professional-button text-center">
@@ -635,8 +639,8 @@
                     <h3 class="text-2xl font-semibold mb-2" style="color: var(--text-primary)">QC Professional Suite</h3>
                     <div class="text-4xl font-semibold mb-6" style="color: var(--primary-blue)">$39</div>
                     <ul class="text-left space-y-3 mb-8">
-                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Model Auditor - 7-category analysis</span></li>
-                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Element Counter - Advanced reporting</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Model Auditor - 7-category</span></li>
+                        <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Element Counter - Reporting</span></li>
                         <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Deliverable Checker - Validation</span></li>
                         <li class="flex items-start"><span class="w-4 h-4 rounded-full mr-3 mt-0.5 flex-shrink-0" style="background-color: var(--primary-blue)"></span><span style="color: var(--text-secondary)">Issue Tracking - Excel export</span></li>
                     </ul>
