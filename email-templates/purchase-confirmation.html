@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your ReviPrompt Lab Purchase - Download Ready</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #323130;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #faf9f8;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #0078d4;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .download-section {
+            background-color: #f3f9ff;
+            border: 1px solid #0078d4;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .download-button {
+            background-color: #107c10;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .download-button:hover {
+            background-color: #0e6b0e;
+        }
+        .order-details {
+            background-color: #faf9f8;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .order-details h3 {
+            margin-top: 0;
+            color: #0078d4;
+        }
+        .footer {
+            background-color: #f5f5f5;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #605e5c;
+        }
+        .support-box {
+            border: 1px solid #edebe9;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        .checkmark {
+            color: #107c10;
+            font-size: 18px;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎉 Your Download is Ready!</h1>
+            <p style="margin: 10px 0 0 0; opacity: 0.9;">Thank you for choosing ReviPrompt Lab</p>
+        </div>
+        
+        <div class="content">
+            <p>Hi <strong>{{CUSTOMER_NAME}}</strong>,</p>
+            
+            <p>Your purchase has been processed successfully and your ReviPrompt Lab tools are ready for download!</p>
+            
+            <div class="download-section">
+                <h3 style="margin-top: 0; color: #0078d4;">
+                    <span class="checkmark">✓</span>
+                    Instant Access Available
+                </h3>
+                <p>Click the button below to access your secure download portal:</p>
+                <a href="{{DOWNLOAD_LINK}}" class="download-button">
+                    Download Your Products
+                </a>
+                <p style="margin: 15px 0 0 0; font-size: 14px; color: #605e5c;">
+                    This link is unique to your purchase and can be used for re-downloads anytime.
+                </p>
+            </div>
+            
+            <div class="order-details">
+                <h3>Order Details</h3>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 5px 0;"><strong>Order ID:</strong></td>
+                        <td style="text-align: right;">{{ORDER_ID}}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px 0;"><strong>Date:</strong></td>
+                        <td style="text-align: right;">{{PURCHASE_DATE}}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px 0;"><strong>Products:</strong></td>
+                        <td style="text-align: right;">{{PRODUCT_NAMES}}</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px 0;"><strong>Total:</strong></td>
+                        <td style="text-align: right; font-weight: bold;">{{TOTAL_AMOUNT}}</td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="support-box">
+                <h3 style="margin-top: 0; color: #0078d4;">Quick Start Guide</h3>
+                <ol style="margin: 0; padding-left: 20px;">
+                    <li>Download your products using the link above</li>
+                    <li>Close all Revit applications before installing</li>
+                    <li>Run the installer as Administrator</li>
+                    <li>Select your Revit version (2024, 2025, or 2026)</li>
+                    <li>Launch Revit and check the Add-ins tab</li>
+                </ol>
+                
+                <p style="margin-top: 15px;"><strong>Need help?</strong> Check our <a href="https://revipromptlab.com/docs.html" style="color: #0078d4;">documentation</a> or contact us at <a href="mailto:hello@revipromptlab.com" style="color: #0078d4;">hello@revipromptlab.com</a></p>
+            </div>
+            
+            <div style="margin: 30px 0;">
+                <h3 style="color: #0078d4;">What's Next?</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin: 10px 0;"><span class="checkmark">✓</span> You'll receive update notifications via email</li>
+                    <li style="margin: 10px 0;"><span class="checkmark">✓</span> Access to our support team for technical questions</li>
+                    <li style="margin: 10px 0;"><span class="checkmark">✓</span> Lifetime re-download access with this link</li>
+                </ul>
+            </div>
+            
+            <p style="margin-top: 30px;">Thanks for choosing ReviPrompt Lab to supercharge your Revit workflow! We're excited to see the time you'll save.</p>
+            
+            <p>Best regards,<br>
+            <strong>The ReviPrompt Lab Team</strong></p>
+        </div>
+        
+        <div class="footer">
+            <p><strong>ReviPrompt Lab LLC</strong></p>
+            <p>Professional Revit Automation Tools</p>
+            <p style="margin-top: 15px;">
+                <a href="https://revipromptlab.com" style="color: #0078d4;">Website</a> • 
+                <a href="https://revipromptlab.com/docs.html" style="color: #0078d4;">Documentation</a> • 
+                <a href="mailto:hello@revipromptlab.com" style="color: #0078d4;">Support</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 12px;">
+                This email was sent to {{CUSTOMER_EMAIL}} because you purchased products from ReviPrompt Lab.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

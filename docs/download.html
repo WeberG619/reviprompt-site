@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Your Products - ReviPrompt Lab</title>
+    <meta name="description" content="Access your ReviPrompt Lab products and download your Revit automation tools.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-blue: #0078d4;
+            --light-blue: #f3f9ff;
+            --text-primary: #323130;
+            --text-secondary: #605e5c;
+            --border-gray: #edebe9;
+            --background-gray: #faf9f8;
+            --card-background: #ffffff;
+            --header-background: #ffffff;
+            --success-green: #107c10;
+            --warning-orange: #ff8c00;
+        }
+        
+        [data-theme="dark"] {
+            --primary-blue: #4fc3f7;
+            --light-blue: #1a1a2e;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-gray: #404040;
+            --background-gray: #1a1a1a;
+            --card-background: #2d2d2d;
+            --header-background: #2d2d2d;
+            --success-green: #54d454;
+            --warning-orange: #ffb347;
+        }
+        
+        body { 
+            font-family: 'Segoe UI', 'Inter', sans-serif; 
+            color: var(--text-primary);
+        }
+        
+        .download-button {
+            background: var(--success-green);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        
+        .download-button:hover {
+            background: #0e6b0e;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(16, 124, 16, 0.3);
+        }
+        
+        .download-button i {
+            margin-right: 8px;
+        }
+        
+        .product-card {
+            background: var(--card-background);
+            border: 1px solid var(--border-gray);
+            border-radius: 8px;
+            padding: 24px;
+            transition: all 0.2s ease;
+        }
+        
+        .product-card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid var(--border-gray);
+            border-radius: 4px;
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .theme-toggle:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-active {
+            background: rgba(16, 124, 16, 0.1);
+            color: var(--success-green);
+        }
+
+        .download-stats {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body style="background-color: var(--background-gray)">
+    <!-- Header -->
+    <header class="shadow-sm sticky top-0 z-50" style="background-color: var(--header-background)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <a href="/" class="text-2xl font-bold" style="color: var(--text-primary)">ReviPrompt Lab</a>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="/" class="transition duration-300 hover:text-blue-600" style="color: var(--text-secondary)">Home</a>
+                    <a href="/#products" class="transition duration-300 hover:text-blue-600" style="color: var(--text-secondary)">Products</a>
+                    <a href="/contact.html" class="transition duration-300 hover:text-blue-600" style="color: var(--text-secondary)">Support</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-4 py-16">
+        <!-- Loading State -->
+        <div id="loading" class="text-center">
+            <div class="animate-spin rounded-full h-16 w-16 border-b-2 mx-auto mb-4" style="border-color: var(--primary-blue)"></div>
+            <p style="color: var(--text-secondary)">Verifying your access...</p>
+        </div>
+
+        <!-- Invalid Access -->
+        <div id="invalid" class="text-center" style="display: none;">
+            <div class="max-w-md mx-auto">
+                <div class="rounded-lg p-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                    <i class="fas fa-exclamation-triangle text-4xl mb-4" style="color: var(--warning-orange)"></i>
+                    <h1 class="text-2xl font-semibold mb-4" style="color: var(--text-primary)">Invalid Access Link</h1>
+                    <p class="mb-6" style="color: var(--text-secondary)">
+                        This download link is invalid or has expired. Please check your email for the correct link or contact support.
+                    </p>
+                    <div class="space-y-3">
+                        <a href="/contact.html" class="block px-6 py-3 rounded" style="background-color: var(--primary-blue); color: white; text-decoration: none;">
+                            Contact Support
+                        </a>
+                        <a href="/" class="block text-sm hover:underline" style="color: var(--text-secondary)">
+                            Return to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Download Portal -->
+        <div id="downloadPortal" style="display: none;">
+            <!-- Welcome Section -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-semibold mb-4" style="color: var(--text-primary)">Your Products</h1>
+                <p class="text-lg" style="color: var(--text-secondary)">
+                    Thank you for your purchase! Download your ReviPrompt Lab tools below.
+                </p>
+                <div class="mt-6 inline-flex items-center px-4 py-2 rounded-full status-badge status-active">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Access Verified
+                </div>
+            </div>
+
+            <!-- Customer Info -->
+            <div class="rounded-lg p-6 mb-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <h2 class="text-lg font-semibold mb-4" style="color: var(--text-primary)">Purchase Details</h2>
+                <div class="grid md:grid-cols-3 gap-4 text-sm">
+                    <div>
+                        <strong style="color: var(--text-primary)">Order ID:</strong>
+                        <div id="orderId" style="color: var(--text-secondary)">Loading...</div>
+                    </div>
+                    <div>
+                        <strong style="color: var(--text-primary)">Purchase Date:</strong>
+                        <div id="purchaseDate" style="color: var(--text-secondary)">Loading...</div>
+                    </div>
+                    <div>
+                        <strong style="color: var(--text-primary)">Customer Email:</strong>
+                        <div id="customerEmail" style="color: var(--text-secondary)">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Products Section -->
+            <div id="productsContainer">
+                <!-- Products will be loaded here -->
+            </div>
+
+            <!-- Installation Help -->
+            <div class="rounded-lg p-6 mt-8" style="background-color: var(--card-background); border: 1px solid var(--border-gray)">
+                <h3 class="text-lg font-semibold mb-4" style="color: var(--text-primary)">
+                    <i class="fas fa-question-circle mr-2" style="color: var(--primary-blue)"></i>
+                    Need Help Installing?
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold mb-2" style="color: var(--text-primary)">Quick Start:</h4>
+                        <ol class="text-sm space-y-1" style="color: var(--text-secondary)">
+                            <li>1. Close all Revit applications</li>
+                            <li>2. Run installer as Administrator</li>
+                            <li>3. Select your Revit version(s)</li>
+                            <li>4. Launch Revit and check Add-ins tab</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold mb-2" style="color: var(--text-primary)">Support:</h4>
+                        <div class="space-y-2 text-sm">
+                            <a href="/docs.html" class="block hover:underline" style="color: var(--primary-blue)">
+                                <i class="fas fa-book mr-2"></i>Complete Documentation
+                            </a>
+                            <a href="/contact.html" class="block hover:underline" style="color: var(--primary-blue)">
+                                <i class="fas fa-envelope mr-2"></i>Contact Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notes -->
+            <div class="rounded-lg p-6 mt-6" style="background-color: var(--light-blue); border: 1px solid var(--border-gray)">
+                <h3 class="text-lg font-semibold mb-3" style="color: var(--text-primary)">
+                    <i class="fas fa-info-circle mr-2" style="color: var(--primary-blue)"></i>
+                    Important Notes
+                </h3>
+                <ul class="text-sm space-y-2" style="color: var(--text-secondary)">
+                    <li><strong>License:</strong> Your purchase includes usage rights as outlined in our license terms</li>
+                    <li><strong>Updates:</strong> You'll receive email notifications when updates are available</li>
+                    <li><strong>Re-downloads:</strong> Bookmark this page to re-download your products anytime</li>
+                    <li><strong>Support:</strong> Contact us at hello@revipromptlab.com for any technical assistance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="text-center mt-12 flex justify-center items-center gap-4">
+            <a href="/" class="hover:text-blue-600" style="color: var(--text-secondary)">← Back to Home</a>
+            <button onclick="toggleTheme()" class="theme-toggle" id="theme-toggle">🌙 Dark</button>
+        </div>
+    </div>
+    
+    <script>
+        // Product definitions - REAL PRODUCTS
+        const PRODUCTS = {
+            'foundation-pack': {
+                name: 'Foundation Pack',
+                description: '25 essential prompts for daily Revit workflows',
+                price: '$39',
+                files: [
+                    { name: 'ReviPrompt_Foundation_Pack_v1.zip', size: '34 KB', version: 'All', url: '/products/ReviPrompt_Foundation_Pack_v1.zip' },
+                    { name: 'Foundation_Pack_Overview.html', size: '15 KB', version: 'All', url: '/products/pdfs/Foundation_Pack_Overview.html' },
+                    { name: 'Foundation_Pack_QuickStart.txt', size: '2 KB', version: 'All', url: '/products/pdfs/Foundation_Pack_QuickStart.txt' },
+                    { name: 'ReviPrompt_Foundation_Pack_Guide.html', size: '25 KB', version: 'All', url: '/products/pdfs/ReviPrompt_Foundation_Pack_Guide.html' }
+                ]
+            },
+            'professional-pack': {
+                name: 'Professional Pack',
+                description: '75 prompts + video tutorials + priority support',
+                price: '$149',
+                files: [
+                    { name: 'ReviPrompt_Professional_Pack_v1.zip', size: '8.4 KB', version: 'All', url: '/products/ReviPrompt_Professional_Pack_v1.zip' },
+                    { name: 'Professional_Pack_Overview.html', size: '18 KB', version: 'All', url: '/products/pdfs/Professional_Pack_Overview.html' },
+                    { name: 'Video_Tutorials_Access.txt', size: '1 KB', version: 'All', url: '#video-access' }
+                ]
+            },
+            'enterprise-pack': {
+                name: 'Enterprise Pack',
+                description: '150+ prompts + MEP + Structural + Commercial license',
+                price: '$299',
+                files: [
+                    { name: 'ReviPrompt_Enterprise_Pack_v1.zip', size: '31 KB', version: 'All', url: '/products/ReviPrompt_Enterprise_Pack_v1.zip' },
+                    { name: 'Enterprise_Pack_Overview.html', size: '22 KB', version: 'All', url: '/products/pdfs/Enterprise_Pack_Overview.html' },
+                    { name: 'Commercial_License_Terms.pdf', size: '5 KB', version: 'All', url: '#license-terms' },
+                    { name: 'Team_Setup_Guide.pdf', size: '8 KB', version: 'All', url: '#team-setup' }
+                ]
+            },
+            'free-sampler': {
+                name: 'FREE Sampler Pack',
+                description: '3 high-value prompts to get you started',
+                price: 'FREE',
+                files: [
+                    { name: 'ReviPrompt_FREE_Sampler.zip', size: '6.7 KB', version: 'All', url: '/products/ReviPrompt_FREE_Sampler.zip' },
+                    { name: 'AI_Cheat_Sheet_Bonus.pdf', size: '2 KB', version: 'All', url: '#bonus-sheet' },
+                    { name: 'Upgrade_Discount_Codes.txt', size: '1 KB', version: 'All', url: '#discount-codes' }
+                ]
+            }
+        };
+
+        // Dark theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const themeButton = document.getElementById('theme-toggle');
+            
+            if (html.getAttribute('data-theme') === 'dark') {
+                html.removeAttribute('data-theme');
+                themeButton.textContent = '🌙 Dark';
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            const themeButton = document.getElementById('theme-toggle');
+            
+            if (savedTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeButton.textContent = '☀️ Light';
+            }
+
+            // Initialize download portal
+            initializeDownloadPortal();
+        });
+
+        function initializeDownloadPortal() {
+            // Get URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('order');
+            const email = urlParams.get('email');
+            const products = urlParams.get('products');
+
+            // Simulate verification delay
+            setTimeout(() => {
+                document.getElementById('loading').style.display = 'none';
+
+                if (!orderId || !email || !products) {
+                    document.getElementById('invalid').style.display = 'block';
+                    return;
+                }
+
+                // Show download portal
+                document.getElementById('downloadPortal').style.display = 'block';
+                
+                // Populate customer info
+                document.getElementById('orderId').textContent = orderId;
+                document.getElementById('customerEmail').textContent = decodeURIComponent(email);
+                document.getElementById('purchaseDate').textContent = new Date().toLocaleDateString();
+
+                // Load products
+                loadProducts(products.split(','));
+            }, 1500);
+        }
+
+        function loadProducts(productIds) {
+            const container = document.getElementById('productsContainer');
+            
+            productIds.forEach(productId => {
+                const product = PRODUCTS[productId];
+                if (!product) return;
+
+                const productCard = createProductCard(product, productId);
+                container.appendChild(productCard);
+            });
+        }
+
+        function createProductCard(product, productId) {
+            const card = document.createElement('div');
+            card.className = 'product-card mb-6';
+            
+            card.innerHTML = `
+                <div class="flex items-start justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-2" style="color: var(--text-primary)">${product.name}</h3>
+                        <p style="color: var(--text-secondary)">${product.description}</p>
+                        <div class="download-stats">
+                            ${product.files.length} files • Last downloaded: Never
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="status-badge status-active">Licensed</div>
+                        <div class="text-lg font-semibold mt-2" style="color: var(--primary-blue)">${product.price}</div>
+                    </div>
+                </div>
+
+                <div class="grid gap-3">
+                    ${product.files.map(file => `
+                        <div class="flex items-center justify-between p-3 rounded border" style="border-color: var(--border-gray); background-color: var(--background-gray)">
+                            <div class="flex items-center">
+                                <i class="fas fa-download mr-3" style="color: var(--success-green)"></i>
+                                <div>
+                                    <div class="font-medium" style="color: var(--text-primary)">${file.name}</div>
+                                    <div class="text-sm" style="color: var(--text-secondary)">
+                                        ${file.size} • Revit ${file.version}
+                                    </div>
+                                </div>
+                            </div>
+                            <button onclick="downloadFile('${productId}', '${file.name}')" class="download-button">
+                                <i class="fas fa-download"></i>
+                                Download
+                            </button>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            return card;
+        }
+
+        function downloadFile(productId, fileName) {
+            // Find the file URL
+            const product = PRODUCTS[productId];
+            if (!product) return;
+            
+            const file = product.files.find(f => f.name === fileName);
+            if (!file || !file.url) {
+                alert('File not found or not available for download.');
+                return;
+            }
+            
+            // Handle special URLs
+            if (file.url.startsWith('#')) {
+                alert(`This feature will be available soon: ${fileName}`);
+                return;
+            }
+            
+            // Log download tracking
+            console.log(`Download started: ${fileName} from ${productId}`);
+            
+            // Create download link and trigger download
+            const link = document.createElement('a');
+            link.href = file.url;
+            link.download = fileName;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Update download stats (in real app, this would go to your analytics)
+            updateDownloadStats(productId, fileName);
+        }
+
+        function updateDownloadStats(productId, fileName) {
+            // Update the download stats display
+            const statsElements = document.querySelectorAll('.download-stats');
+            statsElements.forEach(element => {
+                if (element.textContent.includes('Never')) {
+                    element.textContent = element.textContent.replace('Never', 'Just now');
+                }
+            });
+            
+            // In production, send to analytics
+            console.log('Analytics: Download tracked', { productId, fileName, timestamp: new Date() });
+        }
+    </script>
+</body>
+</html>

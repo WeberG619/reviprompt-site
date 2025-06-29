@@ -1,0 +1,75 @@
+<!-- Dark Theme CSS Template for Footer Pages -->
+<style>
+:root {
+    --primary-blue: #0078d4;
+    --light-blue: #f3f9ff;
+    --text-primary: #323130;
+    --text-secondary: #605e5c;
+    --border-gray: #edebe9;
+    --background-gray: #faf9f8;
+    --card-background: #ffffff;
+    --header-background: #ffffff;
+}
+
+[data-theme="dark"] {
+    --primary-blue: #4fc3f7;
+    --light-blue: #1a1a2e;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-gray: #404040;
+    --background-gray: #1a1a1a;
+    --card-background: #2d2d2d;
+    --header-background: #2d2d2d;
+}
+
+body { 
+    font-family: 'Segoe UI', 'Inter', sans-serif; 
+    color: var(--text-primary);
+}
+
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--primary-blue);
+    color: white;
+}
+</style>
+
+<!-- Dark Theme JavaScript Template -->
+<script>
+// Dark Theme Toggle
+function toggleTheme() {
+    const html = document.documentElement;
+    const themeButton = document.getElementById('theme-toggle');
+    
+    if (html.getAttribute('data-theme') === 'dark') {
+        html.removeAttribute('data-theme');
+        themeButton.textContent = '🌙 Dark';
+        localStorage.setItem('theme', 'light');
+    } else {
+        html.setAttribute('data-theme', 'dark');
+        themeButton.textContent = '☀️ Light';
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// Load saved theme on page load
+document.addEventListener('DOMContentLoaded', function() {
+    const savedTheme = localStorage.getItem('theme');
+    const themeButton = document.getElementById('theme-toggle');
+    
+    if (savedTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeButton.textContent = '☀️ Light';
+    }
+});
+</script>

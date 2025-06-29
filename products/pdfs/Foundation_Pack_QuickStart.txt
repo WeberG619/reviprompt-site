@@ -1,0 +1,67 @@
+
+REVIPROMPT LAB - FOUNDATION PACK
+================================
+
+25 Professional AI Prompts for Revit Automation
+Version 1.0 | 2024
+
+Thank you for your purchase!
+
+QUICK START GUIDE
+-----------------
+
+1. Choose any prompt from this guide
+2. Copy the prompt text
+3. Paste into ChatGPT, Claude, or Copilot
+4. Replace [BRACKETS] with your project values
+5. Run the generated code in Dynamo or pyRevit
+
+WHAT'S INCLUDED
+---------------
+
+Section A: Design Development (5 prompts)
+- A1.01 Residential Massing Analyzer
+- A1.02 Multifamily Unit Mix Optimizer
+- A1.03 Hotel Design Program Validator
+- A1.04 Commercial Space Planning Assistant
+- A1.05 Residential Addition Code Checker
+
+Section B: Documentation Automation (5 prompts)
+- A2.01 Florida Construction Document Generator
+- A2.02 ADA Compliance Documentation Generator
+- A2.03 Multifamily Life Safety Plans
+- A2.04 Commercial Tenant Improvement Package
+- A2.05 Single Family Permit Set Generator
+
+Section C: Quality Control (5 prompts)
+- A4.01 Drawing Set Quality Auditor
+- A4.02 Revit Model Health Analyzer
+- A4.03 Code Compliance Checker
+- A4.04 Specification and Drawing Coordination
+- A4.05 Accessibility Compliance Auditor
+
+Section D: Florida Building Code (5 prompts)
+- B1.01 Hurricane Design Compliance Checker
+- B1.02 Flood Zone Compliance Analyzer
+- B1.03 Energy Conservation Code Optimizer
+- B1.04 Accessibility Code Comprehensive Checker
+- B1.05 Fire Safety and Prevention Code Analyzer
+
+Section E: Life Safety Essentials (5 prompts)
+- B2.01 Comprehensive Egress Calculator
+- B2.02 Assembly Occupancy Life Safety Specialist
+- B2.03 Educational Facility Safety Analyzer
+- B2.04 Healthcare Facility Life Safety Specialist
+- B2.05 High-Rise Evacuation Planner
+
+SUPPORT
+-------
+Email: support@revipromptlab.com
+Discord: discord.gg/revipromptlab
+Emergency: Book 30-min call ($95)
+
+30-Day Money-Back Guarantee
+Single User License
+(c) 2024 ReviPrompt Lab LLC
+
+[See full prompt documentation in the included guide files]

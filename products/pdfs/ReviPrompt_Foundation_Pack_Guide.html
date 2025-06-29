@@ -1,0 +1,915 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ReviPrompt Foundation Pack - Complete Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #7f8c8d;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .prompt-box {
+            background-color: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+<h1>ReviPrompt Foundation Pack - Complete Product</h1>
+
+<h2>🚀 Welcome to ReviPrompt Lab!</h2>
+
+<p>Thank you for purchasing the Foundation Pack! You now have access to 25 professional AI prompts that will transform your Revit workflow.</p>
+
+<hr />
+
+<h2>📥 <strong>Quick Start Guide</strong></h2>
+
+<h3><strong>Step 1: Choose Your Method</strong></h3>
+
+<ul>
+<li><strong>AI Assistant</strong>: Copy prompts → Paste into ChatGPT/Claude → Replace [BRACKETS] → Run code</li>
+<li><strong>Dynamo</strong>: Open .dyn files → Set parameters → Click Run</li>
+</ul>
+
+<h3><strong>Step 2: Test on Sample Project</strong></h3>
+
+<ul>
+<li>Start with Prompt #1 (Residential Massing Analyzer)</li>
+<li>Use a small test project first</li>
+<li>Always backup your project before running automation</li>
+</ul>
+
+<h3><strong>Step 3: Join Our Community</strong></h3>
+
+<ul>
+<li>Discord: discord.gg/revipromptlab</li>
+<li>Email Support: support@revipromptlab.com</li>
+</ul>
+
+<hr />
+
+<h1>FOUNDATION PACK PROMPTS (25 Total)</h1>
+
+<h2>SECTION A: DESIGN DEVELOPMENT (5 Prompts)</h2>
+
+<h3>A1.01 - Residential Massing Analyzer</h3>
+
+<p><strong>Purpose</strong>: Analyze residential projects for zoning compliance and area calculations
+<strong>Time Saved</strong>: 2-3 hours → 15 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Analyze my residential Revit model for zoning compliance:
+1. Calculate total building area and footprint using Revit area calculations
+2. Check setback requirements for [ZONING_TYPE] zoning district
+3. Verify height restrictions and floor area ratios (FAR)
+4. Generate massing study with 3D isometric views
+5. Create compliance report with code citations
+6. Flag any violations with specific measurements and recommendations
+
+Variables to replace:
+- [ZONING_TYPE]: Your zoning district (R-1, R-2, C-1, etc.)
+- [LOT_SIZE]: Total lot area in square feet
+- [MAX_HEIGHT]: Maximum allowed building height
+
+Include Florida Building Code references where applicable.
+Target: Single-family and multifamily projects up to 7 stories.
+Generate Dynamo script for Revit 2024-2026 compatibility.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A101_ResidentialMassingAnalyzer.dyn</code></p>
+
+<hr />
+
+<h3>A1.02 - Multifamily Unit Mix Optimizer</h3>
+
+<p><strong>Purpose</strong>: Optimize apartment layouts for maximum efficiency and marketability
+<strong>Time Saved</strong>: 4-6 hours → 30 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Optimize apartment unit layouts for maximum efficiency:
+1. Analyze existing unit plans for area utilization and circulation efficiency
+2. Suggest improvements for [UNIT_TYPE] layouts (studio, 1BR, 2BR, 3BR)
+3. Calculate net-to-gross ratios by floor and building total
+4. Generate unit mix analysis with market comparables
+5. Optimize corridor efficiency and fire egress requirements
+6. Create leasing plan with optimal rent per square foot ratios
+
+Variables to replace:
+- [UNIT_TYPE]: Target unit types for optimization
+- [MARKET_TYPE]: Luxury, Mid-range, or Affordable housing
+- [TARGET_EFFICIENCY]: Desired net-to-gross ratio (typically 75-85%)
+
+Focus on [MARKET_TYPE] housing segment.
+Include ADA unit distribution requirements (5% minimum).
+Generate space allocation recommendations and circulation analysis.
+Provide Dynamo script for automated area calculations.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A102_MultifamilyUnitMixOptimizer.dyn</code></p>
+
+<hr />
+
+<h3>A1.03 - Hotel Design Program Validator</h3>
+
+<p><strong>Purpose</strong>: Validate hotel design programs against industry standards
+<strong>Time Saved</strong>: 3-4 hours → 20 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Validate hotel design program against industry standards:
+1. Check room count versus required support spaces (lobby, dining, meeting)
+2. Verify FF&amp;E areas meet hospitality standards for [STAR_RATING]
+3. Calculate required parking based on [LOCATION] and local codes
+4. Analyze back-of-house circulation efficiency and service access
+5. Check service area accessibility and code compliance
+6. Generate program verification report with industry benchmarks
+
+Variables to replace:
+- [STAR_RATING]: Hotel classification (3-star, 4-star, 5-star, resort)
+- [LOCATION]: Urban, suburban, resort, airport, etc.
+- [ROOM_COUNT]: Total number of guest rooms
+
+Reference: Hotel design standards from actual resort projects.
+Include provisions for [STAR_RATING] amenity requirements.
+Consider Florida tourism and hospitality market standards.
+Generate space allocation matrix and operational flow diagrams.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A103_HotelDesignProgramValidator.dyn</code></p>
+
+<hr />
+
+<h3>A1.04 - Commercial Space Planning Assistant</h3>
+
+<p><strong>Purpose</strong>: Optimize commercial floor plates for maximum leasability
+<strong>Time Saved</strong>: 2-3 hours → 15 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Optimize commercial floor plate layouts for maximum efficiency:
+1. Analyze rentable versus usable square footage ratios
+2. Calculate core efficiency ratios and common area factors
+3. Optimize tenant demising strategies for [TENANT_TYPE]
+4. Check ADA compliance for all public and tenant spaces
+5. Verify egress paths and occupant load calculations
+6. Generate leasing plan with CAD-ready demising boundaries
+
+Variables to replace:
+- [TENANT_TYPE]: Office, retail, medical, flex space, etc.
+- [BUILDING_CLASS]: Class A, B, or C commercial building
+- [LEASE_STRATEGY]: Single tenant, multi-tenant, flexible suites
+
+Target building types: Office, retail, mixed-use.
+Include BOMA standards compliance for area calculations.
+Generate tenant improvement allowance recommendations.
+Provide market-competitive space planning solutions.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A104_CommercialSpacePlanningAssistant.dyn</code></p>
+
+<hr />
+
+<h3>A1.05 - Residential Addition Code Checker</h3>
+
+<p><strong>Purpose</strong>: Verify residential additions comply with zoning and building codes
+<strong>Time Saved</strong>: 3-5 hours → 30 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Analyze residential additions for comprehensive code compliance:
+1. Check existing structure versus proposed addition compatibility
+2. Verify setback compliance for additions and accessory structures
+3. Calculate total lot coverage and floor area ratio (FAR) impacts
+4. Check height restrictions and view corridor requirements
+5. Analyze structural implications and foundation requirements
+6. Generate permit-ready compliance documentation package
+
+Variables to replace:
+- [ADDITION_TYPE]: Room addition, second story, garage, pool house, etc.
+- [EXISTING_COVERAGE]: Current lot coverage percentage
+- [ZONING_DISTRICT]: Local zoning classification
+
+Focus on Florida residential codes and hurricane requirements.
+Include historic district considerations if applicable.
+Address structural tie-in requirements and code upgrade triggers.
+Generate permit application checklist and required documentation.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A105_ResidentialAdditionCodeChecker.dyn</code></p>
+
+<hr />
+
+<h2>SECTION B: DOCUMENTATION AUTOMATION (5 Prompts)</h2>
+
+<h3>A2.01 - Florida Construction Document Generator</h3>
+
+<p><strong>Purpose</strong>: Generate complete construction document sets for Florida projects
+<strong>Time Saved</strong>: 8-12 hours → 2 hours</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Generate complete construction document set for Florida projects:
+1. Create all required plan types (site, floor, roof, enlarged floor plans)
+2. Generate building elevations with accurate material callouts
+3. Create building sections at appropriate scales [SCALE]
+4. Auto-generate detail callouts and cross-references
+5. Create door/window schedules with manufacturer specifications
+6. Generate sheet index and drawing list organized by CSI divisions
+
+Variables to replace:
+- [SCALE]: Drawing scales (1/8", 1/4", etc.)
+- [PROJECT_TYPE]: Residential, commercial, institutional
+- [BUILDING_HEIGHT]: Number of stories
+
+Follow Florida Building Code documentation requirements.
+Include hurricane tie-down details and flood zone considerations.
+Generate accessibility compliance documentation.
+Provide permit-ready drawing organization and title blocks.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A201_FloridaConstructionDocumentGenerator.dyn</code></p>
+
+<hr />
+
+<h3>A2.02 - ADA Compliance Documentation Generator</h3>
+
+<p><strong>Purpose</strong>: Generate comprehensive ADA compliance documentation
+<strong>Time Saved</strong>: 6-8 hours → 1 hour</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Generate comprehensive ADA compliance documentation package:
+1. Create accessible route plans with accurate dimensions and slopes
+2. Generate detailed bathroom and facility accessibility drawings
+3. Document parking and passenger drop-off accessibility requirements
+4. Create signage and wayfinding accessibility plans
+5. Generate accessibility compliance checklist and certification forms
+6. Produce ADA compliance certificate package for building permits
+
+Variables to replace:
+- [BUILDING_TYPE]: Assembly, business, mercantile, residential, etc.
+- [OCCUPANCY_LOAD]: Total building occupancy for accessibility calculations
+- [STATE]: Florida or other state-specific accessibility requirements
+
+Reference 2010 ADA Standards and Florida Accessibility Code.
+Include path of travel analysis and calculations.
+Generate cost estimates for accessibility improvements.
+Provide accessibility consultant coordination requirements.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A202_ADAComplianceDocumentationGenerator.dyn</code></p>
+
+<hr />
+
+<h3>A2.03 - Multifamily Life Safety Plans</h3>
+
+<p><strong>Purpose</strong>: Generate life safety documentation for multifamily residential projects
+<strong>Time Saved</strong>: 4-6 hours → 45 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Generate comprehensive life safety documentation for multifamily projects:
+1. Create fire egress plans with accurate travel distances and capacity
+2. Generate fire-rated assembly schedules and wall/floor ratings
+3. Document fire department access routes and aerial apparatus access
+4. Create smoke compartment diagrams and barrier documentation
+5. Generate fire safety equipment plans (extinguishers, alarms, sprinklers)
+6. Produce life safety compliance report for plan review
+
+Variables to replace:
+- [BUILDING_HEIGHT]: Number of stories (affects egress requirements)
+- [CONSTRUCTION_TYPE]: Type I, II, III, IV, or V construction
+- [OCCUPANCY_CLASSIFICATION]: R-1, R-2, or mixed occupancy
+
+Follow Florida Fire Prevention Code requirements.
+Include hurricane shelter provisions if required by local code.
+Generate fire safety system coordination with MEP consultants.
+Provide fire department access and operational requirements.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A203_MultifamilyLifeSafetyPlans.dyn</code></p>
+
+<hr />
+
+<h3>A2.04 - Commercial Tenant Improvement Package</h3>
+
+<p><strong>Purpose</strong>: Generate complete TI construction documents
+<strong>Time Saved</strong>: 5-7 hours → 1.5 hours</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Generate comprehensive tenant improvement construction documents:
+1. Create demolition and new construction plans with phasing
+2. Generate reflected ceiling plans with MEP coordination
+3. Create finish plans and material specifications
+4. Generate millwork and built-in details with dimensions
+5. Create electrical and data infrastructure plans
+6. Produce complete permit and bid package documentation
+
+Variables to replace:
+- [TENANT_TYPE]: Office, retail, restaurant, medical, etc.
+- [SUITE_SIZE]: Square footage of tenant space
+- [BASE_BUILDING_YEAR]: Age of base building (affects integration requirements)
+
+Include base building coordination requirements and limitations.
+Focus on office and retail tenant improvement standards.
+Generate cost estimation framework and allowance recommendations.
+Provide construction administration and punch list templates.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A204_CommercialTenantImprovementPackage.dyn</code></p>
+
+<hr />
+
+<h3>A2.05 - Single Family Permit Set Generator</h3>
+
+<p><strong>Purpose</strong>: Generate complete single-family residential permit drawings
+<strong>Time Saved</strong>: 6-10 hours → 2 hours</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Generate complete single-family residential permit drawing set:
+1. Create comprehensive site plan with setbacks and utilities
+2. Generate floor plans with room labels, areas, and door/window schedules
+3. Create elevations with accurate material specifications and details
+4. Generate foundation and framing plans with structural details
+5. Create typical construction details and wall sections
+6. Produce complete permit application package and fee calculations
+
+Variables to replace:
+- [COUNTY]: Local jurisdiction for specific requirements
+- [SQUARE_FOOTAGE]: Total conditioned area
+- [CONSTRUCTION_TYPE]: Frame, masonry, or mixed construction
+
+Follow local jurisdiction requirements for [COUNTY].
+Include hurricane design provisions and flood zone compliance.
+Generate energy code compliance documentation (Florida Energy Code).
+Provide contractor bid package and specification organization.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A205_SingleFamilyPermitSetGenerator.dyn</code></p>
+
+<hr />
+
+<h2>SECTION C: QUALITY CONTROL (5 Prompts)</h2>
+
+<h3>A4.01 - Drawing Set Quality Auditor</h3>
+
+<p><strong>Purpose</strong>: Perform comprehensive quality control review of drawing sets
+<strong>Time Saved</strong>: 4-6 hours → 30 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Perform comprehensive drawing set quality audit:
+1. Check all drawing cross-references and detail callouts for accuracy
+2. Verify dimension strings and mathematical accuracy throughout set
+3. Check room names, numbers, and calculated areas for consistency
+4. Verify door and window schedules match plans and elevations
+5. Check title block and sheet information consistency across all sheets
+6. Generate quality control report with prioritized correction list
+
+Variables to replace:
+- [PROJECT_TYPE]: Residential, commercial, institutional
+- [DRAWING_COUNT]: Total number of sheets in set
+- [REVIEW_LEVEL]: Preliminary, design development, or construction documents
+
+Include specific standards for [PROJECT_TYPE] documentation.
+Focus on construction document accuracy and completeness.
+Generate contractor RFI prevention strategies.
+Provide quality control checklist for future projects.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A401_DrawingSetQualityAuditor.dyn</code></p>
+
+<hr />
+
+<h3>A4.02 - Revit Model Health Analyzer</h3>
+
+<p><strong>Purpose</strong>: Analyze Revit models for performance and accuracy issues
+<strong>Time Saved</strong>: 2-3 hours → 15 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Analyze Revit model for comprehensive performance and accuracy:
+1. Check for warnings and errors throughout model with prioritized fixes
+2. Verify family parameter consistency and loading efficiency
+3. Check workset organization and collaboration standards compliance
+4. Analyze model file size and performance optimization opportunities
+5. Verify view template applications and graphic consistency
+6. Generate model health report with performance recommendations
+
+Variables to replace:
+- [REVIT_VERSION]: 2024, 2025, or 2026
+- [MODEL_SIZE]: Small (&lt;50MB), Medium (50-200MB), or Large (&gt;200MB)
+- [TEAM_SIZE]: Number of users accessing model
+
+Include multi-version Revit compatibility checks.
+Focus on model efficiency and collaboration optimization.
+Generate model maintenance schedule and best practices.
+Provide family management and content organization strategies.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A402_RevitModelHealthAnalyzer.dyn</code></p>
+
+<hr />
+
+<h3>A4.03 - Code Compliance Checker</h3>
+
+<p><strong>Purpose</strong>: Verify comprehensive building code compliance
+<strong>Time Saved</strong>: 6-8 hours → 1 hour</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Verify comprehensive building code compliance throughout design:
+1. Check occupancy classifications and allowable occupant loads
+2. Verify egress widths, travel distances, and exit requirements
+3. Check fire-rated assemblies and separation requirements
+4. Verify accessibility compliance throughout facility
+5. Check parking and site accessibility requirements
+6. Generate code compliance summary report with citations
+
+Variables to replace:
+- [OCCUPANCY_TYPE]: Assembly, business, educational, residential, etc.
+- [CONSTRUCTION_TYPE]: Type I through V construction classification
+- [BUILDING_AREA]: Total building square footage
+
+Reference Florida Building Code and local amendments.
+Include energy code and green building requirements.
+Generate plan review preparation strategy and response protocols.
+Provide code official coordination and presentation materials.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A403_CodeComplianceChecker.dyn</code></p>
+
+<hr />
+
+<h3>A4.04 - Specification and Drawing Coordination</h3>
+
+<p><strong>Purpose</strong>: Coordinate specifications with construction drawings
+<strong>Time Saved</strong>: 3-4 hours → 30 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Coordinate specifications with construction drawings for consistency:
+1. Verify material callouts match specification sections accurately
+2. Check detail references correspond to specification requirements
+3. Coordinate finish schedules with specification divisions
+4. Verify equipment specifications match plan requirements and capacities
+5. Check door and window specifications match schedules and details
+6. Generate coordination report with discrepancy resolution priorities
+
+Variables to replace:
+- [SPEC_FORMAT]: CSI MasterFormat organization (16-division or 50-division)
+- [PROJECT_DELIVERY]: Design-bid-build, design-build, or construction manager
+- [SPEC_LEVEL]: Outline, short form, or full specifications
+
+Include CSI MasterFormat organization standards.
+Focus on eliminating conflicts between documents and specifications.
+Generate contractor coordination requirements and submittal procedures.
+Provide specification writing and coordination best practices.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A404_SpecificationDrawingCoordination.dyn</code></p>
+
+<hr />
+
+<h3>A4.05 - Accessibility Compliance Auditor</h3>
+
+<p><strong>Purpose</strong>: Comprehensive accessibility compliance verification
+<strong>Time Saved</strong>: 4-5 hours → 45 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Audit project for complete accessibility compliance verification:
+1. Check all accessible routes and clearance requirements throughout facility
+2. Verify bathroom and facility accessibility meets current standards
+3. Check parking and site accessibility including van-accessible spaces
+4. Verify signage and wayfinding compliance with ADA requirements
+5. Check elevator and lift requirements for vertical accessibility
+6. Generate ADA compliance certification and documentation package
+
+Variables to replace:
+- [FACILITY_TYPE]: Public accommodation, place of employment, or housing
+- [CONSTRUCTION_PHASE]: New construction, alteration, or addition
+- [STATE_REQUIREMENTS]: Florida Accessibility Code or other state requirements
+
+Include Fair Housing Act requirements for residential projects.
+Focus on both federal ADA and state accessibility standards.
+Generate cost estimates for accessibility improvements and upgrades.
+Provide accessibility consultant coordination and review procedures.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>A405_AccessibilityComplianceAuditor.dyn</code></p>
+
+<hr />
+
+<h2>SECTION D: FLORIDA BUILDING CODE (5 Prompts)</h2>
+
+<h3>B1.01 - Hurricane Design Compliance Checker</h3>
+
+<p><strong>Purpose</strong>: Verify hurricane and wind design compliance for Florida projects
+<strong>Time Saved</strong>: 4-6 hours → 45 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Analyze project for comprehensive Florida hurricane design requirements:
+1. Check wind speed requirements for [COUNTY] location per latest wind maps
+2. Verify building envelope design pressure ratings and impact resistance
+3. Check window and door impact resistance requirements (missiles A-E)
+4. Verify roof tie-down and uplift resistance with appropriate connections
+5. Check garage door and opening protection requirements
+6. Generate hurricane compliance report with engineer coordination requirements
+
+Variables to replace:
+- [COUNTY]: Florida county for specific wind speed requirements
+- [EXPOSURE_CATEGORY]: B, C, or D wind exposure classification
+- [RISK_CATEGORY]: I, II, III, or IV based on building importance
+
+Reference: Florida Building Code Chapter 16 - Structural Design
+Include HVHZ (High Velocity Hurricane Zone) requirements if applicable.
+Target: Residential and commercial buildings in hurricane-prone areas.
+Generate structural engineer coordination checklist and requirements.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B101_HurricaneDesignComplianceChecker.dyn</code></p>
+
+<hr />
+
+<h3>B1.02 - Flood Zone Compliance Analyzer</h3>
+
+<p><strong>Purpose</strong>: Verify flood zone design compliance for Florida coastal projects
+<strong>Time Saved</strong>: 3-4 hours → 30 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Verify comprehensive flood zone design compliance for Florida projects:
+1. Determine Base Flood Elevation (BFE) for site using current FEMA maps
+2. Check lowest floor elevation requirements and freeboard provisions
+3. Verify flood-resistant construction methods and materials
+4. Check utility and equipment elevation requirements above BFE
+5. Verify breakaway wall and enclosure compliance for elevated structures
+6. Generate flood compliance certification documentation for permits
+
+Variables to replace:
+- [FLOOD_ZONE]: AE, VE, X, or other FEMA flood zone designation
+- [BFE]: Base Flood Elevation in feet NAVD88
+- [STRUCTURE_TYPE]: Residential, commercial, or institutional
+
+Reference: FEMA flood maps and Florida Building Code Section 1612
+Include substantial improvement and substantial damage criteria.
+Focus on coastal and riverine flood zones throughout Florida.
+Generate flood insurance and NFIP compliance documentation.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B102_FloodZoneComplianceAnalyzer.dyn</code></p>
+
+<hr />
+
+<h3>B1.03 - Energy Conservation Code Optimizer</h3>
+
+<p><strong>Purpose</strong>: Optimize building design for Florida Energy Conservation Code compliance
+<strong>Time Saved</strong>: 5-7 hours → 1 hour</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Optimize building design for Florida Energy Conservation Code compliance:
+1. Calculate building envelope thermal performance and U-factor compliance
+2. Check HVAC system efficiency requirements and equipment selection
+3. Verify lighting power density limits and control requirements
+4. Check water heating efficiency requirements and solar readiness
+5. Analyze renewable energy compliance options and cost-effectiveness
+6. Generate energy compliance report with prescriptive and performance paths
+
+Variables to replace:
+- [BUILDING_TYPE]: Residential, commercial, or industrial
+- [CLIMATE_ZONE]: Florida climate zone (1A or 2A)
+- [COMPLIANCE_PATH]: Prescriptive, performance, or renewable energy
+
+Reference: Florida Energy Conservation Code based on IECC
+Include both prescriptive and performance path compliance options.
+Target cost-effective energy efficiency strategies for Florida climate.
+Generate utility rebate and incentive program coordination.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B103_EnergyConservationCodeOptimizer.dyn</code></p>
+
+<hr />
+
+<h3>B1.04 - Accessibility Code Comprehensive Checker</h3>
+
+<p><strong>Purpose</strong>: Verify comprehensive accessibility compliance for Florida projects
+<strong>Time Saved</strong>: 6-8 hours → 1 hour</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Verify comprehensive accessibility compliance for Florida projects:
+1. Check Florida Accessibility Code versus ADA requirements and most restrictive
+2. Verify accessible route analysis and documentation throughout facility
+3. Check parking and passenger drop-off compliance with state requirements
+4. Verify bathroom and facility accessibility meets Florida standards
+5. Check signage and communication requirements for accessibility
+6. Generate accessibility compliance certification for permit approval
+
+Variables to replace:
+- [BUILDING_USE]: Assembly, business, mercantile, residential, institutional
+- [ALTERATION_PERCENTAGE]: Percentage of building area being altered
+- [PUBLIC_ACCOMMODATION]: Yes/No for Title III compliance requirements
+
+Reference: Florida Accessibility Code and 2010 ADA Standards
+Include Fair Housing Act requirements for residential projects.
+Focus on both new construction and alteration accessibility requirements.
+Generate accessibility consultant coordination and review procedures.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B104_AccessibilityCodeComprehensiveChecker.dyn</code></p>
+
+<hr />
+
+<h3>B1.05 - Fire Safety and Prevention Code Analyzer</h3>
+
+<p><strong>Purpose</strong>: Analyze comprehensive fire safety compliance for Florida projects
+<strong>Time Saved</strong>: 4-5 hours → 45 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Analyze comprehensive fire safety compliance for Florida projects:
+1. Check occupancy classification and required fire separations
+2. Verify egress capacity and travel distance requirements for all occupancies
+3. Check fire-rated assembly and protection requirements throughout building
+4. Verify fire protection system requirements (sprinklers, alarms, suppression)
+5. Check emergency access and fire department operational requirements
+6. Generate fire safety compliance report with fire marshal coordination
+
+Variables to replace:
+- [OCCUPANCY_MIX]: Single occupancy or mixed-use classification
+- [CONSTRUCTION_TYPE]: Type I through V construction classification
+- [SPRINKLER_SYSTEM]: Sprinklered or non-sprinklered building
+
+Reference: Florida Fire Prevention Code and International Fire Code
+Include wildfire protection requirements for wildland-urban interface areas.
+Focus on life safety and property protection integration.
+Generate fire department coordination and plan review preparation.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B105_FireSafetyPreventionCodeAnalyzer.dyn</code></p>
+
+<hr />
+
+<h2>SECTION E: LIFE SAFETY ESSENTIALS (5 Prompts)</h2>
+
+<h3>B2.01 - Comprehensive Egress Calculator</h3>
+
+<p><strong>Purpose</strong>: Calculate and verify egress requirements for all building occupancies
+<strong>Time Saved</strong>: 3-4 hours → 30 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Calculate and verify comprehensive egress requirements for all occupancies:
+1. Determine occupant load for each space and use group classification
+2. Calculate required egress capacity (doors, corridors, stairs) with safety factors
+3. Verify egress travel distance limitations for each occupancy type
+4. Check egress width and accessibility requirements throughout building
+5. Verify exit discharge and exterior egress path requirements
+6. Generate egress analysis report with calculations and compliance verification
+
+Variables to replace:
+- [OCCUPANCY_TYPES]: List all occupancy classifications in building
+- [SPRINKLER_STATUS]: Sprinklered or non-sprinklered affects travel distances
+- [BUILDING_HEIGHT]: Affects egress requirements and exit stair design
+
+Include assembly, business, educational, and residential occupancies.
+Reference: IBC Chapter 10 and Florida Building Code modifications.
+Focus on both normal and emergency egress scenarios.
+Generate fire department coordination for egress design review.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B201_ComprehensiveEgressCalculator.dyn</code></p>
+
+<hr />
+
+<h3>B2.02 - Assembly Occupancy Life Safety Specialist</h3>
+
+<p><strong>Purpose</strong>: Analyze life safety requirements for assembly occupancies
+<strong>Time Saved</strong>: 4-5 hours → 45 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Analyze comprehensive life safety for assembly occupancies:
+1. Calculate assembly occupant loads and required egress capacity
+2. Verify exit arrangement and travel distance requirements for assembly spaces
+3. Check accessibility seating and egress requirements for disabled patrons
+4. Verify emergency lighting and communication systems for assembly occupancies
+5. Check crowd control and queue management for high-density occupancy
+6. Generate assembly life safety compliance report with operational procedures
+
+Variables to replace:
+- [ASSEMBLY_TYPE]: Theater, church, restaurant, sports facility, etc.
+- [OCCUPANT_LOAD]: Fixed seating count or calculated area-based load
+- [FIXED_SEATING]: Yes/No affects egress calculations significantly
+
+Include theaters, churches, restaurants, and sports facilities.
+Reference: IBC Chapter 3 Assembly occupancies and Chapter 10 Egress.
+Focus on high-density occupancy safety considerations and crowd dynamics.
+Generate emergency management and evacuation procedure coordination.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B202_AssemblyOccupancyLifeSafetySpecialist.dyn</code></p>
+
+<hr />
+
+<h3>B2.03 - Educational Facility Safety Analyzer</h3>
+
+<p><strong>Purpose</strong>: Analyze life safety requirements for educational facilities
+<strong>Time Saved</strong>: 3-4 hours → 30 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Analyze comprehensive educational facility life safety requirements:
+1. Check classroom and corridor egress requirements for student age groups
+2. Verify age-appropriate egress hardware and security lockdown systems
+3. Check emergency lockdown and security provisions with egress requirements
+4. Verify fire drill and evacuation procedures for educational occupancies
+5. Check playground and outdoor area safety and supervision requirements
+6. Generate educational facility safety compliance report with operations coordination
+
+Variables to replace:
+- [GRADE_LEVELS]: Pre-K, elementary, middle, high school, or higher education
+- [STUDENT_CAPACITY]: Total building student capacity for egress calculations
+- [SECURITY_LEVEL]: Standard, enhanced, or high-security requirements
+
+Include K-12 schools, daycare centers, and higher education facilities.
+Reference: IBC Chapter 3 Educational occupancies and state education codes.
+Focus on child safety and emergency response procedures.
+Generate school district coordination and safety plan integration.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B203_EducationalFacilitySafetyAnalyzer.dyn</code></p>
+
+<hr />
+
+<h3>B2.04 - Healthcare Facility Life Safety Specialist</h3>
+
+<p><strong>Purpose</strong>: Analyze life safety requirements for healthcare facilities
+<strong>Time Saved</strong>: 5-6 hours → 1 hour</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Analyze comprehensive healthcare facility life safety requirements:
+1. Check patient egress and evacuation procedures for mobility-impaired occupants
+2. Verify fire-rated assemblies and smoke barriers for healthcare occupancies
+3. Check medical gas and electrical system emergency requirements
+4. Verify infection control and isolation requirements with life safety
+5. Check emergency power and communication systems for life support equipment
+6. Generate healthcare life safety compliance report with operational procedures
+
+Variables to replace:
+- [HEALTHCARE_TYPE]: Hospital, clinic, nursing home, assisted living, medical office
+- [PATIENT_MOBILITY]: Ambulatory, non-ambulatory, or mixed patient population
+- [CRITICAL_CARE]: ICU, surgery, emergency department, or general medical
+
+Include hospitals, clinics, nursing homes, and medical offices.
+Reference: IBC Chapter 3 Institutional occupancies and NFPA healthcare standards.
+Focus on patient safety and continuity of care during emergencies.
+Generate healthcare system coordination and emergency management procedures.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B204_HealthcareFacilityLifeSafetySpecialist.dyn</code></p>
+
+<hr />
+
+<h3>B2.05 - High-Rise Evacuation Planner</h3>
+
+<p><strong>Purpose</strong>: Plan evacuation procedures for high-rise buildings
+<strong>Time Saved</strong>: 4-5 hours → 45 minutes</p>
+
+<p><strong>AI PROMPT</strong>:</p>
+
+<pre><code>Plan comprehensive high-rise building evacuation procedures:
+1. Analyze phased evacuation versus total evacuation strategies for building type
+2. Check elevator use for emergency evacuation and firefighter access
+3. Verify refuge area and area of rescue assistance design and capacity
+4. Check emergency communication and notification systems throughout building
+5. Verify fire department access and operations for high-rise buildings
+6. Generate high-rise evacuation plan and coordination with emergency services
+
+Variables to replace:
+- [BUILDING_HEIGHT]: Total building height in feet and number of stories
+- [OCCUPANCY_MIX]: Office, residential, hotel, or mixed-use occupancies
+- [ELEVATOR_COUNT]: Number and type of elevators for emergency use
+
+Include office buildings, residential towers, and mixed-use high-rises.
+Reference: IBC Chapter 4 High-rise provisions and NFPA emergency procedures.
+Focus on occupant safety and fire department coordination.
+Generate building management and emergency response procedure coordination.
+</code></pre>
+
+<p><strong>DYNAMO FILE</strong>: <code>B205_HighRiseEvacuationPlanner.dyn</code></p>
+
+<hr />
+
+<h2>🎁 <strong>BONUS MATERIALS</strong></h2>
+
+<h3><strong>Dynamo Graph Files (25 .dyn files)</strong></h3>
+
+<p>All prompts include corresponding Dynamo graphs that can be run directly in Dynamo Player without requiring AI assistance.</p>
+
+<h3><strong>Quick Reference Cards</strong></h3>
+
+<ul>
+<li>Variable replacement guide</li>
+<li>Common Florida code references</li>
+<li>Troubleshooting checklist</li>
+<li>Support contact information</li>
+</ul>
+
+<hr />
+
+<h2>📞 <strong>SUPPORT &amp; NEXT STEPS</strong></h2>
+
+<h3><strong>Free Support Included:</strong></h3>
+
+<ul>
+<li>Email: support@revipromptlab.com (4-hour response)</li>
+<li>Discord: discord.gg/revipromptlab</li>
+<li>Documentation: revipromptlab.com/docs</li>
+</ul>
+
+<h3><strong>Ready to Upgrade?</strong></h3>
+
+<ul>
+<li><strong>Professional Pack ($149)</strong>: 75 total prompts - Save $10 with code FOUNDATION10</li>
+<li><strong>Enterprise Pack ($299)</strong>: 150+ prompts with MEP/Structural - Save $39 with code ENTERPRISE39</li>
+</ul>
+
+<h3><strong>Emergency Support:</strong></h3>
+
+<ul>
+<li>30-minute consultation calls available ($95)</li>
+<li>Same-day response for urgent project needs</li>
+<li>Custom prompt development available</li>
+</ul>
+
+<hr />
+
+<p><strong>🔒 30-Day Money-Back Guarantee</strong><br />
+<strong>💼 Single-User License</strong><br />
+<strong>🏢 ReviPrompt Lab LLC, Florida</strong></p>
+
+<p><em>Thank you for choosing ReviPrompt Lab! Your productivity transformation starts now.</em></p>
+
+<div class="footer">
+    <p>© 2024 ReviPrompt Lab LLC | support@revipromptlab.com | 30-Day Money-Back Guarantee</p>
+</div>
+</body>
+</html>
