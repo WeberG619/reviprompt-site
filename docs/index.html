@@ -5,8 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReviPrompt Lab - AI Prompts for Revit Automation</title>
     <meta name="description" content="Professional AI prompt packs that automate Revit's most time-consuming tasks. Save 8-12 hours per project with battle-tested automation.">
+    
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="ReviPrompt Lab - AI Prompts for Revit Automation">
+    <meta property="og:description" content="Transform hours of manual Revit work into minutes with 150+ professional AI prompts.">
+    <meta property="og:image" content="https://revipromptlab.com/images/og-image.png">
+    <meta property="og:url" content="https://revipromptlab.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ReviPrompt Lab - AI Prompts for Revit Automation">
+    <meta name="twitter:description" content="Transform hours of manual Revit work into minutes with 150+ professional AI prompts.">
+    <meta name="twitter:image" content="https://revipromptlab.com/images/og-image.png">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // Replace with your GA4 ID
+    </script>
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
     <!-- Custom Styles -->
     <style>
@@ -188,9 +213,9 @@
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Community Access</li>
                         <li class="flex items-center"><i class="fas fa-check text-green-500 mr-2"></i> Email Support</li>
                     </ul>
-                    <a href="https://ko-fi.com/revipromptlab/shop" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition duration-300 block text-center">
+                    <button onclick="openModal('freeModal')" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition duration-300 block text-center">
                         Download Free
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Foundation -->
@@ -388,6 +413,42 @@
         </div>
     </section>
 
+    <!-- About the Creator -->
+    <section id="about" class="bg-gray-50 py-16">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">About the Creator</h2>
+                </div>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="flex-shrink-0">
+                        <div class="w-32 h-32 bg-gray-300 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-5xl text-gray-600"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Weber G.</h3>
+                        <p class="text-lg text-gray-600 mb-4">Licensed General Contractor | Revit Automation Expert</p>
+                        <p class="text-gray-700 mb-4">
+                            With over a decade of experience in construction and architectural technology, I've developed these prompts to solve real-world problems I faced daily. As a licensed GC in Florida, I understand the pressure of deadlines and the cost of manual work.
+                        </p>
+                        <p class="text-gray-700">
+                            Every prompt in this collection has been battle-tested on actual projects, saving my team hundreds of hours. Now I'm sharing these tools to help other professionals reclaim their weekends.
+                        </p>
+                        <div class="mt-6 flex gap-4 justify-center md:justify-start">
+                            <a href="https://linkedin.com/in/webergc" class="text-blue-600 hover:text-blue-700">
+                                <i class="fab fa-linkedin text-2xl"></i>
+                            </a>
+                            <a href="mailto:weber@revipromptlab.com" class="text-blue-600 hover:text-blue-700">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact -->
     <section id="contact" class="bg-blue-600 text-white py-16">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -435,7 +496,14 @@
                 </div>
                 <div class="text-gray-400 text-sm text-center">
                     © 2024 ReviPrompt Lab LLC. All rights reserved.<br>
-                    <span class="ml-4">Florida, USA • 30-Day Guarantee</span>
+                    <span class="ml-4">Florida, USA • 30-Day Guarantee</span><br>
+                    <div class="mt-2">
+                        <a href="/legal/license.html" class="hover:text-white mx-2">License Terms</a>
+                        <span class="text-gray-600">•</span>
+                        <a href="/legal/privacy.html" class="hover:text-white mx-2">Privacy Policy</a>
+                        <span class="text-gray-600">•</span>
+                        <a href="/legal/refund.html" class="hover:text-white mx-2">Refund Policy</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -508,7 +576,7 @@
                 </button>
             </form>
             <p class="text-sm text-gray-600 mt-4">
-                💳 Secure payment via PayPal or Stripe<br>
+                💳 Secure payment via Ko-fi (PayPal/Stripe)<br>
                 🔒 30-day money-back guarantee<br>
                 📧 Instant delivery after payment
             </p>
@@ -517,6 +585,9 @@
 
     <!-- JavaScript -->
     <script>
+        // Ko-fi shop configuration
+        // All products are available at the Ko-fi shop
+        const kofiShopUrl = 'https://ko-fi.com/revipromptlab/shop';
         // Mobile menu toggle
         document.getElementById('mobile-menu-btn').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobile-menu');
@@ -575,10 +646,22 @@
             // Show success message
             document.getElementById('freeSuccess').style.display = 'block';
             
-            // You can replace this with actual form submission to your backend
-            // For now, we'll simulate sending an email
+            // TODO: Replace with actual email service integration
+            // Options: 
+            // 1. Use Netlify Forms (add data-netlify="true" to form)
+            // 2. Use Formspree (https://formspree.io)
+            // 3. Use your backend API endpoint
+            // 4. Use Mailchimp/ConvertKit embed
+            
+            // For now, save to localStorage and redirect to Ko-fi
+            const lead = { name, email, company, timestamp: new Date().toISOString() };
+            const leads = JSON.parse(localStorage.getItem('reviprompt_leads') || '[]');
+            leads.push(lead);
+            localStorage.setItem('reviprompt_leads', JSON.stringify(leads));
+            
+            // Redirect to Ko-fi free download after 2 seconds
             setTimeout(() => {
-                window.location.href = `mailto:support@revipromptlab.com?subject=Free Sampler Request&body=Name: ${name}%0AEmail: ${email}%0ACompany: ${company}%0A%0APlease send me the free sampler pack.`;
+                window.location.href = 'https://ko-fi.com/revipromptlab/shop'; // Update with actual free download link
             }, 2000);
         });
 
