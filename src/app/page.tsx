@@ -2,60 +2,141 @@ import Link from 'next/link'
 import { ArrowRight, Zap, Shield, TrendingUp, Sparkles, CheckCircle, Star } from 'lucide-react'
 
 export default function HomePage() {
-  const products = [
+  const productCategories = [
     {
-      name: "AI Invoice Generator",
-      description: "Get paid faster with smart invoicing and automated reminders",
-      status: "live",
-      icon: "🧾",
-      features: ["Automated reminders", "AI-powered descriptions", "7-day free trial"],
-      link: "https://ai-portfolio-saas-xxx.vercel.app", // Update with your actual URL
-      cta: "Start Free Trial"
+      title: "AI Business Tools",
+      description: "Automate your business operations with intelligent AI",
+      products: [
+        {
+          name: "AI Invoice Generator",
+          description: "Get paid faster with smart invoicing and automated reminders",
+          status: "live",
+          icon: "🧾",
+          features: ["Automated reminders", "AI-powered descriptions", "7-day free trial"],
+          link: "https://ai-portfolio-saas-xxx.vercel.app",
+          cta: "Start Free Trial"
+        },
+        {
+          name: "AI Social Media Manager",
+          description: "Content that converts on autopilot across all platforms",
+          status: "coming-soon",
+          icon: "🚀",
+          features: ["Auto-posting", "Content generation", "Analytics"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "AI Content Creator",
+          description: "Blog posts, emails, and copy that converts automatically",
+          status: "coming-soon",
+          icon: "📝",
+          features: ["SEO optimization", "Brand voice", "Multi-format"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "AI Customer Support",
+          description: "24/7 support that actually helps your customers",
+          status: "coming-soon",
+          icon: "💬",
+          features: ["Instant responses", "Smart routing", "Learning AI"],
+          link: "#",
+          cta: "Join Waitlist"
+        }
+      ]
     },
     {
-      name: "AI Social Media Manager",
-      description: "Content that converts on autopilot across all platforms",
-      status: "coming-soon",
-      icon: "🚀",
-      features: ["Auto-posting", "Content generation", "Analytics"],
-      link: "#",
-      cta: "Join Waitlist"
+      title: "Developer Tools",
+      description: "Powerful development utilities and automation tools",
+      products: [
+        {
+          name: "Code Generator Suite",
+          description: "AI-powered code generation for multiple languages",
+          status: "coming-soon",
+          icon: "⚡",
+          features: ["Multi-language support", "Best practices", "Documentation"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "API Testing Platform",
+          description: "Comprehensive API testing and monitoring tools",
+          status: "coming-soon",
+          icon: "🔧",
+          features: ["Automated testing", "Performance monitoring", "Documentation"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "Database Tools",
+          description: "Smart database management and optimization utilities",
+          status: "coming-soon",
+          icon: "🗄️",
+          features: ["Query optimization", "Schema management", "Migration tools"],
+          link: "#",
+          cta: "Join Waitlist"
+        }
+      ]
     },
     {
-      name: "AI Content Creator",
-      description: "Blog posts, emails, and copy that converts automatically",
-      status: "coming-soon", 
-      icon: "📝",
-      features: ["SEO optimization", "Brand voice", "Multi-format"],
-      link: "#",
-      cta: "Join Waitlist"
-    },
-    {
-      name: "AI Customer Support",
-      description: "24/7 support that actually helps your customers",
-      status: "coming-soon",
-      icon: "💬", 
-      features: ["Instant responses", "Smart routing", "Learning AI"],
-      link: "#",
-      cta: "Join Waitlist"
-    },
-    {
-      name: "AI Analytics Dashboard", 
-      description: "See what's working with intelligent business insights",
-      status: "coming-soon",
-      icon: "📊",
-      features: ["Predictive analytics", "Custom reports", "Real-time data"],
-      link: "#",
-      cta: "Join Waitlist"
-    },
-    {
-      name: "AI Business Optimizer",
-      description: "Optimize operations with AI-powered recommendations", 
-      status: "coming-soon",
-      icon: "🔧",
-      features: ["Process automation", "Cost optimization", "Growth insights"],
-      link: "#", 
-      cta: "Join Waitlist"
+      title: "AEC Solutions",
+      description: "Professional tools for Architecture, Engineering & Construction",
+      products: [
+        {
+          name: "Revit Extensions",
+          description: "Powerful automation tools for Revit workflows",
+          status: "coming-soon",
+          icon: "🏗️",
+          features: ["Family management", "Parameter automation", "Report generation"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "AutoCAD Tools",
+          description: "Enhanced productivity tools for AutoCAD professionals",
+          status: "coming-soon",
+          icon: "📐",
+          features: ["Drawing automation", "Block libraries", "Dimension tools"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "Rhino Plugins",
+          description: "Advanced modeling and analysis tools for Rhino",
+          status: "coming-soon",
+          icon: "🦏",
+          features: ["Parametric modeling", "Analysis tools", "Export utilities"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "SketchUp Extensions",
+          description: "Professional extensions for SketchUp workflows",
+          status: "coming-soon",
+          icon: "📏",
+          features: ["Modeling tools", "Rendering utilities", "Export options"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "Civil 3D Tools",
+          description: "Advanced civil engineering and infrastructure tools",
+          status: "coming-soon",
+          icon: "🛣️",
+          features: ["Site design", "Grading tools", "Infrastructure planning"],
+          link: "#",
+          cta: "Join Waitlist"
+        },
+        {
+          name: "BIM 360 Integrations",
+          description: "Enhanced collaboration tools for BIM 360 workflows",
+          status: "coming-soon",
+          icon: "☁️",
+          features: ["Cloud sync", "Model coordination", "Issue tracking"],
+          link: "#",
+          cta: "Join Waitlist"
+        }
+      ]
     }
   ]
 
@@ -94,8 +175,8 @@ export default function HomePage() {
             </div>
             <div className="hidden md:flex items-center space-x-8">
               <Link href="#products" className="text-gray-600 hover:text-gray-900">Products</Link>
-              <Link href="#pricing" className="text-gray-600 hover:text-gray-900">Pricing</Link>
-              <Link href="#about" className="text-gray-600 hover:text-gray-900">About</Link>
+              <Link href="/pricing" className="text-gray-600 hover:text-gray-900">Pricing</Link>
+              <Link href="/about" className="text-gray-600 hover:text-gray-900">About</Link>
               <Link href="#contact" className="text-gray-600 hover:text-gray-900">Contact</Link>
               <Link 
                 href="https://ai-portfolio-saas-xxx.vercel.app/auth/login"
@@ -181,57 +262,66 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Complete AI Business Suite
+              Complete Software Solutions Suite
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Everything you need to automate your business operations with cutting-edge AI technology.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              From AI business automation to developer tools and AEC solutions - everything you need to work smarter across industries.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.map((product, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-center space-x-3 mb-4">
-                  <span className="text-3xl">{product.icon}</span>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900">{product.name}</h3>
-                    {product.status === 'live' ? (
-                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                        ✨ Live Now
-                      </span>
-                    ) : (
-                      <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                        🚀 Coming Soon
-                      </span>
-                    )}
-                  </div>
-                </div>
-                
-                <p className="text-gray-600 mb-4">{product.description}</p>
-                
-                <ul className="space-y-2 mb-6">
-                  {product.features.map((feature, i) => (
-                    <li key={i} className="flex items-center space-x-2 text-sm text-gray-600">
-                      <CheckCircle className="w-4 h-4 text-green-500" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <Link
-                  href={product.link}
-                  className={`w-full inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-colors ${
-                    product.status === 'live'
-                      ? 'bg-blue-600 text-white hover:bg-blue-700'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                  }`}
-                >
-                  {product.cta}
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
+          {productCategories.map((category, categoryIndex) => (
+            <div key={categoryIndex} className="mb-16">
+              <div className="text-center mb-12">
+                <h3 className="text-3xl font-bold text-gray-900 mb-3">{category.title}</h3>
+                <p className="text-lg text-gray-600 max-w-2xl mx-auto">{category.description}</p>
               </div>
-            ))}
-          </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {category.products.map((product, index) => (
+                  <div key={index} className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <span className="text-3xl">{product.icon}</span>
+                      <div>
+                        <h4 className="text-xl font-semibold text-gray-900">{product.name}</h4>
+                        {product.status === 'live' ? (
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            ✨ Live Now
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            🚀 Coming Soon
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-600 mb-4">{product.description}</p>
+                    
+                    <ul className="space-y-2 mb-6">
+                      {product.features.map((feature, i) => (
+                        <li key={i} className="flex items-center space-x-2 text-sm text-gray-600">
+                          <CheckCircle className="w-4 h-4 text-green-500" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <Link
+                      href={product.link}
+                      className={`w-full inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-colors ${
+                        product.status === 'live'
+                          ? 'bg-blue-600 text-white hover:bg-blue-700'
+                          : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      }`}
+                    >
+                      {product.cta}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -302,12 +392,12 @@ export default function HomePage() {
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Products</h3>
+              <h3 className="font-semibold mb-4">Solutions</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><Link href="#" className="hover:text-white">AI Invoice Generator</Link></li>
-                <li><Link href="#" className="hover:text-white">AI Social Media Manager</Link></li>
-                <li><Link href="#" className="hover:text-white">AI Content Creator</Link></li>
-                <li><Link href="#" className="hover:text-white">AI Customer Support</Link></li>
+                <li><Link href="#" className="hover:text-white">AI Business Tools</Link></li>
+                <li><Link href="#" className="hover:text-white">Developer Tools</Link></li>
+                <li><Link href="#" className="hover:text-white">AEC Solutions</Link></li>
+                <li><Link href="#" className="hover:text-white">Revit Extensions</Link></li>
               </ul>
             </div>
             

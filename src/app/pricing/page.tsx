@@ -7,12 +7,13 @@ export default function PricingPage() {
       name: "Starter",
       price: 0,
       period: "forever",
-      description: "Perfect for trying out our AI tools",
+      description: "Perfect for trying out our software solutions",
       features: [
         "3 AI-generated invoices per month",
-        "Basic email support",
+        "Basic email support", 
         "Standard templates",
-        "7-day free trial of Pro features"
+        "7-day free trial of Pro features",
+        "Access to coming soon tools"
       ],
       cta: "Get Started Free",
       href: "https://ai-portfolio-saas-xxx.vercel.app/auth/signup",
@@ -26,13 +27,14 @@ export default function PricingPage() {
       description: "Everything you need to run your business",
       features: [
         "Unlimited AI-generated invoices",
-        "Automated payment reminders",
+        "Automated payment reminders", 
         "AI chat assistant",
         "Custom branding",
         "Priority email support",
         "Advanced analytics",
         "Payment tracking",
-        "Client portal access"
+        "Client portal access",
+        "Early access to new tools"
       ],
       cta: "Start Free Trial",
       href: "https://ai-portfolio-saas-xxx.vercel.app/auth/signup",
@@ -43,17 +45,19 @@ export default function PricingPage() {
       name: "Enterprise",
       price: 99,
       period: "month",
-      description: "For teams and growing businesses",
+      description: "For teams and growing businesses across all verticals",
       features: [
         "Everything in Pro",
         "Multi-user access (up to 10 users)",
-        "API access",
+        "API access for all tools",
         "Custom integrations",
         "Dedicated account manager",
         "Phone support",
         "Advanced reporting",
         "White-label options",
-        "Custom AI training"
+        "Custom AI training",
+        "AEC & Developer tools included",
+        "Priority feature requests"
       ],
       cta: "Contact Sales",
       href: "/contact",
@@ -115,7 +119,7 @@ export default function PricingPage() {
             Simple, Transparent Pricing
           </h1>
           <p className="text-xl text-gray-600 mb-8">
-            Choose the plan that fits your business. Start free, scale as you grow.
+            Choose the plan that fits your business. Start free, scale as you grow across AI, development, and AEC solutions.
           </p>
           <div className="inline-flex items-center space-x-2 bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
             <Check className="w-4 h-4" />
@@ -220,7 +224,7 @@ export default function PricingPage() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join hundreds of businesses already automating their workflows with DevCraft AI.
+            Join hundreds of businesses, developers, and AEC professionals already automating their workflows with DevCraft solutions.
           </p>
           <Link
             href="https://ai-portfolio-saas-xxx.vercel.app/auth/signup"
