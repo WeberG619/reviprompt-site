@@ -33,22 +33,22 @@ export default function HomePage() {
           metrics: { users: "2.1k+", accuracy: "99.7%", time_saved: "15hrs/week" }
         },
         {
-          name: "AI Content Engine",
-          description: "Professional content generation with brand voice consistency",
+          name: "AI Email Generator",
+          description: "Professional email content generation for marketing and business communications",
           status: "coming-soon",
-          features: ["Brand voice training", "Multi-format output", "SEO optimization", "Content calendar"],
+          features: ["Template library", "Tone customization", "A/B testing", "Analytics integration"],
           link: "#",
           cta: "Join Waitlist",
-          metrics: { quality: "95%", speed: "10x faster", formats: "12+" }
+          metrics: { open_rate: "+40%", engagement: "95%", templates: "100+" }
         },
         {
-          name: "Customer Intelligence",
-          description: "24/7 AI support with advanced conversation routing",
+          name: "AI CRM Assistant",
+          description: "Intelligent customer relationship management with automated insights",
           status: "coming-soon",
-          features: ["Natural language processing", "Smart ticket routing", "Performance analytics", "Multi-language"],
+          features: ["Lead scoring", "Automated follow-ups", "Performance analytics", "Integration APIs"],
           link: "#",
           cta: "Join Waitlist",
-          metrics: { response: "<30sec", satisfaction: "94%", languages: "12+" }
+          metrics: { conversion: "+35%", efficiency: "3x faster", insights: "real-time" }
         }
       ]
     },
@@ -59,31 +59,31 @@ export default function HomePage() {
       icon: <Code2 className="w-6 h-6" />,
       products: [
         {
-          name: "Code Intelligence Suite",
-          description: "AI-powered code generation with enterprise security standards",
+          name: "AI Landing Page Builder",
+          description: "Professional landing page generation with conversion optimization",
           status: "coming-soon",
-          features: ["Multi-language support", "Security scanning", "Documentation generation", "Team collaboration"],
+          features: ["Template library", "A/B testing", "Analytics integration", "Mobile responsive"],
           link: "#",
           cta: "Request Access",
-          metrics: { languages: "20+", accuracy: "96%", security: "SOC2" }
+          metrics: { conversion: "+60%", load_time: "<2s", templates: "50+" }
         },
         {
-          name: "API Testing Platform",
-          description: "Comprehensive testing and monitoring for production APIs",
+          name: "AI Task Manager",
+          description: "Intelligent project management with automated workflow optimization",
           status: "coming-soon",
-          features: ["Automated testing", "Performance monitoring", "Load testing", "CI/CD integration"],
+          features: ["Smart scheduling", "Team collaboration", "Progress tracking", "Resource allocation"],
           link: "#",
           cta: "Request Access",
-          metrics: { uptime: "99.9%", tests: "1M+/day", integrations: "50+" }
+          metrics: { productivity: "+45%", efficiency: "3x faster", automation: "80%" }
         },
         {
-          name: "Database Optimizer",
-          description: "Intelligent database management and performance optimization",
+          name: "AI Social Scheduler",
+          description: "Content planning and social media automation platform",
           status: "coming-soon",
-          features: ["Query optimization", "Schema analysis", "Performance insights", "Migration tools"],
+          features: ["Multi-platform posting", "Content optimization", "Analytics dashboard", "Team management"],
           link: "#",
           cta: "Request Access",
-          metrics: { performance: "+40%", queries: "optimized", databases: "15+" }
+          metrics: { engagement: "+35%", reach: "2x more", platforms: "10+" }
         }
       ]
     },
@@ -94,31 +94,31 @@ export default function HomePage() {
       icon: <Building2 className="w-6 h-6" />,
       products: [
         {
-          name: "Revit Automation Suite",
-          description: "Advanced workflow automation for Revit professionals",
-          status: "coming-soon",
-          features: ["Family management", "Parameter automation", "Report generation", "Team sync"],
-          link: "#",
-          cta: "Request Access",
-          metrics: { time_saved: "60%", accuracy: "99%", families: "10k+" }
+          name: "ReviPrompt Lab Professional",
+          description: "AI prompts and automation tools for Revit professionals - trusted by 500+ users",
+          status: "live",
+          features: ["AI-powered prompts", "Sheet setup automation", "MEP coordination tools", "IBC/ADA compliance"],
+          link: "https://revipromptlab.com",
+          cta: "View Products",
+          metrics: { users: "500+", time_saved: "60%", packs: "6 available" }
         },
         {
-          name: "CAD Intelligence",
-          description: "AI-powered tools for AutoCAD and Civil 3D workflows",
-          status: "coming-soon",
-          features: ["Drawing automation", "Design optimization", "Standards compliance", "Project management"],
-          link: "#",
-          cta: "Request Access",
-          metrics: { efficiency: "+45%", standards: "100%", projects: "500+" }
+          name: "MEP Power Tools",
+          description: "Advanced MEP coordination and calculation tools for Revit",
+          status: "live",
+          features: ["Load calculations", "Equipment tagging", "System validation", "Model auditing"],
+          link: "https://buy.stripe.com/aFaeVc5iG6amgKveOuefC02",
+          cta: "Buy Now - $39",
+          metrics: { efficiency: "+45%", accuracy: "99%", tools: "5 included" }
         },
         {
-          name: "BIM Collaboration Hub",
-          description: "Unified platform for BIM coordination and model management",
-          status: "coming-soon",
-          features: ["Model coordination", "Issue tracking", "Version control", "Team collaboration"],
-          link: "#",
-          cta: "Request Access",
-          metrics: { coordination: "real-time", issues: "tracked", teams: "sync'd" }
+          name: "QC Professional Suite",
+          description: "Quality control and deliverable checking for architectural projects",
+          status: "live",
+          features: ["Deliverable checker", "Element counter", "Model auditor", "Report generation"],
+          link: "https://buy.stripe.com/bJe9ASeTg6am9i3eOuefC03",
+          cta: "Buy Now - $39",
+          metrics: { errors_found: "95%", time_saved: "40%", reports: "automated" }
         }
       ]
     }
