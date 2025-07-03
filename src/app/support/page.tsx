@@ -326,10 +326,10 @@ export default function SupportPage() {
               <MessageCircle className="w-4 h-4" />
               <span>Contact Support</span>
             </Link>
-            <button className="btn-secondary inline-flex items-center space-x-2">
+            <Link href="/contact" className="btn-secondary inline-flex items-center space-x-2">
               <Phone className="w-4 h-4" />
-              <span>Schedule a Call</span>
-            </button>
+              <span>Contact Sales</span>
+            </Link>
           </div>
         </div>
       </section>

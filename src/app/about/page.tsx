@@ -1,7 +1,19 @@
+'use client'
 import Link from 'next/link'
-import { Sparkles, Target, Users, Zap, Heart, Lightbulb } from 'lucide-react'
+import { Lightbulb, Users, Heart, Zap, Moon, Sun } from 'lucide-react'
+import { useState, useEffect } from 'react'
 
 export default function AboutPage() {
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [darkMode])
+
   const values = [
     {
       icon: <Lightbulb className="w-8 h-8" />,
@@ -25,16 +37,12 @@ export default function AboutPage() {
     }
   ]
 
-  const team = [
-    {
-      name: "DevCraft Team",
-      role: "AI Innovation Engineers",
-      bio: "Passionate builders creating AI tools that actually solve real business problems.",
-      image: "/team-placeholder.jpg"
-    }
-  ]
-
   const milestones = [
+    {
+      year: "2024",
+      title: "DevCraft Labs Founded", 
+      description: "Started with a mission to make AI tools that small businesses can actually use and afford."
+    },
     {
       year: "2024",
       title: "AI Invoice Generator Launch",
@@ -42,38 +50,51 @@ export default function AboutPage() {
     },
     {
       year: "2024",
-      title: "DevCraft Labs Founded", 
-      description: "Started with a mission to make AI tools that small businesses can actually use and afford."
+      title: "ReviPrompt Lab Integration",
+      description: "Partnered with AEC professionals to bring specialized Revit automation tools to architects and engineers."
     }
   ]
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
       {/* Navigation */}
-      <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="glass sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+                <svg width="24" height="24" viewBox="0 0 40 40" className="text-white">
+                  <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="currentColor"/>
+                </svg>
               </div>
-              <span className="text-xl font-bold text-gray-900">DevCraft Labs</span>
+              <div>
+                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">About Us</div>
+              </div>
             </Link>
-            <div className="flex items-center space-x-4">
-              <Link href="/" className="text-gray-600 hover:text-gray-900">← Back to Home</Link>
+            <div className="flex items-center space-x-6">
+              <Link href="/" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
+                ← Back to Home
+              </Link>
+              <button
+                onClick={() => setDarkMode(!darkMode)}
+                className="p-2 rounded-lg text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
+              >
+                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+              </button>
             </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+      <section className="py-20 bg-neutral-50 dark:bg-neutral-800/50">
+        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+          <h1 className="text-5xl font-bold text-neutral-900 dark:text-white mb-6">
             Building AI Tools That 
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> Actually Work</span>
+            <span className="text-blue-600"> Actually Work</span>
           </h1>
-          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+          <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8 max-w-3xl mx-auto">
             We're on a mission to make powerful AI accessible to every business, regardless of size or technical expertise. 
             Our tools are designed to save you time, increase revenue, and let you focus on what you do best.
           </p>
@@ -82,42 +103,40 @@ export default function AboutPage() {
 
       {/* Mission Section */}
       <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-neutral-900 dark:text-white mb-6">
                 Our Mission
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
+              <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">
                 Most AI tools are built for tech companies with big budgets and dedicated IT teams. 
                 We believe every business deserves access to intelligent automation that's simple, 
                 affordable, and effective.
               </p>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
                 That's why we created DevCraft Labs - to build AI tools that small businesses can 
                 actually use without needing a computer science degree or a massive budget.
               </p>
-              <div className="flex items-center space-x-4">
-                <Target className="w-12 h-12 text-blue-600" />
-                <div>
-                  <div className="font-semibold text-gray-900">Our Goal</div>
-                  <div className="text-gray-600">Save 1 million business hours through intelligent automation</div>
-                </div>
-              </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8">
-              <div className="space-y-6">
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-blue-600">500+</div>
-                  <div className="text-gray-600">Businesses Automated</div>
+            <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8">
+              <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white mb-4">Our Impact</h3>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">2.1k+</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Active Users</div>
                 </div>
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-purple-600">10,000+</div>
-                  <div className="text-gray-600">Hours Saved Monthly</div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">500+</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">AEC Professionals</div>
                 </div>
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-2xl font-bold text-green-600">$2M+</div>
-                  <div className="text-gray-600">Revenue Generated</div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">15hrs</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Saved per Week</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">99.9%</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">Uptime SLA</div>
                 </div>
               </div>
             </div>
@@ -126,25 +145,29 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-neutral-50 dark:bg-neutral-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
               Our Values
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we build and every decision we make.
+            <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
+              These principles guide everything we build and every decision we make.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg text-white mb-4">
-                  {value.icon}
+              <div key={index} className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8 text-center">
+                <div className="w-16 h-16 bg-neutral-100 dark:bg-neutral-700 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-blue-600 dark:text-blue-400">{value.icon}</span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">
+                  {value.title}
+                </h3>
+                <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
+                  {value.description}
+                </p>
               </div>
             ))}
           </div>
@@ -153,53 +176,32 @@ export default function AboutPage() {
 
       {/* Timeline Section */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
               Our Journey
             </h2>
-            <p className="text-xl text-gray-600">
-              From idea to impact - how we're building the future of business automation.
+            <p className="text-lg text-neutral-600 dark:text-neutral-300">
+              Key milestones in building tools that make a difference.
             </p>
           </div>
           
           <div className="space-y-8">
             {milestones.map((milestone, index) => (
               <div key={index} className="flex items-start space-x-6">
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold">
-                  {milestone.year}
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                    <span className="text-white font-semibold text-sm">{milestone.year}</span>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{milestone.title}</h3>
-                  <p className="text-gray-600">{milestone.description}</p>
+                <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 flex-grow">
+                  <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
+                    {milestone.title}
+                  </h3>
+                  <p className="text-neutral-600 dark:text-neutral-400">
+                    {milestone.description}
+                  </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              Meet the Team
-            </h2>
-            <p className="text-xl text-gray-600">
-              Passionate engineers and designers building the future of business automation.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <div key={index} className="text-center">
-                <div className="w-32 h-32 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <Users className="w-16 h-16 text-white" />
-                </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                <p className="text-blue-600 font-medium mb-3">{member.role}</p>
-                <p className="text-gray-600">{member.bio}</p>
               </div>
             ))}
           </div>
@@ -207,26 +209,20 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to Join Our Mission?
+      <section className="py-20 bg-neutral-50 dark:bg-neutral-800/50">
+        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+            Ready to Build with Us?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Help us build AI tools that make business better for everyone.
+          <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8">
+            Join thousands of professionals using DevCraft Labs to automate their workflows and grow their businesses.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="https://ai-portfolio-saas.vercel.app"
-              className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100"
-            >
-              Try Our Tools
+            <Link href="https://ai-portfolio-saas.vercel.app" className="btn-primary inline-flex items-center space-x-2">
+              <span>Start Free Trial</span>
             </Link>
-            <Link
-              href="/contact"
-              className="border border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-blue-600"
-            >
-              Get in Touch
+            <Link href="/contact" className="btn-secondary inline-flex items-center space-x-2">
+              <span>Contact Us</span>
             </Link>
           </div>
         </div>
