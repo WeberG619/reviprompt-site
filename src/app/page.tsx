@@ -195,7 +195,7 @@ export default function HomePage() {
               <Link href="/about" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
                 About
               </Link>
-              <Link href="#" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
+              <Link href="/docs" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
                 Docs
               </Link>
               <button
@@ -492,16 +492,16 @@ export default function HomePage() {
               <ul className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
                 <li><Link href="/about" className="hover:text-neutral-900 dark:hover:text-white transition-colors">About</Link></li>
                 <li><Link href="/pricing" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Pricing</Link></li>
-                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Contact</Link></li>
+                <li><Link href="/contact" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
             
             <div>
               <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Resources</h3>
               <ul className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
-                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Documentation</Link></li>
-                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">API Reference</Link></li>
-                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Support</Link></li>
+                <li><Link href="/docs" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Documentation</Link></li>
+                <li><Link href="/docs" className="hover:text-neutral-900 dark:hover:text-white transition-colors">API Reference</Link></li>
+                <li><Link href="/support" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Support</Link></li>
               </ul>
             </div>
           </div>
@@ -509,9 +509,9 @@ export default function HomePage() {
           <div className="border-t border-neutral-200 dark:border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500 dark:text-neutral-400">
             <p>&copy; 2024 DevCraft Labs. All rights reserved.</p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              <Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy</Link>
-              <Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Terms</Link>
-              <Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Security</Link>
+              <Link href="/privacy" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy</Link>
+              <Link href="/terms" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Terms</Link>
+              <Link href="/security" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Security</Link>
             </div>
           </div>
         </div>
