@@ -197,7 +197,7 @@ export default function PricingPage() {
     }
   }
 
-  const currentPlans = pricingData[activeCategory]
+  const currentPlans = pricingData[activeCategory as keyof typeof pricingData]
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
@@ -280,7 +280,7 @@ export default function PricingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {currentPlans.plans.map((plan, index) => (
+            {currentPlans.plans.map((plan: any, index: number) => (
               <div
                 key={index}
                 className={`relative bg-white dark:bg-neutral-800 rounded-xl border-2 p-8 ${
@@ -315,7 +315,7 @@ export default function PricingPage() {
                 </div>
 
                 <ul className="space-y-3 mb-8">
-                  {plan.features.map((feature, i) => (
+                  {plan.features.map((feature: string, i: number) => (
                     <li key={i} className="flex items-center space-x-3">
                       <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
                       <span className="text-neutral-700 dark:text-neutral-300 text-sm">
