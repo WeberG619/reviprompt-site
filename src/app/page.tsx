@@ -13,7 +13,7 @@ export default function HomePage() {
           status: "live",
           icon: "🧾",
           features: ["Automated reminders", "AI-powered descriptions", "7-day free trial"],
-          link: "https://ai-portfolio-saas-xxx.vercel.app",
+          link: "https://ai-portfolio-saas.vercel.app",
           cta: "Start Free Trial"
         },
         {
@@ -179,7 +179,7 @@ export default function HomePage() {
               <Link href="/about" className="text-gray-600 hover:text-gray-900">About</Link>
               <Link href="#contact" className="text-gray-600 hover:text-gray-900">Contact</Link>
               <Link 
-                href="https://ai-portfolio-saas-xxx.vercel.app/auth/login"
+                href="https://ai-portfolio-saas.vercel.app/auth/login"
                 className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
               >
                 Sign In
@@ -202,7 +202,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link 
-                href="https://ai-portfolio-saas-xxx.vercel.app"
+                href="https://ai-portfolio-saas.vercel.app"
                 className="bg-blue-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 flex items-center space-x-2"
               >
                 <span>Get Started Free</span>
@@ -366,7 +366,7 @@ export default function HomePage() {
             Join hundreds of businesses already saving time and increasing revenue with DevCraft AI tools.
           </p>
           <Link
-            href="https://ai-portfolio-saas-xxx.vercel.app"
+            href="https://ai-portfolio-saas.vercel.app"
             className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 inline-flex items-center space-x-2"
           >
             <span>Start Your Free Trial</span>

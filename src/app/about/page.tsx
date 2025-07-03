@@ -217,7 +217,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="https://ai-portfolio-saas-xxx.vercel.app"
+              href="https://ai-portfolio-saas.vercel.app"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100"
             >
               Try Our Tools

@@ -16,7 +16,7 @@ export default function PricingPage() {
         "Access to coming soon tools"
       ],
       cta: "Get Started Free",
-      href: "https://ai-portfolio-saas-xxx.vercel.app/auth/signup",
+      href: "https://ai-portfolio-saas.vercel.app/auth/signup",
       popular: false,
       icon: <Sparkles className="w-6 h-6" />
     },
@@ -37,7 +37,7 @@ export default function PricingPage() {
         "Early access to new tools"
       ],
       cta: "Start Free Trial",
-      href: "https://ai-portfolio-saas-xxx.vercel.app/auth/signup",
+      href: "https://ai-portfolio-saas.vercel.app/auth/signup",
       popular: true,
       icon: <Zap className="w-6 h-6" />
     },
@@ -227,7 +227,7 @@ export default function PricingPage() {
             Join hundreds of businesses, developers, and AEC professionals already automating their workflows with DevCraft solutions.
           </p>
           <Link
-            href="https://ai-portfolio-saas-xxx.vercel.app/auth/signup"
+            href="https://ai-portfolio-saas.vercel.app/auth/signup"
             className="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold hover:bg-gray-100 inline-block"
           >
             Start Your Free Trial
