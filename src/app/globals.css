@@ -42,15 +42,88 @@
   /* Professional grid pattern */
   .grid-pattern {
     background-image: 
-      linear-gradient(to right, rgb(0 0 0 / 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(0 0 0 / 0.05) 1px, transparent 1px);
-    background-size: 32px 32px;
+      linear-gradient(to right, rgb(0 0 0 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(0 0 0 / 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
   
   .dark .grid-pattern {
     background-image: 
-      linear-gradient(to right, rgb(255 255 255 / 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.03) 1px, transparent 1px);
+      linear-gradient(to right, rgb(255 255 255 / 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* AI/Tech inspired dot pattern */
+  .dot-pattern {
+    background-image: radial-gradient(circle, rgb(59 130 246 / 0.08) 1px, transparent 1px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+  }
+  
+  .dark .dot-pattern {
+    background-image: radial-gradient(circle, rgb(59 130 246 / 0.12) 1px, transparent 1px);
+  }
+
+  /* Circuit-inspired pattern */
+  .circuit-pattern {
+    background-image: 
+      linear-gradient(90deg, transparent 24%, rgb(59 130 246 / 0.03) 25%, rgb(59 130 246 / 0.03) 26%, transparent 27%, transparent 74%, rgb(59 130 246 / 0.03) 75%, rgb(59 130 246 / 0.03) 76%, transparent 77%),
+      linear-gradient(0deg, transparent 24%, rgb(59 130 246 / 0.03) 25%, rgb(59 130 246 / 0.03) 26%, transparent 27%, transparent 74%, rgb(59 130 246 / 0.03) 75%, rgb(59 130 246 / 0.03) 76%, transparent 77%);
+    background-size: 48px 48px;
+  }
+  
+  .dark .circuit-pattern {
+    background-image: 
+      linear-gradient(90deg, transparent 24%, rgb(59 130 246 / 0.06) 25%, rgb(59 130 246 / 0.06) 26%, transparent 27%, transparent 74%, rgb(59 130 246 / 0.06) 75%, rgb(59 130 246 / 0.06) 76%, transparent 77%),
+      linear-gradient(0deg, transparent 24%, rgb(59 130 246 / 0.06) 25%, rgb(59 130 246 / 0.06) 26%, transparent 27%, transparent 74%, rgb(59 130 246 / 0.06) 75%, rgb(59 130 246 / 0.06) 76%, transparent 77%);
+  }
+
+  /* Subtle hero background combining patterns */
+  .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgb(59 130 246 / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgb(59 130 246 / 0.03) 0%, transparent 50%),
+      linear-gradient(to right, rgb(0 0 0 / 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(0 0 0 / 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+  }
+  
+  .dark .hero-pattern {
+    background-image: 
+      radial-gradient(circle at 20% 20%, rgb(59 130 246 / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgb(59 130 246 / 0.05) 0%, transparent 50%),
+      linear-gradient(to right, rgb(255 255 255 / 0.015) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.015) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+  }
+
+  /* Professional animations */
+  .glow-on-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .glow-on-hover:hover {
+    box-shadow: 0 0 25px rgb(59 130 246 / 0.1);
+  }
+  
+  .dark .glow-on-hover:hover {
+    box-shadow: 0 0 25px rgb(59 130 246 / 0.2);
+  }
+
+  /* Floating animation for background elements */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-float-delayed {
+    animation: float 8s ease-in-out infinite;
+    animation-delay: -2s;
   }
   
   /* Professional glass effect */

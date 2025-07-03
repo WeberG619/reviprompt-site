@@ -241,7 +241,17 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 grid-pattern opacity-50"></div>
+        <div className="absolute inset-0 hero-pattern"></div>
+        
+        {/* Floating elements for depth */}
+        <div className="absolute top-20 left-20 w-2 h-2 bg-blue-400/20 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-32 w-1 h-1 bg-blue-500/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-blue-400/25 rounded-full animate-float-delayed"></div>
+        <div className="absolute top-32 right-20 w-1 h-1 bg-blue-600/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+        
+        {/* Additional tech-inspired elements */}
+        <div className="absolute top-16 right-1/4 w-8 h-8 border border-blue-300/10 rounded-full animate-float-delayed"></div>
+        <div className="absolute bottom-20 right-16 w-6 h-6 border border-blue-400/15 rotate-45 animate-float" style={{animationDelay: '1.5s'}}></div>
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
@@ -259,6 +269,20 @@ export default function HomePage() {
               Professional-grade AI tools designed for businesses, developers, and AEC professionals. 
               Built with enterprise security, reliability, and developer experience in mind.
             </p>
+            
+            {/* Code snippet preview */}
+            <div className="hidden md:block mb-8 p-4 bg-neutral-100/50 dark:bg-neutral-800/50 rounded-lg border border-neutral-200/50 dark:border-neutral-700/50 max-w-md">
+              <div className="flex items-center space-x-2 mb-2">
+                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono ml-2">devcraft-labs.com</span>
+              </div>
+              <code className="text-sm text-neutral-700 dark:text-neutral-300 font-mono">
+                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST api.devcraft-labs.com/v1<br/>
+                <span className="text-neutral-500 dark:text-neutral-400"># Generate invoice in seconds</span>
+              </code>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link 
                 href="https://ai-portfolio-saas.vercel.app"
