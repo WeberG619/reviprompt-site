@@ -1,3 +1,59 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --gradient-angle: 0deg;
+  }
+  
+  body {
+    @apply transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgb(229 231 235 / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(229 231 235 / 0.3) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+  
+  .dark .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, rgb(55 65 81 / 0.3) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(55 65 81 / 0.3) 1px, transparent 1px);
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 border border-gray-200/50 dark:border-gray-700/50;
+  }
+  
+  .gradient-border {
+    @apply relative;
+    background: linear-gradient(to right, #3b82f6, #8b5cf6);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+  }
+  
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #ec4899);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px;
+  }
+  
+  .bg-300\% {
+    background-size: 300% 300%;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+}
