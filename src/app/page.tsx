@@ -1,12 +1,12 @@
 'use client'
 import Link from 'next/link'
-import { ArrowRight, Zap, Shield, TrendingUp, Sparkles, CheckCircle, Star, Moon, Sun, Code, Building2, Briefcase, Menu, X } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Moon, Sun, Code2, Building2, Briefcase, Terminal, CheckCircle, Star, Github, ExternalLink, Zap } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
 export default function HomePage() {
   const [darkMode, setDarkMode] = useState(false)
   const [activeCategory, setActiveCategory] = useState('all')
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     if (darkMode) {
@@ -20,79 +20,70 @@ export default function HomePage() {
     {
       id: 'ai-business',
       title: "AI Business Tools",
-      description: "Automate your business operations with intelligent AI",
-      gradient: "from-blue-500 to-cyan-500",
+      description: "Enterprise-grade automation for modern businesses",
+      icon: <Briefcase className="w-6 h-6" />,
       products: [
         {
           name: "AI Invoice Generator",
-          description: "Get paid faster with smart invoicing and automated reminders",
+          description: "Intelligent invoicing with automated payment tracking and smart reminders",
           status: "live",
-          icon: "🧾",
-          features: ["Automated reminders", "AI-powered descriptions", "7-day free trial"],
+          features: ["Automated payment reminders", "AI-powered descriptions", "Real-time analytics", "API integration"],
           link: "https://ai-portfolio-saas.vercel.app",
-          cta: "Start Free Trial"
+          cta: "Launch App",
+          metrics: { users: "2.1k+", accuracy: "99.7%", time_saved: "15hrs/week" }
         },
         {
-          name: "AI Social Media Manager",
-          description: "Content that converts on autopilot across all platforms",
+          name: "AI Content Engine",
+          description: "Professional content generation with brand voice consistency",
           status: "coming-soon",
-          icon: "🚀",
-          features: ["Auto-posting", "Content generation", "Analytics"],
+          features: ["Brand voice training", "Multi-format output", "SEO optimization", "Content calendar"],
           link: "#",
-          cta: "Join Waitlist"
+          cta: "Join Waitlist",
+          metrics: { quality: "95%", speed: "10x faster", formats: "12+" }
         },
         {
-          name: "AI Content Creator",
-          description: "Blog posts, emails, and copy that converts automatically",
+          name: "Customer Intelligence",
+          description: "24/7 AI support with advanced conversation routing",
           status: "coming-soon",
-          icon: "📝",
-          features: ["SEO optimization", "Brand voice", "Multi-format"],
+          features: ["Natural language processing", "Smart ticket routing", "Performance analytics", "Multi-language"],
           link: "#",
-          cta: "Join Waitlist"
-        },
-        {
-          name: "AI Customer Support",
-          description: "24/7 support that actually helps your customers",
-          status: "coming-soon",
-          icon: "💬",
-          features: ["Instant responses", "Smart routing", "Learning AI"],
-          link: "#",
-          cta: "Join Waitlist"
+          cta: "Join Waitlist",
+          metrics: { response: "<30sec", satisfaction: "94%", languages: "12+" }
         }
       ]
     },
     {
       id: 'developer',
-      title: "Developer Tools",
-      description: "Powerful development utilities and automation tools",
-      gradient: "from-purple-500 to-pink-500",
+      title: "Developer Platform",
+      description: "Professional tools for modern development workflows",
+      icon: <Code2 className="w-6 h-6" />,
       products: [
         {
-          name: "Code Generator Suite",
-          description: "AI-powered code generation for multiple languages",
+          name: "Code Intelligence Suite",
+          description: "AI-powered code generation with enterprise security standards",
           status: "coming-soon",
-          icon: "⚡",
-          features: ["Multi-language support", "Best practices", "Documentation"],
+          features: ["Multi-language support", "Security scanning", "Documentation generation", "Team collaboration"],
           link: "#",
-          cta: "Join Waitlist"
+          cta: "Request Access",
+          metrics: { languages: "20+", accuracy: "96%", security: "SOC2" }
         },
         {
           name: "API Testing Platform",
-          description: "Comprehensive API testing and monitoring tools",
+          description: "Comprehensive testing and monitoring for production APIs",
           status: "coming-soon",
-          icon: "🔧",
-          features: ["Automated testing", "Performance monitoring", "Documentation"],
+          features: ["Automated testing", "Performance monitoring", "Load testing", "CI/CD integration"],
           link: "#",
-          cta: "Join Waitlist"
+          cta: "Request Access",
+          metrics: { uptime: "99.9%", tests: "1M+/day", integrations: "50+" }
         },
         {
-          name: "Database Tools",
-          description: "Smart database management and optimization utilities",
+          name: "Database Optimizer",
+          description: "Intelligent database management and performance optimization",
           status: "coming-soon",
-          icon: "🗄️",
-          features: ["Query optimization", "Schema management", "Migration tools"],
+          features: ["Query optimization", "Schema analysis", "Performance insights", "Migration tools"],
           link: "#",
-          cta: "Join Waitlist"
+          cta: "Request Access",
+          metrics: { performance: "+40%", queries: "optimized", databases: "15+" }
         }
       ]
     },
@@ -100,70 +91,43 @@ export default function HomePage() {
       id: 'aec',
       title: "AEC Solutions",
       description: "Professional tools for Architecture, Engineering & Construction",
-      gradient: "from-orange-500 to-red-500",
+      icon: <Building2 className="w-6 h-6" />,
       products: [
         {
-          name: "Revit Extensions",
-          description: "Powerful automation tools for Revit workflows",
+          name: "Revit Automation Suite",
+          description: "Advanced workflow automation for Revit professionals",
           status: "coming-soon",
-          icon: "🏗️",
-          features: ["Family management", "Parameter automation", "Report generation"],
+          features: ["Family management", "Parameter automation", "Report generation", "Team sync"],
           link: "#",
-          cta: "Join Waitlist"
+          cta: "Request Access",
+          metrics: { time_saved: "60%", accuracy: "99%", families: "10k+" }
         },
         {
-          name: "AutoCAD Tools",
-          description: "Enhanced productivity tools for AutoCAD professionals",
+          name: "CAD Intelligence",
+          description: "AI-powered tools for AutoCAD and Civil 3D workflows",
           status: "coming-soon",
-          icon: "📐",
-          features: ["Drawing automation", "Block libraries", "Dimension tools"],
+          features: ["Drawing automation", "Design optimization", "Standards compliance", "Project management"],
           link: "#",
-          cta: "Join Waitlist"
+          cta: "Request Access",
+          metrics: { efficiency: "+45%", standards: "100%", projects: "500+" }
         },
         {
-          name: "Rhino Plugins",
-          description: "Advanced modeling and analysis tools for Rhino",
+          name: "BIM Collaboration Hub",
+          description: "Unified platform for BIM coordination and model management",
           status: "coming-soon",
-          icon: "🦏",
-          features: ["Parametric modeling", "Analysis tools", "Export utilities"],
+          features: ["Model coordination", "Issue tracking", "Version control", "Team collaboration"],
           link: "#",
-          cta: "Join Waitlist"
-        },
-        {
-          name: "SketchUp Extensions",
-          description: "Professional extensions for SketchUp workflows",
-          status: "coming-soon",
-          icon: "📏",
-          features: ["Modeling tools", "Rendering utilities", "Export options"],
-          link: "#",
-          cta: "Join Waitlist"
-        },
-        {
-          name: "Civil 3D Tools",
-          description: "Advanced civil engineering and infrastructure tools",
-          status: "coming-soon",
-          icon: "🛣️",
-          features: ["Site design", "Grading tools", "Infrastructure planning"],
-          link: "#",
-          cta: "Join Waitlist"
-        },
-        {
-          name: "BIM 360 Integrations",
-          description: "Enhanced collaboration tools for BIM 360 workflows",
-          status: "coming-soon",
-          icon: "☁️",
-          features: ["Cloud sync", "Model coordination", "Issue tracking"],
-          link: "#",
-          cta: "Join Waitlist"
+          cta: "Request Access",
+          metrics: { coordination: "real-time", issues: "tracked", teams: "sync'd" }
         }
       ]
     }
   ]
 
   const categories = [
-    { id: 'all', name: 'All Solutions', icon: <Sparkles className="w-5 h-5" /> },
-    { id: 'ai-business', name: 'AI Business', icon: <Briefcase className="w-5 h-5" /> },
-    { id: 'developer', name: 'Developer', icon: <Code className="w-5 h-5" /> },
+    { id: 'all', name: 'All Solutions', icon: <Terminal className="w-5 h-5" /> },
+    { id: 'ai-business', name: 'Business AI', icon: <Briefcase className="w-5 h-5" /> },
+    { id: 'developer', name: 'Developer', icon: <Code2 className="w-5 h-5" /> },
     { id: 'aec', name: 'AEC', icon: <Building2 className="w-5 h-5" /> },
   ]
 
@@ -173,89 +137,97 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      text: "DevCraft's AI Invoice Generator saved me 10 hours per week. The automated reminders alone paid for itself.",
+      text: "DevCraft's AI Invoice Generator transformed our billing process. The automation and insights are game-changing for our agency.",
       author: "Sarah Chen",
-      title: "Freelance Designer", 
+      title: "CTO, Design Forward",
+      company: "Design Agency",
       rating: 5
     },
     {
-      text: "Finally, AI tools that actually work for small businesses. Simple, powerful, and worth every penny.",
-      author: "Mike Rodriguez", 
-      title: "Marketing Agency Owner",
+      text: "Professional-grade tools with enterprise reliability. The developer experience is exceptional and the results speak for themselves.",
+      author: "Marcus Rodriguez",
+      title: "Lead Engineer",
+      company: "TechFlow Inc",
       rating: 5
     },
     {
-      text: "The AI chat assistant is like having a business expert available 24/7. Game changer for my consulting firm.",
+      text: "Finally, AI tools built by developers who understand real workflow challenges. The attention to detail is remarkable.",
       author: "Emma Thompson",
-      title: "Business Consultant", 
+      title: "Solutions Architect",
+      company: "BuildTech Pro",
       rating: 5
     }
   ]
 
+  const stats = [
+    { value: "99.9%", label: "Uptime SLA", desc: "Enterprise reliability" },
+    { value: "10x", label: "Faster", desc: "Than manual processes" },
+    { value: "2.1k+", label: "Active Users", desc: "Trusted by professionals" },
+    { value: "50+", label: "Integrations", desc: "Seamless connectivity" }
+  ]
+
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
-      {/* Enhanced Navigation */}
-      <nav className="glass-effect sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
+      {/* Professional Navigation */}
+      <nav className="glass sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center animate-pulse-slow shadow-lg">
-                <Sparkles className="w-6 h-6 text-white" />
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg">
+                <svg width="24" height="24" viewBox="0 0 40 40" className="text-white">
+                  <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="currentColor"/>
+                  <circle cx="20" cy="20" r="3" fill="none" stroke="white" strokeWidth="1" opacity="0.4"/>
+                </svg>
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                DevCraft Labs
-              </span>
-            </div>
+              <div>
+                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Professional AI Tools</div>
+              </div>
+            </Link>
             
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-6">
-              <Link href="#products" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
-                Products
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="#solutions" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
+                Solutions
               </Link>
-              <Link href="/pricing" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <Link href="/pricing" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
                 Pricing
               </Link>
-              <Link href="/about" className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <Link href="/about" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
                 About
+              </Link>
+              <Link href="#" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
+                Docs
               </Link>
               <button
                 onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+                className="p-2 rounded-lg text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
               >
-                {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
               </button>
               <Link 
                 href="https://ai-portfolio-saas.vercel.app/auth/login"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg"
+                className="btn-primary text-sm"
               >
                 Sign In
               </Link>
             </div>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
         </div>
       </nav>
 
-      {/* Category Tabs - Below Navigation */}
-      <div className="sticky top-16 z-40 bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg border-b border-gray-200 dark:border-gray-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Category Filter */}
+      <div className="sticky top-16 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex space-x-1 py-4 overflow-x-auto">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`
-                  flex items-center space-x-2 px-6 py-3 rounded-lg font-medium transition-all whitespace-nowrap
+                  flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all whitespace-nowrap text-sm
                   ${activeCategory === category.id
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg transform scale-105'
-                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                    ? 'bg-blue-600 text-white shadow-lg'
+                    : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800'
                   }
                 `}
               >
@@ -267,156 +239,153 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Hero Section with Grid Background */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-grid-pattern opacity-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50 dark:from-blue-900/20 dark:to-purple-900/20"></div>
+      {/* Hero Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 grid-pattern opacity-50"></div>
         
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="text-gray-900 dark:text-white">AI Tools That</span>
-              <br />
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient-x bg-300%">
-                Actually Work
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="max-w-4xl">
+            <div className="mb-6">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
+                <Zap className="w-4 h-4 mr-2" />
+                Professional AI Tools
               </span>
+            </div>
+            <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight">
+              Enterprise AI Solutions
+              <span className="text-blue-600"> Built by Developers</span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-              Stop doing busy work. Start growing your business with AI tools that handle the tedious stuff while you focus on what matters.
+            <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed max-w-3xl">
+              Professional-grade AI tools designed for businesses, developers, and AEC professionals. 
+              Built with enterprise security, reliability, and developer experience in mind.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link 
                 href="https://ai-portfolio-saas.vercel.app"
-                className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all transform hover:scale-105 shadow-xl flex items-center space-x-2"
+                className="btn-primary inline-flex items-center space-x-2 text-base"
               >
-                <span>Get Started Free</span>
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <span>Start Free Trial</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
-              <button className="glass-effect text-gray-700 dark:text-gray-300 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 dark:hover:bg-gray-800 transition-all">
-                Watch Demo
-              </button>
+              <Link
+                href="#solutions"
+                className="btn-secondary inline-flex items-center space-x-2 text-base"
+              >
+                <Terminal className="w-4 h-4" />
+                <span>View Solutions</span>
+              </Link>
             </div>
-            <div className="mt-8 flex items-center justify-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
+            
+            {/* Trust indicators */}
+            <div className="flex items-center space-x-6 text-sm text-neutral-500 dark:text-neutral-400">
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>7-day free trial</span>
+                <span>Enterprise Security</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>No credit card required</span>
+                <span>99.9% Uptime SLA</span>
               </div>
               <div className="flex items-center space-x-2">
                 <CheckCircle className="w-4 h-4 text-green-500" />
-                <span>Cancel anytime</span>
+                <span>24/7 Support</span>
               </div>
             </div>
           </div>
         </div>
-
-        {/* Animated gradient orbs */}
-        <div className="absolute top-20 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float dark:opacity-30"></div>
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float animation-delay-2000 dark:opacity-30"></div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white dark:bg-gray-800 transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-gray-600 dark:text-gray-300 text-lg">Trusted by 500+ businesses to automate their workflows</p>
-          </div>
+      <section className="py-16 bg-neutral-50 dark:bg-neutral-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent mb-2">10hrs</div>
-              <div className="text-gray-600 dark:text-gray-400">Saved per week</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-2">3x</div>
-              <div className="text-gray-600 dark:text-gray-400">Faster invoicing</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent mb-2">25%</div>
-              <div className="text-gray-600 dark:text-gray-400">Revenue increase</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-2">95%</div>
-              <div className="text-gray-600 dark:text-gray-400">Customer satisfaction</div>
-            </div>
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl font-bold text-neutral-900 dark:text-white mb-2">{stat.value}</div>
+                <div className="text-sm font-medium text-neutral-900 dark:text-white mb-1">{stat.label}</div>
+                <div className="text-xs text-neutral-500 dark:text-neutral-400">{stat.desc}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Products Section with Enhanced Design */}
-      <section id="products" className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Solutions Section */}
+      <section id="solutions" className="py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              Complete Software Solutions Suite
+            <h2 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+              Professional AI Solutions
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              From AI business automation to developer tools and AEC solutions - everything you need to work smarter across industries.
+            <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
+              Enterprise-grade tools built for modern workflows. Each solution is designed with security, 
+              scalability, and developer experience as core principles.
             </p>
           </div>
           
           {filteredProducts.map((category, categoryIndex) => (
             <div key={categoryIndex} className="mb-20">
-              <div className="text-center mb-12">
-                <div className={`inline-flex items-center space-x-3 mb-4 px-6 py-3 rounded-full bg-gradient-to-r ${category.gradient} text-white`}>
-                  {category.id === 'ai-business' && <Briefcase className="w-6 h-6" />}
-                  {category.id === 'developer' && <Code className="w-6 h-6" />}
-                  {category.id === 'aec' && <Building2 className="w-6 h-6" />}
-                  <span className="text-xl font-semibold">{category.title}</span>
+              <div className="flex items-center space-x-4 mb-12">
+                <div className="flex items-center space-x-3 px-4 py-2 bg-blue-600 text-white rounded-lg">
+                  {category.icon}
+                  <span className="text-lg font-semibold">{category.title}</span>
                 </div>
-                <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">{category.description}</p>
+                <div className="text-neutral-600 dark:text-neutral-400">{category.description}</div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {category.products.map((product, index) => (
                   <div 
                     key={index} 
-                    className="group relative bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all transform hover:-translate-y-2 overflow-hidden"
+                    className="group bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 hover-lift glow-on-hover p-8"
                   >
-                    {/* Gradient border on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="relative bg-white dark:bg-gray-800 m-0.5 rounded-2xl p-6 h-full">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <span className="text-4xl animate-float">{product.icon}</span>
-                        <div>
-                          <h4 className="text-xl font-semibold text-gray-900 dark:text-white">{product.name}</h4>
-                          {product.status === 'live' ? (
-                            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200">
-                              ✨ Live Now
-                            </span>
-                          ) : (
-                            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200">
-                              🚀 Coming Soon
-                            </span>
-                          )}
-                        </div>
+                    <div className="flex items-start justify-between mb-6">
+                      <div>
+                        <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
+                          {product.name}
+                        </h3>
+                        <span className={product.status === 'live' ? 'status-live' : 'status-coming-soon'}>
+                          {product.status === 'live' ? '● Live' : '○ Coming Soon'}
+                        </span>
                       </div>
-                      
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">{product.description}</p>
-                      
-                      <ul className="space-y-2 mb-6">
-                        {product.features.map((feature, i) => (
-                          <li key={i} className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      
-                      <Link
-                        href={product.link}
-                        className={`w-full inline-flex items-center justify-center px-4 py-3 rounded-lg font-medium transition-all ${
-                          product.status === 'live'
-                            ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 transform hover:scale-105'
-                            : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-                        }`}
-                      >
-                        {product.cta}
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Link>
+                      <ExternalLink className="w-5 h-5 text-neutral-400 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
+                    
+                    <p className="text-neutral-600 dark:text-neutral-300 mb-6 leading-relaxed">
+                      {product.description}
+                    </p>
+                    
+                    {/* Metrics */}
+                    <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-neutral-50 dark:bg-neutral-700/50 rounded-lg">
+                      {Object.entries(product.metrics).map(([key, value], i) => (
+                        <div key={i} className="text-center">
+                          <div className="text-sm font-semibold text-neutral-900 dark:text-white">{value}</div>
+                          <div className="text-xs text-neutral-500 dark:text-neutral-400 capitalize">{key.replace('_', ' ')}</div>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    {/* Features */}
+                    <ul className="space-y-2 mb-8">
+                      {product.features.map((feature, i) => (
+                        <li key={i} className="flex items-center space-x-2 text-sm text-neutral-600 dark:text-neutral-400">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    
+                    <Link
+                      href={product.link}
+                      className={`w-full inline-flex items-center justify-center px-4 py-3 rounded-lg font-medium transition-all text-sm ${
+                        product.status === 'live'
+                          ? 'btn-primary'
+                          : 'btn-secondary'
+                      }`}
+                    >
+                      {product.cta}
+                      <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
                   </div>
                 ))}
               </div>
@@ -425,33 +394,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials with Enhanced Design */}
-      <section className="py-20 bg-white dark:bg-gray-800 transition-colors">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Testimonials */}
+      <section className="py-24 bg-neutral-50 dark:bg-neutral-800/50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-              What Our Customers Say
+            <h2 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
+              Trusted by Professionals
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Real results from real businesses using DevCraft AI tools.
+            <p className="text-xl text-neutral-600 dark:text-neutral-300">
+              Used by leading companies and independent professionals worldwide.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="glass-effect rounded-2xl p-8 hover:shadow-xl transition-shadow">
+              <div key={index} className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8">
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 mb-6 italic">"{testimonial.text}"</p>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"></div>
-                  <div>
-                    <div className="font-semibold text-gray-900 dark:text-white">{testimonial.author}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">{testimonial.title}</div>
-                  </div>
+                <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
+                  "{testimonial.text}"
+                </p>
+                <div>
+                  <div className="font-semibold text-neutral-900 dark:text-white">{testimonial.author}</div>
+                  <div className="text-sm text-neutral-600 dark:text-neutral-400">{testimonial.title}</div>
+                  <div className="text-xs text-neutral-500 dark:text-neutral-500">{testimonial.company}</div>
                 </div>
               </div>
             ))}
@@ -460,74 +429,90 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Ready to Automate Your Business?
+      <section className="py-24 bg-neutral-900 dark:bg-neutral-800">
+        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Ready to Build with Professional AI?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Join hundreds of businesses already saving time and increasing revenue with DevCraft AI tools.
+          <p className="text-xl text-neutral-300 mb-8">
+            Join thousands of professionals using DevCraft Labs to automate workflows and accelerate growth.
           </p>
-          <Link
-            href="https://ai-portfolio-saas.vercel.app"
-            className="bg-white text-blue-600 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 inline-flex items-center space-x-2 transform hover:scale-105 transition-all shadow-xl"
-          >
-            <span>Start Your Free Trial</span>
-            <ArrowRight className="w-5 h-5" />
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="https://ai-portfolio-saas.vercel.app"
+              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg transition-all inline-flex items-center space-x-2"
+            >
+              <span>Start Free Trial</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link
+              href="/pricing"
+              className="bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-4 rounded-lg transition-all inline-flex items-center space-x-2"
+            >
+              <span>View Pricing</span>
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <footer className="bg-white dark:bg-neutral-900 border-t border-neutral-200 dark:border-neutral-800 py-16">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                  <svg width="20" height="20" viewBox="0 0 40 40" className="text-white">
+                    <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="currentColor"/>
+                  </svg>
                 </div>
-                <span className="text-xl font-bold">DevCraft Labs</span>
+                <span className="text-lg font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
               </div>
-              <p className="text-gray-400">
-                AI-powered tools that help businesses work smarter, not harder.
+              <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
+                Professional AI tools built by developers, for developers and businesses.
               </p>
+              <div className="flex items-center space-x-4">
+                <Link href="#" className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300">
+                  <Github className="w-5 h-5" />
+                </Link>
+              </div>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Solutions</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="#" className="hover:text-white transition-colors">AI Business Tools</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Developer Tools</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">AEC Solutions</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Revit Extensions</Link></li>
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Solutions</h3>
+              <ul className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">AI Business Tools</Link></li>
+                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Developer Platform</Link></li>
+                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">AEC Solutions</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Company</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Blog</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Contact</Link></li>
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Company</h3>
+              <ul className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+                <li><Link href="/about" className="hover:text-neutral-900 dark:hover:text-white transition-colors">About</Link></li>
+                <li><Link href="/pricing" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Pricing</Link></li>
+                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Contact</Link></li>
               </ul>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">Support</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="#" className="hover:text-white transition-colors">Help Center</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
-                <li><Link href="#" className="hover:text-white transition-colors">API Docs</Link></li>
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Resources</h3>
+              <ul className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
+                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Documentation</Link></li>
+                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">API Reference</Link></li>
+                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Support</Link></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+          <div className="border-t border-neutral-200 dark:border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500 dark:text-neutral-400">
             <p>&copy; 2024 DevCraft Labs. All rights reserved.</p>
+            <div className="flex items-center space-x-6 mt-4 md:mt-0">
+              <Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy</Link>
+              <Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Terms</Link>
+              <Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Security</Link>
+            </div>
           </div>
         </div>
       </footer>
