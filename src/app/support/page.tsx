@@ -138,7 +138,7 @@ export default function SupportPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-neutral-50 dark:from-blue-900/20 dark:to-neutral-900">
+      <section className="py-20 bg-neutral-50 dark:bg-neutral-800/50">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h1 className="text-5xl font-bold text-neutral-900 dark:text-white mb-6">
             How can we help you?
@@ -176,11 +176,8 @@ export default function SupportPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {supportChannels.map((channel, index) => (
               <div key={index} className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8 hover:shadow-lg transition-shadow">
-                <div className={`w-12 h-12 rounded-lg flex items-center justify-center mx-auto mb-4 ${
-                  channel.urgent ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400' :
-                  'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-                }`}>
-                  {channel.icon}
+                <div className="w-12 h-12 bg-neutral-100 dark:bg-neutral-700 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <span className="text-blue-600 dark:text-blue-400">{channel.icon}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2 text-center">
                   {channel.title}

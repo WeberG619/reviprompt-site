@@ -481,9 +481,9 @@ export default function HomePage() {
             <div>
               <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Solutions</h3>
               <ul className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
-                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">AI Business Tools</Link></li>
-                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Developer Platform</Link></li>
-                <li><Link href="#" className="hover:text-neutral-900 dark:hover:text-white transition-colors">AEC Solutions</Link></li>
+                <li><Link href="/solutions/ai-business" className="hover:text-neutral-900 dark:hover:text-white transition-colors">AI Business Tools</Link></li>
+                <li><Link href="/solutions/developer" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Developer Platform</Link></li>
+                <li><Link href="/solutions/aec" className="hover:text-neutral-900 dark:hover:text-white transition-colors">AEC Solutions</Link></li>
               </ul>
             </div>
             
