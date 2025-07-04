@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight, Code, Book, Zap, Terminal, ExternalLink, Copy, Moon, Sun, ChevronRight, Key, Shield, Clock } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
@@ -328,19 +329,14 @@ export default function DocsPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-lg shadow-lg">
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="url(#gradient3)"/>
-                  <path d="M12 12h4v2h-4v-2zm6 0h4v2h-4v-2zm-6 4h4v2h-4v-2zm6 4h4v2h-4v-2zm-6 4h4v2h-4v-2z" fill="white" opacity="0.3"/>
-                  <circle cx="20" cy="20" r="3" fill="none" stroke="white" strokeWidth="1" opacity="0.4"/>
-                  <path d="M20 15l1.5 1.5-1.5 1.5-1.5-1.5L20 15zm5 5l-1.5 1.5-1.5-1.5 1.5-1.5L25 20zm-5 5l-1.5-1.5 1.5-1.5 1.5 1.5L20 25zm-5-5l1.5-1.5 1.5 1.5-1.5 1.5L15 20z" fill="white" opacity="0.2"/>
-                  <defs>
-                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#1e40af"/>
-                      <stop offset="100%" stopColor="#3b82f6"/>
-                    </linearGradient>
-                  </defs>
-                </svg>
+              <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg">
+                <Image
+                  src="/DCL-logo.png"
+                  alt="DevCraft Labs Logo"
+                  width={40}
+                  height={40}
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
