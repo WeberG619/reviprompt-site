@@ -330,16 +330,13 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
         {/* Background Image */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=2070&auto=format&fit=crop"
-            alt="AI development and data visualization background"
-            fill
-            className="object-cover opacity-[0.15] dark:opacity-[0.20]"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/90 to-blue-50/95 dark:from-neutral-900/85 dark:via-neutral-900/90 dark:to-neutral-800/95"></div>
-        </div>
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 dark:opacity-30"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=2070&auto=format&fit=crop')`
+          }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/85 to-blue-50/90 dark:from-neutral-900/80 dark:via-neutral-900/85 dark:to-neutral-800/90"></div>
         
         {/* Subtle overlay pattern */}
         <div className="absolute inset-0 hero-pattern"></div>
