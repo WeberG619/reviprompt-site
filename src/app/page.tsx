@@ -258,15 +258,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="/DCL-logo.png"
-                  alt="DevCraft Labs Logo"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <Image
+                src="/DCL-logo.png"
+                alt="DevCraft Labs Logo"
+                width={54}
+                height={32}
+              />
               <div>
                 <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Professional AI Tools</div>
@@ -589,15 +586,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 rounded-lg overflow-hidden">
-                  <Image
-                    src="/DCL-logo.png"
-                    alt="DevCraft Labs Logo"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-contain"
-                  />
-                </div>
+                <Image
+                  src="/DCL-logo.png"
+                  alt="DevCraft Labs Logo"
+                  width={41}
+                  height={24}
+                />
                 <span className="text-lg font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
               </div>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">

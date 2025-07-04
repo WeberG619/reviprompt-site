@@ -329,15 +329,12 @@ export default function DocsPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 rounded-lg overflow-hidden shadow-lg">
-                <Image
-                  src="/DCL-logo.png"
-                  alt="DevCraft Labs Logo"
-                  width={40}
-                  height={40}
-                  className="w-full h-full object-contain"
-                />
-              </div>
+              <Image
+                src="/DCL-logo.png"
+                alt="DevCraft Labs Logo"
+                width={54}
+                height={32}
+              />
               <div>
                 <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">API Documentation</div>
