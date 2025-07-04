@@ -331,12 +331,12 @@ export default function HomePage() {
       <section className="relative py-24 overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 dark:opacity-30"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35 dark:opacity-45"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=2070&auto=format&fit=crop')`
+            backgroundImage: `url('https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop')`
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-white/85 to-blue-50/90 dark:from-neutral-900/80 dark:via-neutral-900/85 dark:to-neutral-800/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/70 via-white/75 to-blue-50/80 dark:from-neutral-900/70 dark:via-neutral-900/75 dark:to-neutral-800/80"></div>
         
         {/* Subtle overlay pattern */}
         <div className="absolute inset-0 hero-pattern"></div>
