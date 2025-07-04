@@ -332,13 +332,13 @@ export default function HomePage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop"
-            alt="Professional AI workspace background"
+            src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=2070&auto=format&fit=crop"
+            alt="AI development and data visualization background"
             fill
-            className="object-cover opacity-[0.03] dark:opacity-[0.05]"
+            className="object-cover opacity-[0.08] dark:opacity-[0.12]"
             priority
           />
-          <div className="absolute inset-0 bg-white/95 dark:bg-neutral-900/95"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/92 via-white/95 to-blue-50/98 dark:from-neutral-900/92 dark:via-neutral-900/95 dark:to-neutral-800/98"></div>
         </div>
         
         {/* Subtle overlay pattern */}
