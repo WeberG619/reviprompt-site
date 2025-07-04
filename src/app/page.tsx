@@ -257,13 +257,17 @@ export default function HomePage() {
       <nav className="glass sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center space-x-3">
               <Image
                 src="/DCL-logo.png"
                 alt="DevCraft Labs Logo"
                 width={54}
                 height={32}
               />
+              <div>
+                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Professional AI Tools</div>
+              </div>
             </Link>
             
             <div className="hidden md:flex items-center space-x-8">
@@ -581,13 +585,14 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div>
-              <div className="mb-4">
+              <div className="flex items-center space-x-3 mb-4">
                 <Image
                   src="/DCL-logo.png"
                   alt="DevCraft Labs Logo"
                   width={54}
                   height={32}
                 />
+                <span className="text-lg font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
               </div>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
                 Professional AI tools built by developers, for developers and businesses.
