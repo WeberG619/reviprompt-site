@@ -40,6 +40,8 @@ export default function DocsPage() {
       items: [
         { id: 'invoice-api', title: 'Invoice Generator API' },
         { id: 'email-api', title: 'Email Content API' },
+        { id: 'proposal-api', title: 'Proposal Generator API' },
+        { id: 'content-api', title: 'Content Generator API' },
         { id: 'webhooks', title: 'Webhooks' },
       ]
     },
@@ -48,8 +50,8 @@ export default function DocsPage() {
       title: 'Developer Platform',
       items: [
         { id: 'landing-api', title: 'Landing Page Builder API' },
+        { id: 'social-api', title: 'Social Media Scheduler API' },
         { id: 'task-api', title: 'Task Manager API' },
-        { id: 'social-api', title: 'Social Scheduler API' },
       ]
     },
     {
@@ -178,6 +180,147 @@ export default function DocsPage() {
   },
   "estimated_time_saved": "3.5 hours",
   "difficulty": "beginner"
+}`
+    },
+    {
+      id: 'generate-proposal',
+      title: 'Generate Business Proposal',
+      method: 'POST',
+      endpoint: '/api/v1/proposals/generate',
+      description: 'Create professional business proposals with AI-generated content',
+      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/proposals/generate \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "businessType": "Software Development",
+    "projectType": "Website Development",
+    "clientInfo": "Acme Corp - tech startup",
+    "projectScope": "Modern responsive website with e-commerce functionality"
+  }'`,
+      response: `{
+  "success": true,
+  "proposal": {
+    "id": "prop_1234567890",
+    "sections": [
+      {
+        "id": "1",
+        "title": "Executive Summary",
+        "content": "We are excited to present our proposal for developing a modern, responsive website..."
+      },
+      {
+        "id": "2", 
+        "title": "Project Understanding",
+        "content": "Based on our discussions and research, we understand that you are looking to..."
+      }
+    ],
+    "estimatedBudget": 25000,
+    "timeline": "8-12 weeks",
+    "recommendations": ["Include detailed scope documentation", "Establish clear communication protocols"]
+  }
+}`
+    },
+    {
+      id: 'generate-landing-page',
+      title: 'Generate Landing Page',
+      method: 'POST',
+      endpoint: '/api/v1/landing/generate',
+      description: 'Create high-converting landing pages with optimization tips',
+      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/landing/generate \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "industry": "SaaS/Software",
+    "goal": "Start Free Trial",
+    "targetAudience": "Small business owners",
+    "brandColors": {
+      "primary": "#3B82F6",
+      "secondary": "#10B981"
+    }
+  }'`,
+      response: `{
+  "success": true,
+  "landingPage": {
+    "elements": [
+      {
+        "id": "1",
+        "type": "header",
+        "content": "Transform Your Business with Cutting-Edge AI Technology",
+        "styles": {
+          "fontSize": "3rem",
+          "fontWeight": "bold",
+          "textAlign": "center"
+        }
+      }
+    ],
+    "conversionOptimizations": ["Remove navigation to reduce distractions", "Add customer testimonials"],
+    "estimatedConversionRate": "8.5%"
+  }
+}`
+    },
+    {
+      id: 'schedule-social-post',
+      title: 'Schedule Social Media Post',
+      method: 'POST',
+      endpoint: '/api/v1/social/schedule',
+      description: 'Schedule posts across multiple social media platforms',
+      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/social/schedule \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "content": "Exciting news! Our AI tools are helping businesses automate workflows and boost productivity by 40%. Try our free trial today! #AI #Productivity",
+    "platforms": ["facebook", "twitter", "linkedin"],
+    "scheduledTime": "2024-07-04T14:00:00Z",
+    "contentType": "text"
+  }'`,
+      response: `{
+  "success": true,
+  "post": {
+    "id": "post_1234567890",
+    "status": "scheduled",
+    "platforms": ["facebook", "twitter", "linkedin"],
+    "scheduledTime": "2024-07-04T14:00:00Z"
+  },
+  "engagementPredictions": {
+    "facebook": {
+      "estimatedReach": 1680,
+      "estimatedEngagement": 4.2,
+      "confidence": 85
+    },
+    "twitter": {
+      "estimatedReach": 1120,
+      "estimatedEngagement": 3.1,
+      "confidence": 82
+    }
+  },
+  "optimalTimes": {
+    "facebook": {
+      "weekday": ["9:00 AM", "1:00 PM", "3:00 PM"],
+      "weekend": ["12:00 PM", "2:00 PM"]
+    }
+  }
+}`
+    },
+    {
+      id: 'get-scheduled-posts',
+      title: 'Get Scheduled Posts',
+      method: 'GET',
+      endpoint: '/api/v1/social/schedule',
+      description: 'Retrieve scheduled social media posts',
+      code: `curl -X GET "https://devcraft-labs-api.vercel.app/api/v1/social/schedule?status=scheduled&limit=10" \\
+  -H "Authorization: Bearer YOUR_API_KEY"`,
+      response: `{
+  "success": true,
+  "posts": [
+    {
+      "id": "post_1234567890",
+      "content": "Exciting news! Our AI tools are helping businesses...",
+      "platforms": ["facebook", "twitter", "linkedin"],
+      "scheduledTime": "2024-07-04T14:00:00Z",
+      "status": "scheduled",
+      "createdAt": "2024-07-03T10:00:00Z"
+    }
+  ],
+  "total": 1
 }`
     }
   ]
