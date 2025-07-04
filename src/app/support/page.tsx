@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { HelpCircle, Book, MessageCircle, Mail, Phone, Search, Moon, Sun, ChevronRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
@@ -112,11 +113,12 @@ export default function SupportPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg">
-                <svg width="24" height="24" viewBox="0 0 40 40" className="text-white">
-                  <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="currentColor"/>
-                </svg>
-              </div>
+              <Image
+                src="/DCL-logo.png"
+                alt="DevCraft Labs Logo"
+                width={54}
+                height={32}
+              />
               <div>
                 <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Help Center</div>
