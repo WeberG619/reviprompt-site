@@ -69,7 +69,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/invoices/generate',
       description: 'Create a new AI-enhanced invoice with intelligent description generation',
-      code: `curl -X POST https://api.devcraft-labs.com/v1/invoices/generate \\
+      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/invoices/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -96,7 +96,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/invoices/send',
       description: 'Send invoice via email with automated reminder scheduling',
-      code: `curl -X POST https://api.devcraft-labs.com/v1/invoices/send \\
+      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/invoices/send \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -122,7 +122,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/content/email',
       description: 'Generate professional email content with AI-powered optimization',
-      code: `curl -X POST https://api.devcraft-labs.com/v1/content/email \\
+      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/email/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -153,7 +153,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/revit/prompts',
       description: 'Generate intelligent Revit automation prompts for AEC workflows',
-      code: `curl -X POST https://api.devcraft-labs.com/v1/revit/prompts \\
+      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/content/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -192,7 +192,7 @@ export default function DocsPage() {
       step: 2,
       title: "Make Your First Request",
       description: "Test your API key with a simple invoice generation request.",
-      code: `curl -X POST https://api.devcraft-labs.com/v1/invoices/generate \\
+      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/invoices/generate \\
   -H "Authorization: Bearer dcl_sk_YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{"client_name": "Test Client", "amount": 100.00}'`
@@ -209,7 +209,7 @@ export default function DocsPage() {
     }
   ]
 
-  const emailApiCode = `curl -X POST https://api.devcraft-labs.com/v1/email/generate \\
+  const emailApiCode = `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/email/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -235,7 +235,7 @@ export default function DocsPage() {
   ]
 }`
 
-  const contentGeneratorCode = `curl -X POST https://api.devcraft-labs.com/v1/content/generate \\
+  const contentGeneratorCode = `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/content/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -266,7 +266,7 @@ export default function DocsPage() {
   ]
 }`
 
-  const landingPageCode = `curl -X POST https://api.devcraft-labs.com/v1/landing/generate \\
+  const landingPageCode = `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/landing/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -328,9 +328,18 @@ export default function DocsPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg">
-                <svg width="24" height="24" viewBox="0 0 40 40" className="text-white">
-                  <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="currentColor"/>
+              <div className="w-10 h-10 rounded-lg shadow-lg">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="url(#gradient3)"/>
+                  <path d="M12 12h4v2h-4v-2zm6 0h4v2h-4v-2zm-6 4h4v2h-4v-2zm6 4h4v2h-4v-2zm-6 4h4v2h-4v-2z" fill="white" opacity="0.3"/>
+                  <circle cx="20" cy="20" r="3" fill="none" stroke="white" strokeWidth="1" opacity="0.4"/>
+                  <path d="M20 15l1.5 1.5-1.5 1.5-1.5-1.5L20 15zm5 5l-1.5 1.5-1.5-1.5 1.5-1.5L25 20zm-5 5l-1.5-1.5 1.5-1.5 1.5 1.5L20 25zm-5-5l1.5-1.5 1.5 1.5-1.5 1.5L15 20z" fill="white" opacity="0.2"/>
+                  <defs>
+                    <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#1e40af"/>
+                      <stop offset="100%" stopColor="#3b82f6"/>
+                    </linearGradient>
+                  </defs>
                 </svg>
               </div>
               <div>
@@ -426,8 +435,13 @@ export default function DocsPage() {
                 <div className="bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-8">
                   <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">Base URL</h3>
                   <code className="bg-neutral-100 dark:bg-neutral-700 px-4 py-2 rounded-lg text-neutral-900 dark:text-white font-mono">
-                    https://api.devcraft-labs.com/v1
+                    https://devcraft-labs-api.vercel.app/api/v1
                   </code>
+                  <div className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
+                    <a href="https://devcraft-labs-api.vercel.app" className="text-blue-600 dark:text-blue-400 hover:underline">
+                      → Live API Explorer & Testing Interface
+                    </a>
+                  </div>
                 </div>
               </div>
             )}

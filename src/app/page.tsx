@@ -258,10 +258,18 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg">
-                <svg width="24" height="24" viewBox="0 0 40 40" className="text-white">
-                  <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="currentColor"/>
+              <div className="w-10 h-10 rounded-lg shadow-lg">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="url(#gradient1)"/>
+                  <path d="M12 12h4v2h-4v-2zm6 0h4v2h-4v-2zm-6 4h4v2h-4v-2zm6 4h4v2h-4v-2zm-6 4h4v2h-4v-2z" fill="white" opacity="0.3"/>
                   <circle cx="20" cy="20" r="3" fill="none" stroke="white" strokeWidth="1" opacity="0.4"/>
+                  <path d="M20 15l1.5 1.5-1.5 1.5-1.5-1.5L20 15zm5 5l-1.5 1.5-1.5-1.5 1.5-1.5L25 20zm-5 5l-1.5-1.5 1.5-1.5 1.5 1.5L20 25zm-5-5l1.5-1.5 1.5 1.5-1.5 1.5L15 20z" fill="white" opacity="0.2"/>
+                  <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#1e40af"/>
+                      <stop offset="100%" stopColor="#3b82f6"/>
+                    </linearGradient>
+                  </defs>
                 </svg>
               </div>
               <div>
@@ -282,6 +290,9 @@ export default function HomePage() {
               </Link>
               <Link href="/docs" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
                 Docs
+              </Link>
+              <Link href="https://devcraft-labs-api.vercel.app" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium" target="_blank">
+                API <ExternalLink className="w-3 h-3 inline ml-1" />
               </Link>
               <button
                 onClick={() => setDarkMode(!darkMode)}
@@ -377,7 +388,7 @@ export default function HomePage() {
                 <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono ml-2">devcraft-labs.com</span>
               </div>
               <code className="text-sm text-neutral-700 dark:text-neutral-300 font-mono">
-                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST api.devcraft-labs.com/v1<br/>
+                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST devcraft-labs-api.vercel.app/api/v1<br/>
                 <span className="text-neutral-500 dark:text-neutral-400"># Generate invoice in seconds</span>
               </code>
             </div>
@@ -583,9 +594,18 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             <div>
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <svg width="20" height="20" viewBox="0 0 40 40" className="text-white">
-                    <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="currentColor"/>
+                <div className="w-8 h-8 rounded-lg">
+                  <svg width="32" height="32" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 6h8c8.284 0 15 6.716 15 15s-6.716 15-15 15H8V6z" fill="url(#gradient2)"/>
+                    <path d="M12 12h4v2h-4v-2zm6 0h4v2h-4v-2zm-6 4h4v2h-4v-2zm6 4h4v2h-4v-2zm-6 4h4v2h-4v-2z" fill="white" opacity="0.3"/>
+                    <circle cx="20" cy="20" r="3" fill="none" stroke="white" strokeWidth="1" opacity="0.4"/>
+                    <path d="M20 15l1.5 1.5-1.5 1.5-1.5-1.5L20 15zm5 5l-1.5 1.5-1.5-1.5 1.5-1.5L25 20zm-5 5l-1.5-1.5 1.5-1.5 1.5 1.5L20 25zm-5-5l1.5-1.5 1.5 1.5-1.5 1.5L15 20z" fill="white" opacity="0.2"/>
+                    <defs>
+                      <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#1e40af"/>
+                        <stop offset="100%" stopColor="#3b82f6"/>
+                      </linearGradient>
+                    </defs>
                   </svg>
                 </div>
                 <span className="text-lg font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
@@ -622,7 +642,7 @@ export default function HomePage() {
               <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Resources</h3>
               <ul className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
                 <li><Link href="/docs" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Documentation</Link></li>
-                <li><Link href="/docs" className="hover:text-neutral-900 dark:hover:text-white transition-colors">API Reference</Link></li>
+                <li><Link href="https://devcraft-labs-api.vercel.app" className="hover:text-neutral-900 dark:hover:text-white transition-colors" target="_blank">Live API Explorer</Link></li>
                 <li><Link href="/support" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Support</Link></li>
               </ul>
             </div>
