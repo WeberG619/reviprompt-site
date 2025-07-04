@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react'
 
 export default function DocsPage() {
   const [darkMode, setDarkMode] = useState(false)
-  const [activeSection, setActiveSection] = useState('getting-started')
+  const [activeSection, setActiveSection] = useState('introduction')
   const [copiedCode, setCopiedCode] = useState('')
 
   useEffect(() => {
@@ -209,6 +209,118 @@ export default function DocsPage() {
     }
   ]
 
+  const emailApiCode = `curl -X POST https://api.devcraft-labs.com/v1/email/generate \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "businessType": "SaaS/Software",
+    "emailType": "Sales Pitch",
+    "tone": "professional",
+    "customizations": {
+      "companyName": "TechCorp",
+      "recipientName": "John Smith",
+      "includeCTA": true
+    }
+  }'`
+
+  const emailApiResponse = `{
+  "templates": [
+    {
+      "subject": "Transform Your Business with Our SaaS/Software Solutions",
+      "body": "Dear John Smith,\\n\\nI hope this email finds you well. I'm reaching out because I believe our SaaS/Software solutions can significantly benefit TechCorp.\\n\\nOur SaaS/Software solution offers:\\n• 30% increase in efficiency\\n• Seamless integration with existing systems\\n• 24/7 customer support\\n• Competitive pricing\\n\\nI'd love to schedule a quick 15-minute demo to show you exactly how this can transform your operations.\\n\\nI look forward to discussing how we can help you achieve your goals.\\n\\nBest regards,\\n[Your Name]",
+      "tone": "professional",
+      "estimatedOpenRate": "24%",
+      "estimatedClickRate": "4.2%"
+    }
+  ]
+}`
+
+  const contentGeneratorCode = `curl -X POST https://api.devcraft-labs.com/v1/content/generate \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "contentType": "blog",
+    "prompt": "Write a blog post about sustainable fashion trends for millennials",
+    "tone": "professional",
+    "language": "English",
+    "length": "medium",
+    "keywords": ["sustainable fashion", "eco-friendly", "millennials"]
+  }'`
+
+  const contentGeneratorResponse = `{
+  "content": "# The Future of AI in Content Marketing\\n\\nIn today's digital landscape, artificial intelligence is revolutionizing how businesses create and distribute content...\\n\\n## Key Benefits of AI Content Creation\\n\\n1. **Increased Efficiency**: AI can generate content 10x faster than traditional methods\\n2. **Consistency**: Maintain brand voice across all content pieces\\n3. **Personalization**: Create targeted content for specific audience segments\\n4. **Cost-Effective**: Reduce content creation costs by up to 70%",
+  "metadata": {
+    "wordCount": 847,
+    "readingTime": "3 minutes",
+    "seoScore": 85,
+    "keywordDensity": {
+      "sustainable fashion": 2.3,
+      "eco-friendly": 1.8,
+      "millennials": 1.5
+    }
+  },
+  "suggestions": [
+    "Add more subheadings for better readability",
+    "Include relevant statistics and data points",
+    "Consider adding a call-to-action at the end"
+  ]
+}`
+
+  const landingPageCode = `curl -X POST https://api.devcraft-labs.com/v1/landing/generate \\
+  -H "Authorization: Bearer YOUR_API_KEY" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "industry": "SaaS/Software",
+    "goal": "Start Free Trial",
+    "targetAudience": "small business owners",
+    "brandColors": {
+      "primary": "#3B82F6",
+      "secondary": "#10B981"
+    }
+  }'`
+
+  const landingPageResponse = `{
+  "landingPage": {
+    "elements": [
+      {
+        "id": "1",
+        "type": "header",
+        "content": "Transform Your Business with Cutting-Edge AI Technology",
+        "styles": {
+          "fontSize": "3rem",
+          "fontWeight": "bold",
+          "textAlign": "center"
+        }
+      }
+    ],
+    "conversionOptimizations": [
+      "Remove navigation to reduce distractions",
+      "Add customer logos for credibility",
+      "Include money-back guarantee"
+    ],
+    "estimatedConversionRate": "8.5%",
+    "recommendations": [
+      "Use contrasting colors for CTA buttons",
+      "Add social proof elements",
+      "Optimize for mobile devices"
+    ]
+  }
+}`
+
+  const webhookExample = `{
+  "event": "invoice.paid",
+  "timestamp": "2024-07-03T10:30:00Z",
+  "data": {
+    "invoice_id": "inv_1234567890",
+    "amount": 1500.00,
+    "currency": "USD",
+    "client_email": "billing@acmecorp.com",
+    "payment_method": "stripe",
+    "payment_id": "pi_3O8Xm2..."
+  },
+  "signature": "sha256=a8b9c7d6e5f4..."
+}`
+
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
       {/* Navigation */}
@@ -406,12 +518,91 @@ export default function DocsPage() {
               </div>
             )}
 
+            {/* Email Content API */}
+            {activeSection === 'email-api' && (
+              <div>
+                <h1 className="text-4xl font-bold text-neutral-900 dark:text-white mb-6">Email Content API</h1>
+                <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
+                  Generate professional email content with AI-powered optimization for any business type and tone.
+                </p>
+                
+                <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8 mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-4">
+                      <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                        POST
+                      </span>
+                      <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">Generate Email Content</h3>
+                    </div>
+                    <button
+                      onClick={() => copyToClipboard(emailApiCode, 'email-generate')}
+                      className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
+                    >
+                      <Copy className="w-4 h-4" />
+                    </button>
+                  </div>
+                  
+                  <code className="text-neutral-600 dark:text-neutral-400 text-sm font-mono mb-4 block">
+                    /api/v1/email/generate
+                  </code>
+                  
+                  <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+                    Generate professional email templates with customizable business types, email types, and tones.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-2">Request</h4>
+                    <div className="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4 relative">
+                      <pre className="text-sm text-neutral-900 dark:text-white overflow-x-auto">
+                        <code>{emailApiCode}</code>
+                      </pre>
+                      {copiedCode === 'email-generate' && (
+                        <div className="absolute top-2 right-2 bg-green-600 text-white px-2 py-1 rounded text-xs">
+                          Copied!
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-2">Response</h4>
+                    <div className="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4">
+                      <pre className="text-sm text-neutral-900 dark:text-white overflow-x-auto">
+                        <code>{emailApiResponse}</code>
+                      </pre>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                      <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Email Types</h4>
+                      <ul className="text-blue-800 dark:text-blue-200 text-sm space-y-1">
+                        <li>• Welcome Email</li>
+                        <li>• Sales Pitch</li>
+                        <li>• Follow-up</li>
+                        <li>• Newsletter</li>
+                        <li>• Product Launch</li>
+                      </ul>
+                    </div>
+                    <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-900 dark:text-green-100 mb-2">Available Tones</h4>
+                      <ul className="text-green-800 dark:text-green-200 text-sm space-y-1">
+                        <li>• Professional</li>
+                        <li>• Friendly</li>
+                        <li>• Casual</li>
+                        <li>• Enthusiastic</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* API Examples for different sections */}
-            {['invoice-api', 'email-api', 'revit-api'].includes(activeSection) && (
+            {['invoice-api', 'revit-api'].includes(activeSection) && (
               <div>
                 <h1 className="text-4xl font-bold text-neutral-900 dark:text-white mb-6">
                   {activeSection === 'invoice-api' && 'Invoice Generator API'}
-                  {activeSection === 'email-api' && 'Email Content API'}
                   {activeSection === 'revit-api' && 'ReviPrompt API'}
                 </h1>
                 
@@ -419,7 +610,6 @@ export default function DocsPage() {
                   {apiExamples
                     .filter(example => {
                       if (activeSection === 'invoice-api') return ['generate-invoice', 'send-email'].includes(example.id)
-                      if (activeSection === 'email-api') return example.id === 'generate-email'
                       if (activeSection === 'revit-api') return example.id === 'revit-prompts'
                       return false
                     })
@@ -476,8 +666,146 @@ export default function DocsPage() {
               </div>
             )}
 
+            {/* Landing Page Builder API */}
+            {activeSection === 'landing-api' && (
+              <div>
+                <h1 className="text-4xl font-bold text-neutral-900 dark:text-white mb-6">Landing Page Builder API</h1>
+                <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
+                  Generate high-converting landing pages with AI-powered optimization for any industry and goal.
+                </p>
+                
+                <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8 mb-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center space-x-4">
+                      <span className="bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium">
+                        POST
+                      </span>
+                      <h3 className="text-xl font-semibold text-neutral-900 dark:text-white">Generate Landing Page</h3>
+                    </div>
+                    <button
+                      onClick={() => copyToClipboard(landingPageCode, 'landing-generate')}
+                      className="text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300"
+                    >
+                      <Copy className="w-4 h-4" />
+                    </button>
+                  </div>
+                  
+                  <code className="text-neutral-600 dark:text-neutral-400 text-sm font-mono mb-4 block">
+                    /api/v1/landing/generate
+                  </code>
+                  
+                  <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+                    Generate a complete landing page with industry-specific templates, conversion optimization tips, and estimated conversion rates.
+                  </p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-2">Request</h4>
+                    <div className="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4 relative">
+                      <pre className="text-sm text-neutral-900 dark:text-white overflow-x-auto">
+                        <code>{landingPageCode}</code>
+                      </pre>
+                      {copiedCode === 'landing-generate' && (
+                        <div className="absolute top-2 right-2 bg-green-600 text-white px-2 py-1 rounded text-xs">
+                          Copied!
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-2">Response</h4>
+                    <div className="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4">
+                      <pre className="text-sm text-neutral-900 dark:text-white overflow-x-auto">
+                        <code>{landingPageResponse}</code>
+                      </pre>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-4">
+                      <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">Supported Industries</h4>
+                      <ul className="text-blue-800 dark:text-blue-200 text-sm space-y-1">
+                        <li>• SaaS/Software</li>
+                        <li>• E-commerce</li>
+                        <li>• Consulting</li>
+                        <li>• Real Estate</li>
+                        <li>• Healthcare</li>
+                      </ul>
+                    </div>
+                    <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-4">
+                      <h4 className="font-semibold text-green-900 dark:text-green-100 mb-2">Features</h4>
+                      <ul className="text-green-800 dark:text-green-200 text-sm space-y-1">
+                        <li>• Conversion rate estimates</li>
+                        <li>• Industry-specific templates</li>
+                        <li>• Optimization recommendations</li>
+                        <li>• Brand color customization</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Webhooks Documentation */}
+            {activeSection === 'webhooks' && (
+              <div>
+                <h1 className="text-4xl font-bold text-neutral-900 dark:text-white mb-6">Webhooks</h1>
+                <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
+                  Receive real-time notifications when events occur in your DevCraft Labs account.
+                </p>
+
+                <div className="space-y-8">
+                  <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8">
+                    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">Setting Up Webhooks</h3>
+                    <p className="text-neutral-600 dark:text-neutral-400 mb-6">
+                      Configure webhook endpoints to receive notifications about invoice payments, API usage, and other events.
+                    </p>
+                    
+                    <div className="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4 mb-6">
+                      <h4 className="text-sm font-semibold text-neutral-900 dark:text-white mb-2">Webhook URL Format</h4>
+                      <code className="text-sm text-neutral-900 dark:text-white font-mono">
+                        POST https://your-domain.com/webhooks/devcraft
+                      </code>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <h4 className="font-semibold text-neutral-900 dark:text-white mb-3">Supported Events</h4>
+                        <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                          <li>• <code>invoice.created</code> - New invoice generated</li>
+                          <li>• <code>invoice.paid</code> - Invoice payment received</li>
+                          <li>• <code>invoice.failed</code> - Payment failed</li>
+                          <li>• <code>subscription.created</code> - New subscription</li>
+                          <li>• <code>subscription.cancelled</code> - Subscription ended</li>
+                          <li>• <code>api.limit_reached</code> - Rate limit hit</li>
+                        </ul>
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-neutral-900 dark:text-white mb-3">Security</h4>
+                        <ul className="space-y-2 text-sm text-neutral-600 dark:text-neutral-400">
+                          <li>• HMAC-SHA256 signature verification</li>
+                          <li>• Timestamps to prevent replay attacks</li>
+                          <li>• IP allowlist for additional security</li>
+                          <li>• Automatic retry with exponential backoff</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8">
+                    <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">Example Webhook Payload</h3>
+                    <div className="bg-neutral-50 dark:bg-neutral-700 rounded-lg p-4">
+                      <pre className="text-sm text-neutral-900 dark:text-white overflow-x-auto">
+                        <code>{webhookExample}</code>
+                      </pre>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
             {/* Coming Soon sections */}
-            {['landing-api', 'task-api', 'social-api', 'mep-api', 'qc-api', 'webhooks'].includes(activeSection) && (
+            {['task-api', 'social-api', 'mep-api', 'qc-api'].includes(activeSection) && (
               <div className="text-center py-16">
                 <Code className="w-16 h-16 text-neutral-400 mx-auto mb-6" />
                 <h1 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">Coming Soon</h1>

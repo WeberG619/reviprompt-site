@@ -1,12 +1,24 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Moon, Sun, Code2, Building2, Briefcase, Terminal, CheckCircle, Star, Github, ExternalLink, Zap } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { ArrowRight, Moon, Sun, Code2, Building2, Briefcase, Terminal, CheckCircle, Star, Github, ExternalLink, Zap, MessageCircle, X, Send, Bot } from 'lucide-react'
+import { useState, useEffect, useRef } from 'react'
+
+interface ChatMessage {
+  text: string
+  isUser: boolean
+  timestamp: Date
+}
 
 export default function HomePage() {
   const [darkMode, setDarkMode] = useState(false)
   const [activeCategory, setActiveCategory] = useState('all')
+  const [isChatOpen, setIsChatOpen] = useState(false)
+  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([])
+  const [chatInput, setChatInput] = useState('')
+  const [isTyping, setIsTyping] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const chatEndRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (darkMode) {
@@ -15,6 +27,79 @@ export default function HomePage() {
       document.documentElement.classList.remove('dark')
     }
   }, [darkMode])
+
+  useEffect(() => {
+    setMounted(true)
+    setChatMessages([{
+      text: "Hi! I'm your DevCraft Labs assistant. I can help you learn about our AI tools, pricing, documentation, and how to get started. What would you like to know?",
+      isUser: false,
+      timestamp: new Date()
+    }])
+  }, [])
+
+  useEffect(() => {
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [chatMessages])
+
+  const getAIResponse = (message: string) => {
+    const lowerMessage = message.toLowerCase()
+    
+    if (lowerMessage.includes('api') || lowerMessage.includes('documentation') || lowerMessage.includes('docs')) {
+      return "Our API documentation is comprehensive and includes real examples from our AI Invoice Generator, Email Content API, Landing Page Builder, and more. You can access it at /docs with authentication examples, rate limits, and webhooks. Need an API key? I can guide you through the setup process!"
+    }
+    
+    if (lowerMessage.includes('pricing') || lowerMessage.includes('cost') || lowerMessage.includes('price')) {
+      return "We offer flexible pricing for all three solution categories: AI Business Tools (starting at $29/mo), Developer Platform ($49/mo), and AEC Solutions ($79/mo). All plans include API access, 24/7 support, and enterprise security. Check out /pricing for detailed comparisons and features!"
+    }
+    
+    if (lowerMessage.includes('invoice') || lowerMessage.includes('billing')) {
+      return "Our AI Invoice Generator is live and trusted by 2.1k+ users! It features automated payment tracking, smart reminders, AI-powered descriptions, and real-time analytics. You can try it free at ai-portfolio-saas.vercel.app with 99.7% accuracy and saves 15hrs/week on average."
+    }
+    
+    if (lowerMessage.includes('revit') || lowerMessage.includes('aec') || lowerMessage.includes('architecture')) {
+      return "ReviPrompt Lab Professional is our AEC solution trusted by 500+ users. It includes AI-powered prompts, sheet setup automation, MEP coordination tools, and IBC/ADA compliance features. Available with live Stripe payment at revipromptlab.com with 6 professional prompt packs!"
+    }
+    
+    if (lowerMessage.includes('developer') || lowerMessage.includes('landing page') || lowerMessage.includes('task manager')) {
+      return "Our Developer Platform includes AI Landing Page Builder (with 60% conversion improvements), AI Task Manager (45% productivity boost), and AI Social Scheduler (35% engagement increase). Most are coming soon - want early access? I can help you join the waitlist!"
+    }
+    
+    if (lowerMessage.includes('security') || lowerMessage.includes('enterprise')) {
+      return "We provide enterprise-grade security with 99.9% uptime SLA, 24/7 support, API key authentication, webhook signature verification, and SOC 2 compliance. All data is encrypted in transit and at rest. Check /security for our complete security documentation."
+    }
+    
+    if (lowerMessage.includes('support') || lowerMessage.includes('help') || lowerMessage.includes('contact')) {
+      return "We offer multiple support channels: 24/7 chat support, email at support@devcraft-labs.com, comprehensive documentation at /docs, and enterprise support for pro plans. You can also visit /contact for direct access to our team or schedule a demo call!"
+    }
+    
+    if (lowerMessage.includes('start') || lowerMessage.includes('get started') || lowerMessage.includes('trial')) {
+      return "Getting started is easy! For AI Business Tools, try our Invoice Generator free at ai-portfolio-saas.vercel.app. For API access, check /docs for authentication. For AEC tools, visit revipromptlab.com. Want a personalized demo? I can help you schedule one!"
+    }
+    
+    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+      return "Hello! Welcome to DevCraft Labs! We're professional AI tool builders serving businesses, developers, and AEC professionals. Our tools include invoice generation, content creation, landing page building, and Revit automation. What interests you most?"
+    }
+    
+    return "I can help you with information about our AI tools, pricing, API documentation, security, support, or getting started. Try asking about our Invoice Generator, ReviPrompt Lab, pricing plans, API docs, or how to start a free trial. What would you like to know more about?"
+  }
+
+  const handleSendMessage = () => {
+    if (!chatInput.trim()) return
+    
+    const userMessage = { text: chatInput, isUser: true, timestamp: new Date() }
+    setChatMessages(prev => [...prev, userMessage])
+    setChatInput('')
+    setIsTyping(true)
+    
+    setTimeout(() => {
+      const aiResponse = getAIResponse(chatInput)
+      const aiMessage = { text: aiResponse, isUser: false, timestamp: new Date() }
+      setChatMessages(prev => [...prev, aiMessage])
+      setIsTyping(false)
+    }, 1000)
+  }
 
   const productCategories = [
     {
@@ -241,6 +326,19 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop"
+            alt="Professional AI workspace background"
+            fill
+            className="object-cover opacity-[0.03] dark:opacity-[0.05]"
+            priority
+          />
+          <div className="absolute inset-0 bg-white/95 dark:bg-neutral-900/95"></div>
+        </div>
+        
+        {/* Subtle overlay pattern */}
         <div className="absolute inset-0 hero-pattern"></div>
         
         {/* Floating elements for depth */}
@@ -540,6 +638,84 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Chatbot Widget */}
+      {mounted && (
+        isChatOpen ? (
+          <div className="fixed bottom-6 right-6 w-80 h-96 bg-white dark:bg-neutral-800 rounded-xl shadow-2xl border border-neutral-200 dark:border-neutral-700 flex flex-col z-50">
+            <div className="bg-blue-600 text-white p-4 rounded-t-xl flex items-center justify-between">
+              <div className="flex items-center space-x-2">
+                <Bot className="w-5 h-5" />
+                <span className="font-medium">DevCraft Assistant</span>
+              </div>
+              <button
+                onClick={() => setIsChatOpen(false)}
+                className="text-white/80 hover:text-white p-1"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            
+            <div className="flex-1 overflow-y-auto p-4 space-y-3">
+              {chatMessages.map((message, index) => (
+                <div key={index} className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}>
+                  <div className={`max-w-[75%] px-3 py-2 rounded-lg text-sm ${
+                    message.isUser 
+                      ? 'bg-blue-600 text-white' 
+                      : 'bg-neutral-100 dark:bg-neutral-700 text-neutral-900 dark:text-white'
+                  }`}>
+                    <p>{message.text}</p>
+                    <p className="text-xs opacity-70 mt-1">
+                      {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                    </p>
+                  </div>
+                </div>
+              ))}
+              
+              {isTyping && (
+                <div className="flex justify-start">
+                  <div className="bg-neutral-100 dark:bg-neutral-700 px-3 py-2 rounded-lg">
+                    <div className="flex space-x-1">
+                      <div className="w-2 h-2 bg-neutral-400 rounded-full animate-bounce"></div>
+                      <div className="w-2 h-2 bg-neutral-400 rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+                      <div className="w-2 h-2 bg-neutral-400 rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+                    </div>
+                  </div>
+                </div>
+              )}
+              
+              <div ref={chatEndRef} />
+            </div>
+            
+            <div className="p-4 border-t border-neutral-200 dark:border-neutral-700">
+              <div className="flex space-x-2">
+                <input
+                  type="text"
+                  value={chatInput}
+                  onChange={(e) => setChatInput(e.target.value)}
+                  placeholder="Ask about our AI tools..."
+                  className="flex-1 px-3 py-2 border border-neutral-300 dark:border-neutral-600 rounded-lg bg-white dark:bg-neutral-800 text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                />
+                <button
+                  onClick={handleSendMessage}
+                  disabled={!chatInput.trim()}
+                  className="px-3 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  <Send className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <button
+            onClick={() => setIsChatOpen(true)}
+            className="fixed bottom-6 right-6 w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-lg flex items-center justify-center z-50 transition-all duration-200 hover:scale-110"
+          >
+            <MessageCircle className="w-6 h-6" />
+          </button>
+        )
+      )}
     </div>
   )
 }
