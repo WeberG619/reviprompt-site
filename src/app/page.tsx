@@ -118,22 +118,22 @@ export default function HomePage() {
           metrics: { users: "2.1k+", accuracy: "99.7%", time_saved: "15hrs/week" }
         },
         {
-          name: "AI Email Generator",
-          description: "Professional email content generation for marketing and business communications",
-          status: "coming-soon",
-          features: ["Template library", "Tone customization", "A/B testing", "Analytics integration"],
-          link: "#",
-          cta: "Join Waitlist",
-          metrics: { open_rate: "+40%", engagement: "95%", templates: "100+" }
+          name: "AI Proposal Generator",
+          description: "Professional business proposals with detailed sections and smart recommendations",
+          status: "live",
+          features: ["Executive summaries", "Timeline planning", "Budget estimates", "Industry templates"],
+          link: "/proposals",
+          cta: "Generate Proposal",
+          metrics: { accuracy: "95%", time_saved: "80%", templates: "25+" }
         },
         {
-          name: "AI CRM Assistant",
-          description: "Intelligent customer relationship management with automated insights",
-          status: "coming-soon",
-          features: ["Lead scoring", "Automated follow-ups", "Performance analytics", "Integration APIs"],
-          link: "#",
-          cta: "Join Waitlist",
-          metrics: { conversion: "+35%", efficiency: "3x faster", insights: "real-time" }
+          name: "AI Content Generator",
+          description: "Create blog posts, social media content, and marketing copy with AI",
+          status: "live",
+          features: ["Multiple content types", "SEO optimization", "Brand voice", "Bulk generation"],
+          link: "/content",
+          cta: "Create Content",
+          metrics: { quality: "98%", speed: "10x faster", formats: "15+" }
         }
       ]
     },
@@ -146,11 +146,20 @@ export default function HomePage() {
         {
           name: "AI Landing Page Builder",
           description: "Professional landing page generation with conversion optimization",
-          status: "coming-soon",
+          status: "live",
           features: ["Template library", "A/B testing", "Analytics integration", "Mobile responsive"],
-          link: "#",
-          cta: "Request Access",
+          link: "/landing-builder",
+          cta: "Build Landing Page",
           metrics: { conversion: "+60%", load_time: "<2s", templates: "50+" }
+        },
+        {
+          name: "AI Social Scheduler",
+          description: "Content planning and social media automation platform",
+          status: "live",
+          features: ["Multi-platform posting", "Content optimization", "Analytics dashboard", "Team management"],
+          link: "/social-scheduler",
+          cta: "Schedule Posts",
+          metrics: { engagement: "+35%", reach: "2x more", platforms: "12+" }
         },
         {
           name: "AI Task Manager",
@@ -160,15 +169,6 @@ export default function HomePage() {
           link: "#",
           cta: "Request Access",
           metrics: { productivity: "+45%", efficiency: "3x faster", automation: "80%" }
-        },
-        {
-          name: "AI Social Scheduler",
-          description: "Content planning and social media automation platform",
-          status: "coming-soon",
-          features: ["Multi-platform posting", "Content optimization", "Analytics dashboard", "Team management"],
-          link: "#",
-          cta: "Request Access",
-          metrics: { engagement: "+35%", reach: "2x more", platforms: "10+" }
         }
       ]
     },
