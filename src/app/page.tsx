@@ -335,10 +335,10 @@ export default function HomePage() {
             src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?q=80&w=2070&auto=format&fit=crop"
             alt="AI development and data visualization background"
             fill
-            className="object-cover opacity-[0.08] dark:opacity-[0.12]"
+            className="object-cover opacity-[0.15] dark:opacity-[0.20]"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-white/92 via-white/95 to-blue-50/98 dark:from-neutral-900/92 dark:via-neutral-900/95 dark:to-neutral-800/98"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-white/85 via-white/90 to-blue-50/95 dark:from-neutral-900/85 dark:via-neutral-900/90 dark:to-neutral-800/95"></div>
         </div>
         
         {/* Subtle overlay pattern */}
