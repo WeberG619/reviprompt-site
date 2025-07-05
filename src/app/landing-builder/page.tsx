@@ -234,7 +234,7 @@ export default function LandingBuilderPage() {
             </div>
             <div className="text-center">
               <Target className="w-8 h-8 text-green-600 mx-auto mb-3" />
-              <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Load in <2s</h3>
+              <h3 className="font-semibold text-neutral-900 dark:text-white mb-2">Load in &lt;2s</h3>
               <p className="text-sm text-neutral-600 dark:text-neutral-400">Lightning-fast pages optimized for performance</p>
             </div>
             <div className="text-center">
