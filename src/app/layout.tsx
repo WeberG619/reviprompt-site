@@ -4,6 +4,9 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Force dynamic rendering for all pages
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'DevCraft Labs - AI Tools That Actually Work For Your Business',
   description: 'Stop doing busy work. Start growing your business with AI tools that handle invoicing, content creation, social media, and customer support automatically.',
