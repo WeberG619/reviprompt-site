@@ -3,6 +3,19 @@
 ## Project Overview
 DevCraft Labs website - a Next.js 15 application with TypeScript and Tailwind CSS. The site features multiple pages including landing builder, solutions, pricing, and various business pages.
 
+## 📋 Documentation Index
+This project uses a comprehensive documentation system to track progress and maintain context:
+
+- **[IMPLEMENTATION.md](./IMPLEMENTATION.md)** - Current implementation status, completed tasks, and next steps
+- **[DESIGN.md](./DESIGN.md)** - Design system, UI patterns, and visual guidelines
+- **[FEATURES.md](./FEATURES.md)** - Feature specifications, requirements, and user stories
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)** - Technical architecture, API design, and system structure
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Deployment configuration, environment setup, and hosting details
+- **[TROUBLESHOOTING.md](./TROUBLESHOOTING.md)** - Common issues, solutions, and debugging guides
+- **[CHANGELOG.md](./CHANGELOG.md)** - Version history and change tracking
+
+📌 **Quick Status Check**: Always read IMPLEMENTATION.md first to understand current project state.
+
 ## Project Structure
 - **Framework**: Next.js 15.0.0 with App Router
 - **Language**: TypeScript with strict mode enabled

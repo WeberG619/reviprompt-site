@@ -86,7 +86,7 @@ export default function CareersPage() {
             Join Our Mission to Transform Business with AI
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            Help us build the future of AI-powered business automation. We're looking for passionate individuals who want to make a real impact.
+            Help us build the future of AI-powered business automation. We&apos;re looking for passionate individuals who want to make a real impact.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="#openings" className="btn-primary inline-flex items-center space-x-2">
@@ -108,7 +108,7 @@ export default function CareersPage() {
               Why Join DevCraft Labs?
             </h2>
             <p className="text-lg text-gray-600 dark:text-gray-300">
-              We offer more than just a job - join a team that's passionate about innovation
+              We offer more than just a job - join a team that&apos;s passionate about innovation
             </p>
           </div>
           
@@ -142,7 +142,7 @@ export default function CareersPage() {
                 Innovation First
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                We push boundaries and challenge the status quo. Innovation isn't just what we do - it's who we are.
+                We push boundaries and challenge the status quo. Innovation isn&apos;t just what we do - it&apos;s who we are.
               </p>
             </div>
             <div>
@@ -150,7 +150,7 @@ export default function CareersPage() {
                 Customer Obsessed
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                Our customers' success is our success. We build tools that solve real problems and deliver real value.
+                Our customers&apos; success is our success. We build tools that solve real problems and deliver real value.
               </p>
             </div>
             <div>
@@ -166,7 +166,7 @@ export default function CareersPage() {
                 Continuous Learning
               </h3>
               <p className="text-gray-600 dark:text-gray-300">
-                We're always learning, growing, and improving. We invest in our team's development and celebrate curiosity.
+                We&apos;re always learning, growing, and improving. We invest in our team&apos;s development and celebrate curiosity.
               </p>
             </div>
           </div>
@@ -218,10 +218,10 @@ export default function CareersPage() {
           
           <div className="mt-12 text-center p-8 bg-gray-50 dark:bg-neutral-800 rounded-lg">
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-              Don't see the right role?
+              Don&apos;t see the right role?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4">
-              We're always looking for talented people. Send us your resume and tell us how you can contribute.
+              We&apos;re always looking for talented people. Send us your resume and tell us how you can contribute.
             </p>
             <Link href="/contact?subject=careers" className="btn-secondary inline-flex items-center space-x-2">
               <span>Get in Touch</span>

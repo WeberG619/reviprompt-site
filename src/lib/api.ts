@@ -34,6 +34,9 @@ class DevCraftAPI {
 
   private async makeRequest<T>(endpoint: string, data: any): Promise<APIResponse<T>> {
     try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 10000) // 10 second timeout
+      
       const response = await fetch(`${DEVCRAFT_API_BASE}${endpoint}`, {
         method: 'POST',
         headers: {
@@ -41,18 +44,54 @@ class DevCraftAPI {
           'Authorization': `Bearer ${this.apiKey}`,
           'X-Client': 'devcraft-labs-website'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        signal: controller.signal
       })
 
+      clearTimeout(timeoutId)
+
       if (!response.ok) {
+        if (response.status === 401) {
+          console.warn('API authentication failed')
+          return {
+            success: false,
+            error: 'Authentication failed. Please check your API key.',
+            message: 'Using demo mode instead.'
+          } as APIResponse<T>
+        }
+        
+        if (response.status === 429) {
+          console.warn('API rate limit exceeded')
+          return {
+            success: false,
+            error: 'Rate limit exceeded. Please try again later.',
+            message: 'Using demo mode instead.'
+          } as APIResponse<T>
+        }
+        
         // Fallback to enhanced mock responses if API is unavailable
         console.log('API unavailable, using enhanced mock responses')
         return this.getMockResponse<T>(endpoint, data)
       }
 
-      return await response.json()
+      const result = await response.json()
+      return result
     } catch (error) {
-      console.log('API error, using enhanced mock responses:', error)
+      if (error instanceof Error) {
+        if (error.name === 'AbortError') {
+          console.warn('API request timed out')
+          return {
+            success: false,
+            error: 'Request timeout. Please try again.',
+            message: 'Using demo mode instead.'
+          } as APIResponse<T>
+        }
+        
+        console.log('API error:', error.message)
+      } else {
+        console.log('Unknown API error:', error)
+      }
+      
       return this.getMockResponse<T>(endpoint, data)
     }
   }

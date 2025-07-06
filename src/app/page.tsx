@@ -268,12 +268,9 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        {/* Background Image */}
+        {/* Background Pattern */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-45 dark:opacity-55"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop')`
-          }}
+          className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-white/30 to-blue-100/20 dark:from-neutral-800/20 dark:via-neutral-900/30 dark:to-blue-900/20"
         ></div>
         <div className="absolute inset-0 bg-gradient-to-br from-white/65 via-white/70 to-blue-50/75 dark:from-neutral-900/65 dark:via-neutral-900/70 dark:to-neutral-800/75"></div>
         
@@ -476,7 +473,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
-                  "{testimonial.text}"
+                  &ldquo;{testimonial.text}&rdquo;
                 </p>
                 <div>
                   <div className="font-semibold text-neutral-900 dark:text-white">{testimonial.author}</div>

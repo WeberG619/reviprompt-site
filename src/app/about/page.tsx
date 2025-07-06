@@ -100,7 +100,7 @@ export default function AboutPage() {
             <span className="text-blue-600"> Actually Work</span>
           </h1>
           <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8 max-w-3xl mx-auto">
-            We're on a mission to make powerful AI accessible to every business, regardless of size or technical expertise. 
+            We&apos;re on a mission to make powerful AI accessible to every business, regardless of size or technical expertise. 
             Our tools are designed to save you time, increase revenue, and let you focus on what you do best.
           </p>
         </div>
@@ -116,11 +116,11 @@ export default function AboutPage() {
               </h2>
               <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-6">
                 Most AI tools are built for tech companies with big budgets and dedicated IT teams. 
-                We believe every business deserves access to intelligent automation that's simple, 
+                We believe every business deserves access to intelligent automation that&apos;s simple, 
                 affordable, and effective.
               </p>
               <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
-                That's why we created DevCraft Labs - to build AI tools that small businesses can 
+                That&apos;s why we created DevCraft Labs - to build AI tools that small businesses can 
                 actually use without needing a computer science degree or a massive budget.
               </p>
             </div>

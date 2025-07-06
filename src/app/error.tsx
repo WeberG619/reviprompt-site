@@ -1,5 +1,6 @@
 'use client'
 import { useEffect } from 'react'
+import Link from 'next/link'
 import { AlertTriangle, RefreshCw, Home, Mail } from 'lucide-react'
 
 export default function Error({
@@ -43,13 +44,13 @@ export default function Error({
             <span>Try Again</span>
           </button>
           
-          <a
+          <Link
             href="/"
             className="w-full inline-flex items-center justify-center space-x-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
           >
             <Home className="w-4 h-4" />
             <span>Go Home</span>
-          </a>
+          </Link>
         </div>
 
         {process.env.NODE_ENV === 'development' && (

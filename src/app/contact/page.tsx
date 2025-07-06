@@ -109,7 +109,7 @@ export default function ContactPage() {
               Send us a Message
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300">
-              Tell us about your project and we'll get back to you within 24 hours.
+              Tell us about your project and we&apos;ll get back to you within 24 hours.
             </p>
           </div>
 
