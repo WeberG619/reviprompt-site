@@ -23,66 +23,66 @@ export default function BlogPage() {
 
   const featuredPost = {
     id: 'ai-transformation-2024',
-    title: 'The AI Transformation: How Businesses Are Achieving 10x Growth in 2024',
-    excerpt: 'Discover the key strategies and AI tools that are driving unprecedented business growth across industries. Learn from real-world examples and actionable insights.',
+    title: 'The AI Invoice Generator Revolution: How Small Businesses Save 15 Hours Weekly',
+    excerpt: 'Discover how our AI Invoice Generator is transforming billing workflows for 2,000+ businesses. Real case studies showing 99.7% accuracy and automated payment tracking.',
     author: {
-      name: 'Dr. Sarah Mitchell',
-      role: 'Head of AI Research',
-      avatar: '/api/placeholder/48/48'
+      name: 'DevCraft Labs Team',
+      role: 'AI Product Research',
+      avatar: '/DCL-logo.png'
     },
     publishedAt: '2024-07-01',
     readTime: '8 min read',
     category: 'AI Insights',
-    image: '/api/placeholder/800/400',
+    image: '/hero-background.png',
     featured: true,
-    tags: ['AI', 'Business Growth', 'Automation', 'Strategy']
+    tags: ['AI Invoice Generator', 'Business Automation', 'Productivity', 'Case Studies']
   }
 
   const blogPosts = [
     {
       id: 'proposal-automation-guide',
-      title: '5 Ways AI Proposal Generation Can Transform Your Sales Process',
-      excerpt: 'Learn how leading companies are using AI to create compelling proposals faster, close more deals, and scale their sales operations.',
+      title: 'DevCraft AI Proposal Generator: 5 Ways It Transforms Your Sales Process',
+      excerpt: 'Learn how our AI Proposal Generator helps businesses create compelling proposals 10x faster, with automated templates, smart pricing, and professional formatting.',
       author: {
-        name: 'Marcus Johnson',
-        role: 'Sales Strategy Expert',
-        avatar: '/api/placeholder/48/48'
+        name: 'DevCraft Labs Team',
+        role: 'Product Development',
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-28',
       readTime: '6 min read',
       category: 'AI Insights',
-      image: '/api/placeholder/600/300',
-      tags: ['Sales', 'AI', 'Proposals', 'Automation']
+      image: '/hero-background.png',
+      tags: ['AI Proposal Generator', 'Sales', 'Automation', 'DevCraft Tools']
     },
     {
       id: 'content-marketing-ai',
-      title: 'The Future of Content Marketing: AI-Powered Content Creation',
-      excerpt: 'Explore how AI is revolutionizing content marketing, from ideation to distribution, and learn best practices for implementation.',
+      title: 'AI Content Generator: Creating Professional Blog Posts and Social Media',
+      excerpt: 'Discover how our AI Content Generator helps marketers and businesses create high-quality content faster, with SEO optimization and brand voice consistency.',
       author: {
-        name: 'Emily Chen',
-        role: 'Content Marketing Director',
-        avatar: '/api/placeholder/48/48'
+        name: 'DevCraft Labs Team',
+        role: 'Content AI Research',
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-25',
       readTime: '7 min read',
       category: 'Productivity',
-      image: '/api/placeholder/600/300',
-      tags: ['Content Marketing', 'AI', 'Strategy', 'Creativity']
+      image: '/hero-background.png',
+      tags: ['AI Content Generator', 'Marketing', 'SEO', 'Productivity']
     },
     {
       id: 'landing-page-optimization',
-      title: 'Data-Driven Landing Page Optimization: A Complete Guide',
-      excerpt: 'Master the art and science of landing page optimization with AI-powered insights, A/B testing strategies, and conversion best practices.',
+      title: 'AI Landing Page Builder: Complete Guide to High-Converting Pages',
+      excerpt: 'Master our AI Landing Page Builder with conversion optimization, A/B testing, and professional templates that boost conversions by 60%.',
       author: {
-        name: 'Alex Rodriguez',
-        role: 'Growth Marketing Lead',
-        avatar: '/api/placeholder/48/48'
+        name: 'DevCraft Labs Team',
+        role: 'Growth Marketing',
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-22',
       readTime: '10 min read',
       category: 'Tutorials',
-      image: '/api/placeholder/600/300',
-      tags: ['Landing Pages', 'Conversion', 'Optimization', 'Growth']
+      image: '/hero-background.png',
+      tags: ['AI Landing Page Builder', 'Conversion', 'A/B Testing', 'DevCraft Tools']
     },
     {
       id: 'techflow-case-study',
@@ -200,7 +200,7 @@ export default function BlogPage() {
       <UnifiedNavigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
+      <section className="py-20 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-gray-800 dark:to-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
@@ -234,7 +234,7 @@ export default function BlogPage() {
                 onClick={() => setSelectedCategory(category.id)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                   selectedCategory === category.id
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-neutral-800 text-white'
                     : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
                 }`}
               >
@@ -261,7 +261,7 @@ export default function BlogPage() {
                     className="object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center space-x-1 px-3 py-1 bg-blue-600 text-white text-sm font-medium rounded-full">
+                    <span className="inline-flex items-center space-x-1 px-3 py-1 bg-neutral-800 text-white text-sm font-medium rounded-full">
                       {getCategoryIcon(featuredPost.category)}
                       <span>{featuredPost.category}</span>
                     </span>
@@ -318,7 +318,7 @@ export default function BlogPage() {
                   
                   <Link
                     href={`/blog/${featuredPost.id}`}
-                    className="inline-flex items-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                    className="inline-flex items-center space-x-2 bg-neutral-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-neutral-900 transition-colors"
                   >
                     <span>Read Article</span>
                     <ArrowRight className="w-4 h-4" />
@@ -353,7 +353,7 @@ export default function BlogPage() {
                     className="object-cover"
                   />
                   <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center space-x-1 px-2 py-1 bg-blue-600 text-white text-xs font-medium rounded">
+                    <span className="inline-flex items-center space-x-1 px-2 py-1 bg-neutral-800 text-white text-xs font-medium rounded">
                       {getCategoryIcon(post.category)}
                       <span>{post.category}</span>
                     </span>
@@ -415,7 +415,7 @@ export default function BlogPage() {
                   
                   <Link
                     href={`/blog/${post.id}`}
-                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 text-sm font-medium"
+                    className="inline-flex items-center space-x-2 text-neutral-700 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white text-sm font-medium"
                   >
                     <span>Read More</span>
                     <ArrowRight className="w-4 h-4" />
@@ -435,7 +435,7 @@ export default function BlogPage() {
                   setSelectedCategory('all')
                   setSearchTerm('')
                 }}
-                className="text-blue-600 hover:text-blue-700 font-medium"
+                className="text-neutral-700 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white font-medium"
               >
                 Clear filters
               </button>
@@ -445,25 +445,25 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-blue-600">
+      <section className="py-20 bg-neutral-900">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-4">
             Stay Updated with DevCraft Labs
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
-            Get the latest insights on AI, productivity, and business growth delivered to your inbox
+          <p className="text-xl text-neutral-300 mb-8">
+            Get the latest insights on AI tools, productivity, and business automation delivered to your inbox
           </p>
           <div className="max-w-md mx-auto flex gap-4">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-blue-300"
+              className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-neutral-500"
             />
-            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-neutral-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
               Subscribe
             </button>
           </div>
-          <p className="text-blue-200 text-sm mt-4">
+          <p className="text-neutral-400 text-sm mt-4">
             No spam. Unsubscribe at any time.
           </p>
         </div>

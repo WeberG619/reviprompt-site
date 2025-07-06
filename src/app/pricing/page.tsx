@@ -333,10 +333,10 @@ export default function UnifiedPricingPage() {
                   </div>
 
                   <Link
-                    href={plan.ctaLink}
+                    href={`/checkout?plan=${plan.name.toLowerCase().replace(' ', '-')}&billing=${billingPeriod}`}
                     className={`w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-colors ${
                       plan.popular
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
+                        ? 'bg-neutral-800 text-white hover:bg-neutral-900'
                         : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >

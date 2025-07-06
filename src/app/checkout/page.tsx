@@ -33,7 +33,7 @@ function CheckoutContent() {
     const plan = searchParams.get('plan')
     const billing = searchParams.get('billing')
     
-    if (plan && ['starter', 'professional', 'enterprise'].includes(plan)) {
+    if (plan && ['starter', 'professional', 'aec-professional', 'enterprise'].includes(plan)) {
       setSelectedPlan(plan)
     }
     if (billing && ['monthly', 'annual'].includes(billing)) {
@@ -69,12 +69,27 @@ function CheckoutContent() {
         'Team collaboration'
       ]
     },
+    'aec-professional': {
+      name: 'AEC Professional',
+      description: 'Complete AEC toolkit for Architecture, Engineering & Construction',
+      price: { monthly: 79, annual: 69 },
+      features: [
+        'All 3 AEC Professional Tools',
+        'Revit 2024, 2025, 2026 compatible',
+        'ReviPrompt Lab Professional',
+        'MEP Power Tools',
+        'QC Professional Suite',
+        'Dedicated AEC support',
+        'Regular tool updates',
+        '14-day free trial'
+      ]
+    },
     enterprise: {
       name: 'Enterprise',
       description: 'Advanced features for large organizations',
       price: { monthly: 149, annual: 119 },
       features: [
-        'Everything in Professional',
+        'Everything in Professional & AEC',
         'Unlimited team members',
         'Custom integrations',
         'Dedicated support manager',
@@ -100,13 +115,36 @@ function CheckoutContent() {
     e.preventDefault()
     setIsProcessing(true)
 
-    // Simulate payment processing
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    // In a real app, this would integrate with Stripe, PayPal, etc.
-    alert('Payment processed successfully! Welcome to DevCraft Labs!')
-    
-    setIsProcessing(false)
+    try {
+      // Unified payment processing - redirect to single Stripe checkout
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          planId: selectedPlan,
+          billingPeriod: billingPeriod,
+          customerInfo: {
+            email: formData.email,
+            name: `${formData.firstName} ${formData.lastName}`,
+            company: formData.company
+          }
+        }),
+      })
+
+      if (response.ok) {
+        const { url } = await response.json()
+        window.location.href = url // Redirect to Stripe Checkout
+      } else {
+        throw new Error('Payment setup failed')
+      }
+    } catch (error) {
+      console.error('Payment error:', error)
+      alert('Payment setup failed. Please try again or contact support.')
+    } finally {
+      setIsProcessing(false)
+    }
   }
 
   const testimonials = [

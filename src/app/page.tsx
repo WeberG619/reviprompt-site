@@ -268,36 +268,41 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden">
-        {/* Background Pattern */}
+        {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-blue-50/20 via-white/30 to-blue-100/20 dark:from-neutral-800/20 dark:via-neutral-900/30 dark:to-blue-900/20"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 dark:opacity-5"
+          style={{
+            backgroundImage: "url('/hero-background.png')"
+          }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-white/65 via-white/70 to-blue-50/75 dark:from-neutral-900/65 dark:via-neutral-900/70 dark:to-neutral-800/75"></div>
+        
+        {/* Background Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-50/90 via-white/95 to-neutral-100/90 dark:from-neutral-900/95 dark:via-neutral-900/98 dark:to-neutral-800/95"></div>
         
         {/* Subtle overlay pattern */}
         <div className="absolute inset-0 hero-pattern"></div>
         
         {/* Floating elements for depth */}
-        <div className="absolute top-20 left-20 w-2 h-2 bg-blue-400/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-32 w-1 h-1 bg-blue-500/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-blue-400/25 rounded-full animate-float-delayed"></div>
-        <div className="absolute top-32 right-20 w-1 h-1 bg-blue-600/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-20 left-20 w-2 h-2 bg-neutral-400/20 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-32 w-1 h-1 bg-neutral-500/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-neutral-400/25 rounded-full animate-float-delayed"></div>
+        <div className="absolute top-32 right-20 w-1 h-1 bg-neutral-600/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
         
         {/* Additional tech-inspired elements */}
-        <div className="absolute top-16 right-1/4 w-8 h-8 border border-blue-300/10 rounded-full animate-float-delayed"></div>
-        <div className="absolute bottom-20 right-16 w-6 h-6 border border-blue-400/15 rotate-45 animate-float" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute top-16 right-1/4 w-8 h-8 border border-neutral-300/10 rounded-full animate-float-delayed"></div>
+        <div className="absolute bottom-20 right-16 w-6 h-6 border border-neutral-400/15 rotate-45 animate-float" style={{animationDelay: '1.5s'}}></div>
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
             <div className="mb-6">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-neutral-100 text-neutral-800 dark:bg-neutral-800/50 dark:text-neutral-300">
                 <Zap className="w-4 h-4 mr-2" />
                 Professional AI Tools
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight">
               Enterprise AI Solutions
-              <span className="text-blue-600"> Built by Developers</span>
+              <span className="text-neutral-700 dark:text-neutral-300"> Built by Developers</span>
             </h1>
             <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed max-w-3xl">
               Professional-grade AI tools designed for businesses, developers, and AEC professionals. 
@@ -313,13 +318,13 @@ export default function HomePage() {
                 <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono ml-2">devcraft-labs.com</span>
               </div>
               <code className="text-sm text-neutral-700 dark:text-neutral-300 font-mono">
-                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST devcraft-labs-api.vercel.app/api/v1<br/>
+                <span className="text-neutral-800 dark:text-neutral-200">curl</span> -X POST devcraft-labs-api.vercel.app/api/v1<br/>
                 <span className="text-neutral-500 dark:text-neutral-400"># Generate invoice in seconds</span>
               </code>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link 
-                href="https://ai-portfolio-saas.vercel.app"
+                href="/checkout?plan=professional&billing=monthly"
                 className="btn-primary inline-flex items-center space-x-2 text-base"
               >
                 <span>Start Free Trial</span>
@@ -497,15 +502,15 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="https://ai-portfolio-saas.vercel.app"
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-8 py-4 rounded-lg transition-all inline-flex items-center space-x-2"
+              href="/checkout?plan=professional&billing=monthly"
+              className="bg-white hover:bg-neutral-100 text-neutral-900 font-medium px-8 py-4 rounded-lg transition-all inline-flex items-center space-x-2"
             >
               <span>Start Free Trial</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/pricing"
-              className="bg-white/10 hover:bg-white/20 text-white font-medium px-8 py-4 rounded-lg transition-all inline-flex items-center space-x-2"
+              className="bg-neutral-800 hover:bg-neutral-700 text-white font-medium px-8 py-4 rounded-lg border border-neutral-700 transition-all inline-flex items-center space-x-2"
             >
               <span>View Pricing</span>
             </Link>

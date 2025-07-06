@@ -2,9 +2,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { ChevronDown, Menu, X } from 'lucide-react'
+import { ChevronDown, Menu, X, Moon, Sun } from 'lucide-react'
+import { useTheme } from './ThemeProvider'
 
 export default function UnifiedNavigation() {
+  const { theme, toggleTheme } = useTheme()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
@@ -244,6 +246,13 @@ export default function UnifiedNavigation() {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
+            <button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
             <Link 
               href="/login" 
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
@@ -252,7 +261,7 @@ export default function UnifiedNavigation() {
             </Link>
             <Link 
               href="/dashboard" 
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="bg-neutral-800 dark:bg-neutral-700 text-white px-4 py-2 rounded-lg hover:bg-neutral-900 dark:hover:bg-neutral-600 transition-colors font-medium"
             >
               Start Free Trial
             </Link>
