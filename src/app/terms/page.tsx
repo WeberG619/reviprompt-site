@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { FileText, Scale, AlertTriangle, Moon, Sun } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
+
 export default function TermsPage() {
   const [darkMode, setDarkMode] = useState(false)
 

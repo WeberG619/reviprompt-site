@@ -5,6 +5,9 @@ import { ArrowRight, Moon, Sun, Code2, Building2, Briefcase, Terminal, CheckCirc
 import { useState, useEffect, useRef } from 'react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
+
 interface ChatMessage {
   text: string
   isUser: boolean

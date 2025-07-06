@@ -2,6 +2,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
+
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
 import { ArrowRight, Layout, TrendingUp, Target, Moon, Sun, Eye, Download, Share2 } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'

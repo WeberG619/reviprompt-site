@@ -6,6 +6,9 @@ import { ArrowRight, FileText, Clock, DollarSign, CheckCircle, Moon, Sun, Downlo
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
+
 export default function ProposalsPage() {
   const [darkMode, setDarkMode] = useState(false)
   const [businessType, setBusinessType] = useState('')

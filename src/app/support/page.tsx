@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { HelpCircle, Book, MessageCircle, Mail, Phone, Search, Moon, Sun, ChevronRight } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
+
 export default function SupportPage() {
   const [darkMode, setDarkMode] = useState(false)
   const [searchQuery, setSearchQuery] = useState('')

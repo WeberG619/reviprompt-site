@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { ArrowRight, Moon, Sun, Code2, CheckCircle, ExternalLink } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
+
 export default function DeveloperPage() {
   const [darkMode, setDarkMode] = useState(false)
 

@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { ArrowRight, Code, Book, Zap, Terminal, ExternalLink, Copy, Moon, Sun, ChevronRight, Key, Shield, Clock } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
+
 export default function DocsPage() {
   const [darkMode, setDarkMode] = useState(false)
   const [activeSection, setActiveSection] = useState('introduction')
