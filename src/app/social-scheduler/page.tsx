@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ArrowRight, Calendar, BarChart3, Share2, Moon, Sun, Clock, TrendingUp, Users, Send } from 'lucide-react'
+import Chatbot from '@/components/Chatbot'
 
 export default function SocialSchedulerPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -66,24 +67,40 @@ export default function SocialSchedulerPage() {
     setIsScheduling(true)
     
     try {
-      // In a real implementation, this would call the API
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Import API dynamically to avoid SSR issues
+      const { devCraftAPI } = await import('@/lib/api')
       
-      const mockPost = {
-        id: `post_${Date.now()}`,
-        content: postContent,
-        platforms: selectedPlatforms,
-        scheduledTime: scheduledTime || new Date(Date.now() + 3600000).toISOString(),
-        status: 'scheduled',
-        engagement: {
-          estimatedReach: Math.floor(Math.random() * 5000) + 1000,
-          estimatedEngagement: (Math.random() * 5 + 2).toFixed(1),
-          bestTime: '2:00 PM EST'
+      const response = await devCraftAPI.generateSocialPost({
+        prompt: postContent,
+        context: {
+          platforms: selectedPlatforms,
+          scheduledTime: scheduledTime
         },
-        createdAt: new Date().toISOString()
-      }
+        tone: 'Professional'
+      })
       
-      setScheduledPost(mockPost)
+      if (response.success && response.data) {
+        const postData = {
+          id: `post_${Date.now()}`,
+          content: response.data.content || postContent,
+          platforms: selectedPlatforms,
+          scheduledTime: scheduledTime || new Date(Date.now() + 3600000).toISOString(),
+          status: 'scheduled',
+          engagement: {
+            estimatedReach: Math.floor(Math.random() * 5000) + 1000,
+            estimatedEngagement: response.data.engagementPrediction || (Math.random() * 5 + 2).toFixed(1),
+            bestTime: response.data.bestTime || '2:00 PM EST'
+          },
+          hashtags: response.data.hashtags || [],
+          platformOptimizations: response.data.platformOptimizations || {},
+          createdAt: new Date().toISOString(),
+          aiGenerated: true
+        }
+        
+        setScheduledPost(postData)
+      } else {
+        throw new Error(response.error || 'Failed to generate social post')
+      }
       setPostContent('')
       setSelectedPlatforms([])
       setScheduledTime('')
@@ -448,6 +465,8 @@ export default function SocialSchedulerPage() {
           </div>
         </div>
       </section>
+      
+      <Chatbot pageContext="social-scheduler" />
     </div>
   )
 }

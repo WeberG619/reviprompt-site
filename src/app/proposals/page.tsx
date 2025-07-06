@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ArrowRight, FileText, Clock, DollarSign, CheckCircle, Moon, Sun, Download, Send } from 'lucide-react'
+import Chatbot from '@/components/Chatbot'
 
 export default function ProposalsPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -29,7 +30,33 @@ export default function ProposalsPage() {
     'E-commerce',
     'Real Estate',
     'Healthcare',
-    'Education'
+    'Education',
+    'Finance',
+    'Manufacturing',
+    'Construction',
+    'Retail',
+    'Restaurant/Food Service',
+    'Professional Services',
+    'Non-profit',
+    'Technology Startup',
+    'SaaS Company',
+    'Digital Agency',
+    'Content Creation',
+    'Media Production',
+    'Legal Services',
+    'Architecture Firm',
+    'Automotive',
+    'Transportation',
+    'Logistics',
+    'Insurance',
+    'Banking',
+    'Travel & Tourism',
+    'Fitness & Wellness',
+    'Beauty & Cosmetics',
+    'Fashion & Apparel',
+    'Home Services',
+    'IT Services',
+    'Telecommunications'
   ]
 
   const projectTypes = {
@@ -40,7 +67,33 @@ export default function ProposalsPage() {
     'E-commerce': ['Online Store Setup', 'Platform Migration', 'Marketing Strategy'],
     'Real Estate': ['Property Marketing', 'CRM Setup', 'Lead Generation'],
     'Healthcare': ['Practice Management', 'Patient Portal', 'Compliance Systems'],
-    'Education': ['Learning Management', 'Online Courses', 'Student Portal']
+    'Education': ['Learning Management', 'Online Courses', 'Student Portal'],
+    'Finance': ['Financial Planning', 'Investment Management', 'Risk Assessment', 'Compliance Audit'],
+    'Manufacturing': ['Process Optimization', 'Quality Control', 'Supply Chain Management', 'ERP Implementation'],
+    'Construction': ['Project Management', 'Cost Estimation', 'Safety Compliance', 'Resource Planning'],
+    'Retail': ['Store Setup', 'Inventory Management', 'Point of Sale', 'Customer Analytics'],
+    'Restaurant/Food Service': ['Menu Development', 'POS System', 'Delivery Platform', 'Kitchen Management'],
+    'Professional Services': ['Service Automation', 'Client Management', 'Billing System', 'Document Management'],
+    'Non-profit': ['Fundraising Campaign', 'Volunteer Management', 'Event Planning', 'Donor Database'],
+    'Technology Startup': ['MVP Development', 'Market Research', 'Scaling Strategy', 'Funding Preparation'],
+    'SaaS Company': ['Product Development', 'Customer Onboarding', 'Subscription Management', 'Analytics Platform'],
+    'Digital Agency': ['Client Portal', 'Project Management', 'Campaign Management', 'Reporting Dashboard'],
+    'Content Creation': ['Content Strategy', 'Publishing Platform', 'Audience Analytics', 'Monetization Strategy'],
+    'Media Production': ['Production Management', 'Asset Management', 'Distribution Strategy', 'Rights Management'],
+    'Legal Services': ['Case Management', 'Document Automation', 'Client Portal', 'Billing System'],
+    'Architecture Firm': ['Project Management', 'Design Collaboration', 'Client Presentation', 'Document Control'],
+    'Automotive': ['Inventory Management', 'Service Scheduling', 'Customer Management', 'Parts Ordering'],
+    'Transportation': ['Fleet Management', 'Route Optimization', 'Maintenance Scheduling', 'Driver Management'],
+    'Logistics': ['Warehouse Management', 'Shipping Optimization', 'Inventory Tracking', 'Supply Chain'],
+    'Insurance': ['Claims Processing', 'Policy Management', 'Risk Assessment', 'Customer Portal'],
+    'Banking': ['Digital Banking', 'Loan Processing', 'Risk Management', 'Customer Onboarding'],
+    'Travel & Tourism': ['Booking System', 'Itinerary Planning', 'Customer Management', 'Revenue Management'],
+    'Fitness & Wellness': ['Membership Management', 'Class Scheduling', 'Personal Training', 'Health Tracking'],
+    'Beauty & Cosmetics': ['Appointment Booking', 'Product Catalog', 'Customer Management', 'Inventory System'],
+    'Fashion & Apparel': ['Product Catalog', 'Inventory Management', 'Order Fulfillment', 'Customer Analytics'],
+    'Home Services': ['Service Scheduling', 'Customer Management', 'Billing System', 'Quality Control'],
+    'IT Services': ['Help Desk System', 'Asset Management', 'Service Delivery', 'Client Portal'],
+    'Telecommunications': ['Network Management', 'Customer Service', 'Billing System', 'Service Provisioning']
   }
 
   const handleGenerate = async () => {
@@ -52,45 +105,66 @@ export default function ProposalsPage() {
     setIsGenerating(true)
     
     try {
-      // In a real implementation, this would call the API
-      // For demo purposes, we'll simulate the API response
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Import API dynamically to avoid SSR issues
+      const { devCraftAPI } = await import('@/lib/api')
       
-      const mockProposal = {
-        id: `prop_${Date.now()}`,
-        sections: [
-          {
-            id: '1',
-            title: 'Executive Summary',
-            content: `We are excited to present our proposal for ${projectType.toLowerCase()} that will enhance your digital presence and drive business growth. Our team of experienced professionals will create a custom solution tailored to your specific needs, ensuring optimal performance, security, and user experience.`
-          },
-          {
-            id: '2', 
-            title: 'Project Understanding',
-            content: `Based on our discussions, we understand you are looking to ${projectType.toLowerCase()} that will address key objectives including enhanced competitive position, improved efficiency, measurable ROI, and scalable growth solutions.`
-          },
-          {
-            id: '3',
-            title: 'Proposed Solution', 
-            content: `Our comprehensive solution includes discovery & planning, development & implementation, and deployment & support phases. We follow industry best practices with agile methodology, continuous integration, and comprehensive testing.`
-          },
-          {
-            id: '4',
-            title: 'Timeline & Methodology',
-            content: `Project timeline: 8-12 weeks including initiation (Week 1-2), development (Week 3-6), testing & refinement (Week 7-8), and deployment (Week 9-10) with ongoing support.`
-          },
-          {
-            id: '5',
-            title: 'Investment & Payment Terms',
-            content: `Transparent pricing with 50% upon commencement, 25% at milestone completion, and 25% upon final delivery. Includes all development work, project management, testing, documentation, and 30-day post-launch support.`
-          }
-        ],
-        estimatedBudget: 25000,
-        timeline: '8-12 weeks',
-        createdAt: new Date().toISOString()
+      const response = await devCraftAPI.generateProposal({
+        prompt: `${projectType} for ${businessType}`,
+        businessType,
+        context: {
+          clientInfo: clientInfo,
+          projectScope: projectScope,
+          projectType: projectType
+        }
+      })
+      
+      if (response.success && response.data) {
+        const proposalData = {
+          id: `prop_${Date.now()}`,
+          sections: [
+            {
+              id: '1',
+              title: 'Executive Summary',
+              content: response.data.executiveSummary
+            },
+            {
+              id: '2',
+              title: 'Project Scope',
+              content: Array.isArray(response.data.scope) ? response.data.scope.join('\n• ') : response.data.scope || projectScope
+            },
+            {
+              id: '3',
+              title: 'Timeline & Methodology',
+              content: response.data.timeline?.map((phase: any) => 
+                `${phase.phase}: ${phase.duration}${phase.tasks ? '\n  - ' + phase.tasks.join('\n  - ') : ''}`
+              ).join('\n\n') || 'Timeline will be provided based on project requirements.'
+            },
+            {
+              id: '4',
+              title: 'Investment & Budget',
+              content: response.data.budget ? 
+                `Total Investment: $${response.data.budget.totalEstimate?.toLocaleString()}\n\nBreakdown:\n${response.data.budget.breakdown?.map((item: any) => `• ${item.category}: $${item.amount?.toLocaleString()} (${item.percentage}%)`).join('\n')}\n\nPayment Terms: ${response.data.budget.paymentTerms}` :
+                'Investment details will be provided based on final requirements.'
+            },
+            {
+              id: '5',
+              title: 'Deliverables',
+              content: Array.isArray(response.data.deliverables) ? 
+                response.data.deliverables.map((item: string) => `• ${item}`).join('\n') :
+                'Comprehensive deliverables package including all project components.'
+            }
+          ],
+          estimatedBudget: response.data.budget?.totalEstimate || 25000,
+          timeline: '8-12 weeks',
+          createdAt: new Date().toISOString(),
+          aiGenerated: true,
+          confidence: response.data.confidence || 0.95
+        }
+        
+        setGeneratedProposal(proposalData)
+      } else {
+        throw new Error(response.error || 'Failed to generate proposal')
       }
-      
-      setGeneratedProposal(mockProposal)
     } catch (error) {
       alert('Error generating proposal. Please try again.')
     } finally {
@@ -360,6 +434,8 @@ export default function ProposalsPage() {
           </div>
         </div>
       </section>
+      
+      <Chatbot pageContext="proposals" />
     </div>
   )
 }

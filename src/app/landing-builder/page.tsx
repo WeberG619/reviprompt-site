@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ArrowRight, Layout, TrendingUp, Target, Moon, Sun, Eye, Download, Share2 } from 'lucide-react'
+import Chatbot from '@/components/Chatbot'
 
 export default function LandingBuilderPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -31,7 +32,29 @@ export default function LandingBuilderPage() {
     'Finance',
     'Marketing Agency',
     'Non-profit',
-    'Restaurant/Food'
+    'Restaurant/Food',
+    'Manufacturing',
+    'Construction',
+    'Retail',
+    'Professional Services',
+    'Technology Startup',
+    'Digital Agency',
+    'Content Creation',
+    'Media Production',
+    'Legal Services',
+    'Architecture Firm',
+    'Automotive',
+    'Transportation',
+    'Logistics',
+    'Insurance',
+    'Banking',
+    'Travel & Tourism',
+    'Fitness & Wellness',
+    'Beauty & Cosmetics',
+    'Fashion & Apparel',
+    'Home Services',
+    'IT Services',
+    'Telecommunications'
   ]
 
   const goals = {
@@ -44,7 +67,29 @@ export default function LandingBuilderPage() {
     'Finance': ['Generate Leads', 'Book Consultation', 'Download Guide', 'Apply Now'],
     'Marketing Agency': ['Generate Leads', 'Book Consultation', 'Download Case Study', 'Request Quote'],
     'Non-profit': ['Collect Donations', 'Generate Volunteers', 'Sign Petition', 'Download Report'],
-    'Restaurant/Food': ['Make Reservation', 'Order Online', 'Join Loyalty', 'Catering Quote']
+    'Restaurant/Food': ['Make Reservation', 'Order Online', 'Join Loyalty', 'Catering Quote'],
+    'Manufacturing': ['Request Quote', 'Download Catalog', 'Schedule Tour', 'Generate Leads'],
+    'Construction': ['Request Quote', 'Schedule Consultation', 'Download Portfolio', 'Generate Leads'],
+    'Retail': ['Sell Product', 'Collect Emails', 'Drive Traffic', 'Join Loyalty'],
+    'Professional Services': ['Book Consultation', 'Generate Leads', 'Download Guide', 'Request Quote'],
+    'Technology Startup': ['Start Free Trial', 'Generate Leads', 'Download App', 'Request Demo'],
+    'Digital Agency': ['Generate Leads', 'Book Consultation', 'Download Case Study', 'Request Quote'],
+    'Content Creation': ['Subscribe', 'Generate Leads', 'Download Sample', 'Book Consultation'],
+    'Media Production': ['Request Quote', 'Download Portfolio', 'Book Consultation', 'Generate Leads'],
+    'Legal Services': ['Book Consultation', 'Generate Leads', 'Download Guide', 'Request Quote'],
+    'Architecture Firm': ['Request Quote', 'Download Portfolio', 'Book Consultation', 'Generate Leads'],
+    'Automotive': ['Schedule Service', 'Request Quote', 'Download Brochure', 'Generate Leads'],
+    'Transportation': ['Request Quote', 'Book Service', 'Download Guide', 'Generate Leads'],
+    'Logistics': ['Request Quote', 'Book Service', 'Download Guide', 'Generate Leads'],
+    'Insurance': ['Get Quote', 'Book Consultation', 'Download Guide', 'Generate Leads'],
+    'Banking': ['Apply Now', 'Book Consultation', 'Download Guide', 'Generate Leads'],
+    'Travel & Tourism': ['Book Trip', 'Download Brochure', 'Request Quote', 'Generate Leads'],
+    'Fitness & Wellness': ['Book Trial', 'Join Membership', 'Download Guide', 'Generate Leads'],
+    'Beauty & Cosmetics': ['Book Appointment', 'Shop Product', 'Download Guide', 'Generate Leads'],
+    'Fashion & Apparel': ['Shop Product', 'Join Newsletter', 'Download Lookbook', 'Generate Leads'],
+    'Home Services': ['Request Quote', 'Book Service', 'Download Guide', 'Generate Leads'],
+    'IT Services': ['Request Quote', 'Book Consultation', 'Download Guide', 'Generate Leads'],
+    'Telecommunications': ['Get Quote', 'Book Service', 'Download Guide', 'Generate Leads']
   }
 
   const handleGenerate = async () => {
@@ -56,58 +101,75 @@ export default function LandingBuilderPage() {
     setIsGenerating(true)
     
     try {
-      // In a real implementation, this would call the API
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Import API dynamically to avoid SSR issues
+      const { devCraftAPI } = await import('@/lib/api')
       
-      const mockPage = {
-        id: `page_${Date.now()}`,
-        elements: [
-          {
-            id: '1',
-            type: 'header',
-            content: getHeadlineForIndustryGoal(industry, goal),
-            styles: {
-              fontSize: '3rem',
-              fontWeight: 'bold',
-              textAlign: 'center',
-              textColor: '#1F2937',
-              padding: '4rem 2rem 2rem 2rem'
+      const response = await devCraftAPI.generateLandingPage({
+        prompt: goal,
+        industry,
+        context: {
+          targetAudience,
+          brandColor: brandColors.primary,
+          industry,
+          goal
+        }
+      })
+      
+      if (response.success && response.data) {
+        const pageData = {
+          id: `page_${Date.now()}`,
+          elements: [
+            {
+              id: '1',
+              type: 'header',
+              content: response.data.headline || getHeadlineForIndustryGoal(industry, goal),
+              styles: {
+                fontSize: '3rem',
+                fontWeight: 'bold',
+                textAlign: 'center',
+                textColor: brandColors.primary || '#1F2937',
+                padding: '4rem 2rem 2rem 2rem'
+              }
+            },
+            {
+              id: '2',
+              type: 'text', 
+              content: response.data.subheadline || getSubheadlineForIndustryGoal(industry, goal),
+              styles: {
+                fontSize: '1.25rem',
+                textAlign: 'center',
+                textColor: '#6B7280',
+                padding: '0 2rem 2rem 2rem'
+              }
+            },
+            {
+              id: '3',
+              type: 'button',
+              content: response.data.ctaText || getCtaForGoal(goal),
+              styles: {
+                backgroundColor: brandColors.primary || '#3B82F6',
+                textColor: '#FFFFFF',
+                fontSize: '1.125rem',
+                fontWeight: 'bold',
+                padding: '1rem 2rem',
+                borderRadius: '0.5rem',
+                textAlign: 'center',
+                margin: '0 auto 3rem auto',
+                width: 'fit-content'
+              }
             }
-          },
-          {
-            id: '2',
-            type: 'text', 
-            content: getSubheadlineForIndustryGoal(industry, goal),
-            styles: {
-              fontSize: '1.25rem',
-              textAlign: 'center',
-              textColor: '#6B7280',
-              padding: '0 2rem 2rem 2rem'
-            }
-          },
-          {
-            id: '3',
-            type: 'button',
-            content: getCtaForGoal(goal),
-            styles: {
-              backgroundColor: brandColors.primary,
-              textColor: '#FFFFFF',
-              fontSize: '1.125rem',
-              fontWeight: 'bold',
-              padding: '1rem 2rem',
-              borderRadius: '0.5rem',
-              textAlign: 'center',
-              margin: '0 auto 3rem auto',
-              width: 'fit-content'
-            }
-          }
-        ],
-        conversionOptimizations: getOptimizationTips(industry, goal),
-        estimatedConversionRate: getConversionRate(industry, goal),
-        createdAt: new Date().toISOString()
+          ],
+          sections: response.data.sections || [],
+          conversionOptimizations: response.data.designRecommendations || getOptimizationTips(industry, goal),
+          estimatedConversionRate: response.data.conversionPrediction || getConversionRate(industry, goal),
+          createdAt: new Date().toISOString(),
+          aiGenerated: true
+        }
+        
+        setGeneratedPage(pageData)
+      } else {
+        throw new Error(response.error || 'Failed to generate landing page')
       }
-      
-      setGeneratedPage(mockPage)
     } catch (error) {
       alert('Error generating landing page. Please try again.')
     } finally {
@@ -137,8 +199,10 @@ export default function LandingBuilderPage() {
       }
     }
 
-    return headlines[industry as keyof typeof headlines]?.[goal as keyof any] || 
-           `Professional ${industry} Solutions That Deliver Results`
+    const industryHeadlines = headlines[industry as keyof typeof headlines]
+    return (industryHeadlines && typeof industryHeadlines === 'object' && goal in industryHeadlines) 
+      ? industryHeadlines[goal as keyof typeof industryHeadlines]
+      : `Professional ${industry} Solutions That Deliver Results`
   }
 
   const getSubheadlineForIndustryGoal = (industry: string, goal: string) => {
@@ -482,6 +546,8 @@ export default function LandingBuilderPage() {
           </div>
         </div>
       </section>
+      
+      <Chatbot pageContext="landing-builder" />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ArrowRight, FileText, Zap, Target, Moon, Sun, Copy, CheckCircle, RefreshCw } from 'lucide-react'
+import Chatbot from '@/components/Chatbot'
 
 export default function ContentPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -38,7 +39,13 @@ export default function ContentPage() {
 
   const audiences = [
     'Business Professionals', 'Small Business Owners', 'Entrepreneurs', 'Developers',
-    'Marketers', 'Students', 'General Public', 'Industry Experts', 'Customers', 'Investors'
+    'Marketers', 'Students', 'General Public', 'Industry Experts', 'Customers', 'Investors',
+    'Healthcare Professionals', 'Educators', 'Real Estate Agents', 'Consultants', 'Designers',
+    'Construction Workers', 'Retailers', 'Restaurant Owners', 'Non-profit Organizations',
+    'Technology Professionals', 'Financial Advisors', 'Legal Professionals', 'Architects',
+    'Manufacturing Workers', 'Transportation Workers', 'Insurance Agents', 'Travel Agents',
+    'Fitness Professionals', 'Beauty Professionals', 'Fashion Professionals', 'Home Service Providers',
+    'IT Professionals', 'Telecommunications Workers', 'Media Professionals', 'Content Creators'
   ]
 
   const handleGenerate = async () => {
@@ -50,20 +57,39 @@ export default function ContentPage() {
     setIsGenerating(true)
     
     try {
-      // In a real implementation, this would call the API
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Import API dynamically to avoid SSR issues
+      const { devCraftAPI } = await import('@/lib/api')
       
-      const mockContent = {
-        id: `content_${Date.now()}`,
-        type: contentType,
-        topic: topic,
-        content: generateMockContent(contentType, topic, audience, tone),
-        createdAt: new Date().toISOString(),
-        wordCount: Math.floor(Math.random() * 500) + 200,
-        readingTime: Math.floor(Math.random() * 5) + 2
+      const response = await devCraftAPI.generateContent({
+        prompt: topic,
+        context: {
+          contentType,
+          audience,
+          tone
+        },
+        audience,
+        tone
+      })
+      
+      if (response.success && response.data) {
+        const contentData = {
+          id: `content_${Date.now()}`,
+          type: contentType,
+          topic: topic,
+          content: response.data.content,
+          createdAt: new Date().toISOString(),
+          wordCount: response.data.wordCount || Math.floor(Math.random() * 500) + 200,
+          readingTime: Math.ceil((response.data.wordCount || 400) / 200),
+          seoScore: response.data.seoScore,
+          readabilityScore: response.data.readabilityScore,
+          engagementPrediction: response.data.engagementPrediction,
+          aiGenerated: true
+        }
+        
+        setGeneratedContent(contentData)
+      } else {
+        throw new Error(response.error || 'Failed to generate content')
       }
-      
-      setGeneratedContent(mockContent)
     } catch (error) {
       alert('Error generating content. Please try again.')
     } finally {
@@ -446,6 +472,8 @@ For more information, contact:
           </div>
         </div>
       </section>
+      
+      <Chatbot pageContext="content" />
     </div>
   )
 }

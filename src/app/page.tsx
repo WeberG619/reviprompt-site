@@ -164,10 +164,10 @@ export default function HomePage() {
         {
           name: "AI Task Manager",
           description: "Intelligent project management with automated workflow optimization",
-          status: "coming-soon",
+          status: "live",
           features: ["Smart scheduling", "Team collaboration", "Progress tracking", "Resource allocation"],
-          link: "#",
-          cta: "Request Access",
+          link: "/task-manager",
+          cta: "Manage Tasks",
           metrics: { productivity: "+45%", efficiency: "3x faster", automation: "80%" }
         }
       ]
