@@ -183,31 +183,13 @@ export default function HomePage() {
       icon: <Building2 className="w-6 h-6" />,
       products: [
         {
-          name: "ReviPrompt Lab Professional",
-          description: "AI prompts and automation tools for Revit professionals - trusted by 500+ users",
+          name: "AEC Professional Suite",
+          description: "Complete toolkit with all 3 professional AEC tools - ReviPrompt Lab Pro, MEP Power Tools, and QC Professional Suite",
           status: "live",
-          features: ["AI-powered prompts", "Sheet setup automation", "MEP coordination tools", "IBC/ADA compliance"],
-          link: "https://revipromptlab.com",
-          cta: "View Products",
-          metrics: { users: "500+", time_saved: "60%", packs: "6 available" }
-        },
-        {
-          name: "MEP Power Tools",
-          description: "Advanced MEP coordination and calculation tools for Revit",
-          status: "live",
-          features: ["Load calculations", "Equipment tagging", "System validation", "Model auditing"],
-          link: "https://buy.stripe.com/aFaeVc5iG6amgKveOuefC02",
-          cta: "Buy Now - $39",
-          metrics: { efficiency: "+45%", accuracy: "99%", tools: "5 included" }
-        },
-        {
-          name: "QC Professional Suite",
-          description: "Quality control and deliverable checking for architectural projects",
-          status: "live",
-          features: ["Deliverable checker", "Element counter", "Model auditor", "Report generation"],
-          link: "https://buy.stripe.com/bJe9ASeTg6am9i3eOuefC03",
-          cta: "Buy Now - $39",
-          metrics: { errors_found: "95%", time_saved: "40%", reports: "automated" }
+          features: ["All 3 AEC tools included", "Revit 2024-2026 compatible", "Dedicated AEC support", "14-day free trial"],
+          link: "/pricing?plan=aec-professional",
+          cta: "Get AEC Professional - $79/month",
+          metrics: { tools: "3 included", savings: "$38/month", support: "dedicated" }
         }
       ]
     }

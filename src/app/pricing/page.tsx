@@ -50,13 +50,36 @@ export default function UnifiedPricingPage() {
       ctaLink: '/dashboard?plan=professional'
     },
     {
+      name: 'AEC Professional',
+      description: 'Complete AEC toolkit for Architecture, Engineering & Construction',
+      price: { monthly: 79, annual: 69 },
+      originalPrice: { monthly: 117, annual: 117 },
+      popular: false,
+      badge: 'AEC Specialists',
+      features: [
+        'All 3 AEC Professional Tools',
+        'Revit 2024, 2025, 2026 compatible',
+        'MEP coordination & calculations',
+        'Quality control & auditing',
+        'AI-powered prompts & automation',
+        'Sheet setup automation',
+        'IBC/ADA compliance tools',
+        'Dedicated AEC support',
+        'Regular tool updates'
+      ],
+      tools: ['ReviPrompt Lab Pro', 'MEP Power Tools', 'QC Professional Suite'],
+      cta: 'Start AEC Trial',
+      ctaLink: '/dashboard?plan=aec-professional',
+      specialty: 'aec'
+    },
+    {
       name: 'Enterprise',
       description: 'Advanced features for large organizations',
       price: { monthly: 149, annual: 119 },
       originalPrice: { monthly: 149, annual: 149 },
       popular: false,
       features: [
-        'Everything in Professional',
+        'Everything in Professional & AEC',
         'Unlimited team members',
         'Custom integrations',
         'Dedicated support manager',
@@ -118,7 +141,38 @@ export default function UnifiedPricingPage() {
       icon: '📊',
       starter: false,
       professional: true,
+      aecProfessional: true,
       enterprise: true
+    },
+    {
+      name: 'ReviPrompt Lab Professional',
+      description: 'AI-powered prompts and automation tools for Revit professionals',
+      icon: '🏗️',
+      starter: false,
+      professional: false,
+      aecProfessional: true,
+      enterprise: true,
+      specialty: 'aec'
+    },
+    {
+      name: 'MEP Power Tools',
+      description: 'Advanced MEP coordination and calculation tools for Revit',
+      icon: '⚙️',
+      starter: false,
+      professional: false,
+      aecProfessional: true,
+      enterprise: true,
+      specialty: 'aec'
+    },
+    {
+      name: 'QC Professional Suite',
+      description: 'Quality control and deliverable checking for architectural projects',
+      icon: '✅',
+      starter: false,
+      professional: false,
+      aecProfessional: true,
+      enterprise: true,
+      specialty: 'aec'
     }
   ]
 
@@ -220,13 +274,15 @@ export default function UnifiedPricingPage() {
       {/* Pricing Cards */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {plans.map((plan) => (
               <div
                 key={plan.name}
                 className={`relative rounded-2xl border-2 p-8 ${
                   plan.popular
                     ? 'border-blue-500 shadow-xl'
+                    : plan.specialty === 'aec'
+                    ? 'border-orange-500 shadow-lg'
                     : 'border-gray-200 dark:border-gray-700'
                 } bg-white dark:bg-gray-800`}
               >
@@ -234,6 +290,13 @@ export default function UnifiedPricingPage() {
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <span className="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-medium">
                       Most Popular
+                    </span>
+                  </div>
+                )}
+                {plan.badge && !plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <span className="bg-orange-500 text-white px-4 py-1 rounded-full text-sm font-medium">
+                      {plan.badge}
                     </span>
                   </div>
                 )}
@@ -344,6 +407,12 @@ export default function UnifiedPricingPage() {
                         Popular
                       </span>
                     </th>
+                    <th className="px-6 py-4 text-center font-semibold text-gray-900 dark:text-white relative">
+                      AEC Professional
+                      <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full">
+                        AEC Specialists
+                      </span>
+                    </th>
                     <th className="px-6 py-4 text-center font-semibold text-gray-900 dark:text-white">
                       Enterprise
                     </th>
@@ -375,6 +444,13 @@ export default function UnifiedPricingPage() {
                       <td className="px-6 py-4 text-center">
                         {tool.professional ? (
                           <Check className="w-5 h-5 text-green-500 mx-auto" />
+                        ) : (
+                          <span className="text-gray-400 text-sm">-</span>
+                        )}
+                      </td>
+                      <td className="px-6 py-4 text-center">
+                        {tool.aecProfessional ? (
+                          <Check className="w-5 h-5 text-orange-500 mx-auto" />
                         ) : (
                           <span className="text-gray-400 text-sm">-</span>
                         )}
