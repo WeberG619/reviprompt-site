@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ArrowRight, FileText, Zap, Target, Moon, Sun, Copy, CheckCircle, RefreshCw } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
+import UnifiedNavigation from '@/components/UnifiedNavigation'
 
 export default function ContentPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -245,36 +246,8 @@ For more information, contact:
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
-      {/* Navigation */}
-      <nav className="glass sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-3">
-              <Image
-                src="/DCL-logo.png"
-                alt="DevCraft Labs Logo"
-                width={54}
-                height={32}
-              />
-              <div>
-                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
-                <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">AI Content Generator</div>
-              </div>
-            </Link>
-            <div className="flex items-center space-x-6">
-              <Link href="/" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
-                ← Back to Home
-              </Link>
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
-              >
-                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Unified Navigation */}
+      <UnifiedNavigation />
 
       {/* Hero Section */}
       <section className="py-20 bg-neutral-50 dark:bg-neutral-800/50">

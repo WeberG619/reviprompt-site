@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { ArrowRight, Calendar, BarChart3, Share2, Moon, Sun, Clock, TrendingUp, Users, Send, CheckCircle2, Circle, Plus, Edit3, Trash2, User, Target, Zap, Timer, AlertCircle, Filter, Search } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
+import UnifiedNavigation from '@/components/UnifiedNavigation'
 
 export default function TaskManagerPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -196,22 +197,16 @@ export default function TaskManagerPage() {
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+      {/* Unified Navigation */}
+      <UnifiedNavigation />
+      
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="flex justify-between items-center mb-8">
           <div>
-            <Link href="/" className="text-blue-600 hover:text-blue-800 font-medium mb-2 inline-block">
-              ← Back to Home
-            </Link>
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white">AI Task Manager</h1>
             <p className="text-gray-600 dark:text-gray-400 mt-2">Intelligent project management with automated workflow optimization</p>
           </div>
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className="p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-          >
-            {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
         </div>
 
         {/* Stats Cards */}

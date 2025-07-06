@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Moon, Sun, Code2, Building2, Briefcase, Terminal, CheckCircle, Star, Github, ExternalLink, Zap, MessageCircle, X, Send, Bot } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
+import UnifiedNavigation from '@/components/UnifiedNavigation'
 
 interface ChatMessage {
   text: string
@@ -253,55 +254,8 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
-      {/* Professional Navigation */}
-      <nav className="glass sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-3">
-              <Image
-                src="/DCL-logo.png"
-                alt="DevCraft Labs Logo"
-                width={54}
-                height={32}
-              />
-              <div>
-                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
-                <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Professional AI Tools</div>
-              </div>
-            </Link>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="#solutions" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
-                Solutions
-              </Link>
-              <Link href="/pricing" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
-                Pricing
-              </Link>
-              <Link href="/about" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
-                About
-              </Link>
-              <Link href="/docs" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
-                Docs
-              </Link>
-              <Link href="https://devcraft-labs-api.vercel.app" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium" target="_blank">
-                API <ExternalLink className="w-3 h-3 inline ml-1" />
-              </Link>
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
-              >
-                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </button>
-              <Link 
-                href="https://ai-portfolio-saas.vercel.app/auth/login"
-                className="btn-primary text-sm"
-              >
-                Sign In
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      {/* Unified Navigation */}
+      <UnifiedNavigation />
 
       {/* Category Filter */}
       <div className="sticky top-16 z-40 bg-white/95 dark:bg-neutral-900/95 backdrop-blur-lg border-b border-neutral-200 dark:border-neutral-800">

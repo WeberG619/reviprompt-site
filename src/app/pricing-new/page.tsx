@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Check, Star, ArrowRight, Zap, Shield, Users, Headphones } from 'lucide-react'
-import UnifiedNavigation from '@/components/UnifiedNavigation'
 
 export default function UnifiedPricingPage() {
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annual'>('monthly')
@@ -171,8 +170,7 @@ export default function UnifiedPricingPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Unified Navigation */}
-      <UnifiedNavigation />
+      {/* Navigation would go here - use UnifiedNavigation component */}
       
       {/* Hero Section */}
       <section className="pt-16 pb-12 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
