@@ -1,12 +1,45 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 
 export default function UnifiedNavigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
+  const [dropdownTimeout, setDropdownTimeout] = useState<NodeJS.Timeout | null>(null)
+
+  const handleDropdownEnter = (dropdown: string) => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout)
+      setDropdownTimeout(null)
+    }
+    setActiveDropdown(dropdown)
+  }
+
+  const handleDropdownLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null)
+    }, 300) // 300ms delay before closing
+    setDropdownTimeout(timeout)
+  }
+
+  const handleDropdownClick = (dropdown: string) => {
+    if (dropdownTimeout) {
+      clearTimeout(dropdownTimeout)
+      setDropdownTimeout(null)
+    }
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown)
+  }
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeout) {
+        clearTimeout(dropdownTimeout)
+      }
+    }
+  }, [dropdownTimeout])
 
   const navigation = {
     products: [
@@ -62,11 +95,11 @@ export default function UnifiedNavigation() {
             {/* Products Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setActiveDropdown('products')}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseEnter={() => handleDropdownEnter('products')}
+              onMouseLeave={handleDropdownLeave}
             >
               <button 
-                onClick={() => setActiveDropdown(activeDropdown === 'products' ? null : 'products')}
+                onClick={() => handleDropdownClick('products')}
                 className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 <span>Products</span>
@@ -76,8 +109,8 @@ export default function UnifiedNavigation() {
               {activeDropdown === 'products' && (
                 <div 
                   className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50"
-                  onMouseEnter={() => setActiveDropdown('products')}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  onMouseEnter={() => handleDropdownEnter('products')}
+                  onMouseLeave={handleDropdownLeave}
                 >
                   <div className="px-4 pb-2">
                     <h3 className="text-sm font-semibold text-gray-900 dark:text-white">AI Tools</h3>
@@ -101,11 +134,11 @@ export default function UnifiedNavigation() {
             {/* Solutions Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setActiveDropdown('solutions')}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseEnter={() => handleDropdownEnter('solutions')}
+              onMouseLeave={handleDropdownLeave}
             >
               <button 
-                onClick={() => setActiveDropdown(activeDropdown === 'solutions' ? null : 'solutions')}
+                onClick={() => handleDropdownClick('solutions')}
                 className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 <span>Solutions</span>
@@ -115,8 +148,8 @@ export default function UnifiedNavigation() {
               {activeDropdown === 'solutions' && (
                 <div 
                   className="absolute top-full left-0 mt-2 w-72 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50"
-                  onMouseEnter={() => setActiveDropdown('solutions')}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  onMouseEnter={() => handleDropdownEnter('solutions')}
+                  onMouseLeave={handleDropdownLeave}
                 >
                   {navigation.solutions.map((item) => (
                     <Link
@@ -141,11 +174,11 @@ export default function UnifiedNavigation() {
             {/* Resources Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setActiveDropdown('resources')}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseEnter={() => handleDropdownEnter('resources')}
+              onMouseLeave={handleDropdownLeave}
             >
               <button 
-                onClick={() => setActiveDropdown(activeDropdown === 'resources' ? null : 'resources')}
+                onClick={() => handleDropdownClick('resources')}
                 className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 <span>Resources</span>
@@ -155,8 +188,8 @@ export default function UnifiedNavigation() {
               {activeDropdown === 'resources' && (
                 <div 
                   className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50"
-                  onMouseEnter={() => setActiveDropdown('resources')}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  onMouseEnter={() => handleDropdownEnter('resources')}
+                  onMouseLeave={handleDropdownLeave}
                 >
                   {navigation.resources.map((item) => (
                     <Link
@@ -176,11 +209,11 @@ export default function UnifiedNavigation() {
             {/* Company Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setActiveDropdown('company')}
-              onMouseLeave={() => setActiveDropdown(null)}
+              onMouseEnter={() => handleDropdownEnter('company')}
+              onMouseLeave={handleDropdownLeave}
             >
               <button 
-                onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
+                onClick={() => handleDropdownClick('company')}
                 className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
               >
                 <span>Company</span>
@@ -190,8 +223,8 @@ export default function UnifiedNavigation() {
               {activeDropdown === 'company' && (
                 <div 
                   className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50"
-                  onMouseEnter={() => setActiveDropdown('company')}
-                  onMouseLeave={() => setActiveDropdown(null)}
+                  onMouseEnter={() => handleDropdownEnter('company')}
+                  onMouseLeave={handleDropdownLeave}
                 >
                   {navigation.company.map((item) => (
                     <Link
