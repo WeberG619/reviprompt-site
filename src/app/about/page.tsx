@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { Lightbulb, Users, Heart, Zap, Moon, Sun } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
+
 export default function AboutPage() {
   const [darkMode, setDarkMode] = useState(false)
 

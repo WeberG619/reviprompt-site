@@ -1,6 +1,9 @@
 'use client'
 import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
+
+// Disable static generation for this page since it uses client-side state and search params
+export const dynamic = 'force-dynamic'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Check, CreditCard, Shield, Lock, ArrowLeft, Star, Users, Zap } from 'lucide-react'

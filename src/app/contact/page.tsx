@@ -4,6 +4,9 @@ import Image from 'next/image'
 import { ArrowRight, Mail, MessageCircle, Phone, MapPin, Clock, Send, Moon, Sun } from 'lucide-react'
 import { useState, useEffect } from 'react'
 
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
+
 export default function ContactPage() {
   const [darkMode, setDarkMode] = useState(false)
 

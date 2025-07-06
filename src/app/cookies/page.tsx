@@ -1,6 +1,9 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
+
+// Disable static generation for this page since it uses client-side state
+export const dynamic = 'force-dynamic'
 import { Shield, Cookie, Settings, Eye, UserCheck } from 'lucide-react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 
