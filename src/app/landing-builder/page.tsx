@@ -96,6 +96,74 @@ export default function LandingBuilderPage() {
     'Telecommunications': ['Get Quote', 'Book Service', 'Download Guide', 'Generate Leads']
   }
 
+  const handleFullPreview = () => {
+    if (!generatedPage) return
+    
+    // In a real implementation, this would open a full preview window
+    alert('Full preview feature requires backend integration. Preview would show the complete landing page with all sections and responsive design.')
+  }
+  
+  const handleDownloadHTML = () => {
+    if (!generatedPage) return
+    
+    // Create a simple HTML template
+    const htmlContent = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${generatedPage.pageTitle}</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .hero { background: ${brandColors.primary}; color: white; padding: 60px 20px; text-align: center; }
+        .features { padding: 40px 20px; }
+        .feature { margin-bottom: 30px; }
+        .cta { background: ${brandColors.secondary}; color: white; padding: 40px 20px; text-align: center; }
+        .btn { display: inline-block; padding: 12px 24px; background: white; color: ${brandColors.primary}; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>${generatedPage.hero.headline}</h1>
+        <p>${generatedPage.hero.subheadline}</p>
+        <a href="#" class="btn">${generatedPage.hero.cta}</a>
+    </div>
+    <div class="features">
+        ${generatedPage.features.map((f: any) => `
+        <div class="feature">
+            <h3>${f.title}</h3>
+            <p>${f.description}</p>
+        </div>`).join('')}
+    </div>
+    <div class="cta">
+        <h2>${generatedPage.cta.headline}</h2>
+        <p>${generatedPage.cta.subheadline}</p>
+        <a href="#" class="btn">${generatedPage.cta.buttonText}</a>
+    </div>
+</body>
+</html>`
+    
+    // Create blob and download
+    const blob = new Blob([htmlContent], { type: 'text/html' })
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `landing-page-${Date.now()}.html`
+    a.click()
+    window.URL.revokeObjectURL(url)
+    
+    alert('Landing page HTML downloaded!')
+  }
+  
+  const handleGetShareableLink = () => {
+    if (!generatedPage) return
+    
+    // In a real implementation, this would create a shareable link
+    const mockLink = `https://devcraft-labs.com/preview/${generatedPage.id}`
+    navigator.clipboard.writeText(mockLink)
+    alert(`Shareable link copied to clipboard: ${mockLink}\n\nNote: Link sharing requires backend integration.`)
+  }
+
   const handleGenerate = async () => {
     if (!industry || !goal) {
       alert('Please select both industry and goal')
@@ -483,15 +551,24 @@ export default function LandingBuilderPage() {
                 </div>
 
                 <div className="space-y-3">
-                  <button className="w-full btn-primary inline-flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={handleFullPreview}
+                    className="w-full btn-primary inline-flex items-center justify-center space-x-2"
+                  >
                     <Eye className="w-4 h-4" />
                     <span>Full Preview</span>
                   </button>
-                  <button className="w-full btn-secondary inline-flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={handleDownloadHTML}
+                    className="w-full btn-secondary inline-flex items-center justify-center space-x-2"
+                  >
                     <Download className="w-4 h-4" />
                     <span>Download HTML</span>
                   </button>
-                  <button className="w-full btn-secondary inline-flex items-center justify-center space-x-2">
+                  <button 
+                    onClick={handleGetShareableLink}
+                    className="w-full btn-secondary inline-flex items-center justify-center space-x-2"
+                  >
                     <Share2 className="w-4 h-4" />
                     <span>Get Shareable Link</span>
                   </button>

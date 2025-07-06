@@ -100,6 +100,38 @@ export default function ProposalsPage() {
     'Telecommunications': ['Network Management', 'Customer Service', 'Billing System', 'Service Provisioning']
   }
 
+  const handleDownloadPDF = () => {
+    if (!generatedProposal) return
+    
+    // Create a simple text version of the proposal
+    const proposalText = generatedProposal.sections
+      .map((section: any) => `${section.title}\n\n${section.content}\n\n`)
+      .join('---\n\n')
+    
+    const fullText = `BUSINESS PROPOSAL\n\nGenerated: ${new Date().toLocaleDateString()}\n\n${proposalText}\n\nEstimated Budget: $${generatedProposal.estimatedBudget.toLocaleString()}\nTimeline: ${generatedProposal.timeline}`
+    
+    // Create blob and download
+    const blob = new Blob([fullText], { type: 'text/plain' })
+    const url = window.URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `proposal_${Date.now()}.txt`
+    a.click()
+    window.URL.revokeObjectURL(url)
+    
+    alert('Proposal downloaded! Note: PDF generation requires a backend service. This is a text version.')
+  }
+  
+  const handleSendToClient = () => {
+    if (!generatedProposal || !clientInfo) {
+      alert('Please generate a proposal and provide client information first.')
+      return
+    }
+    
+    // In a real implementation, this would send via email API
+    alert(`Proposal would be sent to: ${clientInfo}\n\nNote: Email sending requires backend integration.`)
+  }
+
   const handleGenerate = async () => {
     if (!businessType || !projectType) {
       alert('Please select both business type and project type')
@@ -313,11 +345,17 @@ export default function ProposalsPage() {
                   Generated Proposal
                 </h2>
                 <div className="flex space-x-3">
-                  <button className="btn-secondary inline-flex items-center space-x-2">
+                  <button 
+                    onClick={() => handleDownloadPDF()}
+                    className="btn-secondary inline-flex items-center space-x-2"
+                  >
                     <Download className="w-4 h-4" />
                     <span>Download PDF</span>
                   </button>
-                  <button className="btn-primary inline-flex items-center space-x-2">
+                  <button 
+                    onClick={() => handleSendToClient()}
+                    className="btn-primary inline-flex items-center space-x-2"
+                  >
                     <Send className="w-4 h-4" />
                     <span>Send to Client</span>
                   </button>

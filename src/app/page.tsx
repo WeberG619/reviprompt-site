@@ -580,7 +580,7 @@ export default function HomePage() {
               <h3 className="font-semibold text-neutral-900 dark:text-white mb-4">Resources</h3>
               <ul className="space-y-3 text-sm text-neutral-600 dark:text-neutral-400">
                 <li><Link href="/docs" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Documentation</Link></li>
-                <li><Link href="https://devcraft-labs-api.vercel.app" className="hover:text-neutral-900 dark:hover:text-white transition-colors" target="_blank">Live API Explorer</Link></li>
+                <li><Link href="/api-explorer" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Live API Explorer</Link></li>
                 <li><Link href="/support" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Support</Link></li>
               </ul>
             </div>

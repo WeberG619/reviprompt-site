@@ -27,6 +27,7 @@ export default function UnifiedNavigation() {
       { name: 'Blog', href: '/blog', description: 'AI insights and best practices' },
       { name: 'Case Studies', href: '/case-studies', description: 'Customer success stories' },
       { name: 'API Documentation', href: '/docs', description: 'Developer resources' },
+      { name: 'API Explorer', href: '/api-explorer', description: 'Test and explore our APIs' },
       { name: 'Support Center', href: '/support', description: 'Help and guidance' }
     ],
     company: [
@@ -64,13 +65,20 @@ export default function UnifiedNavigation() {
               onMouseEnter={() => setActiveDropdown('products')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <button 
+                onClick={() => setActiveDropdown(activeDropdown === 'products' ? null : 'products')}
+                className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
                 <span>Products</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               
               {activeDropdown === 'products' && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4">
+                <div 
+                  className="absolute top-full left-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50"
+                  onMouseEnter={() => setActiveDropdown('products')}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   <div className="px-4 pb-2">
                     <h3 className="text-sm font-semibold text-gray-900 dark:text-white">AI Tools</h3>
                     <p className="text-xs text-gray-500 dark:text-gray-400">Professional AI-powered business automation</p>
@@ -79,6 +87,7 @@ export default function UnifiedNavigation() {
                     <Link
                       key={item.name}
                       href={item.href}
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                     >
                       <div className="font-medium text-gray-900 dark:text-white">{item.name}</div>
@@ -95,17 +104,25 @@ export default function UnifiedNavigation() {
               onMouseEnter={() => setActiveDropdown('solutions')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <button 
+                onClick={() => setActiveDropdown(activeDropdown === 'solutions' ? null : 'solutions')}
+                className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
                 <span>Solutions</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               
               {activeDropdown === 'solutions' && (
-                <div className="absolute top-full left-0 mt-2 w-72 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4">
+                <div 
+                  className="absolute top-full left-0 mt-2 w-72 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50"
+                  onMouseEnter={() => setActiveDropdown('solutions')}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   {navigation.solutions.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                     >
                       <div className="font-medium text-gray-900 dark:text-white">{item.name}</div>
@@ -127,17 +144,25 @@ export default function UnifiedNavigation() {
               onMouseEnter={() => setActiveDropdown('resources')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <button 
+                onClick={() => setActiveDropdown(activeDropdown === 'resources' ? null : 'resources')}
+                className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
                 <span>Resources</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               
               {activeDropdown === 'resources' && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4">
+                <div 
+                  className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50"
+                  onMouseEnter={() => setActiveDropdown('resources')}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   {navigation.resources.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                     >
                       <div className="font-medium text-gray-900 dark:text-white">{item.name}</div>
@@ -154,17 +179,25 @@ export default function UnifiedNavigation() {
               onMouseEnter={() => setActiveDropdown('company')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+              <button 
+                onClick={() => setActiveDropdown(activeDropdown === 'company' ? null : 'company')}
+                className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+              >
                 <span>Company</span>
                 <ChevronDown className="w-4 h-4" />
               </button>
               
               {activeDropdown === 'company' && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4">
+                <div 
+                  className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 py-4 z-50"
+                  onMouseEnter={() => setActiveDropdown('company')}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   {navigation.company.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
+                      onClick={() => setActiveDropdown(null)}
                       className="block px-4 py-3 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
                     >
                       <div className="font-medium text-gray-900 dark:text-white">{item.name}</div>
