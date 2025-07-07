@@ -1021,13 +1021,13 @@ Let's create a client onboarding workflow as an example:
 ### Step 3: Configure Intelligent Actions
 
 #### Automatic Account Creation
-```workflow
+\`\`\`workflow
 IF new_contract_signed THEN
   CREATE account WITH client_details
   ASSIGN account_manager BASED ON territory_rules
   SET priority BASED ON contract_value
   SCHEDULE setup_deadline = current_time + 24_hours
-```
+\`\`\`
 
 #### Smart Task Assignment
 The AI considers:
@@ -1046,7 +1046,7 @@ Tasks automatically adjust priority based on:
 ### Step 4: Add Conditional Logic
 
 #### Smart Routing
-```workflow
+\`\`\`workflow
 IF contract_value > $50000 THEN
   ASSIGN senior_account_manager
   ADD executive_review_task
@@ -1057,7 +1057,7 @@ ELSE IF contract_value > $10000 THEN
 ELSE
   ASSIGN junior_account_manager
   SET priority = "STANDARD"
-```
+\`\`\`
 
 #### Escalation Protocols
 - Automatic escalation if tasks overdue
@@ -1312,12 +1312,12 @@ Traditional productivity metrics often fall short when evaluating AI impact beca
 - Task complexity adjustments
 
 **Example Tracking:**
-```
+\`\`\`
 Invoice Creation:
 - Before AI: 45 minutes average
 - After AI: 8 minutes average
 - Improvement: 82% time reduction
-```
+\`\`\`
 
 #### Time to Value
 **Definition:** How quickly new hires or processes become productive
@@ -1343,12 +1343,12 @@ Track end-to-end process improvements:
 - Customer satisfaction changes
 
 **Real Example:**
-```
+\`\`\`
 Proposal Accuracy (DevCraft AI Proposal Generator):
 - Manual Process: 94% accuracy
 - AI-Assisted: 99.7% accuracy
 - Customer Complaints: 78% reduction
-```
+\`\`\`
 
 #### Consistency Scores
 - Brand voice consistency across content
@@ -1385,9 +1385,9 @@ Track productivity gains:
 - Cost per customer interaction
 
 **ROI Calculation Formula:**
-```
+\`\`\`
 ROI = (Gains from AI Investment - Cost of AI Investment) / Cost of AI Investment × 100
-```
+\`\`\`
 
 ### 5. Employee Experience Metrics
 
@@ -1973,7 +1973,7 @@ Some clients were concerned about:
 - Key message priorities
 
 #### Example Prompt Template:
-```
+\`\`\`
 Create a blog post for [Brand Name] targeting [Audience] about [Topic].
 
 Brand Voice: [Description]
@@ -1982,7 +1982,7 @@ Format: [Structure requirements]
 Length: [Word count]
 Key Messages: [Main points]
 SEO Keywords: [Target keywords]
-```
+\`\`\`
 
 ### Review and Editing Guidelines
 
