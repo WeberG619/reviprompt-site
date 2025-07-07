@@ -51,7 +51,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-28',
       readTime: '6 min read',
       category: 'AI Insights',
-      image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
       tags: ['AI Proposal Generator', 'Sales', 'Automation', 'DevCraft Tools']
     },
     {
@@ -66,7 +66,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-25',
       readTime: '7 min read',
       category: 'Productivity',
-      image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
       tags: ['AI Content Generator', 'Marketing', 'SEO', 'Productivity']
     },
     {
@@ -96,7 +96,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-20',
       readTime: '5 min read',
       category: 'Case Studies',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
       tags: ['Case Study', 'Customer Success', 'Proposals', 'ROI']
     },
     {
