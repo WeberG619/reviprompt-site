@@ -65,9 +65,9 @@ export default function SocialSchedulerPage() {
     
     try {
       // Import API dynamically to avoid SSR issues
-      const { devCraftAPI } = await import('@/lib/api')
+      const { reviPromptAPI } = await import('@/lib/api')
       
-      const response = await devCraftAPI.generateSocialPost({
+      const response = await reviPromptAPI.generateSocialPost({
         prompt: postContent,
         context: {
           platforms: selectedPlatforms,

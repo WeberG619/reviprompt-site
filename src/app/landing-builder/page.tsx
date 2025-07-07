@@ -167,9 +167,9 @@ export default function LandingBuilderPage() {
     
     try {
       // Import API dynamically to avoid SSR issues
-      const { devCraftAPI } = await import('@/lib/api')
+      const { reviPromptAPI } = await import('@/lib/api')
       
-      const response = await devCraftAPI.generateLandingPage({
+      const response = await reviPromptAPI.generateLandingPage({
         prompt: goal,
         industry,
         context: {

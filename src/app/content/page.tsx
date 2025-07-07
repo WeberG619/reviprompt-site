@@ -55,9 +55,9 @@ export default function ContentPage() {
     
     try {
       // Import API dynamically to avoid SSR issues
-      const { devCraftAPI } = await import('@/lib/api')
+      const { reviPromptAPI } = await import('@/lib/api')
       
-      const response = await devCraftAPI.generateContent({
+      const response = await reviPromptAPI.generateContent({
         prompt: topic,
         context: {
           contentType,

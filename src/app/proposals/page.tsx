@@ -135,9 +135,9 @@ export default function ProposalsPage() {
     
     try {
       // Import API dynamically to avoid SSR issues
-      const { devCraftAPI } = await import('@/lib/api')
+      const { reviPromptAPI } = await import('@/lib/api')
       
-      const response = await devCraftAPI.generateProposal({
+      const response = await reviPromptAPI.generateProposal({
         prompt: `${projectType} for ${businessType}`,
         businessType,
         context: {
