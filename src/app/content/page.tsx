@@ -5,13 +5,12 @@ import { useState, useEffect } from 'react'
 
 // Disable static generation for this page since it uses client-side state
 export const dynamic = 'force-dynamic'
-import { ArrowRight, FileText, Zap, Target, Moon, Sun, Copy, CheckCircle, RefreshCw } from 'lucide-react'
+import { ArrowRight, FileText, Zap, Target, Copy, CheckCircle, RefreshCw } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import AuthGuard from '@/components/AuthGuard'
 
 export default function ContentPage() {
-  const [darkMode, setDarkMode] = useState(false)
   const [contentType, setContentType] = useState('')
   const [topic, setTopic] = useState('')
   const [audience, setAudience] = useState('')
@@ -20,13 +19,6 @@ export default function ContentPage() {
   const [generatedContent, setGeneratedContent] = useState<any>(null)
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const contentTypes = [
     { id: 'blog-post', label: 'Blog Post', description: 'Long-form articles and tutorials' },

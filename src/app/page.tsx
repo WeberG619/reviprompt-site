@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { ArrowRight, Moon, Sun, Code2, Building2, Briefcase, Terminal, CheckCircle, Star, Github, ExternalLink, Zap, MessageCircle, X, Send, Bot } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import { LiveUserCounter, SecurityBadges, UrgencyBanner } from '@/components/TrustSignals'
 
 // Disable static generation for this page since it uses client-side state
 export const dynamic = 'force-dynamic'
@@ -15,7 +16,6 @@ interface ChatMessage {
 }
 
 export default function HomePage() {
-  const [darkMode, setDarkMode] = useState(false)
   const [activeCategory, setActiveCategory] = useState('all')
   const [isChatOpen, setIsChatOpen] = useState(false)
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([])
@@ -25,17 +25,9 @@ export default function HomePage() {
   const chatEndRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
-
-  useEffect(() => {
     setMounted(true)
     setChatMessages([{
-      text: "Hi! I'm your DevCraft Labs assistant. I can help you learn about our AI tools, pricing, documentation, and how to get started. What would you like to know?",
+      text: "Hi! I'm your RevitPrompt Lab assistant. I can help you with AEC tools, Revit automation, prompts, plugins, and construction management. What would you like to know?",
       isUser: false,
       timestamp: new Date()
     }])
@@ -55,11 +47,11 @@ export default function HomePage() {
     }
     
     if (lowerMessage.includes('pricing') || lowerMessage.includes('cost') || lowerMessage.includes('price')) {
-      return "We offer flexible pricing for all three solution categories: AI Business Tools (starting at $29/mo), Developer Platform ($49/mo), and AEC Solutions ($79/mo). All plans include API access, 24/7 support, and enterprise security. Check out /pricing for detailed comparisons and features!"
+      return "We offer AEC-focused pricing: Revit Professional ($79/mo), Construction Team ($149/mo), and Enterprise ($299/mo). All plans include Revit plugins, prompt libraries, project management tools, and 24/7 AEC support. Check out /pricing for detailed comparisons!"
     }
     
     if (lowerMessage.includes('email') || lowerMessage.includes('email generator')) {
-      return "Our AI Email Generator is live with Claude integration! It creates professional emails with smart personalization, multiple templates, and real-time API validation. Features include 8 email types, 10 tone options, and 97% accuracy. Try it at /email-generator with full API documentation!"
+      return "Our AI Email Generator is live with OpenAI integration! It creates professional emails with smart personalization, multiple templates, and real-time API validation. Features include 8 email types, 10 tone options, and 97% accuracy. Try it at /email-generator with full API documentation!"
     }
     
     if (lowerMessage.includes('invoice') || lowerMessage.includes('billing')) {
@@ -71,7 +63,7 @@ export default function HomePage() {
     }
     
     if (lowerMessage.includes('developer') || lowerMessage.includes('landing page') || lowerMessage.includes('task manager')) {
-      return "Our Developer Platform includes AI Landing Page Builder (with 60% conversion improvements), AI Task Manager (45% productivity boost), and AI Social Scheduler (35% engagement increase). Most are coming soon - want early access? I can help you join the waitlist!"
+      return "Our Developer Platform is LIVE! AI Landing Page Builder (60% conversion boost), AI Task Manager (45% productivity increase), and AI Social Scheduler (35% engagement growth) are all ready to use. Try them at /landing-builder, /task-manager, and /social-scheduler - all included in our $49/mo Professional plan!"
     }
     
     if (lowerMessage.includes('security') || lowerMessage.includes('enterprise')) {
@@ -87,7 +79,7 @@ export default function HomePage() {
     }
     
     if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-      return "Hello! Welcome to DevCraft Labs! We're professional AI tool builders serving businesses, developers, and AEC professionals. Our tools include invoice generation, content creation, landing page building, and Revit automation. What interests you most?"
+      return "Hello! Welcome to RevitPrompt Lab! We're AEC professionals building AI tools for Architecture, Engineering & Construction. Our tools include Revit automation, prompt libraries, project management, and construction workflows. What interests you most?"
     }
     
     return "I can help you with information about our AI tools, pricing, API documentation, security, support, or getting started. Try asking about our Invoice Generator, ReviPrompt Lab, pricing plans, API docs, or how to start a free trial. What would you like to know more about?"
@@ -111,9 +103,53 @@ export default function HomePage() {
 
   const productCategories = [
     {
-      id: 'ai-business',
-      title: "AI Business Tools",
-      description: "Enterprise-grade automation for modern businesses",
+      id: 'aec-tools',
+      title: "AEC Professional Tools",
+      description: "Professional AI tools for Architecture, Engineering & Construction",
+      icon: <Building2 className="w-6 h-6" />,
+      products: [
+        {
+          name: "Revit Prompt Library",
+          description: "Professional prompt collection for Revit automation and BIM workflows",
+          status: "live",
+          features: ["500+ professional prompts", "AEC-specific templates", "Revit 2024-2026 compatible", "Regular updates"],
+          link: "/revit-prompts",
+          cta: "Browse Prompts",
+          metrics: { prompts: "500+", accuracy: "95%", time_saved: "25hrs/week" }
+        },
+        {
+          name: "Revit Plugin Suite",
+          description: "Essential plugins for enhanced Revit productivity and automation",
+          status: "live",
+          features: ["MEP coordination tools", "Sheet management", "Family automation", "Quality control"],
+          link: "/revit-plugins",
+          cta: "Download Plugins",
+          metrics: { plugins: "12+", productivity: "+40%", compatibility: "3 versions" }
+        },
+        {
+          name: "Project Manager Pro",
+          description: "Construction project management with BIM integration and team collaboration",
+          status: "live",
+          features: ["BIM integration", "Schedule tracking", "Team collaboration", "Progress reports"],
+          link: "/project-manager",
+          cta: "Manage Projects",
+          metrics: { efficiency: "+45%", teams: "500+", integration: "Revit/BIM" }
+        },
+        {
+          name: "AEC Content Generator",
+          description: "Generate AEC-specific documentation, specifications, and project content",
+          status: "live",
+          features: ["Spec generation", "Drawing notes", "RFI responses", "Code compliance"],
+          link: "/aec-content",
+          cta: "Generate Content",
+          metrics: { accuracy: "98%", time_saved: "20hrs/week", templates: "50+" }
+        }
+      ]
+    },
+    {
+      id: 'business-tools',
+      title: "Business Support Tools",
+      description: "Essential business tools for AEC firms and contractors",
       icon: <Briefcase className="w-6 h-6" />,
       products: [
         {
@@ -135,19 +171,10 @@ export default function HomePage() {
           metrics: { accuracy: "95%", time_saved: "80%", templates: "25+" }
         },
         {
-          name: "AI Content Generator",
-          description: "Create blog posts, social media content, and marketing copy with AI",
-          status: "live",
-          features: ["Multiple content types", "SEO optimization", "Brand voice", "Bulk generation"],
-          link: "/content",
-          cta: "Create Content",
-          metrics: { quality: "98%", speed: "10x faster", formats: "15+" }
-        },
-        {
           name: "AI Email Generator",
-          description: "Professional email generation with personalized content, templates, and Claude integration",
+          description: "Professional email generation with personalized content, templates, and OpenAI integration",
           status: "live",
-          features: ["Smart personalization", "Professional templates", "Claude API integration", "Real-time validation"],
+          features: ["Smart personalization", "Professional templates", "OpenAI API integration", "Real-time validation"],
           link: "/email-generator",
           cta: "Generate Email",
           metrics: { accuracy: "97%", time_saved: "12hrs/week", templates: "8+" }
@@ -188,31 +215,14 @@ export default function HomePage() {
           metrics: { productivity: "+45%", efficiency: "3x faster", automation: "80%" }
         }
       ]
-    },
-    {
-      id: 'aec',
-      title: "AEC Solutions",
-      description: "Professional tools for Architecture, Engineering & Construction",
-      icon: <Building2 className="w-6 h-6" />,
-      products: [
-        {
-          name: "AEC Professional Suite",
-          description: "Complete toolkit with all 3 professional AEC tools - ReviPrompt Lab Pro, MEP Power Tools, and QC Professional Suite",
-          status: "live",
-          features: ["All 3 AEC tools included", "Revit 2024-2026 compatible", "Dedicated AEC support", "14-day free trial"],
-          link: "/pricing?plan=aec-professional",
-          cta: "Get AEC Professional - $79/month",
-          metrics: { tools: "3 included", savings: "$38/month", support: "dedicated" }
-        }
-      ]
     }
   ]
 
   const categories = [
     { id: 'all', name: 'All Solutions', icon: <Terminal className="w-5 h-5" /> },
-    { id: 'ai-business', name: 'Business AI', icon: <Briefcase className="w-5 h-5" /> },
+    { id: 'aec-tools', name: 'AEC Tools', icon: <Building2 className="w-5 h-5" /> },
+    { id: 'business-tools', name: 'Business', icon: <Briefcase className="w-5 h-5" /> },
     { id: 'developer', name: 'Developer', icon: <Code2 className="w-5 h-5" /> },
-    { id: 'aec', name: 'AEC', icon: <Building2 className="w-5 h-5" /> },
   ]
 
   const filteredProducts = activeCategory === 'all' 
@@ -221,33 +231,33 @@ export default function HomePage() {
 
   const testimonials = [
     {
-      text: "DevCraft's AI Invoice Generator transformed our billing process. The automation and insights are game-changing for our agency.",
-      author: "Sarah Chen",
-      title: "CTO, Design Forward",
-      company: "Design Agency",
+      text: "RevitPrompt Lab's prompt library transformed our design process. The AEC-specific prompts save us 25+ hours per week and improve our deliverables.",
+      author: "Michael Torres",
+      title: "Senior Architect",
+      company: "Torres Design Group",
       rating: 5
     },
     {
-      text: "Professional-grade tools with enterprise reliability. The developer experience is exceptional and the results speak for themselves.",
-      author: "Marcus Rodriguez",
-      title: "Lead Engineer",
-      company: "TechFlow Inc",
+      text: "The Revit plugins are game-changers for our MEP coordination. Finally, tools built by AEC professionals who understand our workflows.",
+      author: "Jennifer Kim",
+      title: "MEP Engineer",
+      company: "BuildTech Engineering",
       rating: 5
     },
     {
-      text: "Finally, AI tools built by developers who understand real workflow challenges. The attention to detail is remarkable.",
-      author: "Emma Thompson",
-      title: "Solutions Architect",
-      company: "BuildTech Pro",
+      text: "Professional-grade AEC tools with incredible attention to detail. Our project delivery time improved by 40% using their suite.",
+      author: "David Rodriguez",
+      title: "Project Manager",
+      company: "Construction Pro LLC",
       rating: 5
     }
   ]
 
   const stats = [
-    { value: "99.9%", label: "Uptime SLA", desc: "Enterprise reliability" },
-    { value: "10x", label: "Faster", desc: "Than manual processes" },
-    { value: "2.1k+", label: "Active Users", desc: "Trusted by professionals" },
-    { value: "50+", label: "Integrations", desc: "Seamless connectivity" }
+    { value: "500+", label: "AEC Prompts", desc: "Professional library" },
+    { value: "12+", label: "Revit Plugins", desc: "Essential tools" },
+    { value: "3.2k+", label: "AEC Users", desc: "Trusted professionals" },
+    { value: "25hrs", label: "Saved/Week", desc: "Average time savings" }
   ]
 
   return (
@@ -312,17 +322,17 @@ export default function HomePage() {
           <div className="max-w-4xl">
             <div className="mb-6">
               <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
-                <Zap className="w-4 h-4 mr-2" />
-                Professional AI Tools
+                <Building2 className="w-4 h-4 mr-2" />
+                AEC Professional Suite
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight">
-              Enterprise AI Solutions
-              <span className="text-blue-600"> Built by Developers</span>
+              AEC AI Tools & Prompts
+              <span className="text-blue-600"> Built by Professionals</span>
             </h1>
             <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed max-w-3xl">
-              Professional-grade AI tools designed for businesses, developers, and AEC professionals. 
-              Built with enterprise security, reliability, and developer experience in mind.
+              Professional AI tools, prompts, and plugins designed specifically for Architecture, Engineering & Construction professionals. 
+              Built with Revit expertise, construction workflows, and AEC industry needs in mind.
             </p>
             
             {/* Code snippet preview */}
@@ -331,11 +341,11 @@ export default function HomePage() {
                 <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono ml-2">devcraft-labs.com</span>
+                <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono ml-2">revitpromptlab.com</span>
               </div>
               <code className="text-sm text-neutral-700 dark:text-neutral-300 font-mono">
-                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST devcraft-labs-api.vercel.app/api/v1<br/>
-                <span className="text-neutral-500 dark:text-neutral-400"># Generate invoice in seconds</span>
+                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST revitpromptlab.com/api/v1<br/>
+                <span className="text-neutral-500 dark:text-neutral-400"># Generate AEC prompts instantly</span>
               </code>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -503,6 +513,33 @@ export default function HomePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals Section */}
+      <section className="py-16 bg-white dark:bg-neutral-900">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-4">
+              Trusted by <span className="text-blue-600">2,100+ Professionals</span>
+            </h2>
+            <p className="text-xl text-neutral-600 dark:text-neutral-300">
+              Join the fastest-growing AI platform for business automation
+            </p>
+          </div>
+          
+          <div className="space-y-8">
+            {/* Live user counter */}
+            <div className="flex justify-center">
+              <LiveUserCounter />
+            </div>
+            
+            {/* Security badges */}
+            <SecurityBadges />
+            
+            {/* Urgency banner */}
+            <UrgencyBanner />
           </div>
         </div>
       </section>

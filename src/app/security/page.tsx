@@ -1,22 +1,10 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Shield, Lock, Eye, Database, CheckCircle, AlertTriangle, Moon, Sun } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { Shield, Lock, Eye, Database, CheckCircle, AlertTriangle } from 'lucide-react'
 
-// Disable static generation for this page since it uses client-side state
-export const dynamic = 'force-dynamic'
 
 export default function SecurityPage() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const certifications = [
     {
@@ -63,12 +51,6 @@ export default function SecurityPage() {
               <Link href="/" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
                 ← Back to Home
               </Link>
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
-              >
-                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </button>
             </div>
           </div>
         </div>

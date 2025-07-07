@@ -1,49 +1,37 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Moon, Sun, Code2, CheckCircle, ExternalLink } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { ArrowRight, Code2, CheckCircle, ExternalLink } from 'lucide-react'
 
-// Disable static generation for this page since it uses client-side state
-export const dynamic = 'force-dynamic'
 
 export default function DeveloperPage() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const products = [
     {
       name: "AI Landing Page Builder",
       description: "Professional landing page generation with conversion optimization",
-      status: "coming-soon",
+      status: "live",
       features: ["Template library", "A/B testing", "Analytics integration", "Mobile responsive"],
-      link: "#",
-      cta: "Request Access",
+      link: "/landing-builder",
+      cta: "Build Landing Page",
       metrics: { conversion: "+60%", load_time: "<2s", templates: "50+" }
     },
     {
       name: "AI Task Manager",
       description: "Intelligent project management with automated workflow optimization",
-      status: "coming-soon",
+      status: "live",
       features: ["Smart scheduling", "Team collaboration", "Progress tracking", "Resource allocation"],
-      link: "#",
-      cta: "Request Access",
+      link: "/task-manager",
+      cta: "Manage Tasks",
       metrics: { productivity: "+45%", efficiency: "3x faster", automation: "80%" }
     },
     {
       name: "AI Social Scheduler",
       description: "Content planning and social media automation platform",
-      status: "coming-soon",
+      status: "live",
       features: ["Multi-platform posting", "Content optimization", "Analytics dashboard", "Team management"],
-      link: "#",
-      cta: "Request Access",
+      link: "/social-scheduler",
+      cta: "Schedule Posts",
       metrics: { engagement: "+35%", reach: "2x more", platforms: "10+" }
     }
   ]
@@ -70,12 +58,6 @@ export default function DeveloperPage() {
               <Link href="/" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
                 ← Back to Home
               </Link>
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
-              >
-                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </button>
             </div>
           </div>
         </div>

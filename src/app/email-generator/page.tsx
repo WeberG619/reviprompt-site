@@ -25,7 +25,6 @@ interface GeneratedEmail {
 }
 
 export default function EmailGeneratorPage() {
-  const [darkMode, setDarkMode] = useState(false)
   const [emailType, setEmailType] = useState('')
   const [recipient, setRecipient] = useState('')
   const [purpose, setPurpose] = useState('')
@@ -39,12 +38,7 @@ export default function EmailGeneratorPage() {
 
   useEffect(() => {
     setMounted(true)
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
+  }, [])
 
   useEffect(() => {
     checkApiStatus()
@@ -153,7 +147,7 @@ export default function EmailGeneratorPage() {
                 Professional Email Generation
               </h1>
               <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto mb-8">
-                Create professional emails with AI-powered content generation, personalization, and Claude integration.
+                Create professional emails with AI-powered content generation, personalization, and OpenAI integration.
               </p>
               
               {/* API Status */}
@@ -168,7 +162,7 @@ export default function EmailGeneratorPage() {
                   {apiStatus === 'connected' && (
                     <>
                       <CheckCircle2 className="w-4 h-4 text-green-600" />
-                      <span className="text-sm text-green-600 dark:text-green-400">Claude API Connected</span>
+                      <span className="text-sm text-green-600 dark:text-green-400">OpenAI API Connected</span>
                     </>
                   )}
                   {apiStatus === 'error' && (
@@ -394,10 +388,10 @@ export default function EmailGeneratorPage() {
               <div className="card-enhanced p-6 text-center">
                 <Zap className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
-                  Claude Integration
+                  OpenAI Integration
                 </h3>
                 <p className="text-neutral-600 dark:text-neutral-400">
-                  Powered by Anthropic's Claude for natural, contextual email generation.
+                  Powered by OpenAI's GPT for natural, contextual email generation.
                 </p>
               </div>
 

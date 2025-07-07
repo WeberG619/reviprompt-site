@@ -4,7 +4,6 @@ import { ArrowRight, Building2, Users, Rocket, Heart, Target, Globe } from 'luci
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import Chatbot from '@/components/Chatbot'
 
-export const dynamic = 'force-dynamic'
 
 export default function CareersPage() {
   const openings = [

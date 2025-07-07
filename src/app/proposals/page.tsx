@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { ArrowRight, FileText, Clock, DollarSign, CheckCircle, Moon, Sun, Download, Send } from 'lucide-react'
+import { ArrowRight, FileText, Clock, DollarSign, CheckCircle, Download, Send } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import AuthGuard from '@/components/AuthGuard'
@@ -11,7 +11,6 @@ import AuthGuard from '@/components/AuthGuard'
 export const dynamic = 'force-dynamic'
 
 export default function ProposalsPage() {
-  const [darkMode, setDarkMode] = useState(false)
   const [businessType, setBusinessType] = useState('')
   const [projectType, setProjectType] = useState('')
   const [clientInfo, setClientInfo] = useState('')
@@ -19,13 +18,6 @@ export default function ProposalsPage() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [generatedProposal, setGeneratedProposal] = useState<any>(null)
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const businessTypes = [
     'Software Development',

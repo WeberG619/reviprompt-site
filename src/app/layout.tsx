@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { AuthProvider } from '@/contexts/AuthContext'
+import { Analytics } from '@/components/Analytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,21 +11,21 @@ const inter = Inter({ subsets: ['latin'] })
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'DevCraft Labs - AI Tools That Actually Work For Your Business',
-  description: 'Stop doing busy work. Start growing your business with AI tools that handle invoicing, content creation, social media, and customer support automatically.',
-  keywords: 'AI tools, business automation, invoice generator, social media management, content creation, customer support, AI software',
-  authors: [{ name: 'DevCraft Labs' }],
+  title: 'RevitPrompt Lab - AI Tools & Prompts for AEC Professionals',
+  description: 'Professional AI tools and prompts for Architecture, Engineering & Construction. Revit automation, project management, and AEC-specific content generation.',
+  keywords: 'Revit automation, AEC tools, architecture AI, construction management, engineering software, Revit prompts, BIM automation, AEC productivity',
+  authors: [{ name: 'RevitPrompt Lab' }],
   openGraph: {
-    title: 'DevCraft Labs - AI Business Automation Tools',
-    description: 'AI-powered tools that help businesses work smarter with automated invoicing, content creation, and customer support.',
-    url: 'https://devcraft-labs.com',
-    siteName: 'DevCraft Labs',
+    title: 'RevitPrompt Lab - AEC AI Tools & Revit Automation',
+    description: 'Professional AI tools and prompts designed specifically for Architecture, Engineering & Construction professionals.',
+    url: 'https://revitpromptlab.com',
+    siteName: 'RevitPrompt Lab',
     images: [
       {
         url: '/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'DevCraft Labs AI Tools',
+        alt: 'RevitPrompt Lab AEC Tools',
       },
     ],
     locale: 'en_US',
@@ -32,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DevCraft Labs - AI Tools That Actually Work',
-    description: 'Stop doing busy work. Start growing with AI automation tools.',
+    title: 'RevitPrompt Lab - AEC AI Tools & Prompts',
+    description: 'Professional AI tools for Architecture, Engineering & Construction.',
     images: ['/og-image.png'],
   },
   robots: {
@@ -65,6 +66,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#1E40AF" />
       </head>
       <body className={inter.className}>
+        <Analytics />
         <ThemeProvider>
           <AuthProvider>
             {children}

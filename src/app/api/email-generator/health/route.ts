@@ -2,43 +2,34 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export async function GET(request: NextRequest) {
   try {
-    // Check if Anthropic API key is available
-    const anthropicKey = process.env.ANTHROPIC_API_KEY
+    // Check if OpenAI API key is available
+    const openaiKey = process.env.OPENAI_API_KEY
     
-    if (!anthropicKey) {
+    if (!openaiKey) {
       return NextResponse.json(
         { 
           status: 'error', 
-          message: 'Anthropic API key not configured',
+          message: 'OpenAI API key not configured',
           timestamp: new Date().toISOString()
         }, 
         { status: 500 }
       )
     }
 
-    // Test API connection with a simple request
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
+    // Test API connection
+    const response = await fetch('https://api.openai.com/v1/models', {
+      method: 'GET',
       headers: {
-        'x-api-key': anthropicKey,
+        'Authorization': `Bearer ${openaiKey}`,
         'Content-Type': 'application/json',
-        'anthropic-version': '2023-06-01'
       },
-      body: JSON.stringify({
-        model: 'claude-3-haiku-20240307',
-        max_tokens: 10,
-        messages: [{
-          role: 'user',
-          content: 'Test'
-        }]
-      })
     })
 
     if (!response.ok) {
       return NextResponse.json(
         { 
           status: 'error', 
-          message: 'Anthropic API connection failed',
+          message: 'OpenAI API connection failed',
           timestamp: new Date().toISOString()
         }, 
         { status: 500 }
@@ -47,10 +38,10 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       status: 'connected',
-      message: 'Claude API is healthy and ready',
+      message: 'OpenAI API is healthy and ready',
       timestamp: new Date().toISOString(),
       version: '1.0.0',
-      provider: 'Anthropic Claude'
+      provider: 'OpenAI GPT'
     })
 
   } catch (error) {

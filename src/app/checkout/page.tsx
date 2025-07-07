@@ -8,9 +8,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Check, CreditCard, Shield, Lock, ArrowLeft, Star, Users, Zap } from 'lucide-react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import { useAnalytics } from '@/components/Analytics'
 
 function CheckoutContent() {
   const searchParams = useSearchParams()
+  const { trackConversion, trackEvent } = useAnalytics()
   const [selectedPlan, setSelectedPlan] = useState('professional')
   const [billingPeriod, setBillingPeriod] = useState<'monthly' | 'annual'>('monthly')
   const [isProcessing, setIsProcessing] = useState(false)

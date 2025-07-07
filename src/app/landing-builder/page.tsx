@@ -5,13 +5,12 @@ import { useState, useEffect } from 'react'
 
 // Disable static generation for this page since it uses client-side state
 export const dynamic = 'force-dynamic'
-import { ArrowRight, Layout, TrendingUp, Target, Moon, Sun, Eye, Download, Share2 } from 'lucide-react'
+import { ArrowRight, Layout, TrendingUp, Target, Eye, Download, Share2 } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import AuthGuard from '@/components/AuthGuard'
 
 export default function LandingBuilderPage() {
-  const [darkMode, setDarkMode] = useState(false)
   const [industry, setIndustry] = useState('')
   const [goal, setGoal] = useState('')
   const [targetAudience, setTargetAudience] = useState('')
@@ -19,13 +18,6 @@ export default function LandingBuilderPage() {
   const [isGenerating, setIsGenerating] = useState(false)
   const [generatedPage, setGeneratedPage] = useState<any>(null)
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const industries = [
     'SaaS/Software',

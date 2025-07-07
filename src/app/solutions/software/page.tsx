@@ -4,7 +4,6 @@ import { ArrowRight, Code2, Rocket, Database, Zap, CheckCircle, Terminal } from 
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import Chatbot from '@/components/Chatbot'
 
-export const dynamic = 'force-dynamic'
 
 export default function SoftwareSolutionsPage() {
   const tools = [

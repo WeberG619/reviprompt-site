@@ -5,26 +5,18 @@ import { useState, useEffect } from 'react'
 
 // Disable static generation for this page since it uses client-side state
 export const dynamic = 'force-dynamic'
-import { ArrowRight, Calendar, BarChart3, Share2, Moon, Sun, Clock, TrendingUp, Users, Send } from 'lucide-react'
+import { ArrowRight, Calendar, BarChart3, Share2, Clock, TrendingUp, Users, Send } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import AuthGuard from '@/components/AuthGuard'
 
 export default function SocialSchedulerPage() {
-  const [darkMode, setDarkMode] = useState(false)
   const [selectedPlatforms, setSelectedPlatforms] = useState<string[]>([])
   const [postContent, setPostContent] = useState('')
   const [scheduledTime, setScheduledTime] = useState('')
   const [isScheduling, setIsScheduling] = useState(false)
   const [scheduledPost, setScheduledPost] = useState<any>(null)
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const platforms = [
     { id: 'facebook', name: 'Facebook', color: 'bg-blue-600', followers: '15.4K' },

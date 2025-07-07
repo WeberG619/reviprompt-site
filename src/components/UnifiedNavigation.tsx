@@ -45,18 +45,19 @@ export default function UnifiedNavigation() {
 
   const navigation = {
     products: [
-      { name: 'AI Proposal Generator', href: '/proposals', description: 'Create professional business proposals' },
-      { name: 'AI Content Generator', href: '/content', description: 'Generate blog posts, social media content' },
-      { name: 'AI Landing Page Builder', href: '/landing-builder', description: 'Build high-converting landing pages' },
-      { name: 'AI Social Scheduler', href: '/social-scheduler', description: 'Schedule and optimize social posts' },
-      { name: 'AI Task Manager', href: '/task-manager', description: 'Intelligent project management' },
+      { name: 'Revit Prompt Library', href: '/revit-prompts', description: 'Professional AEC prompts for Revit automation' },
+      { name: 'Revit Plugin Suite', href: '/revit-plugins', description: 'Essential plugins for AEC workflows' },
+      { name: 'AEC Content Generator', href: '/aec-content', description: 'Generate AEC-specific documentation' },
+      { name: 'Project Scheduler', href: '/project-scheduler', description: 'Construction project management' },
+      { name: 'AI Email Generator', href: '/email-generator', description: 'Professional email automation' },
+      { name: 'AI Proposal Generator', href: '/proposals', description: 'Business proposal creation' },
       { name: 'All Tools Dashboard', href: '/dashboard', description: 'Unified control center' }
     ],
     solutions: [
-      { name: 'Marketing Agencies', href: '/solutions/marketing', description: 'Tools for marketing professionals' },
-      { name: 'Software Companies', href: '/solutions/software', description: 'Developer and SaaS focused tools' },
-      { name: 'Consultants', href: '/solutions/consulting', description: 'Professional services automation' },
-      { name: 'AEC Professionals', href: '/solutions/aec', description: 'Architecture & construction tools' }
+      { name: 'AEC Professionals', href: '/solutions/aec', description: 'Architecture & construction tools' },
+      { name: 'Revit Specialists', href: '/solutions/revit', description: 'Revit automation & productivity' },
+      { name: 'Construction Teams', href: '/solutions/construction', description: 'Project management & coordination' },
+      { name: 'Business Tools', href: '/solutions/business', description: 'General business automation' }
     ],
     resources: [
       { name: 'Blog', href: '/blog', description: 'AI insights and best practices' },
@@ -81,14 +82,14 @@ export default function UnifiedNavigation() {
           <Link href="/" className="flex items-center space-x-3">
             <Image
               src="/DCL-logo.png"
-              alt="DevCraft Labs"
+              alt="RevitPrompt Lab"
               width={40}
               height={32}
               className="w-10 h-8"
             />
             <div>
-              <span className="text-xl font-bold text-gray-900 dark:text-white">DevCraft Labs</span>
-              <div className="text-xs text-gray-500 dark:text-gray-400 font-mono">AI-Powered Business Tools</div>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">RevitPrompt Lab</span>
+              <div className="text-xs text-gray-500 dark:text-gray-400 font-mono">AEC AI Tools & Prompts</div>
             </div>
           </Link>
 
@@ -115,8 +116,8 @@ export default function UnifiedNavigation() {
                   onMouseLeave={handleDropdownLeave}
                 >
                   <div className="px-4 pb-2">
-                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white">AI Tools</h3>
-                    <p className="text-xs text-gray-500 dark:text-gray-400">Professional AI-powered business automation</p>
+                    <h3 className="text-sm font-semibold text-gray-900 dark:text-white">AEC AI Tools</h3>
+                    <p className="text-xs text-gray-500 dark:text-gray-400">Professional tools for Architecture, Engineering & Construction</p>
                   </div>
                   {navigation.products.map((item) => (
                     <Link

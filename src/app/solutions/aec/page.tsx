@@ -1,24 +1,12 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Moon, Sun, Building2, CheckCircle, ExternalLink, DollarSign } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { ArrowRight, Building2, CheckCircle, ExternalLink, DollarSign } from 'lucide-react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import Chatbot from '@/components/Chatbot'
 
-// Disable static generation for this page since it uses client-side state
-export const dynamic = 'force-dynamic'
 
 export default function AECPage() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const products = [
     {

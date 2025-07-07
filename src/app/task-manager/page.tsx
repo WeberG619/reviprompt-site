@@ -5,13 +5,12 @@ import { useState, useEffect } from 'react'
 
 // Disable static generation for this page since it uses client-side state
 export const dynamic = 'force-dynamic'
-import { ArrowRight, Calendar, BarChart3, Share2, Moon, Sun, Clock, TrendingUp, Users, Send, CheckCircle2, Circle, Plus, Edit3, Trash2, User, Target, Zap, Timer, AlertCircle, Filter, Search } from 'lucide-react'
+import { ArrowRight, Calendar, BarChart3, Share2, Clock, TrendingUp, Users, Send, CheckCircle2, Circle, Plus, Edit3, Trash2, User, Target, Zap, Timer, AlertCircle, Filter, Search } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import AuthGuard from '@/components/AuthGuard'
 
 export default function TaskManagerPage() {
-  const [darkMode, setDarkMode] = useState(false)
   const [selectedProject, setSelectedProject] = useState('')
   const [selectedPriority, setSelectedPriority] = useState('')
   const [selectedAssignee, setSelectedAssignee] = useState('')
@@ -24,13 +23,6 @@ export default function TaskManagerPage() {
   const [showTaskForm, setShowTaskForm] = useState(false)
   const [filterStatus, setFilterStatus] = useState('all')
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const businessTypes = [
     'Software Development', 'Marketing Agency', 'Design Studio', 'Consulting Firm', 'E-commerce Business',
@@ -201,7 +193,7 @@ export default function TaskManagerPage() {
 
   return (
     <AuthGuard toolName="AI Task Manager">
-      <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       {/* Unified Navigation */}
       <UnifiedNavigation />
       

@@ -21,11 +21,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Get Anthropic API key
-    const anthropicKey = process.env.ANTHROPIC_API_KEY
-    if (!anthropicKey) {
+    // Get OpenAI API key
+    const openaiKey = process.env.OPENAI_API_KEY
+    if (!openaiKey) {
       return NextResponse.json(
-        { error: 'Anthropic API key not configured' }, 
+        { error: 'OpenAI API key not configured' }, 
         { status: 500 }
       )
     }
@@ -33,32 +33,36 @@ export async function POST(request: NextRequest) {
     // Build the prompt for email generation
     const prompt = buildEmailPrompt(emailType, recipient, purpose, tone, context)
 
-    // Call Anthropic Claude API
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
+    // Call OpenAI API
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'x-api-key': anthropicKey,
+        'Authorization': `Bearer ${openaiKey}`,
         'Content-Type': 'application/json',
-        'anthropic-version': '2023-06-01'
       },
       body: JSON.stringify({
-        model: 'claude-3-haiku-20240307',
-        max_tokens: 1000,
+        model: 'gpt-3.5-turbo',
         messages: [
           {
+            role: 'system',
+            content: 'You are a professional email writing assistant. Generate clear, professional emails based on the provided parameters. Always return the response in JSON format with "subject" and "content" fields.'
+          },
+          {
             role: 'user',
-            content: `You are a professional email writing assistant. Generate clear, professional emails based on the provided parameters. Always return the response in JSON format with "subject" and "content" fields.\n\n${prompt}`
+            content: prompt
           }
-        ]
+        ],
+        max_tokens: 1000,
+        temperature: 0.7,
       }),
     })
 
     if (!response.ok) {
-      throw new Error(`Anthropic API error: ${response.status}`)
+      throw new Error(`OpenAI API error: ${response.status}`)
     }
 
     const aiResponse = await response.json()
-    const generatedText = aiResponse.content[0]?.text
+    const generatedText = aiResponse.choices[0]?.message?.content
 
     if (!generatedText) {
       throw new Error('No content generated from AI')

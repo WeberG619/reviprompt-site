@@ -2,13 +2,10 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-// Disable static generation for this page since it uses client-side state
-export const dynamic = 'force-dynamic'
 import { Shield, FileText, UserCheck, Eye, Download, Settings, Mail, Phone, MapPin, Clock } from 'lucide-react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 
 export default function GDPRPage() {
-  const [darkMode, setDarkMode] = useState(false)
 
   const dataTypes = [
     {

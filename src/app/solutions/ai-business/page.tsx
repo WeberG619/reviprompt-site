@@ -1,22 +1,10 @@
 'use client'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, Moon, Sun, Briefcase, CheckCircle, ExternalLink } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { ArrowRight, Briefcase, CheckCircle, ExternalLink } from 'lucide-react'
 
-// Disable static generation for this page since it uses client-side state
-export const dynamic = 'force-dynamic'
 
 export default function AIBusinessPage() {
-  const [darkMode, setDarkMode] = useState(false)
-
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark')
-    } else {
-      document.documentElement.classList.remove('dark')
-    }
-  }, [darkMode])
 
   const products = [
     {
@@ -25,25 +13,43 @@ export default function AIBusinessPage() {
       status: "live",
       features: ["Automated payment reminders", "AI-powered descriptions", "Real-time analytics", "API integration"],
       link: "https://ai-portfolio-saas.vercel.app",
-      cta: "Launch App",
+      cta: "Generate Invoice",
       metrics: { users: "2.1k+", accuracy: "99.7%", time_saved: "15hrs/week" }
     },
     {
       name: "AI Email Generator",
       description: "Professional email content generation for marketing and business communications",
-      status: "coming-soon",
+      status: "live",
       features: ["Template library", "Tone customization", "A/B testing", "Analytics integration"],
-      link: "#",
-      cta: "Join Waitlist",
+      link: "/email-generator",
+      cta: "Generate Emails",
       metrics: { open_rate: "+40%", engagement: "95%", templates: "100+" }
+    },
+    {
+      name: "AI Proposal Generator",
+      description: "Professional proposal creation with automated customization and templates",
+      status: "live",
+      features: ["Template library", "Client customization", "Automated pricing", "Document export"],
+      link: "/proposals",
+      cta: "Create Proposal",
+      metrics: { win_rate: "+50%", time_saved: "75%", templates: "25+" }
+    },
+    {
+      name: "AI Content Generator",
+      description: "Multi-purpose content creation for marketing, blogs, and social media",
+      status: "live",
+      features: ["Blog writing", "Social posts", "Marketing copy", "SEO optimization"],
+      link: "/content",
+      cta: "Generate Content",
+      metrics: { quality: "95%", speed: "10x faster", formats: "20+" }
     },
     {
       name: "AI CRM Assistant",
       description: "Intelligent customer relationship management with automated insights",
-      status: "coming-soon",
+      status: "live",
       features: ["Lead scoring", "Automated follow-ups", "Performance analytics", "Integration APIs"],
-      link: "#",
-      cta: "Join Waitlist",
+      link: "/dashboard",
+      cta: "Launch CRM",
       metrics: { conversion: "+35%", efficiency: "3x faster", insights: "real-time" }
     }
   ]
@@ -70,12 +76,6 @@ export default function AIBusinessPage() {
               <Link href="/" className="text-neutral-600 dark:text-neutral-300 hover:text-neutral-900 dark:hover:text-white transition-colors text-sm font-medium">
                 ← Back to Home
               </Link>
-              <button
-                onClick={() => setDarkMode(!darkMode)}
-                className="p-2 rounded-lg text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors"
-              >
-                {darkMode ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
-              </button>
             </div>
           </div>
         </div>

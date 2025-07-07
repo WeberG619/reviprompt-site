@@ -4,7 +4,6 @@ import { ArrowRight, TrendingUp, Target, Users, Zap, CheckCircle } from 'lucide-
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import Chatbot from '@/components/Chatbot'
 
-export const dynamic = 'force-dynamic'
 
 export default function MarketingSolutionsPage() {
   const tools = [

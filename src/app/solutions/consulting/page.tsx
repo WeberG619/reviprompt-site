@@ -4,7 +4,6 @@ import { ArrowRight, Briefcase, Target, Users, TrendingUp, CheckCircle, BarChart
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import Chatbot from '@/components/Chatbot'
 
-export const dynamic = 'force-dynamic'
 
 export default function ConsultingSolutionsPage() {
   const tools = [
