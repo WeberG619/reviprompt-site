@@ -121,13 +121,14 @@ Smart social media management isn't about posting more—it's about posting bett
 const allBlogPosts = { ...blogPosts, ...additionalBlogPosts }
 
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
-export default function BlogArticlePage({ params }: BlogPageProps) {
-  const post = allBlogPosts[params.slug as keyof typeof allBlogPosts]
+export default async function BlogArticlePage({ params }: BlogPageProps) {
+  const { slug } = await params
+  const post = allBlogPosts[slug as keyof typeof allBlogPosts]
 
   if (!post) {
     notFound()
