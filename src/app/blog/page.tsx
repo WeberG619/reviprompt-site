@@ -26,7 +26,7 @@ export default function BlogPage() {
     author: {
       name: 'DevCraft Labs Team',
       role: 'AI Product Research',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-07-01',
     readTime: '8 min read',
@@ -44,7 +44,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Product Development',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-28',
       readTime: '6 min read',
@@ -59,7 +59,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Content AI Research',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-25',
       readTime: '7 min read',
@@ -74,7 +74,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Growth Marketing',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-22',
       readTime: '10 min read',
@@ -89,7 +89,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Customer Success Manager',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-20',
       readTime: '5 min read',
@@ -104,7 +104,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Social Media AI',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-18',
       readTime: '6 min read',
@@ -119,7 +119,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Product Team',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-15',
       readTime: '4 min read',
@@ -134,7 +134,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Solutions Architect',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-12',
       readTime: '12 min read',
@@ -149,7 +149,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Analytics Specialist',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-10',
       readTime: '8 min read',
@@ -164,7 +164,7 @@ export default function BlogPage() {
       author: {
         name: 'DevCraft Labs Team',
         role: 'Customer Success Lead',
-        avatar: '/DCL-logo.png'
+        avatar: '/revitprompt-logo.png'
       },
       publishedAt: '2024-06-08',
       readTime: '7 min read',

@@ -179,7 +179,7 @@ export default function UnifiedPricingPage() {
       name: 'Sarah Johnson',
       role: 'Marketing Director',
       company: 'TechCorp',
-      image: '/DCL-logo.png',
+      image: '/revitprompt-logo.png',
       quote: 'DevCraft Labs has transformed our content creation process. We\'re producing 3x more content in half the time.',
       rating: 5
     },
@@ -187,7 +187,7 @@ export default function UnifiedPricingPage() {
       name: 'Mike Chen',
       role: 'Agency Owner',
       company: 'Creative Agency',
-      image: '/DCL-logo.png',
+      image: '/revitprompt-logo.png',
       quote: 'The proposal generator alone has saved us 15 hours per week. ROI was immediate.',
       rating: 5
     },
@@ -195,7 +195,7 @@ export default function UnifiedPricingPage() {
       name: 'Emily Davis',
       role: 'Consultant',
       company: 'Strategic Solutions',
-      image: '/DCL-logo.png',
+      image: '/revitprompt-logo.png',
       quote: 'Professional-quality outputs that impress our clients. The AI really understands our industry.',
       rating: 5
     }

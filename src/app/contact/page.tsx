@@ -14,13 +14,13 @@ export default function ContactPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/DCL-logo.png"
-                alt="DevCraft Labs Logo"
+                src="/revitprompt-logo.png"
+                alt="RevitPrompt Lab Logo"
                 width={54}
                 height={32}
               />
               <div>
-                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <span className="text-xl font-semibold text-neutral-900 dark:text-white">RevitPrompt Lab</span>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Professional AI Tools</div>
               </div>
             </Link>
@@ -59,8 +59,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Email Support</h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-4">Get help with technical questions and account issues</p>
-              <a href="mailto:support@devcraft-labs.com" className="text-blue-600 dark:text-blue-400 font-medium">
-                support@devcraft-labs.com
+              <a href="mailto:support@revipromptlab.com" className="text-blue-600 dark:text-blue-400 font-medium">
+                support@revipromptlab.com
               </a>
             </div>
 
@@ -79,8 +79,8 @@ export default function ContactPage() {
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Enterprise Sales</h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-4">Discuss custom solutions and pricing</p>
-              <a href="mailto:sales@devcraft-labs.com" className="text-blue-600 dark:text-blue-400 font-medium">
-                sales@devcraft-labs.com
+              <a href="mailto:sales@revipromptlab.com" className="text-blue-600 dark:text-blue-400 font-medium">
+                sales@revipromptlab.com
               </a>
             </div>
           </div>

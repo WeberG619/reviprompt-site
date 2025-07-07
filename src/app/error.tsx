@@ -82,11 +82,11 @@ export default function Error({
             If this problem persists, please contact our support team.
           </p>
           <a
-            href="mailto:support@devcraft-labs.com"
+            href="mailto:support@revipromptlab.com"
             className="inline-flex items-center space-x-1 text-blue-600 hover:text-blue-700"
           >
             <Mail className="w-4 h-4" />
-            <span>support@devcraft-labs.com</span>
+            <span>support@revipromptlab.com</span>
           </a>
         </div>
       </div>

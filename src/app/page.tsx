@@ -71,7 +71,7 @@ export default function HomePage() {
     }
     
     if (lowerMessage.includes('support') || lowerMessage.includes('help') || lowerMessage.includes('contact')) {
-      return "We offer multiple support channels: 24/7 chat support, email at support@devcraft-labs.com, comprehensive documentation at /docs, and enterprise support for pro plans. You can also visit /contact for direct access to our team or schedule a demo call!"
+      return "We offer multiple support channels: 24/7 chat support, email at support@revipromptlab.com, comprehensive documentation at /docs, and enterprise support for pro plans. You can also visit /contact for direct access to our team or schedule a demo call!"
     }
     
     if (lowerMessage.includes('start') || lowerMessage.includes('get started') || lowerMessage.includes('trial')) {
@@ -341,10 +341,10 @@ export default function HomePage() {
                 <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                 <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono ml-2">revitpromptlab.com</span>
+                <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono ml-2">revipromptlab.com</span>
               </div>
               <code className="text-sm text-neutral-700 dark:text-neutral-300 font-mono">
-                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST revitpromptlab.com/api/v1<br/>
+                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST revipromptlab.com/api/v1<br/>
                 <span className="text-neutral-500 dark:text-neutral-400"># Generate AEC prompts instantly</span>
               </code>
             </div>
@@ -559,7 +559,7 @@ export default function HomePage() {
             Ready to Build with <span className="text-blue-200">Professional AI?</span>
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of professionals using DevCraft Labs to automate workflows and accelerate growth.
+            Join thousands of professionals using RevitPrompt Lab to automate workflows and accelerate growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -586,12 +586,12 @@ export default function HomePage() {
             <div>
               <div className="flex items-center space-x-3 mb-4">
                 <Image
-                  src="/DCL-logo.png"
-                  alt="DevCraft Labs Logo"
+                  src="/revitprompt-logo.png"
+                  alt="RevitPrompt Lab Logo"
                   width={54}
                   height={32}
                 />
-                <span className="text-lg font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <span className="text-lg font-semibold text-neutral-900 dark:text-white">RevitPrompt Lab</span>
               </div>
               <p className="text-neutral-600 dark:text-neutral-400 text-sm mb-4">
                 Professional AI tools built by developers, for developers and businesses.
@@ -632,7 +632,7 @@ export default function HomePage() {
           </div>
           
           <div className="border-t border-neutral-200 dark:border-neutral-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500 dark:text-neutral-400">
-            <p>&copy; 2024 DevCraft Labs. All rights reserved.</p>
+            <p>&copy; 2024 RevitPrompt Lab. All rights reserved.</p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
               <Link href="/privacy" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Privacy</Link>
               <Link href="/terms" className="hover:text-neutral-900 dark:hover:text-white transition-colors">Terms</Link>
@@ -649,7 +649,7 @@ export default function HomePage() {
             <div className="bg-blue-600 text-white p-4 rounded-t-xl flex items-center justify-between">
               <div className="flex items-center space-x-2">
                 <Bot className="w-5 h-5" />
-                <span className="font-medium">DevCraft Assistant</span>
+                <span className="font-medium">RevitPrompt Assistant</span>
               </div>
               <button
                 onClick={() => setIsChatOpen(false)}

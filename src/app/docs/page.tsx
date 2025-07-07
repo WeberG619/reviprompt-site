@@ -65,7 +65,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/invoices/generate',
       description: 'Create a new AI-enhanced invoice with intelligent description generation',
-      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/invoices/generate \\
+      code: `curl -X POST https://revipromptlab.com/api/api/v1/invoices/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -80,9 +80,9 @@ export default function DocsPage() {
       response: `{
   "invoice_id": "inv_1234567890",
   "status": "created",
-  "pdf_url": "https://invoices.devcraft-labs.com/inv_1234567890.pdf",
+  "pdf_url": "https://invoices.revipromptlab.com/inv_1234567890.pdf",
   "enhanced_description": "Professional web development services including responsive design, API integration, and performance optimization",
-  "payment_link": "https://pay.devcraft-labs.com/inv_1234567890",
+  "payment_link": "https://pay.revipromptlab.com/inv_1234567890",
   "created_at": "2024-07-03T10:30:00Z"
 }`
     },
@@ -92,7 +92,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/invoices/send',
       description: 'Send invoice via email with automated reminder scheduling',
-      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/invoices/send \\
+      code: `curl -X POST https://revipromptlab.com/api/api/v1/invoices/send \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -118,7 +118,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/content/email',
       description: 'Generate professional email content with AI-powered optimization',
-      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/email/generate \\
+      code: `curl -X POST https://revipromptlab.com/api/api/v1/email/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -149,7 +149,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/revit/prompts',
       description: 'Generate intelligent Revit automation prompts for AEC workflows',
-      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/content/generate \\
+      code: `curl -X POST https://revipromptlab.com/api/api/v1/content/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -181,7 +181,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/proposals/generate',
       description: 'Create professional business proposals with AI-generated content',
-      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/proposals/generate \\
+      code: `curl -X POST https://revipromptlab.com/api/api/v1/proposals/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -218,7 +218,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/landing/generate',
       description: 'Create high-converting landing pages with optimization tips',
-      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/landing/generate \\
+      code: `curl -X POST https://revipromptlab.com/api/api/v1/landing/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -256,7 +256,7 @@ export default function DocsPage() {
       method: 'POST',
       endpoint: '/api/v1/social/schedule',
       description: 'Schedule posts across multiple social media platforms',
-      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/social/schedule \\
+      code: `curl -X POST https://revipromptlab.com/api/api/v1/social/schedule \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -299,7 +299,7 @@ export default function DocsPage() {
       method: 'GET',
       endpoint: '/api/v1/social/schedule',
       description: 'Retrieve scheduled social media posts',
-      code: `curl -X GET "https://devcraft-labs-api.vercel.app/api/v1/social/schedule?status=scheduled&limit=10" \\
+      code: `curl -X GET "https://revipromptlab.com/api/api/v1/social/schedule?status=scheduled&limit=10" \\
   -H "Authorization: Bearer YOUR_API_KEY"`,
       response: `{
   "success": true,
@@ -329,7 +329,7 @@ export default function DocsPage() {
       step: 2,
       title: "Make Your First Request",
       description: "Test your API key with a simple invoice generation request.",
-      code: `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/invoices/generate \\
+      code: `curl -X POST https://revipromptlab.com/api/api/v1/invoices/generate \\
   -H "Authorization: Bearer dcl_sk_YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{"client_name": "Test Client", "amount": 100.00}'`
@@ -340,13 +340,13 @@ export default function DocsPage() {
       description: "Process the JSON response to get your invoice URL and payment link.",
       code: `{
   "invoice_id": "inv_test_123",
-  "pdf_url": "https://invoices.devcraft-labs.com/inv_test_123.pdf",
-  "payment_link": "https://pay.devcraft-labs.com/inv_test_123"
+  "pdf_url": "https://invoices.revipromptlab.com/inv_test_123.pdf",
+  "payment_link": "https://pay.revipromptlab.com/inv_test_123"
 }`
     }
   ]
 
-  const emailApiCode = `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/email/generate \\
+  const emailApiCode = `curl -X POST https://revipromptlab.com/api/api/v1/email/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -372,7 +372,7 @@ export default function DocsPage() {
   ]
 }`
 
-  const contentGeneratorCode = `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/content/generate \\
+  const contentGeneratorCode = `curl -X POST https://revipromptlab.com/api/api/v1/content/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -403,7 +403,7 @@ export default function DocsPage() {
   ]
 }`
 
-  const landingPageCode = `curl -X POST https://devcraft-labs-api.vercel.app/api/v1/landing/generate \\
+  const landingPageCode = `curl -X POST https://revipromptlab.com/api/api/v1/landing/generate \\
   -H "Authorization: Bearer YOUR_API_KEY" \\
   -H "Content-Type: application/json" \\
   -d '{
@@ -466,7 +466,7 @@ export default function DocsPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/DCL-logo.png"
+                src="/revitprompt-logo.png"
                 alt="DevCraft Labs Logo"
                 width={54}
                 height={32}
@@ -558,10 +558,10 @@ export default function DocsPage() {
                 <div className="bg-neutral-50 dark:bg-neutral-800/50 rounded-xl p-8">
                   <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">Base URL</h3>
                   <code className="bg-neutral-100 dark:bg-neutral-700 px-4 py-2 rounded-lg text-neutral-900 dark:text-white font-mono">
-                    https://devcraft-labs-api.vercel.app/api/v1
+                    https://revipromptlab.com/api/api/v1
                   </code>
                   <div className="mt-4 text-sm text-neutral-600 dark:text-neutral-400">
-                    <a href="https://devcraft-labs-api.vercel.app" className="text-blue-600 dark:text-blue-400 hover:underline">
+                    <a href="https://revipromptlab.com/api" className="text-blue-600 dark:text-blue-400 hover:underline">
                       → Live API Explorer & Testing Interface
                     </a>
                   </div>

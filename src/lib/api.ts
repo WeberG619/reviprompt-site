@@ -1,4 +1,4 @@
-export const DEVCRAFT_API_BASE = 'https://devcraft-labs-api.vercel.app'
+export const REVIPROMPT_API_BASE = 'https://revipromptlab-api.vercel.app'
 
 interface APIResponse<T = any> {
   success: boolean
@@ -23,13 +23,13 @@ interface ResearchRequest {
   maxResults?: number
 }
 
-class DevCraftAPI {
+class ReviPromptAPI {
   private apiKey: string | null = null
   
   constructor() {
     // In a real implementation, this would come from environment variables
     // For now, we'll use a mock key that triggers AI-powered responses
-    this.apiKey = process.env.NEXT_PUBLIC_DEVCRAFT_API_KEY || 'demo-key'
+    this.apiKey = process.env.NEXT_PUBLIC_REVIPROMPT_API_KEY || 'demo-key'
   }
 
   private async makeRequest<T>(endpoint: string, data: any): Promise<APIResponse<T>> {
@@ -37,12 +37,12 @@ class DevCraftAPI {
       const controller = new AbortController()
       const timeoutId = setTimeout(() => controller.abort(), 10000) // 10 second timeout
       
-      const response = await fetch(`${DEVCRAFT_API_BASE}${endpoint}`, {
+      const response = await fetch(`${REVIPROMPT_API_BASE}${endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${this.apiKey}`,
-          'X-Client': 'devcraft-labs-website'
+          'X-Client': 'revipromptlab-website'
         },
         body: JSON.stringify(data),
         signal: controller.signal
@@ -647,5 +647,5 @@ What trends are you seeing in your industry? Drop your thoughts below! 👇
   }
 }
 
-export const devCraftAPI = new DevCraftAPI()
-export default devCraftAPI
+export const reviPromptAPI = new ReviPromptAPI()
+export default reviPromptAPI

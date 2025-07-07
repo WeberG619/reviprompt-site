@@ -14,13 +14,13 @@ export default function PrivacyPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/DCL-logo.png"
-                alt="DevCraft Labs Logo"
+                src="/revitprompt-logo.png"
+                alt="ReviPrompt Lab Logo"
                 width={54}
                 height={32}
               />
               <div>
-                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <span className="text-xl font-semibold text-neutral-900 dark:text-white">ReviPrompt Lab</span>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Privacy Policy</div>
               </div>
             </Link>
@@ -52,7 +52,7 @@ export default function PrivacyPage() {
                   Privacy Commitment
                 </h2>
                 <p className="text-blue-800 dark:text-blue-200">
-                  DevCraft Labs is committed to protecting your privacy and ensuring the security of your data. 
+                  ReviPrompt Lab is committed to protecting your privacy and ensuring the security of your data. 
                   We follow industry best practices and maintain compliance with GDPR, CCPA, and other privacy regulations.
                 </p>
               </div>
@@ -201,9 +201,9 @@ export default function PrivacyPage() {
           </p>
           <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-6">
             <p className="text-neutral-700 dark:text-neutral-300">
-              <strong>Email:</strong> privacy@devcraft-labs.com<br />
+              <strong>Email:</strong> privacy@revipromptlab.com<br />
               <strong>Address:</strong> 123 Innovation Drive, Tech Hub, CA 94105<br />
-              <strong>Data Protection Officer:</strong> dpo@devcraft-labs.com
+              <strong>Data Protection Officer:</strong> dpo@revipromptlab.com
             </p>
           </div>
         </div>

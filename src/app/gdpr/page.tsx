@@ -144,7 +144,7 @@ export default function GDPRPage() {
             GDPR Compliance
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-6">
-            Your privacy rights under the General Data Protection Regulation (GDPR) and how DevCraft Labs protects your personal data.
+            Your privacy rights under the General Data Protection Regulation (GDPR) and how ReviPrompt Lab protects your personal data.
           </p>
           <div className="flex items-center justify-center space-x-6 text-sm text-gray-500 dark:text-gray-400">
             <div className="flex items-center space-x-2">
@@ -341,7 +341,7 @@ export default function GDPRPage() {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
                     <Mail className="w-5 h-5 text-gray-400" />
-                    <span className="text-gray-900 dark:text-white">dpo@devcraft-labs.com</span>
+                    <span className="text-gray-900 dark:text-white">dpo@revipromptlab.com</span>
                   </div>
                   <div className="flex items-center space-x-3">
                     <Phone className="w-5 h-5 text-gray-400" />
@@ -349,7 +349,7 @@ export default function GDPRPage() {
                   </div>
                   <div className="flex items-center space-x-3">
                     <MapPin className="w-5 h-5 text-gray-400" />
-                    <span className="text-gray-900 dark:text-white">DevCraft Labs Data Protection Office</span>
+                    <span className="text-gray-900 dark:text-white">ReviPrompt Lab Data Protection Office</span>
                   </div>
                 </div>
               </div>

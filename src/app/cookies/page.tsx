@@ -66,7 +66,7 @@ export default function CookiePolicyPage() {
             Cookie Policy
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Learn about how DevCraft Labs uses cookies and similar technologies to improve your experience.
+            Learn about how ReviPrompt Lab uses cookies and similar technologies to improve your experience.
           </p>
           <div className="mt-6 text-sm text-gray-500 dark:text-gray-400">
             Last updated: {new Date().toLocaleDateString()}
@@ -87,7 +87,7 @@ export default function CookiePolicyPage() {
             How We Use Cookies
           </h2>
           <p className="text-gray-700 dark:text-gray-300 mb-6">
-            DevCraft Labs uses cookies to enhance your experience, analyze website performance, and provide personalized content. 
+            ReviPrompt Lab uses cookies to enhance your experience, analyze website performance, and provide personalized content. 
             We are committed to transparency about our data practices and your privacy rights.
           </p>
         </section>
@@ -201,8 +201,8 @@ export default function CookiePolicyPage() {
               If you have any questions about our use of cookies or this Cookie Policy, please contact us:
             </p>
             <div className="space-y-2 text-gray-700 dark:text-gray-300">
-              <p><strong>Email:</strong> privacy@devcraft-labs.com</p>
-              <p><strong>Address:</strong> DevCraft Labs Privacy Team</p>
+              <p><strong>Email:</strong> privacy@revipromptlab.com</p>
+              <p><strong>Address:</strong> ReviPrompt Lab Privacy Team</p>
             </div>
             <div className="mt-4">
               <Link 

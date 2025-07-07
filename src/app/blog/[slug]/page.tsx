@@ -105,7 +105,7 @@ Smart social media management isn't about posting more—it's about posting bett
     author: {
       name: 'DevCraft Labs Team',
       role: 'Social Media AI',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-18',
     readTime: '6 min read',

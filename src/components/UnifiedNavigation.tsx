@@ -81,7 +81,7 @@ export default function UnifiedNavigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
             <Image
-              src="/DCL-logo.png"
+              src="/revitprompt-logo.png"
               alt="RevitPrompt Lab"
               width={40}
               height={32}

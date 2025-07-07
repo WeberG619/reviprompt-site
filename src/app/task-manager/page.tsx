@@ -120,9 +120,9 @@ export default function TaskManagerPage() {
     
     try {
       // Import API dynamically to avoid SSR issues
-      const { devCraftAPI } = await import('@/lib/api')
+      const { reviPromptAPI } = await import('@/lib/api')
       
-      const response = await devCraftAPI.generateTask({
+      const response = await reviPromptAPI.generateTask({
         prompt: `${taskTitle}: ${taskDescription}`,
         businessType: selectedProject,
         context: {

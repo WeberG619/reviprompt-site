@@ -23,7 +23,7 @@ export default function SupportPage() {
         },
         {
           question: "How do I integrate with my existing tools?",
-          answer: "DevCraft Labs offers APIs and webhooks for seamless integration with popular accounting software, CRMs, and project management tools."
+          answer: "ReviPrompt Lab offers APIs and webhooks for seamless integration with popular accounting software, CRMs, and project management tools."
         }
       ]
     },
@@ -78,7 +78,7 @@ export default function SupportPage() {
       availability: "Response within 4 hours",
       icon: <Mail className="w-6 h-6" />,
       action: "Send Email",
-      email: "support@devcraft-labs.com"
+      email: "support@revipromptlab.com"
     },
     {
       title: "Phone Support",
@@ -107,13 +107,13 @@ export default function SupportPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/DCL-logo.png"
-                alt="DevCraft Labs Logo"
+                src="/revitprompt-logo.png"
+                alt="ReviPrompt Lab Logo"
                 width={54}
                 height={32}
               />
               <div>
-                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <span className="text-xl font-semibold text-neutral-900 dark:text-white">ReviPrompt Lab</span>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Help Center</div>
               </div>
             </Link>
@@ -264,7 +264,7 @@ export default function SupportPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300">
-              Find answers to the most common questions about DevCraft Labs.
+              Find answers to the most common questions about ReviPrompt Lab.
             </p>
           </div>
 
@@ -308,7 +308,7 @@ export default function SupportPage() {
             Still need help?
           </h2>
           <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
-            Our support team is here to help you succeed with DevCraft Labs.
+            Our support team is here to help you succeed with ReviPrompt Lab.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-primary inline-flex items-center space-x-2">

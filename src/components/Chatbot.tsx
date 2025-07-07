@@ -76,7 +76,7 @@ export default function Chatbot({ pageContext = 'general' }: ChatbotProps) {
     
     // General responses
     if (lowerMessage.includes('api') || lowerMessage.includes('documentation') || lowerMessage.includes('docs')) {
-      return "Our API documentation is comprehensive and includes real examples from all our AI tools. You can access it at /docs with authentication examples, rate limits, and webhooks. All tools connect to our DevCraft Labs API at devcraft-labs-api.vercel.app. Need an API key? I can guide you through the setup process!"
+      return "Our API documentation is comprehensive and includes real examples from all our AI tools. You can access it at /docs with authentication examples, rate limits, and webhooks. All tools connect to our ReviPrompt Lab API at revipromptlab-api.vercel.app. Need an API key? I can guide you through the setup process!"
     }
     
     if (lowerMessage.includes('pricing') || lowerMessage.includes('cost') || lowerMessage.includes('price')) {
@@ -96,7 +96,7 @@ export default function Chatbot({ pageContext = 'general' }: ChatbotProps) {
     }
     
     if (lowerMessage.includes('support') || lowerMessage.includes('help') || lowerMessage.includes('contact')) {
-      return "We offer multiple support channels: 24/7 chat support, email at support@devcraft-labs.com, comprehensive documentation at /docs, and enterprise support for pro plans. You can also visit /contact for direct access to our team or schedule a demo call!"
+      return "We offer multiple support channels: 24/7 chat support, email at support@revipromptlab.com, comprehensive documentation at /docs, and enterprise support for pro plans. You can also visit /contact for direct access to our team or schedule a demo call!"
     }
     
     if (lowerMessage.includes('start') || lowerMessage.includes('get started') || lowerMessage.includes('trial')) {
@@ -104,7 +104,7 @@ export default function Chatbot({ pageContext = 'general' }: ChatbotProps) {
     }
     
     if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-      return "Hello! Welcome to DevCraft Labs! I'm here to help you with any questions about our AI tools, pricing, API integration, or getting started. Our tools are designed to be intelligent and connected to real-time data. What would you like to know?"
+      return "Hello! Welcome to ReviPrompt Lab! I'm here to help you with any questions about our AI tools, pricing, API integration, or getting started. Our tools are designed to be intelligent and connected to real-time data. What would you like to know?"
     }
     
     return "I can help you with information about our AI tools, pricing, API documentation, security, support, or getting started. All our tools are AI-powered and can research current information online to provide the best results. Try asking about specific features, pricing, or how to get started. What would you like to know more about?"
@@ -140,7 +140,7 @@ export default function Chatbot({ pageContext = 'general' }: ChatbotProps) {
           <div className="flex items-center justify-between p-4 border-b border-neutral-200 dark:border-neutral-700">
             <div className="flex items-center space-x-2">
               <Bot className="w-5 h-5 text-blue-600" />
-              <span className="font-semibold text-neutral-900 dark:text-white">DevCraft AI Assistant</span>
+              <span className="font-semibold text-neutral-900 dark:text-white">ReviPrompt AI Assistant</span>
             </div>
             <button
               onClick={() => setIsChatOpen(false)}

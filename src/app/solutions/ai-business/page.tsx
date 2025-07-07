@@ -62,7 +62,7 @@ export default function AIBusinessPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/DCL-logo.png"
+                src="/revitprompt-logo.png"
                 alt="DevCraft Labs Logo"
                 width={54}
                 height={32}

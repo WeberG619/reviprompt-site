@@ -32,7 +32,7 @@ export default function AboutPage() {
   const milestones = [
     {
       year: "2024",
-      title: "DevCraft Labs Founded", 
+      title: "RevitPrompt Lab Founded", 
       description: "Started with a mission to make AI tools that small businesses can actually use and afford."
     },
     {
@@ -42,8 +42,8 @@ export default function AboutPage() {
     },
     {
       year: "2024",
-      title: "ReviPrompt Lab Integration",
-      description: "Partnered with AEC professionals to bring specialized Revit automation tools to architects and engineers."
+      title: "AEC Professional Tools Launch",
+      description: "Launched comprehensive AEC professional tools, including Revit automation, prompt libraries, and construction management solutions."
     }
   ]
 
@@ -55,13 +55,13 @@ export default function AboutPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/DCL-logo.png"
-                alt="DevCraft Labs Logo"
+                src="/revitprompt-logo.png"
+                alt="RevitPrompt Lab Logo"
                 width={54}
                 height={32}
               />
               <div>
-                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <span className="text-xl font-semibold text-neutral-900 dark:text-white">RevitPrompt Lab</span>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">About Us</div>
               </div>
             </Link>
@@ -106,7 +106,7 @@ export default function AboutPage() {
                 affordable, and effective.
               </p>
               <p className="text-lg text-neutral-600 dark:text-neutral-300 mb-8">
-                That&apos;s why we created DevCraft Labs - to build AI tools that small businesses can 
+                That&apos;s why we created RevitPrompt Lab - to build AI tools that small businesses can 
                 actually use without needing a computer science degree or a massive budget.
               </p>
             </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
             Ready to Build with Us?
           </h2>
           <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8">
-            Join thousands of professionals using DevCraft Labs to automate their workflows and grow their businesses.
+            Join thousands of professionals using RevitPrompt Lab to automate their workflows and grow their businesses.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="https://ai-portfolio-saas.vercel.app" className="btn-primary inline-flex items-center space-x-2">

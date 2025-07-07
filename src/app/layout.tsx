@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'RevitPrompt Lab - AEC AI Tools & Revit Automation',
     description: 'Professional AI tools and prompts designed specifically for Architecture, Engineering & Construction professionals.',
-    url: 'https://revitpromptlab.com',
+    url: 'https://revipromptlab.com',
     siteName: 'RevitPrompt Lab',
     images: [
       {

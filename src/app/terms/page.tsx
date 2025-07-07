@@ -14,13 +14,13 @@ export default function TermsPage() {
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-3">
               <Image
-                src="/DCL-logo.png"
-                alt="DevCraft Labs Logo"
+                src="/revitprompt-logo.png"
+                alt="ReviPrompt Lab Logo"
                 width={54}
                 height={32}
               />
               <div>
-                <span className="text-xl font-semibold text-neutral-900 dark:text-white">DevCraft Labs</span>
+                <span className="text-xl font-semibold text-neutral-900 dark:text-white">ReviPrompt Lab</span>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400 font-mono">Terms of Service</div>
               </div>
             </Link>
@@ -52,7 +52,7 @@ export default function TermsPage() {
                   Important Notice
                 </h2>
                 <p className="text-amber-800 dark:text-amber-200">
-                  Please read these Terms of Service carefully before using DevCraft Labs services. 
+                  Please read these Terms of Service carefully before using ReviPrompt Lab services. 
                   By accessing or using our services, you agree to be bound by these terms.
                 </p>
               </div>
@@ -64,7 +64,7 @@ export default function TermsPage() {
             1. Acceptance of Terms
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 mb-6">
-            These Terms of Service ("Terms") constitute a legally binding agreement between you and DevCraft Labs Inc. 
+            These Terms of Service ("Terms") constitute a legally binding agreement between you and ReviPrompt Lab Inc. 
             ("Company", "we", "us", or "our") regarding your use of our AI-powered software tools and services 
             (collectively, the "Services").
           </p>
@@ -77,7 +77,7 @@ export default function TermsPage() {
             2. Description of Services
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 mb-4">
-            DevCraft Labs provides AI-powered software tools designed for businesses, developers, and AEC professionals, including but not limited to:
+            ReviPrompt Lab provides AI-powered software tools designed for businesses, developers, and AEC professionals, including but not limited to:
           </p>
           <ul className="list-disc list-inside space-y-2 mb-8 text-neutral-700 dark:text-neutral-300">
             <li>AI Invoice Generator with automated payment tracking</li>
@@ -153,7 +153,7 @@ export default function TermsPage() {
             6. Intellectual Property Rights
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 mb-4">
-            <strong>Our IP:</strong> DevCraft Labs retains all rights to our software, AI models, documentation, 
+            <strong>Our IP:</strong> ReviPrompt Lab retains all rights to our software, AI models, documentation, 
             and other intellectual property. You receive a limited, non-exclusive license to use our Services.
           </p>
           <p className="text-neutral-700 dark:text-neutral-300 mb-8">
@@ -199,7 +199,7 @@ export default function TermsPage() {
             9. Limitation of Liability
           </h2>
           <p className="text-neutral-700 dark:text-neutral-300 mb-8">
-            TO THE MAXIMUM EXTENT PERMITTED BY LAW, DEVCRAFT LABS SHALL NOT BE LIABLE FOR ANY INDIRECT, 
+            TO THE MAXIMUM EXTENT PERMITTED BY LAW, REVIPROMPT LAB SHALL NOT BE LIABLE FOR ANY INDIRECT, 
             INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF 
             PROFITS, DATA, USE, OR OTHER INTANGIBLE LOSSES, RESULTING FROM YOUR USE OF THE SERVICES.
           </p>
@@ -231,8 +231,8 @@ export default function TermsPage() {
           <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-6">
             <p className="text-neutral-700 dark:text-neutral-300">
               For questions about these Terms of Service, please contact us:<br /><br />
-              <strong>Email:</strong> legal@devcraft-labs.com<br />
-              <strong>Address:</strong> DevCraft Labs Inc., 123 Innovation Drive, Tech Hub, CA 94105<br />
+              <strong>Email:</strong> legal@revipromptlab.com<br />
+              <strong>Address:</strong> ReviPrompt Lab Inc., 123 Innovation Drive, Tech Hub, CA 94105<br />
               <strong>Phone:</strong> +1 (555) 123-4567
             </p>
           </div>

@@ -73,7 +73,7 @@ export default function SignupPage() {
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
             <Image
-              src="/DCL-logo.png"
+              src="/revitprompt-logo.png"
               alt="DevCraft Labs"
               width={60}
               height={48}

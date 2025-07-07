@@ -106,9 +106,9 @@ The future of business administration is here, and it's powered by AI. Join the 
 *Ready to save 15 hours weekly? Start your free trial of the AI Invoice Generator today.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'AI Product Research',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-07-01',
     readTime: '8 min read',
@@ -118,10 +118,10 @@ The future of business administration is here, and it's powered by AI. Join the 
   },
   'proposal-automation-guide': {
     id: 'proposal-automation-guide',
-    title: 'DevCraft AI Proposal Generator: 5 Ways It Transforms Your Sales Process',
+    title: 'ReviPrompt AI Proposal Generator: 5 Ways It Transforms Your Sales Process',
     excerpt: 'Learn how our AI Proposal Generator helps businesses create compelling proposals 10x faster, with automated templates, smart pricing, and professional formatting.',
     content: `
-# DevCraft AI Proposal Generator: 5 Ways It Transforms Your Sales Process
+# ReviPrompt AI Proposal Generator: 5 Ways It Transforms Your Sales Process
 
 Creating compelling proposals is an art and a science. Our AI Proposal Generator combines both, helping businesses create professional, persuasive proposals 10x faster than traditional methods.
 
@@ -221,15 +221,15 @@ The future of sales is intelligent, efficient, and effective. Join hundreds of b
 *Ready to 10x your proposal creation speed? Start your free trial today.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Product Development',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-28',
     readTime: '6 min read',
     category: 'AI Insights',
     image: '/img/blog/proposal-generator.jpg',
-    tags: ['AI Proposal Generator', 'Sales', 'Automation', 'DevCraft Tools']
+    tags: ['AI Proposal Generator', 'Sales', 'Automation', 'ReviPrompt Tools']
   },
   'content-marketing-ai': {
     id: 'content-marketing-ai',
@@ -340,9 +340,9 @@ Quality content at scale is no longer a luxury—it's a necessity. Our AI Conten
 *Ready to scale your content marketing? Start your free trial today.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Content AI Research',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-25',
     readTime: '7 min read',
@@ -497,15 +497,15 @@ Success in digital marketing starts with great landing pages. Our AI-powered bui
 *Ready to boost your conversions? Start building your first AI-optimized landing page today.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Growth Marketing',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-22',
     readTime: '10 min read',
     category: 'Tutorials',
     image: '/img/blog/landing-page-builder.jpg',
-    tags: ['AI Landing Page Builder', 'Conversion', 'A/B Testing', 'DevCraft Tools']
+    tags: ['AI Landing Page Builder', 'Conversion', 'A/B Testing', 'ReviPrompt Tools']
   },
   'techflow-case-study': {
     id: 'techflow-case-study',
@@ -683,9 +683,9 @@ The 85% reduction in proposal time isn't just about efficiency—it's about comp
 *Ready to transform your proposal process? Learn how our AI Proposal Generator can help your business achieve similar results.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Customer Success Manager',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-20',
     readTime: '5 min read',
@@ -803,15 +803,15 @@ Smart social media management isn't about posting more—it's about posting bett
 *Ready to automate your social media success? Start your free trial today.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Social Media AI',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-18',
     readTime: '6 min read',
     category: 'Productivity',
     image: '/img/blog/social-scheduler.jpg',
-    tags: ['AI Social Scheduler', 'Social Media', 'Engagement', 'DevCraft Tools']
+    tags: ['AI Social Scheduler', 'Social Media', 'Engagement', 'ReviPrompt Tools']
   },
   'devcraft-product-update': {
     id: 'devcraft-product-update',
@@ -820,7 +820,7 @@ Smart social media management isn't about posting more—it's about posting bett
     content: `
 # Product Update: New AI Task Manager and Enhanced Analytics
 
-We're excited to announce major updates to the DevCraft Labs platform that will revolutionize how you manage tasks and track performance. These new features represent months of development based on your feedback.
+We're excited to announce major updates to the ReviPrompt Lab platform that will revolutionize how you manage tasks and track performance. These new features represent months of development based on your feedback.
 
 ## What's New
 
@@ -915,7 +915,7 @@ Our brand-new AI Task Manager automatically organizes, prioritizes, and schedule
 ## How to Access New Features
 
 ### Existing Users
-1. Log into your DevCraft Labs account
+1. Log into your ReviPrompt Lab account
 2. Look for the "What's New" banner
 3. Follow the setup wizard for new features
 
@@ -958,15 +958,15 @@ These updates wouldn't be possible without your feedback and support. Keep the s
 *Ready to experience the new features? Log in to your account and explore what's new.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Product Team',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-15',
     readTime: '4 min read',
     category: 'Company News',
     image: '/img/blog/product-update.jpg',
-    tags: ['Product Update', 'AI Task Manager', 'Analytics', 'DevCraft Tools']
+    tags: ['Product Update', 'AI Task Manager', 'Analytics', 'ReviPrompt Tools']
   },
   'ai-workflow-automation': {
     id: 'ai-workflow-automation',
@@ -1266,9 +1266,9 @@ Building intelligent workflows is an ongoing journey, not a one-time setup. Star
 *Ready to build your first intelligent workflow? Start with our AI Task Manager today.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Solutions Architect',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-12',
     readTime: '12 min read',
@@ -1279,7 +1279,7 @@ Building intelligent workflows is an ongoing journey, not a one-time setup. Star
   'productivity-metrics': {
     id: 'productivity-metrics',
     title: 'Measuring AI Impact: Key Productivity Metrics That Matter',
-    excerpt: 'Learn which metrics to track when implementing DevCraft Labs AI tools and how to measure ROI effectively in your organization.',
+    excerpt: 'Learn which metrics to track when implementing ReviPrompt Lab AI tools and how to measure ROI effectively in your organization.',
     content: `
 # Measuring AI Impact: Key Productivity Metrics That Matter
 
@@ -1344,7 +1344,7 @@ Track end-to-end process improvements:
 
 **Real Example:**
 \`\`\`
-Proposal Accuracy (DevCraft AI Proposal Generator):
+Proposal Accuracy (ReviPrompt AI Proposal Generator):
 - Manual Process: 94% accuracy
 - AI-Assisted: 99.7% accuracy
 - Customer Complaints: 78% reduction
@@ -1580,7 +1580,7 @@ Metrics that confirm results:
 ### Analytics Platforms
 
 #### Built-in Analytics
-Most DevCraft Labs tools include:
+Most ReviPrompt Lab tools include:
 - Performance dashboards
 - Usage analytics
 - Efficiency reports
@@ -1679,9 +1679,9 @@ Measuring AI impact isn't just about proving value—it's about continuously imp
 *Ready to start measuring your AI impact? Our analytics dashboard helps you track all these metrics automatically.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Analytics Specialist',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-10',
     readTime: '8 min read',
@@ -1692,7 +1692,7 @@ Measuring AI impact isn't just about proving value—it's about continuously imp
   'creative-collective-story': {
     id: 'creative-collective-story',
     title: 'Customer Spotlight: Creative Collective\'s Content Revolution',
-    excerpt: 'How a digital agency scaled their content production 5x while maintaining quality and creativity using DevCraft Labs AI Content Generator.',
+    excerpt: 'How a digital agency scaled their content production 5x while maintaining quality and creativity using ReviPrompt Lab AI Content Generator.',
     content: `
 # Customer Spotlight: Creative Collective's Content Revolution
 
@@ -1731,12 +1731,12 @@ Sarah was initially skeptical about AI for creative work:
 
 However, mounting pressure forced exploration of AI solutions.
 
-## DevCraft Labs AI Content Generator Discovery
+## ReviPrompt Lab AI Content Generator Discovery
 
-### Why DevCraft Labs?
+### Why ReviPrompt Lab?
 
 #### Brand Voice Learning
-Unlike generic AI tools, DevCraft Labs' AI Content Generator:
+Unlike generic AI tools, ReviPrompt Lab's AI Content Generator:
 - Analyzes existing brand content to understand voice
 - Maintains consistency across all generated content
 - Adapts to different client styles seamlessly
@@ -2037,7 +2037,7 @@ SEO Keywords: [Target keywords]
 ### Technology Stack
 
 #### Current Tools:
-- DevCraft Labs AI Content Generator
+- ReviPrompt Lab AI Content Generator
 - Trello for project management
 - Google Workspace for collaboration
 - Canva for visual content
@@ -2158,12 +2158,12 @@ The key insight: AI is a powerful creative tool when combined with human insight
 
 ---
 
-*Interested in transforming your content creation process? Learn how DevCraft Labs AI Content Generator can help your agency scale while maintaining quality.*
+*Interested in transforming your content creation process? Learn how ReviPrompt Lab AI Content Generator can help your agency scale while maintaining quality.*
     `,
     author: {
-      name: 'DevCraft Labs Team',
+      name: 'ReviPrompt Lab Team',
       role: 'Customer Success Lead',
-      avatar: '/DCL-logo.png'
+      avatar: '/revitprompt-logo.png'
     },
     publishedAt: '2024-06-08',
     readTime: '7 min read',
