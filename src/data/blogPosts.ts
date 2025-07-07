@@ -113,7 +113,7 @@ The future of business administration is here, and it's powered by AI. Join the 
     publishedAt: '2024-07-01',
     readTime: '8 min read',
     category: 'AI Insights',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400&q=80',
+    image: '/img/blog/ai-invoice-generator.jpg',
     tags: ['AI Invoice Generator', 'Business Automation', 'Productivity', 'Case Studies']
   },
   'proposal-automation-guide': {
@@ -228,7 +228,7 @@ The future of sales is intelligent, efficient, and effective. Join hundreds of b
     publishedAt: '2024-06-28',
     readTime: '6 min read',
     category: 'AI Insights',
-    image: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+    image: '/img/blog/proposal-generator.jpg',
     tags: ['AI Proposal Generator', 'Sales', 'Automation', 'DevCraft Tools']
   },
   'content-marketing-ai': {
@@ -347,7 +347,7 @@ Quality content at scale is no longer a luxury—it's a necessity. Our AI Conten
     publishedAt: '2024-06-25',
     readTime: '7 min read',
     category: 'Productivity',
-    image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+    image: '/img/blog/content-generator.jpg',
     tags: ['AI Content Generator', 'Marketing', 'SEO', 'Productivity']
   },
   'landing-page-optimization': {
@@ -504,7 +504,7 @@ Success in digital marketing starts with great landing pages. Our AI-powered bui
     publishedAt: '2024-06-22',
     readTime: '10 min read',
     category: 'Tutorials',
-    image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+    image: '/img/blog/landing-page-builder.jpg',
     tags: ['AI Landing Page Builder', 'Conversion', 'A/B Testing', 'DevCraft Tools']
   },
   'techflow-case-study': {
@@ -690,7 +690,7 @@ The 85% reduction in proposal time isn't just about efficiency—it's about comp
     publishedAt: '2024-06-20',
     readTime: '5 min read',
     category: 'Case Studies',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+    image: '/img/blog/case-study.jpg',
     tags: ['Case Study', 'Customer Success', 'Proposals', 'ROI']
   }
   // Additional blog posts would continue here...

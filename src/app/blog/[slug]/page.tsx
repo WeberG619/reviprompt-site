@@ -111,7 +111,7 @@ Smart social media management isn't about posting more—it's about posting bett
     publishedAt: '2024-06-18',
     readTime: '6 min read',
     category: 'Productivity',
-    image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+    image: '/img/blog/social-scheduler.jpg',
     tags: ['AI Social Scheduler', 'Social Media', 'Engagement', 'DevCraft Tools']
   }
   // More blog posts would be added here for complete coverage

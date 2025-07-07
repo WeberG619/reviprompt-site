@@ -33,7 +33,7 @@ export default function BlogPage() {
     publishedAt: '2024-07-01',
     readTime: '8 min read',
     category: 'AI Insights',
-    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400&q=80',
+    image: '/img/blog/ai-invoice-generator.jpg',
     featured: true,
     tags: ['AI Invoice Generator', 'Business Automation', 'Productivity', 'Case Studies']
   }
@@ -51,7 +51,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-28',
       readTime: '6 min read',
       category: 'AI Insights',
-      image: 'https://images.unsplash.com/photo-1556155092-490a1ba16284?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/proposal-generator.jpg',
       tags: ['AI Proposal Generator', 'Sales', 'Automation', 'DevCraft Tools']
     },
     {
@@ -66,7 +66,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-25',
       readTime: '7 min read',
       category: 'Productivity',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/content-generator.jpg',
       tags: ['AI Content Generator', 'Marketing', 'SEO', 'Productivity']
     },
     {
@@ -81,7 +81,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-22',
       readTime: '10 min read',
       category: 'Tutorials',
-      image: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/landing-page-builder.jpg',
       tags: ['AI Landing Page Builder', 'Conversion', 'A/B Testing', 'DevCraft Tools']
     },
     {
@@ -96,7 +96,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-20',
       readTime: '5 min read',
       category: 'Case Studies',
-      image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/case-study.jpg',
       tags: ['Case Study', 'Customer Success', 'Proposals', 'ROI']
     },
     {
@@ -111,7 +111,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-18',
       readTime: '6 min read',
       category: 'Productivity',
-      image: 'https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/social-scheduler.jpg',
       tags: ['AI Social Scheduler', 'Social Media', 'Engagement', 'DevCraft Tools']
     },
     {
@@ -126,7 +126,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-15',
       readTime: '4 min read',
       category: 'Company News',
-      image: 'https://images.unsplash.com/photo-1590479773265-7464e5d48118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/product-update.jpg',
       tags: ['Product Update', 'AI Task Manager', 'Analytics', 'DevCraft Tools']
     },
     {
@@ -141,7 +141,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-12',
       readTime: '12 min read',
       category: 'Tutorials',
-      image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/ai-workflow.jpg',
       tags: ['AI Task Manager', 'Workflows', 'Automation', 'Tutorial']
     },
     {
@@ -156,7 +156,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-10',
       readTime: '8 min read',
       category: 'Productivity',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/productivity-metrics.jpg',
       tags: ['Metrics', 'Analytics', 'ROI', 'Productivity']
     },
     {
@@ -171,7 +171,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-08',
       readTime: '7 min read',
       category: 'Case Studies',
-      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      image: '/img/blog/creative-collective.jpg',
       tags: ['Customer Story', 'AI Content Generator', 'Agency', 'Scale']
     }
   ]
