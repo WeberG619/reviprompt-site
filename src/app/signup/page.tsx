@@ -4,8 +4,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { ArrowRight, Mail, Lock, Eye, EyeOff, User, Building2 } from 'lucide-react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import { useAuth } from '@/contexts/AuthContext'
 
 export default function SignupPage() {
+  const { startTrial } = useAuth()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -54,14 +56,13 @@ export default function SignupPage() {
 
     setIsLoading(true)
 
-    // Demo signup - in production, this would create account with your backend
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    
-    // For demo, accept any valid form
-    localStorage.setItem('isLoggedIn', 'true')
-    localStorage.setItem('userEmail', formData.email)
-    localStorage.setItem('userName', `${formData.firstName} ${formData.lastName}`)
-    window.location.href = '/dashboard'
+    try {
+      // Start trial with the user's email
+      await startTrial(formData.email)
+    } catch (err) {
+      setError('Failed to create account. Please try again.')
+      setIsLoading(false)
+    }
   }
 
   return (

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { ArrowRight, Mail, Lock, Eye, EyeOff, LogIn } from 'lucide-react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import { useAuth } from '@/contexts/AuthContext'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
@@ -11,23 +12,22 @@ export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState('')
+  const { login } = useAuth()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
     setIsLoading(true)
 
-    // Demo login - in production, this would authenticate with your backend
-    if (email && password) {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500))
-      
-      // For demo, accept any email/password
-      localStorage.setItem('isLoggedIn', 'true')
-      localStorage.setItem('userEmail', email)
-      window.location.href = '/dashboard'
-    } else {
-      setError('Please enter both email and password')
+    try {
+      if (email && password) {
+        await login(email, password)
+      } else {
+        setError('Please enter both email and password')
+        setIsLoading(false)
+      }
+    } catch (err) {
+      setError('Invalid email or password')
       setIsLoading(false)
     }
   }

@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic'
 import { ArrowRight, FileText, Zap, Target, Moon, Sun, Copy, CheckCircle, RefreshCw } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import AuthGuard from '@/components/AuthGuard'
 
 export default function ContentPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -248,7 +249,8 @@ For more information, contact:
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
+    <AuthGuard toolName="AI Content Generator">
+      <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
       {/* Unified Navigation */}
       <UnifiedNavigation />
 
@@ -451,5 +453,6 @@ For more information, contact:
       
       <Chatbot pageContext="content" />
     </div>
+    </AuthGuard>
   )
 }

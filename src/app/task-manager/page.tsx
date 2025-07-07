@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic'
 import { ArrowRight, Calendar, BarChart3, Share2, Moon, Sun, Clock, TrendingUp, Users, Send, CheckCircle2, Circle, Plus, Edit3, Trash2, User, Target, Zap, Timer, AlertCircle, Filter, Search } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import AuthGuard from '@/components/AuthGuard'
 
 export default function TaskManagerPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -199,7 +200,8 @@ export default function TaskManagerPage() {
   )
 
   return (
-    <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
+    <AuthGuard toolName="AI Task Manager">
+      <div className={`min-h-screen transition-colors duration-300 ${darkMode ? 'dark bg-gray-900' : 'bg-gray-50'}`}>
       {/* Unified Navigation */}
       <UnifiedNavigation />
       
@@ -509,7 +511,8 @@ export default function TaskManagerPage() {
         )}
       </div>
       
-      <Chatbot pageContext="task-manager" />
-    </div>
+        <Chatbot pageContext="task-manager" />
+      </div>
+    </AuthGuard>
   )
 }

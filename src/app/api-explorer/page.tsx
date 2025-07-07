@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, Send, Code2, FileJson, Copy, CheckCircle } from 'lucide-react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 import Chatbot from '@/components/Chatbot'
+import AuthGuard from '@/components/AuthGuard'
 
 export const dynamic = 'force-dynamic'
 
@@ -128,7 +129,8 @@ export default function APIExplorerPage() {
   const currentEndpoint = endpoints.find(e => e.id === selectedEndpoint)
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900">
+    <AuthGuard toolName="API Explorer">
+      <div className="min-h-screen bg-white dark:bg-neutral-900">
       <UnifiedNavigation />
       
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
@@ -267,7 +269,8 @@ export default function APIExplorerPage() {
         </div>
       </div>
       
-      <Chatbot pageContext="api-explorer" />
-    </div>
+        <Chatbot pageContext="api-explorer" />
+      </div>
+    </AuthGuard>
   )
 }

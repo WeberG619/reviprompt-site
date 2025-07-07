@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic'
 import { ArrowRight, Calendar, BarChart3, Share2, Moon, Sun, Clock, TrendingUp, Users, Send } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import AuthGuard from '@/components/AuthGuard'
 
 export default function SocialSchedulerPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -116,7 +117,8 @@ export default function SocialSchedulerPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
+    <AuthGuard toolName="AI Social Scheduler">
+      <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
       {/* Unified Navigation */}
       <UnifiedNavigation />
 
@@ -442,7 +444,8 @@ export default function SocialSchedulerPage() {
         </div>
       </section>
       
-      <Chatbot pageContext="social-scheduler" />
-    </div>
+        <Chatbot pageContext="social-scheduler" />
+      </div>
+    </AuthGuard>
   )
 }

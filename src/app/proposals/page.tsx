@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import { ArrowRight, FileText, Clock, DollarSign, CheckCircle, Moon, Sun, Download, Send } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import AuthGuard from '@/components/AuthGuard'
 
 // Disable static generation for this page since it uses client-side state
 export const dynamic = 'force-dynamic'
@@ -209,7 +210,8 @@ export default function ProposalsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
+    <AuthGuard toolName="AI Proposal Generator">
+      <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
       {/* Unified Navigation */}
       <UnifiedNavigation />
 
@@ -451,5 +453,6 @@ export default function ProposalsPage() {
       
       <Chatbot pageContext="proposals" />
     </div>
+    </AuthGuard>
   )
 }

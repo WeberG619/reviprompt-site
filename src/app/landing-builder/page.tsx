@@ -8,6 +8,7 @@ export const dynamic = 'force-dynamic'
 import { ArrowRight, Layout, TrendingUp, Target, Moon, Sun, Eye, Download, Share2 } from 'lucide-react'
 import Chatbot from '@/components/Chatbot'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
+import AuthGuard from '@/components/AuthGuard'
 
 export default function LandingBuilderPage() {
   const [darkMode, setDarkMode] = useState(false)
@@ -320,7 +321,8 @@ export default function LandingBuilderPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
+    <AuthGuard toolName="AI Landing Page Builder">
+      <div className="min-h-screen bg-white dark:bg-neutral-900 transition-colors">
       {/* Unified Navigation */}
       <UnifiedNavigation />
 
@@ -600,7 +602,8 @@ export default function LandingBuilderPage() {
         </div>
       </section>
       
-      <Chatbot pageContext="landing-builder" />
-    </div>
+        <Chatbot pageContext="landing-builder" />
+      </div>
+    </AuthGuard>
   )
 }
