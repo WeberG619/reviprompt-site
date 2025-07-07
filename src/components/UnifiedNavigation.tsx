@@ -261,7 +261,7 @@ export default function UnifiedNavigation() {
             </Link>
             <Link 
               href="/dashboard" 
-              className="bg-neutral-800 dark:bg-neutral-700 text-white px-4 py-2 rounded-lg hover:bg-neutral-900 dark:hover:bg-neutral-600 transition-colors font-medium"
+              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
             >
               Start Free Trial
             </Link>

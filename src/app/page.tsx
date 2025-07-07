@@ -270,39 +270,42 @@ export default function HomePage() {
       <section className="relative py-24 overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 dark:opacity-5"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35 dark:opacity-25"
           style={{
             backgroundImage: "url('/hero-background.png')"
           }}
         ></div>
         
-        {/* Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-neutral-50/90 via-white/95 to-neutral-100/90 dark:from-neutral-900/95 dark:via-neutral-900/98 dark:to-neutral-800/95"></div>
+        {/* Enhanced Background Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white/85 to-blue-100/80 dark:from-neutral-900/85 dark:via-neutral-900/90 dark:to-blue-900/85"></div>
+        
+        {/* Additional gradient layer for depth */}
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-50/20 to-purple-50/20 dark:from-transparent dark:via-blue-900/20 dark:to-purple-900/20"></div>
         
         {/* Subtle overlay pattern */}
         <div className="absolute inset-0 hero-pattern"></div>
         
         {/* Floating elements for depth */}
-        <div className="absolute top-20 left-20 w-2 h-2 bg-neutral-400/20 rounded-full animate-float"></div>
-        <div className="absolute top-40 right-32 w-1 h-1 bg-neutral-500/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-neutral-400/25 rounded-full animate-float-delayed"></div>
-        <div className="absolute top-32 right-20 w-1 h-1 bg-neutral-600/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+        <div className="absolute top-20 left-20 w-2 h-2 bg-blue-400/20 rounded-full animate-float"></div>
+        <div className="absolute top-40 right-32 w-1 h-1 bg-blue-500/30 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+        <div className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-blue-400/25 rounded-full animate-float-delayed"></div>
+        <div className="absolute top-32 right-20 w-1 h-1 bg-blue-600/20 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
         
         {/* Additional tech-inspired elements */}
-        <div className="absolute top-16 right-1/4 w-8 h-8 border border-neutral-300/10 rounded-full animate-float-delayed"></div>
-        <div className="absolute bottom-20 right-16 w-6 h-6 border border-neutral-400/15 rotate-45 animate-float" style={{animationDelay: '1.5s'}}></div>
+        <div className="absolute top-16 right-1/4 w-8 h-8 border border-blue-300/10 rounded-full animate-float-delayed"></div>
+        <div className="absolute bottom-20 right-16 w-6 h-6 border border-blue-400/15 rotate-45 animate-float" style={{animationDelay: '1.5s'}}></div>
         
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="max-w-4xl">
             <div className="mb-6">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-neutral-100 text-neutral-800 dark:bg-neutral-800/50 dark:text-neutral-300">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400">
                 <Zap className="w-4 h-4 mr-2" />
                 Professional AI Tools
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-neutral-900 dark:text-white mb-6 leading-tight">
               Enterprise AI Solutions
-              <span className="text-neutral-700 dark:text-neutral-300"> Built by Developers</span>
+              <span className="text-blue-600"> Built by Developers</span>
             </h1>
             <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8 leading-relaxed max-w-3xl">
               Professional-grade AI tools designed for businesses, developers, and AEC professionals. 
@@ -318,23 +321,23 @@ export default function HomePage() {
                 <span className="text-xs text-neutral-500 dark:text-neutral-400 font-mono ml-2">devcraft-labs.com</span>
               </div>
               <code className="text-sm text-neutral-700 dark:text-neutral-300 font-mono">
-                <span className="text-neutral-800 dark:text-neutral-200">curl</span> -X POST devcraft-labs-api.vercel.app/api/v1<br/>
+                <span className="text-blue-600 dark:text-blue-400">curl</span> -X POST devcraft-labs-api.vercel.app/api/v1<br/>
                 <span className="text-neutral-500 dark:text-neutral-400"># Generate invoice in seconds</span>
               </code>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link 
                 href="/checkout?plan=professional&billing=monthly"
-                className="btn-primary inline-flex items-center space-x-2 text-base"
+                className="btn-primary inline-flex items-center space-x-2 text-base group"
               >
                 <span>Start Free Trial</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="#solutions"
-                className="btn-secondary inline-flex items-center space-x-2 text-base"
+                className="btn-secondary inline-flex items-center space-x-2 text-base group"
               >
-                <Terminal className="w-4 h-4" />
+                <Terminal className="w-4 h-4 transition-transform group-hover:scale-110" />
                 <span>View Solutions</span>
               </Link>
             </div>
@@ -359,12 +362,12 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-neutral-50 dark:bg-neutral-800/50">
+      <section className="py-16 bg-gradient-to-r from-neutral-50 via-blue-50/30 to-neutral-50 dark:from-neutral-800/50 dark:via-blue-900/10 dark:to-neutral-800/50 section-pattern">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl font-bold text-neutral-900 dark:text-white mb-2">{stat.value}</div>
+              <div key={index} className="text-center p-6 bg-white/60 dark:bg-neutral-800/60 rounded-xl backdrop-blur-sm border border-white/20 dark:border-neutral-700/50 hover-lift-sm">
+                <div className="text-3xl font-bold text-gradient-blue mb-2">{stat.value}</div>
                 <div className="text-sm font-medium text-neutral-900 dark:text-white mb-1">{stat.label}</div>
                 <div className="text-xs text-neutral-500 dark:text-neutral-400">{stat.desc}</div>
               </div>
@@ -400,7 +403,7 @@ export default function HomePage() {
                 {category.products.map((product, index) => (
                   <div 
                     key={index} 
-                    className="group bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 hover-lift glow-on-hover p-8"
+                    className="group card-enhanced hover-glow p-8"
                   >
                     <div className="flex items-start justify-between mb-6">
                       <div>
@@ -419,7 +422,7 @@ export default function HomePage() {
                     </p>
                     
                     {/* Metrics */}
-                    <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-neutral-50 dark:bg-neutral-700/50 rounded-lg">
+                    <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-gradient-to-r from-blue-50 to-blue-100/50 dark:from-neutral-700/50 dark:to-blue-900/20 rounded-lg border border-blue-100/50 dark:border-blue-800/20">
                       {Object.entries(product.metrics).map(([key, value], i) => (
                         <div key={i} className="text-center">
                           <div className="text-sm font-semibold text-neutral-900 dark:text-white">{value}</div>
@@ -458,11 +461,11 @@ export default function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-neutral-50 dark:bg-neutral-800/50">
+      <section className="py-24 bg-gradient-to-br from-neutral-50 via-blue-50/20 to-neutral-50 dark:from-neutral-800/50 dark:via-blue-900/10 dark:to-neutral-800/50 section-pattern">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
-              Trusted by Professionals
+              Trusted by <span className="text-gradient-blue">Professionals</span>
             </h2>
             <p className="text-xl text-neutral-600 dark:text-neutral-300">
               Used by leading companies and independent professionals worldwide.
@@ -471,10 +474,10 @@ export default function HomePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8">
+              <div key={index} className="card-enhanced hover-glow p-8 group">
                 <div className="flex items-center space-x-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-current" />
+                    <Star key={i} className="w-4 h-4 text-yellow-500 fill-current transition-transform group-hover:scale-110" style={{transitionDelay: `${i * 50}ms`}} />
                   ))}
                 </div>
                 <p className="text-neutral-700 dark:text-neutral-300 mb-6 leading-relaxed">
@@ -492,25 +495,33 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-neutral-900 dark:bg-neutral-800">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+      <section className="py-24 bg-animated relative overflow-hidden">
+        {/* Animated background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-blue-700/90 to-blue-600/90"></div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-10 left-10 w-20 h-20 bg-white/5 rounded-full animate-float"></div>
+        <div className="absolute top-20 right-20 w-16 h-16 bg-white/5 rounded-full animate-float-delayed"></div>
+        <div className="absolute bottom-10 left-1/4 w-12 h-12 bg-white/5 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        
+        <div className="relative max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Ready to Build with Professional AI?
+            Ready to Build with <span className="text-blue-200">Professional AI?</span>
           </h2>
-          <p className="text-xl text-neutral-300 mb-8">
+          <p className="text-xl text-blue-100 mb-8">
             Join thousands of professionals using DevCraft Labs to automate workflows and accelerate growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/checkout?plan=professional&billing=monthly"
-              className="bg-white hover:bg-neutral-100 text-neutral-900 font-medium px-8 py-4 rounded-lg transition-all inline-flex items-center space-x-2"
+              className="bg-white hover:bg-blue-50 text-blue-600 font-medium px-8 py-4 rounded-lg transition-all hover:shadow-2xl hover:-translate-y-1 inline-flex items-center space-x-2 group transform"
             >
               <span>Start Free Trial</span>
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
             <Link
               href="/pricing"
-              className="bg-neutral-800 hover:bg-neutral-700 text-white font-medium px-8 py-4 rounded-lg border border-neutral-700 transition-all inline-flex items-center space-x-2"
+              className="bg-blue-700/80 hover:bg-blue-800 text-white font-medium px-8 py-4 rounded-lg border border-blue-500/50 backdrop-blur-sm transition-all hover:shadow-xl hover:-translate-y-1 inline-flex items-center space-x-2 transform"
             >
               <span>View Pricing</span>
             </Link>

@@ -79,23 +79,39 @@
       linear-gradient(0deg, transparent 24%, rgb(59 130 246 / 0.06) 25%, rgb(59 130 246 / 0.06) 26%, transparent 27%, transparent 74%, rgb(59 130 246 / 0.06) 75%, rgb(59 130 246 / 0.06) 76%, transparent 77%);
   }
 
-  /* Subtle hero background combining patterns */
+  /* Enhanced hero background with dynamic patterns */
   .hero-pattern {
     background-image: 
-      radial-gradient(circle at 20% 20%, rgb(59 130 246 / 0.03) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgb(59 130 246 / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 20% 20%, rgb(59 130 246 / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgb(59 130 246 / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgb(147 51 234 / 0.03) 0%, transparent 50%),
       linear-gradient(to right, rgb(0 0 0 / 0.02) 1px, transparent 1px),
       linear-gradient(to bottom, rgb(0 0 0 / 0.02) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+    background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px, 24px 24px;
   }
   
   .dark .hero-pattern {
     background-image: 
-      radial-gradient(circle at 20% 20%, rgb(59 130 246 / 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 80% 80%, rgb(59 130 246 / 0.05) 0%, transparent 50%),
-      linear-gradient(to right, rgb(255 255 255 / 0.015) 1px, transparent 1px),
-      linear-gradient(to bottom, rgb(255 255 255 / 0.015) 1px, transparent 1px);
-    background-size: 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+      radial-gradient(circle at 20% 20%, rgb(59 130 246 / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgb(59 130 246 / 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 40% 60%, rgb(147 51 234 / 0.05) 0%, transparent 50%),
+      linear-gradient(to right, rgb(255 255 255 / 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.02) 1px, transparent 1px);
+    background-size: 100% 100%, 100% 100%, 100% 100%, 24px 24px, 24px 24px;
+  }
+  
+  /* Section background patterns */
+  .section-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgb(59 130 246 / 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgb(59 130 246 / 0.03) 0%, transparent 50%);
+    background-size: 100% 100%, 100% 100%;
+  }
+  
+  .dark .section-pattern {
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgb(59 130 246 / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgb(59 130 246 / 0.05) 0%, transparent 50%);
   }
 
   /* Professional animations */
@@ -140,9 +156,25 @@
     box-shadow: 0 0 20px rgb(59 130 246 / 0.25);
   }
   
-  /* Professional hover states */
+  /* Enhanced hover states */
   .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+  
+  .hover-lift-sm {
     @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-2xl;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.25);
+  }
+  
+  .dark .hover-glow:hover {
+    box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.4);
   }
   
   /* Code-style elements */
@@ -159,20 +191,53 @@
     @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400;
   }
   
-  /* Professional buttons */
+  /* Professional buttons with enhanced effects */
   .btn-primary {
-    @apply bg-neutral-800 hover:bg-neutral-900 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2;
-  }
-  
-  .dark .btn-primary {
-    @apply bg-neutral-700 hover:bg-neutral-600;
+    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform;
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-neutral-50 text-neutral-900 font-medium px-6 py-3 rounded-lg border border-neutral-200 transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2;
+    @apply bg-white hover:bg-neutral-50 text-neutral-900 font-medium px-6 py-3 rounded-lg border border-neutral-200 transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transform;
   }
   
   .dark .btn-secondary {
-    @apply bg-neutral-800 hover:bg-neutral-700 text-white border-neutral-700;
+    @apply bg-neutral-800 hover:bg-neutral-700 text-white border-neutral-700 hover:border-neutral-600;
+  }
+  
+  /* Enhanced card styles */
+  .card-enhanced {
+    @apply bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm;
+  }
+  
+  /* Gradient text effects */
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent;
+  }
+  
+  .text-gradient-blue {
+    @apply bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent;
+  }
+  
+  /* Interactive icons */
+  .icon-interactive {
+    @apply transition-all duration-300 hover:scale-110 hover:rotate-3 hover:text-blue-600 dark:hover:text-blue-400;
+  }
+  
+  /* Enhanced hover effects */
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+  
+  /* Animated backgrounds */
+  .bg-animated {
+    background: linear-gradient(-45deg, #3b82f6, #1d4ed8, #2563eb, #1e40af);
+    background-size: 400% 400%;
+    animation: gradient-shift 8s ease infinite;
+  }
+  
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 }

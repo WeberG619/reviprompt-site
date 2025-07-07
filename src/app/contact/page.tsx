@@ -52,10 +52,14 @@ export default function ContactPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-neutral-50 dark:bg-neutral-800/50">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-neutral-50 via-blue-50/30 to-neutral-50 dark:from-neutral-800/50 dark:via-blue-900/10 dark:to-neutral-800/50 section-pattern relative overflow-hidden">
+        {/* Floating elements */}
+        <div className="absolute top-16 left-16 w-20 h-20 bg-blue-300/10 dark:bg-blue-400/5 rounded-full blur-2xl animate-float"></div>
+        <div className="absolute top-32 right-24 w-16 h-16 bg-purple-300/10 dark:bg-purple-400/5 rounded-full blur-xl animate-float-delayed"></div>
+        
+        <div className="relative max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h1 className="text-5xl font-bold text-neutral-900 dark:text-white mb-6">
-            Get in Touch
+            Get in <span className="text-gradient-blue">Touch</span>
           </h1>
           <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8">
             Ready to transform your business with professional AI tools? Our team is here to help you get started.
@@ -67,9 +71,9 @@ export default function ContactPage() {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div className="text-center p-8 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700">
-              <div className="w-12 h-12 bg-neutral-100 dark:bg-neutral-700 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            <div className="text-center p-8 card-enhanced hover-glow group">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-neutral-700 dark:to-blue-900/50 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400 icon-interactive" />
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Email Support</h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-4">Get help with technical questions and account issues</p>
@@ -78,18 +82,18 @@ export default function ContactPage() {
               </a>
             </div>
 
-            <div className="text-center p-8 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700">
-              <div className="w-12 h-12 bg-neutral-100 dark:bg-neutral-700 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <MessageCircle className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            <div className="text-center p-8 card-enhanced hover-glow group">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-neutral-700 dark:to-blue-900/50 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <MessageCircle className="w-6 h-6 text-blue-600 dark:text-blue-400 icon-interactive" />
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Live Chat</h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-4">Real-time support for urgent questions</p>
               <p className="text-neutral-500 dark:text-neutral-400 text-sm">Available 9 AM - 6 PM EST</p>
             </div>
 
-            <div className="text-center p-8 bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700">
-              <div className="w-12 h-12 bg-neutral-100 dark:bg-neutral-700 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            <div className="text-center p-8 card-enhanced hover-glow group">
+              <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-neutral-700 dark:to-blue-900/50 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400 icon-interactive" />
               </div>
               <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Enterprise Sales</h3>
               <p className="text-neutral-600 dark:text-neutral-400 mb-4">Discuss custom solutions and pricing</p>
@@ -113,7 +117,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <form className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8">
+          <form className="card-enhanced hover-glow p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium text-neutral-900 dark:text-white mb-2">
@@ -190,9 +194,9 @@ export default function ContactPage() {
 
             <button
               type="submit"
-              className="btn-primary inline-flex items-center space-x-2"
+              className="btn-primary inline-flex items-center space-x-2 group"
             >
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               <span>Send Message</span>
             </button>
           </form>

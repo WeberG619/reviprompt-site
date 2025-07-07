@@ -33,7 +33,7 @@ export default function BlogPage() {
     publishedAt: '2024-07-01',
     readTime: '8 min read',
     category: 'AI Insights',
-    image: '/hero-background.png',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400&q=80',
     featured: true,
     tags: ['AI Invoice Generator', 'Business Automation', 'Productivity', 'Case Studies']
   }
@@ -51,7 +51,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-28',
       readTime: '6 min read',
       category: 'AI Insights',
-      image: '/hero-background.png',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
       tags: ['AI Proposal Generator', 'Sales', 'Automation', 'DevCraft Tools']
     },
     {
@@ -66,7 +66,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-25',
       readTime: '7 min read',
       category: 'Productivity',
-      image: '/hero-background.png',
+      image: 'https://images.unsplash.com/photo-1432888622747-4eb9a8efeb07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
       tags: ['AI Content Generator', 'Marketing', 'SEO', 'Productivity']
     },
     {
@@ -81,7 +81,7 @@ export default function BlogPage() {
       publishedAt: '2024-06-22',
       readTime: '10 min read',
       category: 'Tutorials',
-      image: '/hero-background.png',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
       tags: ['AI Landing Page Builder', 'Conversion', 'A/B Testing', 'DevCraft Tools']
     },
     {
@@ -89,90 +89,90 @@ export default function BlogPage() {
       title: 'Case Study: How TechFlow Reduced Proposal Time by 85%',
       excerpt: 'Deep dive into TechFlow\'s journey from manual proposal creation to AI-powered automation, including challenges, solutions, and results.',
       author: {
-        name: 'Sarah Chen',
+        name: 'DevCraft Labs Team',
         role: 'Customer Success Manager',
-        avatar: '/api/placeholder/48/48'
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-20',
       readTime: '5 min read',
       category: 'Case Studies',
-      image: '/api/placeholder/600/300',
+      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
       tags: ['Case Study', 'Customer Success', 'Proposals', 'ROI']
     },
     {
       id: 'social-media-scheduling',
-      title: 'Smart Social Media Scheduling: Beyond Just Posting',
-      excerpt: 'Learn advanced social media scheduling strategies that go beyond basic posting to drive real engagement and business results.',
+      title: 'AI Social Scheduler: Beyond Just Posting - Smart Automation',
+      excerpt: 'Learn how our AI Social Scheduler transforms social media management with intelligent posting, content optimization, and engagement analytics.',
       author: {
-        name: 'Jordan Park',
-        role: 'Social Media Strategist',
-        avatar: '/api/placeholder/48/48'
+        name: 'DevCraft Labs Team',
+        role: 'Social Media AI',
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-18',
       readTime: '6 min read',
       category: 'Productivity',
-      image: '/api/placeholder/600/300',
-      tags: ['Social Media', 'Scheduling', 'Engagement', 'Strategy']
+      image: 'https://images.unsplash.com/photo-1611926653458-09294b3142bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      tags: ['AI Social Scheduler', 'Social Media', 'Engagement', 'DevCraft Tools']
     },
     {
       id: 'devcraft-product-update',
       title: 'Product Update: New AI Task Manager and Enhanced Analytics',
       excerpt: 'Announcing major updates to our platform including the new AI Task Manager, enhanced analytics dashboard, and improved integrations.',
       author: {
-        name: 'DevCraft Team',
+        name: 'DevCraft Labs Team',
         role: 'Product Team',
-        avatar: '/api/placeholder/48/48'
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-15',
       readTime: '4 min read',
       category: 'Company News',
-      image: '/api/placeholder/600/300',
-      tags: ['Product Update', 'Features', 'Task Manager', 'Analytics']
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      tags: ['Product Update', 'AI Task Manager', 'Analytics', 'DevCraft Tools']
     },
     {
       id: 'ai-workflow-automation',
-      title: 'Building Intelligent Workflows: A Step-by-Step Tutorial',
-      excerpt: 'Complete tutorial on creating intelligent, automated workflows that adapt to your business needs and scale with your growth.',
+      title: 'Building Intelligent Workflows: AI Task Manager Tutorial',
+      excerpt: 'Complete tutorial on creating intelligent, automated workflows with our AI Task Manager that adapt to your business needs and scale with growth.',
       author: {
-        name: 'Michael Thompson',
+        name: 'DevCraft Labs Team',
         role: 'Solutions Architect',
-        avatar: '/api/placeholder/48/48'
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-12',
       readTime: '12 min read',
       category: 'Tutorials',
-      image: '/api/placeholder/600/300',
-      tags: ['Workflows', 'Automation', 'Tutorial', 'Integration']
+      image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      tags: ['AI Task Manager', 'Workflows', 'Automation', 'Tutorial']
     },
     {
       id: 'productivity-metrics',
       title: 'Measuring AI Impact: Key Productivity Metrics That Matter',
-      excerpt: 'Learn which metrics to track when implementing AI tools and how to measure ROI effectively in your organization.',
+      excerpt: 'Learn which metrics to track when implementing DevCraft Labs AI tools and how to measure ROI effectively in your organization.',
       author: {
-        name: 'Lisa Wang',
+        name: 'DevCraft Labs Team',
         role: 'Analytics Specialist',
-        avatar: '/api/placeholder/48/48'
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-10',
       readTime: '8 min read',
       category: 'Productivity',
-      image: '/api/placeholder/600/300',
+      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
       tags: ['Metrics', 'Analytics', 'ROI', 'Productivity']
     },
     {
       id: 'creative-collective-story',
       title: 'Customer Spotlight: Creative Collective\'s Content Revolution',
-      excerpt: 'How a digital agency scaled their content production 5x while maintaining quality and creativity using DevCraft Labs AI tools.',
+      excerpt: 'How a digital agency scaled their content production 5x while maintaining quality and creativity using DevCraft Labs AI Content Generator.',
       author: {
-        name: 'Rachel Green',
+        name: 'DevCraft Labs Team',
         role: 'Customer Success Lead',
-        avatar: '/api/placeholder/48/48'
+        avatar: '/DCL-logo.png'
       },
       publishedAt: '2024-06-08',
       readTime: '7 min read',
       category: 'Case Studies',
-      image: '/api/placeholder/600/300',
-      tags: ['Customer Story', 'Content Creation', 'Agency', 'Scale']
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80',
+      tags: ['Customer Story', 'AI Content Generator', 'Agency', 'Scale']
     }
   ]
 
@@ -200,11 +200,15 @@ export default function BlogPage() {
       <UnifiedNavigation />
       
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-br from-neutral-50 to-neutral-100 dark:from-gray-800 dark:to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-blue-100/50 to-indigo-100 dark:from-gray-800 dark:via-blue-900/20 dark:to-gray-900 section-pattern relative overflow-hidden">
+        {/* Floating elements for visual interest */}
+        <div className="absolute top-16 left-16 w-20 h-20 bg-blue-300/10 dark:bg-blue-400/5 rounded-full blur-2xl animate-float"></div>
+        <div className="absolute top-32 right-24 w-16 h-16 bg-purple-300/10 dark:bg-purple-400/5 rounded-full blur-xl animate-float-delayed"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-6">
-              DevCraft Labs Blog
+              DevCraft Labs <span className="text-gradient-blue">Blog</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
               Insights, tutorials, and stories about AI, productivity, and business transformation. 
@@ -227,15 +231,15 @@ export default function BlogPage() {
           </div>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
                   selectedCategory === category.id
-                    ? 'bg-neutral-800 text-white'
-                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600'
+                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg'
+                    : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-600 shadow-md'
                 }`}
               >
                 {category.name} ({category.count})
@@ -251,17 +255,18 @@ export default function BlogPage() {
           <div className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8">Featured Article</h2>
             
-            <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden">
+            <div className="card-enhanced hover-glow overflow-hidden group">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                <div className="relative h-64 lg:h-auto">
+                <div className="relative h-64 lg:h-auto overflow-hidden">
                   <Image
                     src={featuredPost.image}
                     alt={featuredPost.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/20 to-transparent group-hover:from-blue-600/30 transition-all duration-500"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center space-x-1 px-3 py-1 bg-neutral-800 text-white text-sm font-medium rounded-full">
+                    <span className="inline-flex items-center space-x-1 px-3 py-1 bg-blue-600 text-white text-sm font-medium rounded-full shadow-lg backdrop-blur-sm">
                       {getCategoryIcon(featuredPost.category)}
                       <span>{featuredPost.category}</span>
                     </span>
@@ -318,10 +323,10 @@ export default function BlogPage() {
                   
                   <Link
                     href={`/blog/${featuredPost.id}`}
-                    className="inline-flex items-center space-x-2 bg-neutral-800 text-white px-6 py-3 rounded-lg font-semibold hover:bg-neutral-900 transition-colors"
+                    className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 group/btn transform"
                   >
                     <span>Read Article</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
                   </Link>
                 </div>
               </div>
@@ -331,29 +336,30 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50/20 to-gray-50 dark:from-gray-800 dark:via-blue-900/10 dark:to-gray-800 section-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Latest Articles
+              Latest <span className="text-gradient-blue">Articles</span>
             </h2>
-            <div className="text-sm text-gray-600 dark:text-gray-400">
+            <div className="text-sm text-gray-600 dark:text-gray-400 bg-white/60 dark:bg-gray-800/60 px-3 py-1 rounded-full backdrop-blur-sm">
               {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''}
             </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post) => (
-              <article key={post.id} className="bg-white dark:bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="relative h-48">
+              <article key={post.id} className="card-enhanced hover-glow overflow-hidden group">
+                <div className="relative h-48 overflow-hidden">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
-                    className="object-cover"
+                    className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-300"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center space-x-1 px-2 py-1 bg-neutral-800 text-white text-xs font-medium rounded">
+                    <span className="inline-flex items-center space-x-1 px-2 py-1 bg-blue-600 text-white text-xs font-medium rounded shadow-lg backdrop-blur-sm">
                       {getCategoryIcon(post.category)}
                       <span>{post.category}</span>
                     </span>
@@ -415,10 +421,10 @@ export default function BlogPage() {
                   
                   <Link
                     href={`/blog/${post.id}`}
-                    className="inline-flex items-center space-x-2 text-neutral-700 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white text-sm font-medium"
+                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 text-sm font-medium group/link transition-all duration-300"
                   >
                     <span>Read More</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
                   </Link>
                 </div>
               </article>
@@ -435,7 +441,7 @@ export default function BlogPage() {
                   setSelectedCategory('all')
                   setSearchTerm('')
                 }}
-                className="text-neutral-700 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white font-medium"
+                className="text-blue-600 hover:text-blue-700 font-medium"
               >
                 Clear filters
               </button>
@@ -445,25 +451,33 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-20 bg-neutral-900">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+      <section className="py-20 bg-animated relative overflow-hidden">
+        {/* Animated background overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-blue-700/90 to-blue-600/90"></div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-8 left-8 w-16 h-16 bg-white/5 rounded-full animate-float"></div>
+        <div className="absolute top-16 right-16 w-12 h-12 bg-white/5 rounded-full animate-float-delayed"></div>
+        <div className="absolute bottom-8 left-1/3 w-10 h-10 bg-white/5 rounded-full animate-float" style={{animationDelay: '1s'}}></div>
+        
+        <div className="relative max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-white mb-4">
-            Stay Updated with DevCraft Labs
+            Stay Updated with <span className="text-blue-200">DevCraft Labs</span>
           </h2>
-          <p className="text-xl text-neutral-300 mb-8">
+          <p className="text-xl text-blue-100 mb-8">
             Get the latest insights on AI tools, productivity, and business automation delivered to your inbox
           </p>
           <div className="max-w-md mx-auto flex gap-4">
             <input
               type="email"
               placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-neutral-500"
+              className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-blue-300 backdrop-blur-sm bg-white/95 transition-all duration-300 focus:bg-white"
             />
-            <button className="bg-white text-neutral-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+            <button className="bg-white text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 transform">
               Subscribe
             </button>
           </div>
-          <p className="text-neutral-400 text-sm mt-4">
+          <p className="text-blue-200 text-sm mt-4">
             No spam. Unsubscribe at any time.
           </p>
         </div>

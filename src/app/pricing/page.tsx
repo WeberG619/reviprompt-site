@@ -232,10 +232,14 @@ export default function UnifiedPricingPage() {
       <UnifiedNavigation />
       
       {/* Hero Section */}
-      <section className="pt-16 pb-12 bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-800 dark:to-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="pt-16 pb-12 bg-gradient-to-br from-blue-50 via-blue-100/50 to-indigo-100 dark:from-gray-800 dark:via-blue-900/20 dark:to-gray-900 section-pattern relative overflow-hidden">
+        {/* Floating elements for visual interest */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-blue-200/10 dark:bg-blue-400/5 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-40 right-32 w-24 h-24 bg-purple-200/10 dark:bg-purple-400/5 rounded-full blur-2xl animate-float-delayed"></div>
+        
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-            Simple, Transparent Pricing
+            Simple, <span className="text-gradient-blue">Transparent</span> Pricing
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
             Choose the perfect plan for your team. All plans include our complete suite of AI tools, 
@@ -278,13 +282,13 @@ export default function UnifiedPricingPage() {
             {plans.map((plan) => (
               <div
                 key={plan.name}
-                className={`relative rounded-2xl border-2 p-8 ${
+                className={`relative rounded-2xl border-2 p-8 transition-all duration-300 hover:-translate-y-2 group ${
                   plan.popular
-                    ? 'border-blue-500 shadow-xl'
+                    ? 'border-blue-500 shadow-xl hover:shadow-2xl bg-gradient-to-b from-white to-blue-50/50 dark:from-gray-800 dark:to-blue-900/20'
                     : plan.specialty === 'aec'
-                    ? 'border-orange-500 shadow-lg'
-                    : 'border-gray-200 dark:border-gray-700'
-                } bg-white dark:bg-gray-800`}
+                    ? 'border-orange-500 shadow-lg hover:shadow-xl bg-gradient-to-b from-white to-orange-50/30 dark:from-gray-800 dark:to-orange-900/10'
+                    : 'border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 shadow-lg hover:shadow-xl'
+                } bg-white dark:bg-gray-800 backdrop-blur-sm`}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
@@ -334,14 +338,16 @@ export default function UnifiedPricingPage() {
 
                   <Link
                     href={`/checkout?plan=${plan.name.toLowerCase().replace(' ', '-')}&billing=${billingPeriod}`}
-                    className={`w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-colors ${
+                    className={`w-full inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg group/btn ${
                       plan.popular
-                        ? 'bg-neutral-800 text-white hover:bg-neutral-900'
+                        ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800'
+                        : plan.specialty === 'aec'
+                        ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700'
                         : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'
                     }`}
                   >
                     {plan.cta}
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/btn:translate-x-1" />
                   </Link>
                 </div>
 
@@ -472,11 +478,11 @@ export default function UnifiedPricingPage() {
       </section>
 
       {/* Trust Signals */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-gradient-to-r from-white via-blue-50/30 to-white dark:from-gray-900 dark:via-blue-900/10 dark:to-gray-900 section-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            <div className="flex flex-col items-center">
-              <Shield className="w-12 h-12 text-blue-600 mb-4" />
+            <div className="flex flex-col items-center p-6 bg-white/60 dark:bg-gray-800/60 rounded-xl backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover-lift group">
+              <Shield className="w-12 h-12 text-blue-600 mb-4 icon-interactive" />
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                 Enterprise Security
               </h3>
@@ -484,8 +490,8 @@ export default function UnifiedPricingPage() {
                 SOC 2 compliance and bank-level encryption
               </p>
             </div>
-            <div className="flex flex-col items-center">
-              <Headphones className="w-12 h-12 text-blue-600 mb-4" />
+            <div className="flex flex-col items-center p-6 bg-white/60 dark:bg-gray-800/60 rounded-xl backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover-lift group">
+              <Headphones className="w-12 h-12 text-blue-600 mb-4 icon-interactive" />
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                 24/7 Support
               </h3>
@@ -493,8 +499,8 @@ export default function UnifiedPricingPage() {
                 Always available when you need help
               </p>
             </div>
-            <div className="flex flex-col items-center">
-              <Zap className="w-12 h-12 text-blue-600 mb-4" />
+            <div className="flex flex-col items-center p-6 bg-white/60 dark:bg-gray-800/60 rounded-xl backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover-lift group">
+              <Zap className="w-12 h-12 text-blue-600 mb-4 icon-interactive" />
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                 99.9% Uptime
               </h3>
@@ -502,8 +508,8 @@ export default function UnifiedPricingPage() {
                 Reliable service you can count on
               </p>
             </div>
-            <div className="flex flex-col items-center">
-              <Users className="w-12 h-12 text-blue-600 mb-4" />
+            <div className="flex flex-col items-center p-6 bg-white/60 dark:bg-gray-800/60 rounded-xl backdrop-blur-sm border border-white/20 dark:border-gray-700/50 hover-lift group">
+              <Users className="w-12 h-12 text-blue-600 mb-4 icon-interactive" />
               <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
                 5,000+ Users
               </h3>
@@ -516,20 +522,20 @@ export default function UnifiedPricingPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 bg-gradient-to-br from-gray-50 via-blue-50/20 to-gray-50 dark:from-gray-800 dark:via-blue-900/10 dark:to-gray-800 section-pattern">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Loved by thousands of businesses
+              Loved by <span className="text-gradient-blue">thousands</span> of businesses
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial) => (
-              <div key={testimonial.name} className="bg-white dark:bg-gray-900 rounded-xl p-6 shadow-lg">
+              <div key={testimonial.name} className="card-enhanced hover-glow p-6 group">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current transition-transform group-hover:scale-110" style={{transitionDelay: `${i * 50}ms`}} />
                   ))}
                 </div>
                 <p className="text-gray-700 dark:text-gray-300 mb-6">
@@ -541,7 +547,7 @@ export default function UnifiedPricingPage() {
                     alt={testimonial.name}
                     width={48}
                     height={48}
-                    className="w-12 h-12 rounded-full mr-4"
+                    className="w-12 h-12 rounded-full mr-4 ring-2 ring-blue-100 dark:ring-blue-800 group-hover:ring-blue-300 dark:group-hover:ring-blue-600 transition-all"
                   />
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white">
@@ -593,7 +599,7 @@ export default function UnifiedPricingPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/dashboard?plan=professional"
+              href="/checkout?plan=professional&billing=monthly"
               className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-flex items-center justify-center"
             >
               Start 14-Day Free Trial

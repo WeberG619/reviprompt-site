@@ -93,11 +93,15 @@ export default function AboutPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 bg-neutral-50 dark:bg-neutral-800/50">
-        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+      <section className="py-20 bg-gradient-to-br from-neutral-50 via-blue-50/30 to-neutral-50 dark:from-neutral-800/50 dark:via-blue-900/10 dark:to-neutral-800/50 section-pattern relative overflow-hidden">
+        {/* Floating elements */}
+        <div className="absolute top-16 left-16 w-20 h-20 bg-blue-300/10 dark:bg-blue-400/5 rounded-full blur-2xl animate-float"></div>
+        <div className="absolute top-32 right-24 w-16 h-16 bg-purple-300/10 dark:bg-purple-400/5 rounded-full blur-xl animate-float-delayed"></div>
+        
+        <div className="relative max-w-4xl mx-auto text-center px-6 lg:px-8">
           <h1 className="text-5xl font-bold text-neutral-900 dark:text-white mb-6">
             Building AI Tools That 
-            <span className="text-blue-600"> Actually Work</span>
+            <span className="text-gradient-blue"> Actually Work</span>
           </h1>
           <p className="text-xl text-neutral-600 dark:text-neutral-300 mb-8 max-w-3xl mx-auto">
             We&apos;re on a mission to make powerful AI accessible to every business, regardless of size or technical expertise. 
@@ -124,23 +128,23 @@ export default function AboutPage() {
                 actually use without needing a computer science degree or a massive budget.
               </p>
             </div>
-            <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8">
+            <div className="card-enhanced hover-glow p-8 group">
               <h3 className="text-2xl font-semibold text-neutral-900 dark:text-white mb-4">Our Impact</h3>
               <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">2.1k+</div>
+                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-neutral-700/50 dark:to-blue-900/20 rounded-lg hover-lift-sm">
+                  <div className="text-3xl font-bold text-gradient-blue mb-2">2.1k+</div>
                   <div className="text-sm text-neutral-600 dark:text-neutral-400">Active Users</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">500+</div>
+                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-neutral-700/50 dark:to-blue-900/20 rounded-lg hover-lift-sm">
+                  <div className="text-3xl font-bold text-gradient-blue mb-2">500+</div>
                   <div className="text-sm text-neutral-600 dark:text-neutral-400">AEC Professionals</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">15hrs</div>
+                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-neutral-700/50 dark:to-blue-900/20 rounded-lg hover-lift-sm">
+                  <div className="text-3xl font-bold text-gradient-blue mb-2">15hrs</div>
                   <div className="text-sm text-neutral-600 dark:text-neutral-400">Saved per Week</div>
                 </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600 dark:text-blue-400 mb-2">99.9%</div>
+                <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100/50 dark:from-neutral-700/50 dark:to-blue-900/20 rounded-lg hover-lift-sm">
+                  <div className="text-3xl font-bold text-gradient-blue mb-2">99.9%</div>
                   <div className="text-sm text-neutral-600 dark:text-neutral-400">Uptime SLA</div>
                 </div>
               </div>
@@ -150,11 +154,11 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 bg-neutral-50 dark:bg-neutral-800/50">
+      <section className="py-20 bg-gradient-to-br from-neutral-50 via-blue-50/20 to-neutral-50 dark:from-neutral-800/50 dark:via-blue-900/10 dark:to-neutral-800/50 section-pattern">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-neutral-900 dark:text-white mb-4">
-              Our Values
+              Our <span className="text-gradient-blue">Values</span>
             </h2>
             <p className="text-lg text-neutral-600 dark:text-neutral-300 max-w-3xl mx-auto">
               These principles guide everything we build and every decision we make.
@@ -163,9 +167,9 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-8 text-center">
-                <div className="w-16 h-16 bg-neutral-100 dark:bg-neutral-700 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <span className="text-blue-600 dark:text-blue-400">{value.icon}</span>
+              <div key={index} className="card-enhanced hover-glow p-8 text-center group">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-neutral-700 dark:to-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-blue-600 dark:text-blue-400 icon-interactive">{value.icon}</span>
                 </div>
                 <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">
                   {value.title}
@@ -199,7 +203,7 @@ export default function AboutPage() {
                     <span className="text-white font-semibold text-sm">{milestone.year}</span>
                   </div>
                 </div>
-                <div className="bg-white dark:bg-neutral-800 rounded-xl border border-neutral-200 dark:border-neutral-700 p-6 flex-grow">
+                <div className="card-enhanced hover-glow p-6 flex-grow group">
                   <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-2">
                     {milestone.title}
                   </h3>
