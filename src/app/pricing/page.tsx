@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 // Disable static generation for this page since it uses client-side state
 export const dynamic = 'force-dynamic'
-import { Check, Star, ArrowRight, Zap, Shield, Users, Headphones } from 'lucide-react'
+import { Check, Star, ArrowRight, Zap, Shield, Users, Headphones, FileText, Sparkles, Rocket, Smartphone, BarChart3, Building2, Settings, CheckCircle } from 'lucide-react'
 import UnifiedNavigation from '@/components/UnifiedNavigation'
 
 export default function UnifiedPricingPage() {
@@ -98,7 +98,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'AI Proposal Generator',
       description: 'Create professional business proposals with AI',
-      icon: '📝',
+      icon: FileText,
       starter: true,
       professional: true,
       enterprise: true
@@ -106,7 +106,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'AI Content Generator',
       description: 'Generate blog posts, social media content, and marketing copy',
-      icon: '✨',
+      icon: Sparkles,
       starter: true,
       professional: true,
       enterprise: true
@@ -114,7 +114,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'AI Landing Page Builder',
       description: 'Build high-converting landing pages with AI optimization',
-      icon: '🚀',
+      icon: Rocket,
       starter: false,
       professional: true,
       enterprise: true
@@ -122,7 +122,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'AI Social Scheduler',
       description: 'Schedule and optimize social media posts across platforms',
-      icon: '📱',
+      icon: Smartphone,
       starter: false,
       professional: true,
       enterprise: true
@@ -130,7 +130,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'AI Task Manager',
       description: 'Intelligent project management with automated workflows',
-      icon: '⚡',
+      icon: Zap,
       starter: false,
       professional: true,
       enterprise: true
@@ -138,7 +138,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'Unified Dashboard',
       description: 'Central control panel for all your AI tools and projects',
-      icon: '📊',
+      icon: BarChart3,
       starter: false,
       professional: true,
       aecProfessional: true,
@@ -147,7 +147,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'ReviPrompt Lab Professional',
       description: 'AI-powered prompts and automation tools for Revit professionals',
-      icon: '🏗️',
+      icon: Building2,
       starter: false,
       professional: false,
       aecProfessional: true,
@@ -157,7 +157,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'MEP Power Tools',
       description: 'Advanced MEP coordination and calculation tools for Revit',
-      icon: '⚙️',
+      icon: Settings,
       starter: false,
       professional: false,
       aecProfessional: true,
@@ -167,7 +167,7 @@ export default function UnifiedPricingPage() {
     {
       name: 'QC Professional Suite',
       description: 'Quality control and deliverable checking for architectural projects',
-      icon: '✅',
+      icon: CheckCircle,
       starter: false,
       professional: false,
       aecProfessional: true,
@@ -181,7 +181,7 @@ export default function UnifiedPricingPage() {
       name: 'Sarah Johnson',
       role: 'Marketing Director',
       company: 'TechCorp',
-      image: '/api/placeholder/48/48',
+      image: '/DCL-logo.png',
       quote: 'DevCraft Labs has transformed our content creation process. We\'re producing 3x more content in half the time.',
       rating: 5
     },
@@ -189,7 +189,7 @@ export default function UnifiedPricingPage() {
       name: 'Mike Chen',
       role: 'Agency Owner',
       company: 'Creative Agency',
-      image: '/api/placeholder/48/48',
+      image: '/DCL-logo.png',
       quote: 'The proposal generator alone has saved us 15 hours per week. ROI was immediate.',
       rating: 5
     },
@@ -197,7 +197,7 @@ export default function UnifiedPricingPage() {
       name: 'Emily Davis',
       role: 'Consultant',
       company: 'Strategic Solutions',
-      image: '/api/placeholder/48/48',
+      image: '/DCL-logo.png',
       quote: 'Professional-quality outputs that impress our clients. The AI really understands our industry.',
       rating: 5
     }
@@ -408,16 +408,20 @@ export default function UnifiedPricingPage() {
                       Starter
                     </th>
                     <th className="px-6 py-4 text-center font-semibold text-gray-900 dark:text-white relative">
-                      Professional
-                      <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
-                        Popular
-                      </span>
+                      <div className="flex flex-col items-center">
+                        <span className="bg-blue-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                          Popular
+                        </span>
+                        <span>Professional</span>
+                      </div>
                     </th>
                     <th className="px-6 py-4 text-center font-semibold text-gray-900 dark:text-white relative">
-                      AEC Professional
-                      <span className="absolute -top-2 left-1/2 transform -translate-x-1/2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full">
-                        AEC Specialists
-                      </span>
+                      <div className="flex flex-col items-center">
+                        <span className="bg-orange-500 text-white text-xs px-2 py-1 rounded-full mb-2">
+                          AEC Specialists
+                        </span>
+                        <span>AEC Professional</span>
+                      </div>
                     </th>
                     <th className="px-6 py-4 text-center font-semibold text-gray-900 dark:text-white">
                       Enterprise
@@ -429,7 +433,9 @@ export default function UnifiedPricingPage() {
                     <tr key={tool.name}>
                       <td className="px-6 py-4">
                         <div className="flex items-center">
-                          <span className="text-2xl mr-3">{tool.icon}</span>
+                          <div className="w-8 h-8 rounded-lg bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mr-3">
+                            <tool.icon className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                          </div>
                           <div>
                             <div className="font-medium text-gray-900 dark:text-white">
                               {tool.name}

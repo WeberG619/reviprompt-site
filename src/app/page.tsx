@@ -58,6 +58,10 @@ export default function HomePage() {
       return "We offer flexible pricing for all three solution categories: AI Business Tools (starting at $29/mo), Developer Platform ($49/mo), and AEC Solutions ($79/mo). All plans include API access, 24/7 support, and enterprise security. Check out /pricing for detailed comparisons and features!"
     }
     
+    if (lowerMessage.includes('email') || lowerMessage.includes('email generator')) {
+      return "Our AI Email Generator is live with Claude integration! It creates professional emails with smart personalization, multiple templates, and real-time API validation. Features include 8 email types, 10 tone options, and 97% accuracy. Try it at /email-generator with full API documentation!"
+    }
+    
     if (lowerMessage.includes('invoice') || lowerMessage.includes('billing')) {
       return "Our AI Invoice Generator is live and trusted by 2.1k+ users! It features automated payment tracking, smart reminders, AI-powered descriptions, and real-time analytics. You can try it free at ai-portfolio-saas.vercel.app with 99.7% accuracy and saves 15hrs/week on average."
     }
@@ -138,6 +142,15 @@ export default function HomePage() {
           link: "/content",
           cta: "Create Content",
           metrics: { quality: "98%", speed: "10x faster", formats: "15+" }
+        },
+        {
+          name: "AI Email Generator",
+          description: "Professional email generation with personalized content, templates, and Claude integration",
+          status: "live",
+          features: ["Smart personalization", "Professional templates", "Claude API integration", "Real-time validation"],
+          link: "/email-generator",
+          cta: "Generate Email",
+          metrics: { accuracy: "97%", time_saved: "12hrs/week", templates: "8+" }
         }
       ]
     },
@@ -270,14 +283,14 @@ export default function HomePage() {
       <section className="relative py-24 overflow-hidden">
         {/* Background Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-35 dark:opacity-25"
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-75 dark:opacity-60 hero-image-fade"
           style={{
-            backgroundImage: "url('/hero-background.png')"
+            backgroundImage: "url('/developer-hero.jpg')"
           }}
         ></div>
         
         {/* Enhanced Background Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-white/85 to-blue-100/80 dark:from-neutral-900/85 dark:via-neutral-900/90 dark:to-blue-900/85"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/60 via-white/70 to-blue-100/60 dark:from-neutral-900/80 dark:via-neutral-900/85 dark:to-blue-900/80"></div>
         
         {/* Additional gradient layer for depth */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-blue-50/20 to-purple-50/20 dark:from-transparent dark:via-blue-900/20 dark:to-purple-900/20"></div>

@@ -133,6 +133,26 @@ export default function APIExplorerPage() {
       <div className="min-h-screen bg-white dark:bg-neutral-900">
       <UnifiedNavigation />
       
+      {/* Hero Section */}
+      <div className="bg-gray-50 dark:bg-gray-800 py-16">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <div className="flex justify-center mb-6">
+            <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center">
+              <Code2 className="w-8 h-8 text-white" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            DevCraft Labs API
+          </h1>
+          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
+            Professional AI tools API for businesses, developers, and AEC professionals
+          </p>
+          <div className="inline-flex items-center px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-sm font-medium">
+            ✅ Status: Operational
+          </div>
+        </div>
+      </div>
+      
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
@@ -145,14 +165,14 @@ export default function APIExplorerPage() {
               <span>Back to Home</span>
             </Link>
             <div className="h-6 w-px bg-gray-300 dark:bg-gray-700" />
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">API Explorer</h1>
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">API Explorer</h2>
           </div>
           <Link
-            href="/docs"
-            className="btn-secondary inline-flex items-center space-x-2"
+            href="/"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors inline-flex items-center space-x-2"
           >
-            <FileJson className="w-4 h-4" />
-            <span>API Documentation</span>
+            <ArrowLeft className="w-4 h-4" />
+            <span>Main Website</span>
           </Link>
         </div>
 
