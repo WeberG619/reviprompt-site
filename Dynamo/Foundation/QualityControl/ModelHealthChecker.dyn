@@ -1,0 +1,96 @@
+{
+  "Uuid": "7a8f9c2d-1e3b-4d6a-9f0e-5b4c8a7d3e2f",
+  "IsCustomNode": false,
+  "Description": "Comprehensive model health analysis including warnings, performance metrics, and best practices",
+  "Name": "ModelHealthChecker",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "includeWarnings",
+      "Name": "Check Warnings",
+      "Type": "bool",
+      "Value": true,
+      "Description": "Include warning analysis"
+    },
+    {
+      "Id": "includePerformance",
+      "Name": "Check Performance",
+      "Type": "bool",
+      "Value": true,
+      "Description": "Include performance metrics"
+    },
+    {
+      "Id": "includeStandards",
+      "Name": "Check Standards",
+      "Type": "bool",
+      "Value": true,
+      "Description": "Check modeling standards"
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "healthReport",
+      "Name": "Health Report",
+      "Type": "object",
+      "Description": "Comprehensive health analysis report"
+    },
+    {
+      "Id": "warningCount",
+      "Name": "Warning Count",
+      "Type": "int",
+      "Description": "Total number of warnings"
+    },
+    {
+      "Id": "criticalIssues",
+      "Name": "Critical Issues",
+      "Type": "array",
+      "Description": "List of critical issues requiring immediate attention"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function",
+      "FunctionSignature": "GetWarnings",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "warningNode",
+      "Description": "Retrieves all model warnings"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function",
+      "FunctionSignature": "AnalyzePerformance",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "performanceNode",
+      "Description": "Analyzes model performance metrics"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function",
+      "FunctionSignature": "CheckStandards",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "standardsNode",
+      "Description": "Checks compliance with modeling standards"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function",
+      "FunctionSignature": "GenerateReport",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "reportNode",
+      "Description": "Generates comprehensive health report"
+    }
+  ],
+  "Dependencies": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.0.3265",
+      "RunType": "Manual"
+    }
+  }
+}

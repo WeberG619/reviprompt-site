@@ -1,0 +1,163 @@
+{
+  "Uuid": "5d3e7a9c-4b2f-4a8d-9e1c-8f5d3c7a9b4e",
+  "IsCustomNode": false,
+  "Description": "Copy parameter values between elements with advanced filtering and mapping options",
+  "Name": "ParameterValuePropagator",
+  "ElementResolver": {
+    "ResolutionMap": {
+      "DSCore.List": {
+        "Key": "DSCore.List",
+        "Value": "DSCoreNodes.dll"
+      },
+      "DSCore.String": {
+        "Key": "DSCore.String",
+        "Value": "DSCoreNodes.dll"
+      }
+    }
+  },
+  "Inputs": [
+    {
+      "Id": "sourceElements",
+      "Name": "Source Elements",
+      "Type": "Revit.Elements.Element[]",
+      "Value": null,
+      "Description": "Elements to copy parameter values FROM"
+    },
+    {
+      "Id": "targetElements",
+      "Name": "Target Elements",
+      "Type": "Revit.Elements.Element[]",
+      "Value": null,
+      "Description": "Elements to copy parameter values TO"
+    },
+    {
+      "Id": "parameterNames",
+      "Name": "Parameter Names",
+      "Type": "string[]",
+      "Value": ["Comments", "Mark", "Description"],
+      "Description": "List of parameter names to copy"
+    },
+    {
+      "Id": "overwriteExisting",
+      "Name": "Overwrite Existing Values",
+      "Type": "bool",
+      "Value": true,
+      "Description": "Overwrite existing parameter values in target elements"
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "successCount",
+      "Name": "Success Count",
+      "Type": "int",
+      "Description": "Number of successfully copied parameters"
+    },
+    {
+      "Id": "failedParameters",
+      "Name": "Failed Parameters",
+      "Type": "string[]",
+      "Description": "List of parameters that failed to copy"
+    },
+    {
+      "Id": "modifiedElements",
+      "Name": "Modified Elements",
+      "Type": "Revit.Elements.Element[]",
+      "Description": "Elements that were successfully modified"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNode",
+      "NodeType": "CodeBlockNode",
+      "Code": "// Parameter Value Propagator Logic\n// This node handles the core copying logic\n\n// Get parameters from source\nsourceParams = Element.GetParameterValueByName(sourceElements, parameterNames);\n\n// Apply to targets with validation\nresult = Element.SetParameterByName(targetElements, parameterNames, sourceParams);\n\n// Track success and failures\nsuccessCount = List.Count(result);\nfailedParams = List.FilterByBoolMask(parameterNames, result);",
+      "Id": "coreLogicNode",
+      "Inputs": [
+        {
+          "Id": "sourceElements",
+          "Name": "sourceElements"
+        },
+        {
+          "Id": "targetElements",
+          "Name": "targetElements"
+        },
+        {
+          "Id": "parameterNames",
+          "Name": "parameterNames"
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "result",
+          "Name": "result"
+        },
+        {
+          "Id": "successCount",
+          "Name": "successCount"
+        },
+        {
+          "Id": "failedParams",
+          "Name": "failedParams"
+        }
+      ]
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode",
+      "NodeType": "PythonScriptNode",
+      "Code": "import clr\nclr.AddReference('RevitAPI')\nclr.AddReference('RevitServices')\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\n\ndoc = DocumentManager.Instance.CurrentDBDocument\n\n# Input processing\nsource_elements = UnwrapElement(IN[0])\ntarget_elements = UnwrapElement(IN[1])\nparameter_names = IN[2]\noverwrite = IN[3]\n\n# Start transaction\nTransactionManager.Instance.EnsureInTransaction(doc)\n\nsuccess_count = 0\nfailed_params = []\nmodified_elements = []\n\nfor target in target_elements:\n    for param_name in parameter_names:\n        try:\n            # Get source parameter value\n            source_param = source_elements[0].LookupParameter(param_name)\n            if source_param:\n                target_param = target.LookupParameter(param_name)\n                if target_param and not target_param.IsReadOnly:\n                    if overwrite or not target_param.HasValue:\n                        target_param.Set(source_param.AsString())\n                        success_count += 1\n                        if target not in modified_elements:\n                            modified_elements.append(target)\n        except:\n            failed_params.append(param_name)\n\n# End transaction\nTransactionManager.Instance.TransactionTaskDone()\n\nOUT = [success_count, failed_params, modified_elements]",
+      "VariableInputPorts": true,
+      "Id": "pythonNode",
+      "Inputs": [
+        {
+          "Id": "source",
+          "Name": "IN[0]"
+        },
+        {
+          "Id": "target",
+          "Name": "IN[1]"
+        },
+        {
+          "Id": "params",
+          "Name": "IN[2]"
+        },
+        {
+          "Id": "overwrite",
+          "Name": "IN[3]"
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "output",
+          "Name": "OUT"
+        }
+      ]
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "sourceElements",
+      "End": "pythonNode.IN[0]"
+    },
+    {
+      "Start": "targetElements",
+      "End": "pythonNode.IN[1]"
+    },
+    {
+      "Start": "parameterNames",
+      "End": "pythonNode.IN[2]"
+    },
+    {
+      "Start": "overwriteExisting",
+      "End": "pythonNode.IN[3]"
+    }
+  ],
+  "Dependencies": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.0.3265",
+      "RunType": "Manual"
+    }
+  }
+}

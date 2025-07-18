@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviPromptLab Knowledge Base</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .search-highlight { background-color: #fef3c7; }
+        .category-active { background-color: #dbeafe; border-left: 4px solid #3b82f6; }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <a href="https://revipromptlab.com" class="text-2xl font-bold text-blue-600">🚀 ReviPromptLab</a>
+                    <div class="ml-4 text-gray-600">Knowledge Base</div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="https://portal.revipromptlab.com" class="text-gray-600 hover:text-blue-600">Customer Portal</a>
+                    <a href="mailto:support@revipromptlab.com" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Search Bar -->
+        <div class="text-center mb-12">
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">How can we help you?</h1>
+            <div class="max-w-2xl mx-auto relative">
+                <input type="text" id="knowledge-search" placeholder="Search for help articles, tutorials, or FAQs..." 
+                       class="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <i class="fas fa-search absolute left-4 top-4 text-gray-400"></i>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Sidebar Categories -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                    <h2 class="text-lg font-semibold mb-4">Categories</h2>
+                    <nav class="space-y-2" id="category-nav">
+                        <a href="#" class="category-link category-active flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md" data-category="all">
+                            <i class="fas fa-list-ul mr-3"></i>
+                            All Articles
+                        </a>
+                        <a href="#" class="category-link flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-50" data-category="getting-started">
+                            <i class="fas fa-play-circle mr-3"></i>
+                            Getting Started
+                        </a>
+                        <a href="#" class="category-link flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-50" data-category="prompts">
+                            <i class="fas fa-comment-dots mr-3"></i>
+                            Using Prompts
+                        </a>
+                        <a href="#" class="category-link flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-50" data-category="dynamo">
+                            <i class="fas fa-project-diagram mr-3"></i>
+                            Dynamo Graphs
+                        </a>
+                        <a href="#" class="category-link flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-50" data-category="troubleshooting">
+                            <i class="fas fa-wrench mr-3"></i>
+                            Troubleshooting
+                        </a>
+                        <a href="#" class="category-link flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-50" data-category="billing">
+                            <i class="fas fa-credit-card mr-3"></i>
+                            Billing & Account
+                        </a>
+                        <a href="#" class="category-link flex items-center px-3 py-2 text-sm font-medium text-gray-700 rounded-md hover:bg-gray-50" data-category="integrations">
+                            <i class="fas fa-plug mr-3"></i>
+                            Integrations
+                        </a>
+                    </nav>
+                </div>
+
+                <!-- Popular Articles -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mt-6">
+                    <h2 class="text-lg font-semibold mb-4">Popular Articles</h2>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-sm text-blue-600 hover:text-blue-800">
+                            How to use Sheet Setup Master
+                        </a>
+                        <a href="#" class="block text-sm text-blue-600 hover:text-blue-800">
+                            Installing Dynamo graphs
+                        </a>
+                        <a href="#" class="block text-sm text-blue-600 hover:text-blue-800">
+                            Troubleshooting ChatGPT errors
+                        </a>
+                        <a href="#" class="block text-sm text-blue-600 hover:text-blue-800">
+                            Accessing customer portal
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="lg:col-span-3">
+                <!-- Featured Articles -->
+                <div class="bg-white rounded-lg shadow-sm p-6 mb-8" id="featured-section">
+                    <h2 class="text-2xl font-bold mb-6">Featured Articles</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="border rounded-lg p-4 hover:shadow-md transition">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-green-100 w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-rocket text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Quick Start Guide</h3>
+                                    <p class="text-sm text-gray-600">5 min read</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Get up and running with your first AI prompt in under 5 minutes.</p>
+                            <a href="#" class="text-blue-600 text-sm hover:text-blue-800">Read more →</a>
+                        </div>
+
+                        <div class="border rounded-lg p-4 hover:shadow-md transition">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-blue-100 w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-video text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Video Tutorial Library</h3>
+                                    <p class="text-sm text-gray-600">10 tutorials</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Step-by-step video guides for every major feature.</p>
+                            <a href="#" class="text-blue-600 text-sm hover:text-blue-800">Watch now →</a>
+                        </div>
+
+                        <div class="border rounded-lg p-4 hover:shadow-md transition">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-purple-100 w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-lightbulb text-purple-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Best Practices</h3>
+                                    <p class="text-sm text-gray-600">8 min read</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Professional tips to get the most out of your prompts.</p>
+                            <a href="#" class="text-blue-600 text-sm hover:text-blue-800">Learn more →</a>
+                        </div>
+
+                        <div class="border rounded-lg p-4 hover:shadow-md transition">
+                            <div class="flex items-center mb-3">
+                                <div class="bg-yellow-100 w-10 h-10 rounded-lg flex items-center justify-center mr-3">
+                                    <i class="fas fa-question-circle text-yellow-600"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold">Common Issues</h3>
+                                    <p class="text-sm text-gray-600">15 solutions</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm mb-3">Solutions to the most frequently reported problems.</p>
+                            <a href="#" class="text-blue-600 text-sm hover:text-blue-800">Get help →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Articles List -->
+                <div class="bg-white rounded-lg shadow-sm p-6" id="articles-section">
+                    <div class="flex items-center justify-between mb-6">
+                        <h2 class="text-xl font-bold">Knowledge Base Articles</h2>
+                        <div class="text-sm text-gray-600">
+                            <span id="articles-count">47</span> articles
+                        </div>
+                    </div>
+
+                    <div class="space-y-4" id="articles-list">
+                        <!-- Articles will be populated by JavaScript -->
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="text-center mt-8">
+                        <button id="load-more-btn" class="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+                            Load More Articles
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Support CTA -->
+    <div class="bg-blue-600 text-white py-12 mt-12">
+        <div class="max-w-4xl mx-auto text-center px-4">
+            <h2 class="text-2xl font-bold mb-4">Still need help?</h2>
+            <p class="text-blue-100 mb-6">Our support team is here to help you succeed</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="mailto:support@revipromptlab.com" class="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold hover:bg-gray-100 transition">
+                    Email Support
+                </a>
+                <a href="https://discord.gg/revipromptlab" class="bg-blue-500 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition">
+                    Join Discord Community
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Knowledge Base JavaScript
+        class KnowledgeBase {
+            constructor() {
+                this.articles = this.loadArticles();
+                this.currentCategory = 'all';
+                this.currentPage = 1;
+                this.articlesPerPage = 10;
+                this.init();
+            }
+
+            init() {
+                this.setupEventListeners();
+                this.renderArticles();
+            }
+
+            setupEventListeners() {
+                // Search functionality
+                document.getElementById('knowledge-search').addEventListener('input', (e) => {
+                    this.handleSearch(e.target.value);
+                });
+
+                // Category navigation
+                document.querySelectorAll('.category-link').forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        this.handleCategoryChange(e.target.dataset.category);
+                    });
+                });
+
+                // Load more button
+                document.getElementById('load-more-btn').addEventListener('click', () => {
+                    this.loadMoreArticles();
+                });
+            }
+
+            handleSearch(query) {
+                if (query.length < 2) {
+                    this.renderArticles();
+                    return;
+                }
+
+                const filteredArticles = this.articles.filter(article => 
+                    article.title.toLowerCase().includes(query.toLowerCase()) ||
+                    article.content.toLowerCase().includes(query.toLowerCase()) ||
+                    article.tags.some(tag => tag.toLowerCase().includes(query.toLowerCase()))
+                );
+
+                this.renderFilteredArticles(filteredArticles, query);
+            }
+
+            handleCategoryChange(category) {
+                this.currentCategory = category;
+                this.currentPage = 1;
+                
+                // Update active category
+                document.querySelectorAll('.category-link').forEach(link => {
+                    link.classList.remove('category-active');
+                });
+                document.querySelector(`[data-category="${category}"]`).classList.add('category-active');
+
+                this.renderArticles();
+            }
+
+            renderArticles() {
+                const filteredArticles = this.currentCategory === 'all' 
+                    ? this.articles 
+                    : this.articles.filter(article => article.category === this.currentCategory);
+
+                const startIndex = 0;
+                const endIndex = this.currentPage * this.articlesPerPage;
+                const articlesToShow = filteredArticles.slice(startIndex, endIndex);
+
+                this.displayArticles(articlesToShow);
+                this.updateArticleCount(filteredArticles.length);
+                this.updateLoadMoreButton(endIndex < filteredArticles.length);
+            }
+
+            renderFilteredArticles(articles, query) {
+                this.displayArticles(articles.slice(0, this.articlesPerPage), query);
+                this.updateArticleCount(articles.length);
+                this.updateLoadMoreButton(false);
+            }
+
+            displayArticles(articles, searchQuery = null) {
+                const articlesList = document.getElementById('articles-list');
+                
+                articlesList.innerHTML = articles.map(article => {
+                    let title = article.title;
+                    let content = article.content;
+                    
+                    if (searchQuery) {
+                        const regex = new RegExp(`(${searchQuery})`, 'gi');
+                        title = title.replace(regex, '<span class="search-highlight">$1</span>');
+                        content = content.replace(regex, '<span class="search-highlight">$1</span>');
+                    }
+                    
+                    return `
+                        <div class="border-b pb-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-${this.getCategoryColor(article.category)}-100 w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                    <i class="fas ${this.getCategoryIcon(article.category)} text-${this.getCategoryColor(article.category)}-600"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-lg mb-2">
+                                        <a href="${article.url}" class="text-gray-900 hover:text-blue-600">${title}</a>
+                                    </h3>
+                                    <p class="text-gray-600 mb-3">${content.substring(0, 150)}...</p>
+                                    <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                        <span><i class="fas fa-clock mr-1"></i> ${article.readTime}</span>
+                                        <span><i class="fas fa-eye mr-1"></i> ${article.views} views</span>
+                                        <span class="bg-gray-100 px-2 py-1 rounded text-xs">${article.category.replace('-', ' ')}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            updateArticleCount(count) {
+                document.getElementById('articles-count').textContent = count;
+            }
+
+            updateLoadMoreButton(show) {
+                const loadMoreBtn = document.getElementById('load-more-btn');
+                loadMoreBtn.style.display = show ? 'block' : 'none';
+            }
+
+            loadMoreArticles() {
+                this.currentPage++;
+                this.renderArticles();
+            }
+
+            getCategoryColor(category) {
+                const colors = {
+                    'getting-started': 'green',
+                    'prompts': 'blue',
+                    'dynamo': 'purple',
+                    'troubleshooting': 'yellow',
+                    'billing': 'red',
+                    'integrations': 'indigo'
+                };
+                return colors[category] || 'gray';
+            }
+
+            getCategoryIcon(category) {
+                const icons = {
+                    'getting-started': 'fa-play-circle',
+                    'prompts': 'fa-comment-dots',
+                    'dynamo': 'fa-project-diagram',
+                    'troubleshooting': 'fa-wrench',
+                    'billing': 'fa-credit-card',
+                    'integrations': 'fa-plug'
+                };
+                return icons[category] || 'fa-file-alt';
+            }
+
+            loadArticles() {
+                // In production, this would fetch from an API
+                return [
+                    {
+                        id: 1,
+                        title: "Getting Started with ReviPrompt Lab",
+                        content: "Welcome to ReviPrompt Lab! This comprehensive guide will walk you through everything you need to know to start automating your Revit workflows with AI. We'll cover account setup, downloading your first prompts, and running your first automation.",
+                        category: "getting-started",
+                        readTime: "5 min read",
+                        views: 2847,
+                        tags: ["setup", "tutorial", "basics"],
+                        url: "/kb/getting-started"
+                    },
+                    {
+                        id: 2,
+                        title: "How to Use Sheet Setup Master",
+                        content: "Sheet Setup Master is one of our most popular prompts, automating the creation and numbering of drawing sheets. Learn how to customize it for your project standards and save hours of manual work.",
+                        category: "prompts",
+                        readTime: "8 min read",
+                        views: 1923,
+                        tags: ["sheets", "automation", "tutorial"],
+                        url: "/kb/sheet-setup-master"
+                    },
+                    {
+                        id: 3,
+                        title: "Installing Dynamo Graphs",
+                        content: "Every ReviPrompt Lab prompt comes with a backup Dynamo graph. This guide shows you how to install and use these graphs as an alternative to AI-generated code.",
+                        category: "dynamo",
+                        readTime: "6 min read",
+                        views: 1456,
+                        tags: ["dynamo", "installation", "backup"],
+                        url: "/kb/installing-dynamo-graphs"
+                    },
+                    {
+                        id: 4,
+                        title: "Troubleshooting ChatGPT Errors",
+                        content: "Sometimes AI tools don't work perfectly. This guide covers the most common ChatGPT errors when using our prompts and how to resolve them quickly.",
+                        category: "troubleshooting",
+                        readTime: "10 min read",
+                        views: 3421,
+                        tags: ["chatgpt", "errors", "debugging"],
+                        url: "/kb/chatgpt-troubleshooting"
+                    },
+                    {
+                        id: 5,
+                        title: "Accessing Your Customer Portal",
+                        content: "Your customer portal is your hub for downloads, updates, and video tutorials. Learn how to log in, navigate the interface, and access all your purchased content.",
+                        category: "billing",
+                        readTime: "3 min read",
+                        views: 987,
+                        tags: ["portal", "login", "downloads"],
+                        url: "/kb/customer-portal"
+                    },
+                    {
+                        id: 6,
+                        title: "Integrating with pyRevit",
+                        content: "pyRevit is a powerful extension for Revit that can run Python scripts. Learn how to integrate our AI-generated Python code with pyRevit for even more automation possibilities.",
+                        category: "integrations",
+                        readTime: "12 min read",
+                        views: 756,
+                        tags: ["pyrevit", "python", "integration"],
+                        url: "/kb/pyrevit-integration"
+                    },
+                    {
+                        id: 7,
+                        title: "Parameter Propagation Best Practices",
+                        content: "The Parameter Propagator is a powerful tool for copying parameter values across multiple elements. Learn the best practices for using it effectively and avoiding common pitfalls.",
+                        category: "prompts",
+                        readTime: "7 min read",
+                        views: 1234,
+                        tags: ["parameters", "best-practices", "efficiency"],
+                        url: "/kb/parameter-propagation"
+                    },
+                    {
+                        id: 8,
+                        title: "Understanding License Types",
+                        content: "ReviPrompt Lab offers different license types for different needs. Understand the differences between Foundation, Professional, and Enterprise licenses.",
+                        category: "billing",
+                        readTime: "4 min read",
+                        views: 567,
+                        tags: ["license", "tiers", "pricing"],
+                        url: "/kb/license-types"
+                    }
+                ];
+            }
+        }
+
+        // Initialize Knowledge Base
+        document.addEventListener('DOMContentLoaded', () => {
+            new KnowledgeBase();
+        });
+    </script>
+</body>
+</html>

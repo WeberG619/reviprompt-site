@@ -1,0 +1,190 @@
+{
+  "Uuid": "8f4d2c3a-9e7b-4a5c-b3d1-7f8e5a9c4d2b",
+  "IsCustomNode": false,
+  "Description": "Automatically creates floor plans for all levels with proper view templates and crop regions",
+  "Name": "FloorPlanGenerator",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "viewTemplate",
+      "Name": "View Template",
+      "Type": "string",
+      "Value": "Architectural Plan",
+      "Description": "Name of view template to apply"
+    },
+    {
+      "Id": "viewNamePrefix",
+      "Name": "View Name Prefix",
+      "Type": "string",
+      "Value": "FLOOR PLAN - ",
+      "Description": "Prefix for view names"
+    },
+    {
+      "Id": "cropOffset",
+      "Name": "Crop Region Offset",
+      "Type": "double",
+      "Value": 10.0,
+      "Description": "Offset from building extents in feet"
+    },
+    {
+      "Id": "createCeilingPlans",
+      "Name": "Create Ceiling Plans",
+      "Type": "bool",
+      "Value": false,
+      "Description": "Also create reflected ceiling plans"
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "createdViews",
+      "Name": "Created Views",
+      "Type": "Revit.Elements.Views.FloorPlanView[]",
+      "Description": "List of created floor plan views"
+    },
+    {
+      "Id": "viewCount",
+      "Name": "View Count",
+      "Type": "int",
+      "Description": "Number of views created"
+    },
+    {
+      "Id": "report",
+      "Name": "Creation Report",
+      "Type": "string",
+      "Description": "Detailed report of view creation"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.Levels",
+      "SelectedIndex": -1,
+      "NodeType": "ExtensionNode",
+      "Id": "levelsNode",
+      "Description": "Select all levels in the project",
+      "Outputs": [
+        {
+          "Id": "levels",
+          "Name": "Levels",
+          "Description": "All levels in project"
+        }
+      ]
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Floor Plan Generator with Advanced Options\nimport clr\nclr.AddReference('RevitAPI')\nclr.AddReference('RevitServices')\nclr.AddReference('RevitNodes')\n\nfrom Autodesk.Revit.DB import *\nfrom RevitServices.Persistence import DocumentManager\nfrom RevitServices.Transactions import TransactionManager\nimport Revit\nclr.ImportExtensions(Revit.GeometryConversion)\n\n# Get current document\ndoc = DocumentManager.Instance.CurrentDBDocument\n\n# Inputs\nlevels = UnwrapElement(IN[0])\nview_template_name = IN[1]\nview_prefix = IN[2]\ncrop_offset = IN[3]\ncreate_ceiling = IN[4]\n\n# Find view template\nview_templates = FilteredElementCollector(doc).OfClass(View).ToElements()\ntemplate = None\nfor vt in view_templates:\n    if vt.IsTemplate and vt.Name == view_template_name:\n        template = vt\n        break\n\n# Start transaction\nTransactionManager.Instance.EnsureInTransaction(doc)\n\ncreated_views = []\nreport_lines = []\n\nfor level in levels:\n    try:\n        # Create floor plan\n        view_fam_type = doc.GetDefaultElementTypeId(ElementTypeGroup.ViewTypeFloorPlan)\n        floor_plan = ViewPlan.Create(doc, view_fam_type, level.Id)\n        \n        # Set view name\n        floor_plan.Name = view_prefix + level.Name\n        \n        # Apply template if found\n        if template:\n            floor_plan.ViewTemplateId = template.Id\n            report_lines.append(f\"Created floor plan for {level.Name} with template\")\n        else:\n            report_lines.append(f\"Created floor plan for {level.Name} without template\")\n        \n        # Set crop region if needed\n        if floor_plan.CropBoxActive:\n            # Get building extents and add offset\n            # This is simplified - real implementation would calculate actual extents\n            crop_box = floor_plan.CropBox\n            transform = crop_box.Transform\n            min_pt = crop_box.Min\n            max_pt = crop_box.Max\n            \n            # Add offset\n            offset_vec = XYZ(crop_offset, crop_offset, 0)\n            new_min = min_pt - offset_vec\n            new_max = max_pt + offset_vec\n            \n            crop_box.Min = new_min\n            crop_box.Max = new_max\n            floor_plan.CropBox = crop_box\n        \n        created_views.append(floor_plan)\n        \n        # Create ceiling plan if requested\n        if create_ceiling:\n            ceiling_type = doc.GetDefaultElementTypeId(ElementTypeGroup.ViewTypeCeilingPlan)\n            ceiling_plan = ViewPlan.Create(doc, ceiling_type, level.Id)\n            ceiling_plan.Name = \"RCP - \" + level.Name\n            if template:\n                ceiling_plan.ViewTemplateId = template.Id\n            created_views.append(ceiling_plan)\n            report_lines.append(f\"Created ceiling plan for {level.Name}\")\n            \n    except Exception as e:\n        report_lines.append(f\"Failed to create view for {level.Name}: {str(e)}\")\n\n# End transaction\nTransactionManager.Instance.TransactionTaskDone()\n\n# Prepare outputs\nview_count = len(created_views)\nreport = \"\\n\".join(report_lines)\n\nOUT = [created_views, view_count, report]",
+      "VariableInputPorts": true,
+      "Id": "pythonCreateViews",
+      "Inputs": [
+        {
+          "Id": "levels",
+          "Name": "IN[0]",
+          "Description": "Levels"
+        },
+        {
+          "Id": "template",
+          "Name": "IN[1]",
+          "Description": "Template name"
+        },
+        {
+          "Id": "prefix",
+          "Name": "IN[2]",
+          "Description": "Name prefix"
+        },
+        {
+          "Id": "offset",
+          "Name": "IN[3]",
+          "Description": "Crop offset"
+        },
+        {
+          "Id": "ceiling",
+          "Name": "IN[4]",
+          "Description": "Create ceiling plans"
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "output",
+          "Name": "OUT",
+          "Description": "Created views, count, and report"
+        }
+      ]
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNode",
+      "NodeType": "CodeBlockNode",
+      "Code": "// Extract outputs\nviews = output[0];\ncount = output[1];\nreport = output[2];",
+      "Id": "outputProcessor",
+      "Inputs": [
+        {
+          "Id": "output",
+          "Name": "output"
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "views",
+          "Name": "views"
+        },
+        {
+          "Id": "count",
+          "Name": "count"
+        },
+        {
+          "Id": "report",
+          "Name": "report"
+        }
+      ]
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "levelsNode.levels",
+      "End": "pythonCreateViews.IN[0]"
+    },
+    {
+      "Start": "viewTemplate",
+      "End": "pythonCreateViews.IN[1]"
+    },
+    {
+      "Start": "viewNamePrefix",
+      "End": "pythonCreateViews.IN[2]"
+    },
+    {
+      "Start": "cropOffset",
+      "End": "pythonCreateViews.IN[3]"
+    },
+    {
+      "Start": "createCeilingPlans",
+      "End": "pythonCreateViews.IN[4]"
+    },
+    {
+      "Start": "pythonCreateViews.output",
+      "End": "outputProcessor.output"
+    },
+    {
+      "Start": "outputProcessor.views",
+      "End": "createdViews"
+    },
+    {
+      "Start": "outputProcessor.count",
+      "End": "viewCount"
+    },
+    {
+      "Start": "outputProcessor.report",
+      "End": "report"
+    }
+  ],
+  "Dependencies": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.0.3265",
+      "RunType": "Manual"
+    }
+  }
+}

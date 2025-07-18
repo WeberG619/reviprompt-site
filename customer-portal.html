@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviPrompt Lab Customer Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <div class="text-2xl font-bold text-blue-600">🚀 ReviPrompt Lab</div>
+                    <div class="ml-4 text-gray-600">Customer Portal</div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <span class="text-sm text-gray-600">Welcome back, <span id="user-name">Loading...</span></span>
+                    <button class="text-gray-600 hover:text-gray-900" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- License Info Card -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Your License</h2>
+                    <div class="flex items-center mt-2">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold" id="product-tier">
+                            Loading...
+                        </span>
+                        <span class="ml-3 text-gray-600" id="license-key">License: Loading...</span>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <div class="text-sm text-gray-500">Valid Until</div>
+                    <div class="text-lg font-semibold" id="expires-date">Loading...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-download text-blue-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold mb-2">Download All</h3>
+                <button class="text-blue-600 hover:text-blue-800 text-sm" onclick="downloadAll()">
+                    Get Complete Package
+                </button>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                <div class="bg-green-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-sync text-green-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold mb-2">Updates</h3>
+                <button class="text-green-600 hover:text-green-800 text-sm" onclick="checkUpdates()">
+                    Check for Updates
+                </button>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                <div class="bg-purple-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-play-circle text-purple-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold mb-2">Video Tutorials</h3>
+                <button class="text-purple-600 hover:text-purple-800 text-sm" onclick="showVideos()" id="video-btn">
+                    Watch Now
+                </button>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-sm p-6 text-center">
+                <div class="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-headset text-yellow-600 text-xl"></i>
+                </div>
+                <h3 class="font-semibold mb-2">Support</h3>
+                <button class="text-yellow-600 hover:text-yellow-800 text-sm" onclick="openSupport()">
+                    Get Help
+                </button>
+            </div>
+        </div>
+
+        <!-- Downloads Section -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-xl font-bold mb-4">Downloads</h2>
+            <div class="space-y-4" id="downloads-list">
+                <!-- Downloads will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Video Tutorials Section -->
+        <div class="bg-white rounded-lg shadow-sm p-6 mb-8" id="videos-section" style="display:none;">
+            <h2 class="text-xl font-bold mb-4">Video Tutorials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="videos-grid">
+                <!-- Videos will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Recent Updates -->
+        <div class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-xl font-bold mb-4">Recent Updates</h2>
+            <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                    <div class="bg-blue-100 w-8 h-8 rounded-full flex items-center justify-center">
+                        <i class="fas fa-plus text-blue-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">New: Area Calculator Pro</div>
+                        <div class="text-sm text-gray-600">Added advanced area calculation with room boundaries</div>
+                        <div class="text-xs text-gray-500 mt-1">2 days ago</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-3">
+                    <div class="bg-green-100 w-8 h-8 rounded-full flex items-center justify-center">
+                        <i class="fas fa-wrench text-green-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">Updated: Sheet Setup Master</div>
+                        <div class="text-sm text-gray-600">Improved Revit 2025 compatibility</div>
+                        <div class="text-xs text-gray-500 mt-1">1 week ago</div>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-3">
+                    <div class="bg-purple-100 w-8 h-8 rounded-full flex items-center justify-center">
+                        <i class="fas fa-video text-purple-600 text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-semibold">New Video: Advanced Parameter Workflows</div>
+                        <div class="text-sm text-gray-600">15-minute deep dive on complex parameter automation</div>
+                        <div class="text-xs text-gray-500 mt-1">2 weeks ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center" style="display:none;">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <h2 class="text-2xl font-bold mb-6">Customer Portal Login</h2>
+            <form id="login-form">
+                <div class="mb-4">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                    <input type="email" id="login-email" required 
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-sm font-medium text-gray-700 mb-2">License Key</label>
+                    <input type="text" id="login-license" required placeholder="RPL-F-XXXXXXXX-XXXXXXXX"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">
+                    Access Portal
+                </button>
+            </form>
+            <div class="mt-4 text-center">
+                <p class="text-sm text-gray-600">
+                    Can't find your license key? 
+                    <a href="mailto:support@revipromptlab.com" class="text-blue-600 hover:underline">Contact Support</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Customer Portal JavaScript
+        class CustomerPortal {
+            constructor() {
+                this.apiBase = 'https://api.revipromptlab.com';
+                this.currentUser = null;
+                this.init();
+            }
+
+            init() {
+                // Check if user is already logged in
+                const savedUser = localStorage.getItem('rpl_user');
+                if (savedUser) {
+                    this.currentUser = JSON.parse(savedUser);
+                    this.loadDashboard();
+                } else {
+                    this.showLoginModal();
+                }
+
+                // Setup event listeners
+                document.getElementById('login-form').addEventListener('submit', (e) => this.handleLogin(e));
+            }
+
+            showLoginModal() {
+                document.getElementById('login-modal').style.display = 'flex';
+            }
+
+            hideLoginModal() {
+                document.getElementById('login-modal').style.display = 'none';
+            }
+
+            async handleLogin(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('login-email').value;
+                const licenseKey = document.getElementById('login-license').value;
+                
+                try {
+                    const response = await fetch(`${this.apiBase}/auth/login`, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, licenseKey })
+                    });
+                    
+                    if (response.ok) {
+                        const userData = await response.json();
+                        this.currentUser = userData;
+                        localStorage.setItem('rpl_user', JSON.stringify(userData));
+                        this.hideLoginModal();
+                        this.loadDashboard();
+                    } else {
+                        alert('Invalid credentials. Please check your email and license key.');
+                    }
+                } catch (error) {
+                    console.error('Login error:', error);
+                    alert('Login failed. Please try again.');
+                }
+            }
+
+            loadDashboard() {
+                // Populate user info
+                document.getElementById('user-name').textContent = this.currentUser.email.split('@')[0];
+                document.getElementById('product-tier').textContent = this.currentUser.productTier.toUpperCase();
+                document.getElementById('license-key').textContent = `License: ${this.currentUser.licenseKey}`;
+                document.getElementById('expires-date').textContent = new Date(this.currentUser.expiresAt).toLocaleDateString();
+
+                // Load downloads
+                this.loadDownloads();
+
+                // Setup video access
+                if (this.currentUser.videoAccess) {
+                    document.getElementById('video-btn').onclick = () => this.showVideos();
+                } else {
+                    document.getElementById('video-btn').onclick = () => this.showUpgradeModal();
+                }
+            }
+
+            loadDownloads() {
+                const downloadsList = document.getElementById('downloads-list');
+                const downloads = this.getDownloadsForTier(this.currentUser.productTier);
+                
+                downloadsList.innerHTML = downloads.map(download => `
+                    <div class="flex items-center justify-between p-4 border rounded-lg hover:bg-gray-50">
+                        <div class="flex items-center space-x-3">
+                            <div class="bg-blue-100 w-10 h-10 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-file-archive text-blue-600"></i>
+                            </div>
+                            <div>
+                                <div class="font-medium">${download.name}</div>
+                                <div class="text-sm text-gray-600">${download.size} • ${download.description}</div>
+                            </div>
+                        </div>
+                        <button onclick="downloadFile('${download.url}')" 
+                                class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                            Download
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            getDownloadsForTier(tier) {
+                const downloads = {
+                    foundation: [
+                        { name: 'Foundation Pack', size: '45 MB', description: '25 Essential Prompts + Dynamo Graphs', url: '/downloads/foundation-pack.zip' },
+                        { name: 'Quick Start Guide', size: '2 MB', description: 'PDF Guide + Video Links', url: '/downloads/quick-start.pdf' }
+                    ],
+                    professional: [
+                        { name: 'Professional Pack', size: '120 MB', description: '75 Prompts + Dynamo Graphs', url: '/downloads/professional-pack.zip' },
+                        { name: 'Video Tutorials', size: '850 MB', description: '10 HD Tutorial Videos', url: '/downloads/video-tutorials.zip' },
+                        { name: 'Advanced Workflows', size: '15 MB', description: 'Complex Automation Examples', url: '/downloads/advanced-workflows.zip' }
+                    ],
+                    enterprise: [
+                        { name: 'Enterprise Complete', size: '2.1 GB', description: '150+ Prompts + All Content', url: '/downloads/enterprise-complete.zip' },
+                        { name: 'MEP Specialization', size: '340 MB', description: 'Mechanical, Electrical, Plumbing', url: '/downloads/mep-pack.zip' },
+                        { name: 'Structural Pack', size: '280 MB', description: 'Structural Analysis & Design', url: '/downloads/structural-pack.zip' },
+                        { name: 'Team License Keys', size: '1 MB', description: '10 User License File', url: '/downloads/team-licenses.txt' }
+                    ]
+                };
+                
+                return downloads[tier] || downloads.foundation;
+            }
+
+            showVideos() {
+                const videosSection = document.getElementById('videos-section');
+                videosSection.style.display = 'block';
+                videosSection.scrollIntoView({ behavior: 'smooth' });
+                
+                // Load video grid
+                this.loadVideoGrid();
+            }
+
+            loadVideoGrid() {
+                const videosGrid = document.getElementById('videos-grid');
+                const videos = [
+                    { title: 'Sheet Setup Master', duration: '4:32', thumbnail: '/thumbnails/sheet-setup.jpg' },
+                    { title: 'Missing Tag Finder', duration: '3:15', thumbnail: '/thumbnails/tag-finder.jpg' },
+                    { title: 'Parameter Propagator', duration: '5:41', thumbnail: '/thumbnails/parameter-prop.jpg' },
+                    { title: 'View Template Wizard', duration: '4:18', thumbnail: '/thumbnails/view-template.jpg' },
+                    { title: 'Dimension Checker Pro', duration: '3:52', thumbnail: '/thumbnails/dimension-check.jpg' },
+                    { title: 'Schedule Generator', duration: '4:07', thumbnail: '/thumbnails/schedule-gen.jpg' },
+                    { title: 'Model Health Scanner', duration: '5:23', thumbnail: '/thumbnails/health-scan.jpg' },
+                    { title: 'Batch Export Master', duration: '3:44', thumbnail: '/thumbnails/batch-export.jpg' },
+                    { title: 'Code Compliance Checker', duration: '4:56', thumbnail: '/thumbnails/code-check.jpg' },
+                    { title: 'AI Integration Masterclass', duration: '6:13', thumbnail: '/thumbnails/ai-master.jpg' }
+                ];
+                
+                videosGrid.innerHTML = videos.map(video => `
+                    <div class="bg-gray-100 rounded-lg overflow-hidden hover:shadow-lg transition">
+                        <div class="aspect-video bg-gray-200 flex items-center justify-center">
+                            <i class="fas fa-play-circle text-4xl text-gray-400"></i>
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-semibold mb-1">${video.title}</h3>
+                            <p class="text-sm text-gray-600">${video.duration}</p>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            showUpgradeModal() {
+                alert('Video tutorials are available with Professional and Enterprise tiers. Visit revipromptlab.com to upgrade!');
+            }
+        }
+
+        // Global functions
+        function downloadFile(url) {
+            // In production, generate secure download links
+            window.open(url, '_blank');
+        }
+
+        function downloadAll() {
+            alert('Preparing complete package download...');
+        }
+
+        function checkUpdates() {
+            alert('Checking for updates... You have the latest version!');
+        }
+
+        function openSupport() {
+            window.open('mailto:support@revipromptlab.com?subject=Customer Support Request', '_blank');
+        }
+
+        function logout() {
+            localStorage.removeItem('rpl_user');
+            location.reload();
+        }
+
+        // Initialize portal
+        document.addEventListener('DOMContentLoaded', () => {
+            new CustomerPortal();
+        });
+    </script>
+</body>
+</html>

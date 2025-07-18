@@ -1,0 +1,118 @@
+{
+  "Uuid": "3c9d1a8f-2b4e-4f5a-8e7d-6c3b2a1f0e9d",
+  "IsCustomNode": false,
+  "Description": "Automated sheet creation with titleblocks, numbers, and names from Excel",
+  "Name": "SheetSetupMaster",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "excelFilePath",
+      "Name": "Excel File Path",
+      "Type": "string",
+      "Value": "C:\\SheetList.xlsx",
+      "Description": "Path to Excel file containing sheet data"
+    },
+    {
+      "Id": "titleblockType",
+      "Name": "Titleblock Type",
+      "Type": "string",
+      "Value": "E1 30x42",
+      "Description": "Name of titleblock family type to use"
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "createdSheets",
+      "Name": "Created Sheets",
+      "Type": "array",
+      "Description": "List of newly created sheets"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function",
+      "FunctionSignature": "ReadExcel",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "node1",
+      "Inputs": [
+        {
+          "Id": "filePath",
+          "Name": "File Path",
+          "Description": "Path to Excel file"
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "data",
+          "Name": "Sheet Data",
+          "Description": "Data from Excel"
+        }
+      ]
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function",
+      "FunctionSignature": "CreateSheets",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "node2",
+      "Inputs": [
+        {
+          "Id": "sheetNumbers",
+          "Name": "Sheet Numbers",
+          "Description": "List of sheet numbers"
+        },
+        {
+          "Id": "sheetNames",
+          "Name": "Sheet Names",
+          "Description": "List of sheet names"
+        },
+        {
+          "Id": "titleblock",
+          "Name": "Titleblock",
+          "Description": "Titleblock family type"
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "sheets",
+          "Name": "Sheets",
+          "Description": "Created sheet elements"
+        }
+      ]
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "node1",
+      "End": "node2",
+      "Id": "connector1"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": false,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.13.0.3265",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    }
+  }
+}

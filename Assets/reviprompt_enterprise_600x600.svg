@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="enterpriseGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#enterpriseGradient)" />
+  
+  <!-- Border -->
+  <rect x="3" y="3" width="594" height="594" fill="none" stroke="#475569" stroke-width="6" />
+  
+  <!-- Logo -->
+  <text x="300" y="120" font-family="Arial, sans-serif" font-size="72" text-anchor="middle" fill="#475569">🏢</text>
+  
+  <!-- Product Name -->
+  <text x="300" y="200" font-family="Arial, sans-serif" font-size="42" font-weight="bold" text-anchor="middle" fill="#1e293b">Enterprise Pack</text>
+  
+  <!-- Price -->
+  <text x="300" y="300" font-family="Arial, sans-serif" font-size="96" font-weight="bold" text-anchor="middle" fill="#475569">$299</text>
+  
+  <!-- Description -->
+  <text x="300" y="360" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="#64748b">150+ Complete Library</text>
+  
+  <!-- Features -->
+  <text x="300" y="430" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ MEP &amp; Structural</text>
+  <text x="300" y="460" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ 10 User License</text>
+  <text x="300" y="490" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ Custom Development</text>
+  <text x="300" y="520" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ Lifetime Updates</text>
+</svg>

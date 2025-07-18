@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="freeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0fdf4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dcfce7;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#freeGradient)" />
+  
+  <!-- Border -->
+  <rect x="3" y="3" width="594" height="594" fill="none" stroke="#22c55e" stroke-width="6" />
+  
+  <!-- Logo -->
+  <text x="300" y="120" font-family="Arial, sans-serif" font-size="72" text-anchor="middle" fill="#22c55e">🎁</text>
+  
+  <!-- Product Name -->
+  <text x="300" y="200" font-family="Arial, sans-serif" font-size="42" font-weight="bold" text-anchor="middle" fill="#1e293b">FREE Sampler Pack</text>
+  
+  <!-- Price -->
+  <text x="300" y="300" font-family="Arial, sans-serif" font-size="96" font-weight="bold" text-anchor="middle" fill="#22c55e">$0</text>
+  
+  <!-- Description -->
+  <text x="300" y="360" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="#64748b">Try 3 Essential AI Prompts</text>
+  
+  <!-- Features -->
+  <text x="300" y="430" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ Sheet Setup Master</text>
+  <text x="300" y="460" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ Missing Tag Finder</text>
+  <text x="300" y="490" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ Area Calculator Pro</text>
+</svg>

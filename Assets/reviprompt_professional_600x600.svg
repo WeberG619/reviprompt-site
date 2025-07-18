@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="professionalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf5ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ede9fe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#professionalGradient)" />
+  
+  <!-- Border -->
+  <rect x="3" y="3" width="594" height="594" fill="none" stroke="#9333ea" stroke-width="6" />
+  
+  <!-- Popular Badge -->
+  <g transform="rotate(45, 500, 100)">
+    <rect x="400" y="80" width="200" height="40" fill="#f59e0b" />
+    <text x="500" y="105" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="white">POPULAR</text>
+  </g>
+  
+  <!-- Logo -->
+  <text x="300" y="120" font-family="Arial, sans-serif" font-size="72" text-anchor="middle" fill="#9333ea">💎</text>
+  
+  <!-- Product Name -->
+  <text x="300" y="200" font-family="Arial, sans-serif" font-size="42" font-weight="bold" text-anchor="middle" fill="#1e293b">Professional Pack</text>
+  
+  <!-- Price -->
+  <text x="300" y="300" font-family="Arial, sans-serif" font-size="96" font-weight="bold" text-anchor="middle" fill="#9333ea">$149</text>
+  
+  <!-- Description -->
+  <text x="300" y="360" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" fill="#64748b">75 Complete AI Prompts</text>
+  
+  <!-- Features -->
+  <text x="300" y="430" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ Everything in Foundation</text>
+  <text x="300" y="460" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ Advanced Workflows</text>
+  <text x="300" y="490" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ Video Tutorials</text>
+  <text x="300" y="520" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#475569">✓ 1 Year Updates</text>
+</svg>

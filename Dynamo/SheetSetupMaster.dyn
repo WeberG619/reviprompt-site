@@ -1,0 +1,55 @@
+# Dynamo Graph Template: SheetSetupMaster.dyn
+# This is a template - you'll need to create actual .dyn files in Dynamo
+
+## Graph Description:
+Smart sheet reorganization with automatic viewport alignment
+
+## Input Parameters:
+- New Title Block Family Type (Family Type)
+- Starting Sheet Number (String) 
+- Sheet Naming Convention (String)
+- Viewport Grid Spacing (Number)
+
+## Node Structure:
+
+### 1. Get All Sheets
+- All Elements of Category: Sheets
+- Filter by: Sheet.IsPlaceholder = False
+
+### 2. Replace Title Blocks
+- Sheet.TitleBlock (Get current)
+- Element.SetParameterByName: "Title Block" -> New Type
+- Transaction handling
+
+### 3. Renumber Sheets
+- String.Split: Current numbers
+- String operations: Generate sequence
+- Sheet.SetSheetNumber: Apply new numbers
+
+### 4. Align Viewports  
+- Sheet.Views: Get all viewports on sheet
+- Viewport.GetBoxCenter: Current positions
+- Grid.BySpacing: Create alignment grid
+- Viewport.SetBoxCenter: Snap to grid
+
+### 5. Generate Sheet Index
+- Sheet.SheetNumber + Sheet.SheetName
+- String.Join: Create formatted list
+- Export to: Shared parameter or schedule
+
+## Output:
+- Success/Failure status
+- Count of sheets processed
+- Error messages (if any)
+
+## Usage Notes:
+1. Run this graph on a test project first
+2. Backup your project before running
+3. Check viewport positions after completion
+4. Verify title block parameters transfer correctly
+
+## Error Handling:
+- Check for locked sheets
+- Validate title block type exists
+- Confirm viewport positions within sheet bounds
+- Transaction rollback on errors

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics & Tracking Setup Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 p-8">
+    <div class="max-w-6xl mx-auto">
+        <h1 class="text-3xl font-bold mb-8">Analytics & Tracking Setup Guide</h1>
+
+        <!-- Google Analytics 4 Setup -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Google Analytics 4 (GA4) Setup</h2>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                <h3 class="font-semibold mb-2">Step 1: Create GA4 Property</h3>
+                <ol class="list-decimal list-inside space-y-1 text-sm">
+                    <li>Go to <a href="https://analytics.google.com" class="text-blue-600 underline">Google Analytics</a></li>
+                    <li>Create new property: "ReviPromptLab"</li>
+                    <li>Set timezone to your location</li>
+                    <li>Enable Enhanced Measurement</li>
+                    <li>Copy your Measurement ID (G-XXXXXXXXXX)</li>
+                </ol>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                <h3 class="font-semibold mb-2">Step 2: Add to Squarespace</h3>
+                <p class="text-sm text-gray-600 mb-2">Add this code to your Squarespace site header:</p>
+                <pre class="bg-gray-800 text-white p-4 rounded text-sm overflow-x-auto"><code>&lt;!-- Google Analytics --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"&gt;&lt;/script&gt;
+&lt;script&gt;
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX', {
+    'custom_map': {
+      'custom_parameter_1': 'product_tier',
+      'custom_parameter_2': 'license_key'
+    }
+  });
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <div class="bg-green-50 border-l-4 border-green-500 p-4 mb-6">
+                <h3 class="font-semibold mb-2">Step 3: Enhanced E-commerce Tracking</h3>
+                <p class="text-sm text-gray-600 mb-2">Add this to track purchases and conversions:</p>
+                <pre class="bg-gray-800 text-white p-4 rounded text-sm overflow-x-auto"><code>&lt;script&gt;
+// Track purchase events
+function trackPurchase(productTier, value, transactionId) {
+  gtag('event', 'purchase', {
+    'transaction_id': transactionId,
+    'value': value,
+    'currency': 'USD',
+    'items': [{
+      'item_id': productTier,
+      'item_name': 'ReviPrompt Lab ' + productTier + ' Pack',
+      'category': 'Digital Product',
+      'quantity': 1,
+      'price': value
+    }]
+  });
+}
+
+// Track email signups
+function trackEmailSignup(email) {
+  gtag('event', 'sign_up', {
+    'method': 'email',
+    'custom_parameter_1': 'free_tier'
+  });
+}
+
+// Track video views
+function trackVideoView(videoTitle, duration) {
+  gtag('event', 'video_play', {
+    'video_title': videoTitle,
+    'video_duration': duration
+  });
+}
+&lt;/script&gt;</code></pre>
+            </div>
+        </section>
+
+        <!-- Hotjar Setup -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Hotjar Heatmaps & User Behavior</h2>
+            
+            <div class="bg-orange-50 border-l-4 border-orange-500 p-4 mb-6">
+                <h3 class="font-semibold mb-2">Step 1: Create Hotjar Account</h3>
+                <ol class="list-decimal list-inside space-y-1 text-sm">
+                    <li>Sign up at <a href="https://hotjar.com" class="text-orange-600 underline">Hotjar.com</a></li>
+                    <li>Add site: "revipromptlab.com"</li>
+                    <li>Copy your Site ID</li>
+                    <li>Choose Basic plan (free for 35 daily sessions)</li>
+                </ol>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                <h3 class="font-semibold mb-2">Step 2: Install Hotjar Code</h3>
+                <pre class="bg-gray-800 text-white p-4 rounded text-sm overflow-x-auto"><code>&lt;!-- Hotjar Tracking Code --&gt;
+&lt;script&gt;
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:YOUR_SITE_ID,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                <h3 class="font-semibold mb-2">Step 3: Configure Heatmaps</h3>
+                <ul class="list-disc list-inside space-y-1 text-sm">
+                    <li>Homepage heatmap: Track CTA clicks</li>
+                    <li>Pricing page heatmap: See which tier gets attention</li>
+                    <li>Free download form: Optimize conversion</li>
+                    <li>Set up funnels: Home → Pricing → Purchase</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Facebook Pixel -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Facebook Pixel (Meta Ads)</h2>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
+                <h3 class="font-semibold mb-2">Setup Facebook Pixel</h3>
+                <ol class="list-decimal list-inside space-y-1 text-sm">
+                    <li>Go to <a href="https://business.facebook.com" class="text-blue-600 underline">Facebook Business Manager</a></li>
+                    <li>Create pixel for "ReviPromptLab"</li>
+                    <li>Copy pixel ID</li>
+                    <li>Add to Squarespace header</li>
+                </ol>
+            </div>
+
+            <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                <pre class="bg-gray-800 text-white p-4 rounded text-sm overflow-x-auto"><code>&lt;!-- Facebook Pixel --&gt;
+&lt;script&gt;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID');
+  fbq('track', 'PageView');
+&lt;/script&gt;</code></pre>
+            </div>
+
+            <div class="bg-green-50 border-l-4 border-green-500 p-4">
+                <h3 class="font-semibold mb-2">Track Custom Events</h3>
+                <pre class="bg-gray-800 text-white p-4 rounded text-sm overflow-x-auto"><code>// Track email signup
+fbq('track', 'Lead');
+
+// Track purchase
+fbq('track', 'Purchase', {
+  value: 39.00,
+  currency: 'USD',
+  content_name: 'Foundation Pack'
+});
+
+// Track add to cart (pricing page view)
+fbq('track', 'AddToCart', {
+  value: 39.00,
+  currency: 'USD'
+});</code></pre>
+            </div>
+        </section>
+
+        <!-- Conversion Tracking -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Key Conversion Events to Track</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold mb-3">Primary Conversions</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Email signup (free prompts)
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Foundation Pack purchase ($39)
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Professional Pack purchase ($149)
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Enterprise Pack purchase ($299)
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="border rounded-lg p-4">
+                    <h3 class="font-semibold mb-3">Secondary Conversions</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            Pricing page view
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            Video tutorial play
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            Customer portal login
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-circle text-blue-500 mr-2"></i>
+                            Download completion
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- UTM Campaign Tracking -->
+        <section class="bg-white rounded-lg shadow-sm p-6 mb-8">
+            <h2 class="text-2xl font-semibold mb-4">UTM Campaign Tracking</h2>
+            
+            <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6">
+                <h3 class="font-semibold mb-2">Pre-built UTM Links</h3>
+                <p class="text-sm text-gray-600 mb-2">Use these for different marketing channels:</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">LinkedIn Posts</h4>
+                    <code class="text-sm">https://revipromptlab.com?utm_source=linkedin&utm_medium=social&utm_campaign=launch</code>
+                </div>
+                
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Facebook Groups</h4>
+                    <code class="text-sm">https://revipromptlab.com?utm_source=facebook&utm_medium=social&utm_campaign=groups</code>
+                </div>
+                
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Email Newsletter</h4>
+                    <code class="text-sm">https://revipromptlab.com?utm_source=email&utm_medium=newsletter&utm_campaign=weekly</code>
+                </div>
+                
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Product Hunt</h4>
+                    <code class="text-sm">https://revipromptlab.com?utm_source=producthunt&utm_medium=listing&utm_campaign=launch</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics Dashboard -->
+        <section class="bg-white rounded-lg shadow-sm p-6">
+            <h2 class="text-2xl font-semibold mb-4">Key Metrics to Monitor</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h3 class="font-semibold mb-2">Traffic Metrics</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>• Unique visitors</li>
+                        <li>• Page views</li>
+                        <li>• Session duration</li>
+                        <li>• Bounce rate</li>
+                        <li>• Traffic sources</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="font-semibold mb-2">Conversion Metrics</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>• Email signup rate</li>
+                        <li>• Purchase conversion rate</li>
+                        <li>• Average order value</li>
+                        <li>• Revenue per visitor</li>
+                        <li>• Cart abandonment rate</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h3 class="font-semibold mb-2">User Behavior</h3>
+                    <ul class="text-sm space-y-1">
+                        <li>• Heat map insights</li>
+                        <li>• Click-through rates</li>
+                        <li>• Form completion rates</li>
+                        <li>• Video engagement</li>
+                        <li>• Customer portal usage</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Checklist -->
+        <section class="bg-green-50 border-2 border-green-500 p-6 rounded-lg mt-8">
+            <h2 class="text-2xl font-semibold mb-4 text-green-800">🎯 Implementation Checklist</h2>
+            
+            <div class="space-y-3">
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Set up Google Analytics 4 property</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Add GA4 tracking code to Squarespace</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Configure e-commerce tracking</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Set up Hotjar heatmaps</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Install Facebook Pixel</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Create UTM tracking links</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Set up conversion goals</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Test all tracking events</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="checkbox" class="mr-3">
+                    <span>Create analytics dashboard</span>
+                </label>
+            </div>
+            
+            <div class="mt-6 p-4 bg-white rounded-lg">
+                <p class="text-sm text-gray-600">
+                    <strong>Time to implement:</strong> 2-3 hours<br>
+                    <strong>Monthly cost:</strong> $0 (free tiers)<br>
+                    <strong>Expected insights:</strong> 10x better understanding of customer behavior
+                </p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

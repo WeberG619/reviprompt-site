@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ReviPrompt Product Images</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        .product-card {
+            width: 600px;
+            height: 600px;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 20px;
+            padding: 40px;
+            box-sizing: border-box;
+            position: relative;
+            overflow: hidden;
+        }
+        .logo {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .product-name {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #1e293b;
+        }
+        .price {
+            font-size: 72px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        .description {
+            font-size: 24px;
+            color: #64748b;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        .features {
+            font-size: 18px;
+            color: #475569;
+            text-align: center;
+            list-style: none;
+            padding: 0;
+        }
+        .features li {
+            margin: 10px 0;
+        }
+        .badge {
+            position: absolute;
+            top: 40px;
+            right: -30px;
+            background: #f59e0b;
+            color: white;
+            padding: 10px 50px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        /* Color schemes for each product */
+        .free { 
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+            border: 3px solid #22c55e;
+        }
+        .free .price { color: #22c55e; }
+        
+        .foundation { 
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            border: 3px solid #3b82f6;
+        }
+        .foundation .price { color: #3b82f6; }
+        
+        .professional { 
+            background: linear-gradient(135deg, #faf5ff 0%, #ede9fe 100%);
+            border: 3px solid #9333ea;
+        }
+        .professional .price { color: #9333ea; }
+        
+        .enterprise { 
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border: 3px solid #475569;
+        }
+        .enterprise .price { color: #475569; }
+    </style>
+</head>
+<body>
+    <!-- FREE Sampler -->
+    <div class="product-card free">
+        <div class="logo">🚀</div>
+        <h2 class="product-name">FREE Sampler Pack</h2>
+        <div class="price">$0</div>
+        <p class="description">Try 3 Essential AI Prompts</p>
+        <ul class="features">
+            <li>✓ Sheet Setup Master</li>
+            <li>✓ Missing Tag Finder</li>
+            <li>✓ Area Calculator Pro</li>
+            <li>✓ Quick Start Guide</li>
+        </ul>
+    </div>
+
+    <!-- Foundation Pack -->
+    <div class="product-card foundation">
+        <div class="logo">⚡</div>
+        <h2 class="product-name">Foundation Pack</h2>
+        <div class="price">$39</div>
+        <p class="description">25 Essential AI Prompts</p>
+        <ul class="features">
+            <li>✓ Sheet Automation Suite</li>
+            <li>✓ Quality Control Tools</li>
+            <li>✓ Code Compliance</li>
+            <li>✓ 6 Months Updates</li>
+        </ul>
+    </div>
+
+    <!-- Professional Pack -->
+    <div class="product-card professional">
+        <div class="badge">POPULAR</div>
+        <div class="logo">💎</div>
+        <h2 class="product-name">Professional Pack</h2>
+        <div class="price">$149</div>
+        <p class="description">75 Complete AI Prompts</p>
+        <ul class="features">
+            <li>✓ Everything in Foundation</li>
+            <li>✓ Advanced Workflows</li>
+            <li>✓ Video Tutorials</li>
+            <li>✓ 1 Year Updates</li>
+        </ul>
+    </div>
+
+    <!-- Enterprise Pack -->
+    <div class="product-card enterprise">
+        <div class="logo">🏢</div>
+        <h2 class="product-name">Enterprise Pack</h2>
+        <div class="price">$299</div>
+        <p class="description">150+ Complete Library</p>
+        <ul class="features">
+            <li>✓ MEP & Structural</li>
+            <li>✓ 10 User License</li>
+            <li>✓ Custom Development</li>
+            <li>✓ Lifetime Updates</li>
+        </ul>
+    </div>
+
+    <div style="margin-top: 40px; padding: 20px; background: white;">
+        <h3>How to Create Images from This:</h3>
+        <ol>
+            <li>Open this file in your browser</li>
+            <li>Take a screenshot of each product card (600x600 pixels)</li>
+            <li>Or use a browser extension like "Full Page Screen Capture"</li>
+            <li>Save as:
+                <ul>
+                    <li>reviprompt_free_600x600.png</li>
+                    <li>reviprompt_foundation_600x600.png</li>
+                    <li>reviprompt_professional_600x600.png</li>
+                    <li>reviprompt_enterprise_600x600.png</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>
