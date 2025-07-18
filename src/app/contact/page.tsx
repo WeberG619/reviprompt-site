@@ -68,9 +68,9 @@ export default function ContactPage() {
               <div className="w-12 h-12 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-neutral-700 dark:to-blue-900/50 rounded-lg flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                 <MessageCircle className="w-6 h-6 text-blue-600 dark:text-blue-400 icon-interactive" />
               </div>
-              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Live Chat</h3>
-              <p className="text-neutral-600 dark:text-neutral-400 mb-4">Real-time support for urgent questions</p>
-              <p className="text-neutral-500 dark:text-neutral-400 text-sm">Available 9 AM - 6 PM EST</p>
+              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white mb-2">Documentation</h3>
+              <p className="text-neutral-600 dark:text-neutral-400 mb-4">Comprehensive guides and tutorials</p>
+              <p className="text-neutral-500 dark:text-neutral-400 text-sm">Available 24/7</p>
             </div>
 
             <div className="text-center p-8 card-enhanced hover-glow group">
@@ -185,35 +185,34 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Office Information */}
+      {/* Support Information */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-3xl font-bold text-neutral-900 dark:text-white mb-6">
-                Visit Our Office
+                Digital-First Support
               </h2>
               <div className="space-y-6">
                 <div className="flex items-start space-x-4">
-                  <MapPin className="w-6 h-6 text-blue-600 dark:text-blue-400 mt-1" />
+                  <Mail className="w-6 h-6 text-blue-600 dark:text-blue-400 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">Address</h3>
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">Primary Contact</h3>
                     <p className="text-neutral-600 dark:text-neutral-400">
-                      123 Innovation Drive<br />
-                      Tech Hub, CA 94105<br />
-                      United States
+                      Email is our preferred method for support<br />
+                      <a href="mailto:support@revipromptlab.com" className="text-blue-600 dark:text-blue-400">support@revipromptlab.com</a>
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <Clock className="w-6 h-6 text-green-600 dark:text-green-400 mt-1" />
+                  <MessageCircle className="w-6 h-6 text-green-600 dark:text-green-400 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">Office Hours</h3>
+                    <h3 className="font-semibold text-neutral-900 dark:text-white mb-1">Remote Support</h3>
                     <p className="text-neutral-600 dark:text-neutral-400">
-                      Monday - Friday: 9:00 AM - 6:00 PM PST<br />
-                      Saturday: 10:00 AM - 2:00 PM PST<br />
-                      Sunday: Closed
+                      We operate as a remote-first company to serve<br />
+                      customers globally with digital efficiency<br />
+                      and 24/7 documentation access
                     </p>
                   </div>
                 </div>
@@ -222,11 +221,11 @@ export default function ContactPage() {
 
             <div className="bg-neutral-100 dark:bg-neutral-800 rounded-xl p-8">
               <h3 className="text-xl font-semibold text-neutral-900 dark:text-white mb-4">
-                Quick Response Times
+                Response Times
               </h3>
               <div className="space-y-4">
                 <div className="flex justify-between items-center">
-                  <span className="text-neutral-600 dark:text-neutral-400">Email Support</span>
+                  <span className="text-neutral-600 dark:text-neutral-400">General Support</span>
                   <span className="font-semibold text-neutral-900 dark:text-white">&lt; 24 hours</span>
                 </div>
                 <div className="flex justify-between items-center">
@@ -235,11 +234,11 @@ export default function ContactPage() {
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-neutral-600 dark:text-neutral-400">Technical Issues</span>
-                  <span className="font-semibold text-neutral-900 dark:text-white">&lt; 2 hours</span>
+                  <span className="font-semibold text-neutral-900 dark:text-white">&lt; 12 hours</span>
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-neutral-600 dark:text-neutral-400">Live Chat</span>
-                  <span className="font-semibold text-green-600 dark:text-green-400">Instant</span>
+                  <span className="text-neutral-600 dark:text-neutral-400">Documentation</span>
+                  <span className="font-semibold text-green-600 dark:text-green-400">24/7 Available</span>
                 </div>
               </div>
             </div>

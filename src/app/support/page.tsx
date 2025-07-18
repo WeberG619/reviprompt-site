@@ -65,28 +65,29 @@ export default function SupportPage() {
 
   const supportChannels = [
     {
-      title: "Live Chat",
-      description: "Instant help from our support team",
-      availability: "Mon-Fri, 9 AM - 6 PM EST",
-      icon: <MessageCircle className="w-6 h-6" />,
-      action: "Start Chat",
+      title: "Email Support",
+      description: "Detailed technical assistance for all inquiries",
+      availability: "Response within 24 hours",
+      icon: <Mail className="w-6 h-6" />,
+      action: "Send Email",
+      email: "support@revipromptlab.com",
       urgent: true
     },
     {
-      title: "Email Support",
-      description: "Detailed technical assistance",
-      availability: "Response within 4 hours",
-      icon: <Mail className="w-6 h-6" />,
-      action: "Send Email",
-      email: "support@revipromptlab.com"
+      title: "Knowledge Base",
+      description: "Self-service articles and tutorials",
+      availability: "Available 24/7",
+      icon: <Book className="w-6 h-6" />,
+      action: "Browse Articles",
+      link: "/docs"
     },
     {
-      title: "Phone Support",
-      description: "Direct line for Enterprise customers",
-      availability: "24/7 for critical issues",
-      icon: <Phone className="w-6 h-6" />,
-      action: "Call Now",
-      phone: "+1 (555) 123-4567"
+      title: "Video Tutorials",
+      description: "Step-by-step guides for common tasks",
+      availability: "Available 24/7",
+      icon: <HelpCircle className="w-6 h-6" />,
+      action: "Watch Videos",
+      link: "/tutorials"
     }
   ]
 
@@ -177,21 +178,32 @@ export default function SupportPage() {
                 <p className="text-sm text-neutral-500 dark:text-neutral-400 text-center mb-6">
                   {channel.availability}
                 </p>
-                <button className={`w-full py-3 px-4 rounded-lg font-medium transition-colors ${
-                  channel.urgent
-                    ? 'bg-green-600 hover:bg-green-700 text-white'
-                    : 'btn-primary'
-                }`}>
-                  {channel.action}
-                </button>
+                {channel.email ? (
+                  <a 
+                    href={`mailto:${channel.email}`}
+                    className={`w-full py-3 px-4 rounded-lg font-medium transition-colors inline-block text-center ${
+                      channel.urgent
+                        ? 'bg-blue-600 hover:bg-blue-700 text-white'
+                        : 'btn-primary'
+                    }`}
+                  >
+                    {channel.action}
+                  </a>
+                ) : channel.link ? (
+                  <Link 
+                    href={channel.link}
+                    className="w-full py-3 px-4 rounded-lg font-medium transition-colors btn-primary inline-block text-center"
+                  >
+                    {channel.action}
+                  </Link>
+                ) : (
+                  <button className="w-full py-3 px-4 rounded-lg font-medium transition-colors btn-primary">
+                    {channel.action}
+                  </button>
+                )}
                 {channel.email && (
                   <p className="text-xs text-neutral-500 dark:text-neutral-400 text-center mt-2">
                     {channel.email}
-                  </p>
-                )}
-                {channel.phone && (
-                  <p className="text-xs text-neutral-500 dark:text-neutral-400 text-center mt-2">
-                    {channel.phone}
                   </p>
                 )}
               </div>

@@ -1,29 +1,31 @@
 import { NextRequest, NextResponse } from 'next/server'
+import Stripe from 'stripe'
 
-// This would be your actual Stripe integration
-// For now, it's a placeholder that demonstrates the unified payment structure
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+  apiVersion: '2024-06-20',
+})
 
 export async function POST(request: NextRequest) {
   try {
     const { planId, billingPeriod, customerInfo } = await request.json()
 
-    // Define all your products in one place
+    // Define all your products with environment variable price IDs
     const productPricing = {
       'starter': {
-        monthly: { price: 0, priceId: 'price_starter_monthly' },
-        annual: { price: 0, priceId: 'price_starter_annual' }
+        monthly: { price: 0, priceId: process.env.STRIPE_PRICE_STARTER_MONTHLY },
+        annual: { price: 0, priceId: process.env.STRIPE_PRICE_STARTER_ANNUAL }
       },
       'professional': {
-        monthly: { price: 4900, priceId: 'price_professional_monthly' }, // $49.00 in cents
-        annual: { price: 3900, priceId: 'price_professional_annual' }   // $39.00 in cents
+        monthly: { price: 4900, priceId: process.env.STRIPE_PRICE_PROFESSIONAL_MONTHLY },
+        annual: { price: 3900, priceId: process.env.STRIPE_PRICE_PROFESSIONAL_ANNUAL }
       },
       'aec-professional': {
-        monthly: { price: 7900, priceId: 'price_aec_professional_monthly' }, // $79.00 in cents
-        annual: { price: 6900, priceId: 'price_aec_professional_annual' }    // $69.00 in cents
+        monthly: { price: 7900, priceId: process.env.STRIPE_PRICE_AEC_PROFESSIONAL_MONTHLY },
+        annual: { price: 6900, priceId: process.env.STRIPE_PRICE_AEC_PROFESSIONAL_ANNUAL }
       },
       'enterprise': {
-        monthly: { price: 14900, priceId: 'price_enterprise_monthly' }, // $149.00 in cents
-        annual: { price: 11900, priceId: 'price_enterprise_annual' }    // $119.00 in cents
+        monthly: { price: 14900, priceId: process.env.STRIPE_PRICE_ENTERPRISE_MONTHLY },
+        annual: { price: 11900, priceId: process.env.STRIPE_PRICE_ENTERPRISE_ANNUAL }
       }
     }
 
@@ -42,25 +44,59 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    // In a real implementation, you would:
-    // 1. Initialize Stripe with your secret key
-    // 2. Create a checkout session with the price ID
-    // 3. Return the checkout URL
-    
-    // For now, return a placeholder response
-    const checkoutUrl = `https://checkout.stripe.com/c/pay/placeholder#${planId}_${billingPeriod}`
-    
+    // Check if we have the required environment variables
+    if (!process.env.STRIPE_SECRET_KEY) {
+      console.error('STRIPE_SECRET_KEY is not configured')
+      return NextResponse.json({ error: 'Payment system not configured' }, { status: 500 })
+    }
+
+    if (!priceInfo.priceId) {
+      console.error(`Price ID not configured for ${planId} ${billingPeriod}`)
+      return NextResponse.json({ error: 'Price not configured' }, { status: 500 })
+    }
+
+    // Create Stripe checkout session
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: [
+        {
+          price: priceInfo.priceId,
+          quantity: 1,
+        },
+      ],
+      mode: 'subscription',
+      success_url: `${request.headers.get('origin')}/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${request.headers.get('origin')}/pricing`,
+      customer_email: customerInfo.email,
+      metadata: {
+        planId,
+        billingPeriod,
+        customerName: customerInfo.name,
+        company: customerInfo.company || '',
+      },
+      subscription_data: {
+        metadata: {
+          planId,
+          billingPeriod,
+          customerName: customerInfo.name,
+          company: customerInfo.company || '',
+        },
+      },
+      allow_promotion_codes: true,
+      billing_address_collection: 'required',
+    })
+
     return NextResponse.json({ 
-      url: checkoutUrl,
-      planId,
-      billingPeriod,
-      price: priceInfo.price,
-      customer: customerInfo
+      url: session.url,
+      sessionId: session.id
     })
 
   } catch (error) {
     console.error('Checkout session creation failed:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    return NextResponse.json({ 
+      error: 'Failed to create checkout session', 
+      details: error instanceof Error ? error.message : 'Unknown error'
+    }, { status: 500 })
   }
 }
 
