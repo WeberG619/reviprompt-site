@@ -232,8 +232,8 @@ export default function TermsPage() {
             <p className="text-neutral-700 dark:text-neutral-300">
               For questions about these Terms of Service, please contact us:<br /><br />
               <strong>Email:</strong> legal@revipromptlab.com<br />
-              <strong>Address:</strong> ReviPrompt Lab Inc., 123 Innovation Drive, Tech Hub, CA 94105<br />
-              <strong>Phone:</strong> +1 (555) 123-4567
+              <strong>Company:</strong> ReviPromptLab (operating as a digital-first business)<br />
+              <strong>Support:</strong> support@revipromptlab.com
             </p>
           </div>
         </div>

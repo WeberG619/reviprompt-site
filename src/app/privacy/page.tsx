@@ -202,7 +202,7 @@ export default function PrivacyPage() {
           <div className="bg-neutral-50 dark:bg-neutral-800 rounded-lg p-6">
             <p className="text-neutral-700 dark:text-neutral-300">
               <strong>Email:</strong> privacy@revipromptlab.com<br />
-              <strong>Address:</strong> 123 Innovation Drive, Tech Hub, CA 94105<br />
+              <strong>Company:</strong> ReviPromptLab (digital-first operations)<br />
               <strong>Data Protection Officer:</strong> dpo@revipromptlab.com
             </p>
           </div>
