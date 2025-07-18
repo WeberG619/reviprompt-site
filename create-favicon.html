@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviPromptLab Favicon Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .favicon-preview {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .favicon-size {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .favicon-size h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        canvas {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background: white;
+        }
+        .download-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .download-btn:hover {
+            background: #0056b3;
+        }
+        .instructions {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 ReviPromptLab Favicon Generator</h1>
+        <p>Custom favicon for your ReviPromptLab website. Click the download buttons below to get the files.</p>
+        
+        <div class="favicon-preview">
+            <div class="favicon-size">
+                <h3>16x16 (Browser Tab)</h3>
+                <canvas id="favicon16" width="16" height="16"></canvas>
+                <br>
+                <button class="download-btn" onclick="downloadFavicon('favicon16', 'favicon-16x16.png')">
+                    Download 16x16
+                </button>
+            </div>
+            
+            <div class="favicon-size">
+                <h3>32x32 (Standard)</h3>
+                <canvas id="favicon32" width="32" height="32"></canvas>
+                <br>
+                <button class="download-btn" onclick="downloadFavicon('favicon32', 'favicon-32x32.png')">
+                    Download 32x32
+                </button>
+            </div>
+            
+            <div class="favicon-size">
+                <h3>48x48 (High DPI)</h3>
+                <canvas id="favicon48" width="48" height="48"></canvas>
+                <br>
+                <button class="download-btn" onclick="downloadFavicon('favicon48', 'favicon-48x48.png')">
+                    Download 48x48
+                </button>
+            </div>
+            
+            <div class="favicon-size">
+                <h3>180x180 (Apple Touch)</h3>
+                <canvas id="favicon180" width="180" height="180"></canvas>
+                <br>
+                <button class="download-btn" onclick="downloadFavicon('favicon180', 'apple-touch-icon.png')">
+                    Download Apple Touch
+                </button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 Installation Instructions</h3>
+            <ol>
+                <li>Download all favicon files using the buttons above</li>
+                <li>Replace the existing files in your <code>/public/</code> folder:
+                    <ul>
+                        <li><code>favicon-16x16.png</code> → <code>favicon.ico</code></li>
+                        <li><code>apple-touch-icon.png</code> → <code>apple-touch-icon.png</code></li>
+                    </ul>
+                </li>
+                <li>Deploy to your website</li>
+                <li>Clear your browser cache (Ctrl+F5) to see the new favicon</li>
+            </ol>
+            
+            <p><strong>Note:</strong> The rocket 🚀 icon represents innovation and forward momentum, perfect for ReviPromptLab's AI-powered automation tools.</p>
+        </div>
+    </div>
+
+    <script>
+        function drawFavicon(canvasId, size) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext('2d');
+            
+            // Clear canvas
+            ctx.clearRect(0, 0, size, size);
+            
+            // Background gradient (blue to darker blue)
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#3B82F6');  // Blue-500
+            gradient.addColorStop(1, '#1E40AF');  // Blue-700
+            
+            // Draw rounded rectangle background
+            const radius = size * 0.15;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, radius);
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Draw rocket emoji/icon
+            ctx.fillStyle = 'white';
+            ctx.font = `${size * 0.6}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('🚀', size/2, size/2);
+            
+            // Add subtle border
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            ctx.lineWidth = 1;
+            ctx.stroke();
+        }
+        
+        function downloadFavicon(canvasId, filename) {
+            const canvas = document.getElementById(canvasId);
+            const link = document.createElement('a');
+            link.download = filename;
+            link.href = canvas.toDataURL();
+            link.click();
+        }
+        
+        // Generate all favicons on page load
+        window.onload = function() {
+            drawFavicon('favicon16', 16);
+            drawFavicon('favicon32', 32);
+            drawFavicon('favicon48', 48);
+            drawFavicon('favicon180', 180);
+        };
+    </script>
+</body>
+</html>
